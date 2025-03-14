@@ -1,0 +1,176 @@
+body {
+  font-family: "Inter";
+}
+
+
+
+.Announcementlist {
+  overflow: hidden;
+}
+
+.Ourpodcastsecbg {
+  background-image: url("../../Assets/images/volunteerbg.png");
+  background-size: cover;
+  background-color: #000000;
+  background-position: center;
+  color: #333333;
+}
+
+.volunteers {
+  background-color: #fcfaf7;
+}
+
+.info-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+/* Responsive font adjustments */
+@media (min-width: 1200px) {
+  .Announcementlist .info-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    font-weight: 500;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .Announcementlist .title {
+    font-size: 30px !important;
+    color: #333333;
+    max-width: 100% !important;
+    ;
+  }
+
+
+}
+
+.volunteerbtn {
+  background: #fdd22e;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 26px;
+  margin-top: 14px;
+}
+
+.Announcementlist .title {
+  font-size: 35px;
+  color: #333333;
+  max-width: 72%;
+}
+
+
+
+
+.Announcementlist .title span {
+  font-style: italic;
+  color: #348f99;
+  font-family: test;
+}
+
+
+
+
+
+.ourpodcastrounderline {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+
+.borderstop {
+  border-top: 1px solid #c3beb7;
+  margin-left: 15px;
+
+  /* Add padding for better spacing */
+}
+
+/* For smaller screens (e.g., tablets and mobile) */
+@media (max-width: 768px) {
+  .borderstop {
+    margin-left: 0;
+    /* Remove the margin for smaller screens */
+
+    /* Adjust padding for smaller screens */
+    text-align: center;
+    /* Ensure content is centered */
+  }
+}
+
+/* For very small screens (e.g., phones) */
+@media (max-width: 480px) {
+  .borderstop {
+
+    /* Further reduce padding for small screens */
+    border-top: 2px solid #c3beb7;
+    /* Slightly thicker border for visual appeal */
+  }
+}
+
+
+.announcementread {
+  color: #3b7e85;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.Announcementlist .announcetitle {
+  
+  font-size: 35px;
+  color: #333333;
+  max-width: 101%;
+  margin: 0 auto;
+  width: 71%;
+  left: 0px;
+  margin-left: 0;
+}
+
+/* For tablets and medium screens */
+@media (max-width: 992px) {
+  .Announcementlist .announcetitle {
+    font-size: 28px;
+    /* Reduce font size */
+    max-width: 80%;
+    /* Restrict width */
+  }
+}
+
+/* For mobile screens */
+@media (max-width: 576px) {
+  .Announcementlist .announcetitle {
+    font-size: 24px;
+    /* Further reduce font size */
+    max-width: 90%;
+    /* Adjust width for smaller screens */
+  }
+}

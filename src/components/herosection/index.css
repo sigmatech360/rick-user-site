@@ -1,0 +1,96 @@
+.hero-section .overlay {
+    /* background-color: rgba(0, 0, 0, 0.5);   */
+  }
+  
+  .breadcrumb {
+    font-size: 1.2rem;
+    font-weight: 400;
+  }
+  
+
+ .hero-section{
+height: 50vh!important;
+  }
+
+
+  .aboutherounderline{
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(5px);
+  }
+
+
+
+
+  /* .hero-section .title{
+    margin-bottom: 126px !important;
+  } */
+
+
+
+
+  .programprojectsubttle {
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-top: 37px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.herotitle {
+  display: flex;
+  justify-content: center; /* Center horizontally on small screens */
+  align-items: center; /* Center vertically on small screens */
+}
+
+ 
+
+/* Adjust alignment for medium screens and above */
+@media (min-width: 768px) {
+  .herotitle {
+ 
+
+    
+  display: flex;
+  justify-content: end; /* Center horizontally on small screens */
+  align-items: end; /* Center vertically on small screens */
+
+  }
+ 
+}

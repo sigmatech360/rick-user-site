@@ -1,0 +1,211 @@
+/* Community Section */
+.community {
+  background-color: #fdfbf8;
+}
+
+.todaybtn {
+  color: #563b3b !important;
+  font-weight: 100 !important;
+  border-radius: 26px;
+  padding: 6px 24px;
+  border: none;
+  background: #fdfbf8;
+  border: 1px solid #348f99;
+}
+
+.todaybtn:hover {
+  color: white !important;
+  font-weight: 100 !important;
+  border-radius: 26px;
+  padding: 5px 17px;
+  border: none;
+  background: #348f99;
+  border: 1px solid #348f99;
+  font-weight: 700 !important;
+  font-size: 0.82rem;
+}
+
+.communityschedual {
+  color: #6e6e6f;
+}
+
+.communityschedualdivider {
+  height: 21px !important;
+  border-right: 1px solid #6e6e6f;
+}
+
+.communitytitle {
+  font-weight: bold;
+  /* font-size: 3rem; */
+
+  color: #333333;
+}
+
+.communitypara {
+  color: #4d4d4f;
+  /* width: 80%; */
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+/* Monday Text */
+.monday-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.monday2 {
+  margin-left: 5px;
+  font-weight: 800;
+  font-size: 1.3rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small Devices (Phones) */
+@media (max-width: 576px) {
+  .communitytitle {
+    font-size: 1rem;
+    width: 100%;
+  }
+
+  .communitypara {
+    /* width: 90%; */
+    font-size: 0.9rem;
+  }
+
+  .monday2 {
+    font-size: 1rem;
+  }
+
+  .todaybtn {
+    padding: 6px 16px;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust layout for smaller devices */
+  .community .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* .col-md-8,
+  .col-md-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  } */
+
+  .communityschedual {
+    font-size: 0.9rem;
+  }
+
+  .communityschedualdivider {
+    height: 14px;
+  }
+}
+
+/* Medium Devices (Tablets) */
+@media (max-width: 768px) {
+  .communitytitle {
+    font-size: 1.45rem;
+    /* width: 70%; */
+  }
+
+  .communitypara {
+    /* width: 85%; */
+    font-size: 1rem;
+  }
+
+  .monday2 {
+    font-size: 1.1rem;
+  }
+
+  .todaybtn {
+    padding: 6px 20px;
+    font-size: 1rem;
+  }
+
+  .community .row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* .col-md-8,
+  .col-md-4 {
+    width: 100%;
+    margin-bottom: 20px;
+  } */
+
+  .communityschedual {
+    font-size: 1rem;
+  }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 992px) {
+  .communitytitle {
+    font-size: 2.1rem;
+    width: 50%;
+  }
+
+  .communitypara {
+    width: 80%;
+    font-size: 1rem;
+  }
+
+  .monday2 {
+    font-size: 1.3rem;
+  }
+
+  .todaybtn {
+    padding: 6px 24px;
+    font-size: 1.1rem;
+  }
+
+  .community .row {
+    flex-direction: row;
+  }
+
+  /* .col-md-8,
+  .col-md-4 {
+    width: 48%;
+    margin-right: 20px;
+  } */
+}
+
+/* Extra Large Devices (Large Desktops) */
+@media (min-width: 1200px) {
+  .communitytitle {
+    font-size: 2.51rem;
+    width: 60%;
+  }
+
+  .communitypara {
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .monday2 {
+    font-size: 1.4rem;
+  }
+
+  .todaybtn {
+    padding: 5px 17px;
+    font-size: 0.82rem;
+    color: #6e6e6f !important;
+    font-weight: 700 !important;
+  }
+
+  /* .community .row {
+    flex-direction: row;
+  } */
+
+  /* .col-md-8,
+  .col-md-4 {
+    width: 48%;
+    margin-right: 20px;
+  } */
+}

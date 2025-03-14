@@ -1,0 +1,231 @@
+/* innovation services */
+.BuildingFutures{
+  overflow: hidden;
+}
+.BuildingFutures {
+  background-color: #fdfbf8;
+}
+
+.BuildingFutures .para {
+  color: var(--unnamed-color-6e6e6f, #6e6e6f);
+  text-align: left;
+  /* font-weight: normal; */
+  font-size: 13px;
+  line-height: 18px;
+  /* font-family: 'Inter', sans-serif; */
+  letter-spacing: 0px;
+  opacity: 1;
+}
+
+.service-card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  text-align: start;
+  justify-content: start;
+}
+
+/* Container for the service card */
+/* .service-card-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px; 
+  } */
+
+/* Service Card styles */
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .service-card {
+    padding: 10px;
+  }
+
+  .service-card {
+    width: 100%; /* Ensure it takes full width on smaller screens */
+    /* max-width: 90%; Adjust max-width on smaller screens */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.BuildingFutures .createdunderline {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  transform: translateY(5px);
+}
+
+.BuildingFutures .creadetimg {
+  height: 67px;
+  width: 60px;
+}
+
+.donate-button:hover {
+  background-color: #348f99;
+  color: #fff;
+  border-radius: 30px;
+  padding: 5px 21px;
+  font-weight: 400;
+}
+
+.donate-button {
+  background-color: #348f99;
+  color: #fff;
+  border-radius: 30px;
+  padding: 5px 21px;
+  font-weight: 400;
+}
+
+/* .BuildingFutures . {
+  max-width: 100%;
+  width: 76px;
+} */
+
+.BuildingFutures .credit {
+  font-family: test;
+  font-style: italic;
+  color: #348f99;
+}
+
+.BuildingFutures .extension {
+  line-height: 2;
+  color: var(--unnamed-color-333333);
+  text-align: left;
+  font: normal normal bold 18px / 43px Inter, sans-serif;
+  line-height: 23px;
+  margin-bottom: 14px !important;
+}
+
+.BuildingFutures .iconbg {
+  padding: 9px;
+  background-color: #348f99;
+  border-radius: 15px;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+}
+
+.BuildingFutures .donateiconbg {
+  padding: 8px 24px;
+  border: none;
+  background-color: #fdd22e;
+  border-radius: 26px;
+  font-size: 16px;
+  gap: 4px;
+}
+
+/* .BuildingFutures .joinuspara {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.BuildingFutures .empowelive {
+  color: black;
+  font-size: 44px;
+  max-width: 68%;
+}
+
+.BuildingFutures .empowelive span {
+  font-style: italic;
+  color: #348f99;
+  font-family: test;
+} */
+
+/* Base styles for larger devices (desktop and tablets) */
+.BuildingFutures .joinuspara {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.BuildingFutures .empowelive {
+  color: black;
+  font-size: 44px;
+  max-width: 68%;
+}
+
+.BuildingFutures .empowelive span {
+  font-style: italic;
+  color: #348f99;
+  font-family: test;
+}
+
+/* For tablets (screen width <= 768px) */
+
+@media (min-width: 1024px) {
+  .BuildingFutures .empowelive {
+    font-size: 36px;
+    max-width: 74%;
+  }
+}
+
+@media (max-width: 768px) {
+  .BuildingFutures .joinuspara {
+    font-size: 22px;
+    display: flex;
+    text-align: center;
+    margin: auto;
+    justify-content: center;
+    margin-bottom: 22px;
+    margin-top: 9px;
+  }
+
+  .BuildingFutures .empowelive {
+    font-size: 36px;
+
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 4px;
+  }
+
+  .BuildingFutures .empowelive span {
+    font-size: 32px; /* Adjust font size for the highlighted text */
+  }
+
+  .BuildingFutures .donateiconbg {
+    padding: 8px 24px;
+    border: none;
+    background-color: #fdd22e;
+    border-radius: 26px;
+    font-size: 16px;
+    gap: 4px;
+    margin: auto;
+  }
+}
+
+/* For mobile devices (screen width <= 480px) */
+@media (max-width: 480px) {
+  .BuildingFutures .joinuspara {
+    font-size: 18px; /* Further reduce font size for smaller screens */
+  }
+
+  .BuildingFutures .empowelive {
+    font-size: 28px; /* Adjust font size for mobile */
+    max-width: 100%; /* Allow full width for mobile readability */
+    text-align: center; /* Center-align text for smaller screens */
+  }
+
+  .BuildingFutures .empowelive span {
+    font-size: 24px; /* Smaller font size for the italic text */
+  }
+
+  .BuildingFutures .para {
+    color: var(--unnamed-color-6e6e6f, #6e6e6f);
+    text-align: center;
+    font-size: 13px;
+    line-height: 18px;
+    /* font-family: 'Inter', sans-serif; */
+    letter-spacing: 0px;
+    opacity: 1;
+  }
+}

@@ -1,0 +1,112 @@
+/* General Section Styles */
+.myprofile {
+    background-color: white;
+    /* min-height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 0%;
+}
+
+/* Profile Section */
+.profile-section {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}
+
+.profile-picture-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.edit-button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    padding: 6px 8px;
+    cursor: pointer;
+}
+
+.edit-button i {
+    font-size: 14px;
+}
+
+/* Form Section */
+.profile-section-form {
+    background-color: #FDFBF8;
+    /* border-radius: 10px; */
+    min-height: 100vh !important;
+    /* padding: 20px; */
+    margin-bottom: 0px;
+    padding: 74px !important;
+    display: flex;
+    justify-items: center !important;
+    align-items: center !important;
+
+}
+
+.form-control {
+    border: 1px solid #6e6e6f;
+    background-color: #fdfbf8;
+    padding: 0.75rem;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.5);
+}
+
+/* Update Button */
+.profile-update {
+    background-color: #397177;
+    color: white;
+    height: 45px;
+    border-radius: 8px;
+    font-weight: bold;
+    border: none;
+}
+
+.profile-update:hover {
+    background-color: #295f5e;
+    color: white;
+    border-radius: 8px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .myprofile .row {
+        text-align: center;
+    }
+
+    .profile-section {
+        margin-bottom: 20px;
+    }
+}
+
+
+.myprofile .dropdown-input {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 17px 15px;
+    background-color: #fdfbf8;
+    border: 1px solid #348F99 !important;
+    color: #3c3c3c;
+    border-radius: 8px;
+    cursor: pointer;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}

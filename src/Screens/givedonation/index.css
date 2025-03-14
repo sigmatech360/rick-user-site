@@ -1,0 +1,850 @@
+.homeless-intervention {
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.wedopara {
+  color: #4d4d4f;
+  letter-spacing: 0px;
+}
+
+
+
+
+
+
+.ourprogramgradbg {
+  position: relative;
+}
+
+.ourprogramgradbg::before {
+  left: 137px !important;
+  content: "";
+  position: absolute;
+  top: -71px !important;
+
+  background: url('../../Assets/images/volusteergradiantimg.png') 0% 0% no-repeat;
+  background-size: contain;
+  padding-left: 0;
+  height: 179%;
+  width: 205%;
+  z-index: -1;
+
+}
+
+
+.how-we-do {
+  left: 0px;
+  /* width: 175px; */
+  /* height: 93px; */
+  color: #333333;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 49px;
+  line-height: 87px;
+  letter-spacing: 0px;
+}
+
+.hopeunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.wedotagline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.text-success {
+  --bs-text-opacity: 1;
+  /* color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important; */
+  color: #fdd22e !important;
+  font-family: text;
+  font-style: italic;
+}
+
+/* Custom text styling */
+.highlight-text {
+  color: #0056b3;
+  /* Example color, adjust as needed */
+  font-style: italic;
+  font-weight: bold;
+  color: #348f99;
+  font-style: italic;
+  font-weight: bold;
+  font-family: test Signifier;
+  position: relative;
+}
+
+/* Right section text */
+.right-section-text {
+  font-size: 2rem;
+  /* Adjust as needed */
+  color: #ffffff;
+}
+
+/* legacy */
+
+.legacy {
+  overflow: hidden;
+}
+
+.homeless-intervention {
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.wedopara {
+  color: #4d4d4f;
+  letter-spacing: 0px;
+}
+
+.how-we-do {
+  left: 0px;
+  /* width: 175px; */
+  /* height: 93px; */
+  color: #333333;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 49px;
+  line-height: 87px;
+  letter-spacing: 0px;
+}
+
+.hopeunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.wedotagline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.text-success {
+  --bs-text-opacity: 1;
+  /* color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important; */
+  color: #fdd22e !important;
+  font-family: text;
+  font-style: italic;
+}
+
+/* Left section background */
+/* .left-section {
+  background-image: url("../../Assets/images/wedobg.png");
+  background-size: cover;
+  background-position: center;
+  color: #333333;
+  padding: 83px;
+  min-height: 400px;  
+
+  background-color: #fdfbf8;
+} */
+
+/* Right section background */
+/* .legacy .right-section {
+  background-image: url("../../Assets/images/legacybg.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 400px;  
+} */
+
+/* Custom text styling */
+.highlight-text {
+  color: #0056b3;
+  /* Example color, adjust as needed */
+  font-style: italic;
+  font-weight: bold;
+  color: #348f99;
+  font-style: italic;
+  font-weight: bold;
+  font-family: test Signifier;
+  position: relative;
+}
+
+/* Right section text */
+.right-section-text {
+  font-size: 2rem;
+  /* Adjust as needed */
+  color: #ffffff;
+}
+
+/*  Driving change*/
+
+/* donate-section */
+
+.donate-section {
+  /* background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ), url('../../Assets/images/multiprogrambg.png');  */
+  background-image: url("../../Assets/images/multiprogrambg.png");
+  background-size: cover;
+  background-color: #fdfbf8;
+  background-position: center;
+  color: #333333;
+}
+
+
+.donate-section .para {
+  color: var(--unnamed-color-333333, #333333);
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 27px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0px;
+  opacity: 1;
+  max-width: 50%
+}
+
+/* Responsive adjustments for max-width and font-size */
+@media (max-width: 1200px) {
+  .donate-section .para {
+    max-width: 60%;
+  }
+}
+
+@media (max-width: 992px) {
+  .donate-section .para {
+    max-width: 70%;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .donate-section .para {
+    max-width: 80%;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .donate-section .para {
+
+    max-width: 90%;
+    font-size: 13px;
+  }
+
+  .services-section .para {
+    text-align: center !important;
+  }
+
+  .extension {
+    color: var(--unnamed-color-333333);
+    text-align: center !important;
+    font: normal normal bold 18px / 43px Inter, sans-serif;
+    letter-spacing: 0px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dedicatd-leadership .card-title {
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 0px;
+  text-align: left;
+}
+
+
+
+.dedicatd-leadership .card-text {
+  text-align: left;
+}
+
+.profile-container {
+  position: relative;
+  /* width: 200px;   */
+  overflow: hidden;
+  /* border-radius: 5px; */
+}
+
+/* Yellow overlay */
+/* .yellow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-height: 145%;
+  height: 272px;
+  max-width: 100%; 
+  height: 304px;
+  background-color: #FDD22E;
+  z-index: 2;
+  filter: opacity(0.5);
+  width: 61px;
+} */
+
+
+
+
+.yellow-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 309px !important;
+  /* Default height */
+  background-color: #FDD22E;
+  z-index: 2;
+  filter: opacity(0.5);
+  width: 61px;
+  /* Default width */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .yellow-overlay {
+    height: 291px;
+    width: 62px;
+  }
+}
+
+@media (max-width: 992px) {
+  .yellow-overlay {
+    height: 200px;
+    /* Adjust height for smaller screens */
+    width: 45px;
+    /* Adjust width for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .yellow-overlay {
+    height: 320px;
+    width: 63px;
+  }
+}
+
+@media (max-width: 576px) {
+  .yellow-overlay {
+    height: 374px;
+    width: 65px;
+  }
+}
+
+
+
+
+
+
+
+
+/* @media (max-width: 768px) {
+  .yellow-overlay {
+    height: 335px;
+}} */
+
+
+
+@media (max-width: 768px) {
+
+  /* .yellow-overlay {
+    height: 100%;  
+  } */
+}
+
+@media (max-width: 576px) {
+
+  /* .yellow-overlay {
+    width: 50%;  
+  } */
+}
+
+/* @media (min-width: 1200px) {
+
+  width: 3vw;  
+} */
+
+.hisoc {
+  padding: 3px 10px;
+  color: var(--unnamed-color-6e6e6f);
+  text-align: left;
+  font: normal normal normal 18px / 23px Inter;
+  letter-spacing: 0px;
+  color: #6E6E6F;
+}
+
+/* Profile image styling */
+.profile-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 1;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
+/* innovation services */
+
+.services-section {
+  background-color: #fdfbf8;
+}
+
+.services-section .para {
+
+  color: var(--unnamed-color-6e6e6f, #6e6e6f);
+  text-align: left;
+  /* font-weight: normal; */
+  font-size: 13px;
+  line-height: 18px;
+  /* font-family: 'Inter', sans-serif; */
+  letter-spacing: 0px;
+  opacity: 1;
+}
+
+.service-card {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  transition: transform 0.2s ease;
+  text-align: start;
+  justify-content: start;
+}
+
+
+.donatecard :hover {
+  box-shadow: 4px 12px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: box-shadow 0.3s cubic-bezier(0.65, -0.33, 0.26, 1.05) !important;
+}
+
+
+
+
+
+
+
+
+/* Container for the service card */
+/* .service-card-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px; 
+} */
+
+/* Service Card styles */
+
+/* Responsive Adjustments for smaller screens */
+@media (max-width: 768px) {
+  .service-card {
+    padding: 10px;
+  }
+
+  .service-card {
+    width: 100%;
+    /* Ensure it takes full width on smaller screens */
+    /* max-width: 90%; Adjust max-width on smaller screens */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.services-section .createdunderline {
+
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  left: 0px;
+  transform: translateY(5px);
+}
+
+
+
+.services-section .creadetimg {
+  height: 67px;
+  width: 60px;
+
+}
+
+.donate-button:hover {
+  background-color: #348F99;
+  color: #fff;
+  border-radius: 30px;
+  padding: 5px 21px;
+  font-weight: 400;
+
+}
+
+
+.donate-button {
+  background-color: #348F99;
+  color: #fff;
+  border-radius: 30px;
+  padding: 5px 21px;
+  font-weight: 400;
+
+}
+
+
+
+.services-section . {
+  max-width: 100%;
+  width: 76px;
+}
+
+.services-section .credit {
+
+  font-family: test;
+  font-style: italic;
+  color: #348F99;
+}
+
+.extension {
+
+  color: var(--unnamed-color-333333);
+  text-align: left;
+  font: normal normal bold 18px / 43px Inter, sans-serif;
+  letter-spacing: 0px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* help-section */
+
+
+
+
+.help-section {
+  background-image: url('../../Assets/images/helpstart.svg');
+  background-position: center;
+  background-color: #333333;
+  color: #ffffff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 100%;
+
+  position: relative;
+  color: #ffffff;
+  overflow: hidden;
+
+}
+
+.help-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+}
+
+.hashtag {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.display-1 {
+  font-weight: bold;
+  font-size: 5rem;
+  /* Large font size for "211" */
+}
+
+.star-icon {
+  font-size: 2rem;
+  margin-left: 10px;
+}
+
+.oc-text {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ffcc00;
+  /* Orange color for "oc" */
+  margin-left: 10px;
+}
+
+.description {
+  color: #d1d1d1;
+  /* Light gray color for description text */
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.btn-link {
+  font-size: 0.9rem;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+  background-color: #ffffff;
+  color: #333333;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+/* programs-section */
+.programs-section {
+  overflow: hidden;
+}
+
+
+.programs-section .program-card {
+  position: relative;
+  overflow: hidden;
+  color: #ffffff;
+  /* border-radius: 8px; */
+  min-height: 600px;
+  /* Ensures all cards have the same minimum height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+
+.program-title {
+  font: normal normal bold 42px / 50px Inter, sans-serif;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  text-transform: capitalize;
+  text-align: start;
+}
+
+.program-title span {
+  color: #FDD22E;
+  font-style: italic;
+  font-family: test;
+}
+
+
+.programs-section .matchinggiftunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.program-card .overlay {
+  /* background-color: rgba(0, 0, 0, 0.6);   */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.program-card .content {
+  position: relative;
+  z-index: 2;
+}
+
+
+.program-description {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #d1d1d1;
+  max-width: 118vh;
+
+  text-align: start;
+
+}
+
+.highlighted-text {
+  color: #fdd22e;
+  /* Highlighted color */
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* Responsive text sizing */
+/* @media (max-width: 768px) {
+  .program-title {
+    font-size: 1.25rem;
+  }
+  .program-description {
+    font-size: 0.9rem;
+  }
+} */
+
+
+.legacyunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .programs-section .program-card {
+    min-height: 400px;
+    padding: 15px;
+  }
+
+  .program-title {
+    font-size: 1.75rem;
+    line-height: 2rem;
+    text-align: center;
+  }
+
+  .program-description {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  .programs-section .matchinggiftunderline {
+    transform: translateY(3px);
+  }
+}
+
+
+.programs-section {
+  background-color: #fdfbf8;
+
+}
+
+/* Additional adjustments for extra small screens */
+@media (max-width: 576px) {
+  .programs-section .program-card {
+    min-height: 300px;
+    padding: 10px;
+  }
+
+  .program-title {
+    font-size: 1.5rem;
+    line-height: 1.75rem;
+    text-align: center;
+  }
+
+  .program-description {
+    font-size: 0.85rem;
+    text-align: center;
+  }
+}
+
+
+.givedonationsubtitle {
+
+  font-size: 1.1rem;
+  font-weight: 400;
+  margin-top: 1px;
+}

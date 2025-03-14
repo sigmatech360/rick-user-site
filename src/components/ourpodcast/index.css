@@ -1,0 +1,230 @@
+.Podcastcard:hover {
+  transform: translateY(-15px) !important;
+  /* Slight lift on hover */
+  transition: transform 0.2s ease;
+}
+
+/* General container for podcasts */
+.podcasts {
+  overflow: hidden !important;
+  padding: 20px 0;
+  background-color: #fdfbf8;
+}
+
+/* Podcast card body styling */
+.podcastcardbody {
+  padding: 20px 4px;
+  /* background: #fff; */
+  border-radius: 10px;
+  /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); */
+
+}
+
+/* Image styling */
+.card-img-top {
+  height: 280px;
+  object-fit: cover;
+  border-radius: 19px;
+  height: auto;
+  max-width: 396px;
+}
+
+.video-meta {
+  display: flex;
+  font-family: "Inter";
+  gap: 17px;
+  color: #6e6e6f;
+  font-size: 14px;
+  margin-bottom: 7px;
+}
+
+.podcasts .titles {
+  font-size: 45px;
+  font-weight: 600;
+  font-family: "Inter";
+  margin-bottom: 54px !important;
+}
+
+
+
+
+
+
+
+
+.podcasts .titles {
+  font-size: 45px;
+  /* Default font size for larger screens */
+  font-weight: 600;
+  font-family: "Inter", sans-serif;
+  margin-bottom: 54px !important;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 1200px) {
+  .podcasts .titles {
+    font-size: 38px;
+    /* Slightly smaller for medium screens */
+    margin-bottom: 40px;
+    /* Adjust margin for better spacing */
+  }
+}
+
+@media (max-width: 992px) {
+  .podcasts .titles {
+    font-size: 32px;
+    /* Further reduce font size for smaller screens */
+    margin-bottom: 30px;
+  }
+  .video-meta {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .podcasts .titles {
+    font-size: 28px;
+    /* Smaller font size for mobile */
+    margin-bottom: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .podcasts .titles {
+    font-size: 24px;
+    /* Minimum font size for very small screens */
+    margin-bottom: 20px;
+  }
+}
+
+
+.podcasts .titles span {
+  font-style: italic;
+  color: #348f99;
+  font-family: test;
+}
+
+.podcasts .underline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+
+
+
+
+.podcasts .viewall {
+  margin: auto;
+  max-width: 16%;
+  padding: 5px 0px;
+  border-radius: 26px;
+  background: #348F99;
+  color: white;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  /* Default font size */
+}
+
+/* Responsive adjustments for medium screens */
+@media (max-width: 1200px) {
+  .podcasts .viewall {
+    max-width: 25%;
+    /* Increase max-width for larger tablet and small laptop screens */
+    padding: 8px 0px;
+    /* Add more padding for touch targets */
+    font-size: 14px;
+    /* Slightly smaller text */
+  }
+}
+
+/* For screens between 992px and 768px (tablets) */
+@media (max-width: 992px) {
+  .podcasts .viewall {
+    max-width: 35%;
+    /* Increase max-width for tablets */
+    padding: 10px 0px;
+    /* Adjust padding for touch-friendly button */
+    font-size: 13px;
+    /* Smaller text for smaller devices */
+  }
+}
+
+/* For mobile screens (768px and below) */
+@media (max-width: 768px) {
+  .podcasts .viewall {
+    max-width: 50%;
+    /* Make the button larger on mobile devices */
+    padding: 12px 0px;
+    /* Adequate padding for better touch interaction */
+    font-size: 15px;
+    /* Maintain readable text size on mobile */
+  }
+}
+
+/* For very small screens (600px and below) */
+@media (max-width: 576px) {
+  .podcasts .viewall {
+    max-width: 70%;
+    /* Make the button even larger for small phones */
+    padding: 14px 0px;
+    /* More padding for touch devices */
+    font-size: 16px;
+    /* Default font size for readability */
+  }
+}
+
+
+
+
+
+.iframe-wrapper {
+  position: relative;
+  width: 100%;
+  padding-bottom: 76.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 17px !important
+  /* overflow: hidden; */
+}
+
+.iframe-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+
+.poscasttle {
+  color: black;
+}
+
+.poscastpara {
+  color: #6e6e6f;
+}
+
+
+
+.podcasts .podcastbtn {
+  background: #348f99;
+  color: white;
+  border-radius: 26px;
+  max-width: 100%;
+  width: 229px;
+  border: none;
+  justify-content: center;
+  display: flex;
+  padding: 5px 0px;
+  margin: auto;
+}

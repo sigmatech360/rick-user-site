@@ -1,0 +1,225 @@
+/* info-section */
+
+.Volunteerinfosecbg {
+  /* background: linear-gradient(
+      rgba(255, 255, 255, 0.9),
+      rgba(255, 255, 255, 0.9)
+    ), url('../../Assets/images/multiprogrambg.png');  */
+  background-image: url("../../Assets/images/volunteerbg.png");
+  background-size: cover;
+  background-color: #fdfbf8;
+  background-position: center;
+  color: #333333;
+
+  overflow: hidden !important;
+}
+
+.volteersbg{
+  position: relative;
+}
+
+.volteersbg::before {
+  
+ content: "";
+ position: absolute;
+ top: -71px!important ;
+ left: 0;
+ background: url('../../Assets/images/volusteergradiantimg.png') 0% 0% no-repeat;
+ background-size: contain;
+ padding-left: 0;
+ height: 179%;
+ width: 205%;
+ z-index: -1;
+
+}
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+.volunteers {
+  background-color: #fcfaf7;
+  overflow: hidden !important;
+}
+
+.info-text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #333333;
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 1;
+}
+
+/* Responsive font adjustments */
+@media (min-width: 1200px) {
+  .info-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .info-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+}
+
+.program-item:hover {
+  background-color: #fdd22e;
+
+  .highlighted-word {
+    color: #397177;
+    font-style: italic;
+    font-family: test;
+    font-weight: 600;
+    position: relative;
+  }
+
+  .programunderlines {
+    vertical-align: middle;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    height: auto;
+    transform: translateY(5px);
+    display: flex;
+  }
+
+  .arrow-con {
+    background-color: white;
+  }
+}
+
+.programunderlines {
+  display: none;
+}
+
+.program-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.program-item .arrow-icon {
+  color: #ffcc00;
+  font-size: 1.5rem;
+}
+
+.program-item.highlighted {
+  background-color: #ffeaa7;
+  font-weight: bold;
+}
+
+.image-container {
+  position: relative;
+}
+
+.image-container img {
+  border-radius: 8px;
+  transition: opacity 0.3s ease;
+}
+
+.volunteerbtn {
+  background: #fdd22e;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 26px;
+  margin-top: 14px;
+}
+
+.Volunteerinfo .title {
+  font-size: 45px;
+  color: #333333;
+  max-width: 78%;
+}
+
+.Volunteerinfo .title span {
+  font-style: italic;
+  color: #348f99;
+  font-family: test;
+}
+
+.Volunteerinfo .houseprogramunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.no-gutters {
+  padding: 20px;
+  background: #ebfdff;
+  box-shadow: 0px 3px 15px #0000000d;
+  border: none;
+}
+
+.Volunteerinfo .card-body {
+  background-color: transparent;
+}
+
+.Volunteerinfo .card {
+  /* border-radius: 10px; */
+  background-color: #fefbeb;
+  box-shadow: 0px 1px 17px 4px rgb(145 145 145 / 10%);
+  border: none;
+}
+
+.Volunteerinfo .dividervol {
+  border-bottom: 1px solid #fdd22e;
+  margin-top: 8px;
+  max-width: 30%;
+}
+
+@media (max-width: 768px) {
+  .Volunteerinfo .title {
+    font-size: 42px;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .Volunteerinfo .title {
+    font-size: 27px;
+    /* max-width: 100%; */
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+  }
+  .Volunteerinfo .info-text {
+    text-align: center !important;
+  }
+
+  .Volunteerinfo .volunteerbtn {
+    background: #fdd22e;
+    border: none;
+    padding: 8px 25px;
+    border-radius: 26px;
+    margin-top: 14px;
+    margin: auto;
+    justify-content: center;
+    display: flex;
+    margin-top: 20px;
+  }
+}

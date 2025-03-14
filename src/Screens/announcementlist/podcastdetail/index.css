@@ -1,0 +1,349 @@
+/* General Styles */
+.communityOutreachDay {
+  background: #fdfbf8;
+  padding: 2rem 0;
+}
+
+.communityOutreachDayheader {
+  color: #6e6e6f;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.communityOutreachDaytitle {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #333333;
+}
+
+.communityOutreachDaypara {
+  color: #4d4d4f;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.communityOutreachDayschedual {
+  color: #6e6e6f;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.communityOutreachDayschedualdivider {
+  height: 20px;
+  border-right: 1px solid #6e6e6f;
+}
+
+.communityimg {
+  max-width: 100% !important;
+  /* Ensures it scales within its container */
+  width: 50%;
+  /* Sets the image to occupy the full width of its container */
+  height: auto;
+  /* Maintains aspect ratio */
+  border-radius: 20px;
+  /* Keeps rounded corners */
+  margin: 2rem 0;
+  /* Adds spacing above and below the image */
+}
+
+.VolunteerOrientationblg::-webkit-scrollbar {
+  width: 4px;
+  /* Width of the scrollbar */
+}
+
+.VolunteerOrientationblg::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  /* Scrollbar track color */
+}
+
+.VolunteerOrientationblg::-webkit-scrollbar-thumb {
+  background: #888;
+  /* Scrollbar thumb color */
+  border-radius: 10px;
+  /* Rounded corners for the thumb */
+}
+
+.VolunteerOrientationblg::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Thumb color on hover */
+}
+
+.VolunteerOrientationblg {
+  background: white;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  margin-bottom: 1.5rem;
+  padding: 22px 30px;
+  /* display: flex
+; */
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  color: black;
+  overflow: hidden;
+
+}
+
+
+
+
+
+.VolunteerOrientationblg .item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+
+@media (max-width: 768px) {
+  .VolunteerOrientationblg {
+    padding: 15px;
+    /* Decrease padding for smaller screens */
+    border-radius: 10px;
+    /* Make corners more rounded */
+  }
+
+  .VolunteerOrientationblg .item {
+    flex-direction: column;
+    /* Stack items vertically on smaller screens */
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .VolunteerOrientationblg {
+    padding: 10px;
+    /* Further reduce padding for very small screens */
+  }
+
+  .VolunteerOrientationblg .item {
+    margin-bottom: 0.6rem;
+    padding-bottom: 0.6rem;
+  }
+
+  .VolunteerOrientationblg .item>* {
+    font-size: 14px;
+    /* Adjust font size for very small screens */
+  }
+}
+
+
+
+
+
+
+
+
+
+.VolunteerOrientationblgimg {
+  height: auto;
+  max-width: 100%;
+  width: 150px;
+  border-radius: 10px;
+}
+
+.VolunteerOrientationblgtitledate {
+  color: #6e6e6f;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.VolunteerOrientationblgtitledatereade {
+  color: #348f99;
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.VolunteerOrientationblg h4 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+}
+
+/* Buttons */
+.todaybtn {
+  color: #563b3b;
+  font-weight: 400;
+  border-radius: 26px;
+  padding: 6px 24px;
+  border: 1px solid #348f99;
+  background: #fdfbf8;
+  transition: all 0.3s ease;
+}
+
+.todaybtn:hover {
+  color: white;
+  background: #348f99;
+  border-color: #348f99;
+}
+
+/* Media Queries */
+@media (max-width: 576px) {
+  .communityOutreachDaytitle {
+    font-size: 2rem;
+  }
+
+  .communityOutreachDaypara {
+    font-size: 0.9rem;
+  }
+
+  .communityOutreachDayschedual {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .VolunteerOrientationblgimg {
+    width: 100px;
+  }
+
+  .VolunteerOrientationblg h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .communityOutreachDaytitle {
+    font-size: 2.2rem;
+  }
+
+  .communityOutreachDaypara {
+    font-size: 1rem;
+  }
+
+  .VolunteerOrientationblgimg {
+    width: 120px;
+  }
+}
+
+@media (min-width: 992px) {
+  .communityOutreachDaytitle {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .communityOutreachDaytitle {
+    font-size: 3.1rem;
+  }
+}
+
+.timeline-dotparent {
+  background: #fdfbf8 !important;
+  border: 1px solid #348f99;
+  /* padding: 9px; */
+  border-radius: 115%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 26px;
+  height: 26px;
+  left: -13px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 0px;
+  border-left: 2px solid #ddd;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.timeline-dot {
+  /* position: absolute; */
+  left: 0.5px;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background-color: #348f99;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+.timeline-content {
+  margin-left: 20px;
+}
+
+.time {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: bold;
+}
+
+.event {
+  font-size: 1rem;
+  color: #343a40;
+}
+
+@media (max-width: 576px) {
+  .timeline-content {
+    margin-left: 15px;
+  }
+
+  .time {
+    font-size: 0.8rem;
+  }
+
+  .event {
+    font-size: 0.9rem;
+  }
+}
+
+/* .timeline:before {
+  top: 80px;
+  bottom: 90px;
+  position: absolute;
+  content: " ";
+  width: 3px;
+  background-color: #eeeeee;
+ 
+  margin-left: -1.5px;
+} */
+
+.iframe-wrapperdetail {
+  position: relative;
+  width: 100%; /* Default width for smaller screens */
+  height: 100%;
+  padding-bottom: 28.25% !important;
+  padding: 50px 20px; /* Adjust padding for smaller screens */
+}
+
+.iframe-wrapperdetail iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Medium screens (tablets and larger phones) */
+@media (min-width: 768px) {
+  .iframe-wrapperdetail {
+    width: 110%; /* Slightly larger for medium screens */
+    padding: 100px 100px; /* Adjust padding as needed */
+  }
+}
+
+/* Large screens (desktops) */
+@media (min-width: 1024px) {
+  .iframe-wrapperdetail {
+    width: 120%; /* Restore full size for large screens */
+    padding: 190px 484px; /* Original padding */
+  }
+}

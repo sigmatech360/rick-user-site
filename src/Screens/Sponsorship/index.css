@@ -1,0 +1,514 @@
+.homeless-intervention {
+  overflow: hidden;
+}
+.container-fluid {
+  padding: 0;
+}
+
+.wedopara {
+  color: #4d4d4f;
+  letter-spacing: 0px;
+}
+
+.how-we-do {
+  left: 0px;
+  /* width: 175px; */
+  /* height: 93px; */
+  color: #333333;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 49px;
+  line-height: 87px;
+  letter-spacing: 0px;
+}
+
+
+
+.sponsorshipsectionimg{
+  width: 100%;
+  height: 100%;
+  max-height: 600px;
+  object-fit: cover;
+
+}
+.sponsor-programmessage {
+  margin-top: 25.3px;
+}
+
+.hopeunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.wedotagline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.text-success {
+  --bs-text-opacity: 1;
+  /* color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important; */
+  color: #fdd22e !important;
+  font-family: text;
+  font-style: italic;
+}
+
+/* Left section background */
+/* .left-section {
+  background-image: url("../../Assets/images/wedobg.png");
+  background-size: cover;
+  background-position: center;
+  color: #333333;
+  padding: 83px;
+  min-height: 400px;  
+
+  background-color: #fdfbf8;
+} */
+
+/* Right section background */
+.right-section {
+  background-image: url("../../Assets/images/ourmission.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 400px; /* Adjust height as needed */
+}
+
+/* Custom text styling */
+.highlight-text {
+  color: #0056b3; /* Example color, adjust as needed */
+  font-style: italic;
+  font-weight: bold;
+  color: #348f99;
+  font-style: italic;
+  font-weight: bold;
+  font-family: test Signifier;
+  position: relative;
+}
+
+/* Right section text */
+.right-section-text {
+  font-size: 2rem; /* Adjust as needed */
+  color: #ffffff;
+}
+/* Container styling */
+.map-form {
+  overflow: hidden;
+}
+
+/* Form background color */
+.contactformleft {
+  background-color: #fdfbf8;
+  padding: 20px;
+}
+
+/* Map image styling */
+.map-image {
+  width: 100%;
+  height: 100%;
+  max-height: 600px; /* Set a max height for the map image */
+  object-fit: cover;
+}
+
+/* Title styling */
+.do-it {
+  font-family: test;
+  font-style: italic;
+  color: #348f99;
+  position: relative;
+}
+
+.donateunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+/* HIS-OC text styling */
+.his-oc {
+  color: #348f99;
+  font-weight: bold;
+}
+
+/* Responsive text styling and layout adjustments */
+
+.inquiries-calltitle {
+  font-size: 33px;
+  text-align: center; /* Centers text horizontally */
+  margin: 0 auto; /* Ensures it's centered horizontally if it's a block element */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+  .inquiries-calltitle {
+    font-size: 28px !important; /* Adjust font size for medium screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .inquiries-calltitle {
+    font-size: 24px !important; /* Adjust font size for smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .inquiries-calltitle {
+    font-size: 20px !important; /* Adjust font size for even smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .inquiries-calltitle {
+    font-size: 18px !important; /* Smaller font size for extra small screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .do-it {
+    font-size: 1.5rem;
+  }
+
+  /* .container-fluid {
+    padding: 1rem;
+  } */
+
+  .contactformleft {
+    padding: 1.5rem;
+  }
+
+  .map-image {
+    height: 200px; /* Reduced height on smaller screens */
+  }
+}
+
+.map-form {
+  background-color: #fdfbf8;
+}
+
+.map-form .form-control {
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  appearance: none;
+  background-color: #fdfbf8;
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: 1px solid #6e6e6f;
+  border-radius: 30px;
+}
+.map-form .form-select {
+  --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27none%27 stroke=%27%23343a40%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m2 5 6 6 6-6%27/%3e%3c/svg%3e);
+  display: block;
+  width: 100%;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--bs-body-color);
+  appearance: none;
+  background-color: #fdfbf8;
+  background-image: var(--bs-form-select-bg-img),
+    var(--bs-form-select-bg-icon, none);
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 16px 12px;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: 1px solid #6e6e6f;
+  border-radius: 30px;
+}
+
+.map-form .submit {
+  border-radius: 30px;
+  padding: 8px 22px !important;
+  color: black !important;
+  font-weight: 502 !important;
+}
+
+/* sponser */
+
+.inquiries-call {
+  background-color: #367379; /* Dark teal background color */
+  padding: 50px 0; /* Adjust padding as needed */
+  text-align: center;
+}
+
+.inquiries-call {
+  font-style: italic;
+  position: relative;
+}
+
+.inquiries-calltitle {
+  font-size: 33px;
+}
+
+.sponsorunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.Partner .para {
+  max-width: 80%;  /* Default max-width for larger screens */
+  color: #333333 !important;
+  font-weight: 500;
+  font-size: 18px;  /* Default font size */
+}
+
+/* For medium screens (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .Partner .para {
+    font-size: 16px;  /* Slightly smaller font size for medium screens */
+    max-width: 85%;  /* Allow more width on medium screens */
+  }
+}
+
+/* For tablets and smaller screens (max-width: 992px) */
+@media (max-width: 992px) {
+  .Partner .para {
+    font-size: 15px;  /* Further reduce font size for tablets */
+    max-width: 90%;  /* Increase max-width to utilize available space */
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .Partner .para {
+    font-size: 14px;  /* Smaller font size for mobile devices */
+    max-width: 95%;  /* Allow text to use almost full width on small screens */
+  }
+}
+
+/* For very small screens (max-width: 576px) */
+@media (max-width: 576px) {
+  .Partner .para {
+    font-size: 13px;  /* Smallest font size for very small screens */
+    max-width: 100%;  /* Ensure the paragraph takes full width on tiny screens */
+  }
+}
+
+
+ /* General styling for the Partner form */
+ 
+.Partner .partnerfield {
+  position: relative;
+  display: flex
+;
+  align-items: center;
+  width: 100%;
+  border: 1px solid #7ecdc3;
+  border-radius: 30px;
+  padding: 0px 9px;
+}
+
+
+
+
+
+
+.Partner .partnerfieldmessage {
+  position: relative;
+  display: flex
+;
+  /* align-items: center; */
+  width: 100%;
+  border: 1px solid #7ecdc3;
+  border-radius: 30px;
+  padding: 0px 9px;
+}
+
+
+
+
+/* Input fields within partnerfield */
+.Partner .partnerinputfield {
+  border: none; /* Remove default border */
+  flex: 1; /* Take up remaining space */
+  background: none; /* Transparent background */
+  outline: none; /* Remove outline */
+  padding: 10px; /* Add padding for better spacing */
+  font-size: 16px;
+  border-radius: 30px; /* Consistent rounded corners */
+}
+
+/* Input group icons */
+.Partner .partnerfield .input-group-text {
+  background: transparent; /* Transparent background for icons */
+  border: none; /* Remove border */
+  color: #1f5591; /* Teal icon color */
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  font-size: 18px; /* Adjust icon size */
+}
+
+
+.input-group-textmsg{
+  background: transparent;
+  border: none;
+  color: #1f5591;
+  display: flex;
+  /* align-items: center; */
+  padding: 5px 10px;
+  font-size: 18px;
+  margin-top: 3.3px;
+  }
+  
+
+
+/* Focus effects */
+.Partner .partnerinputfield:focus {
+  outline: none; /* Remove outline */
+  box-shadow: none; /* Remove box shadow */
+  border: none; /* Highlighted border on focus */
+}
+
+/* Submit button styling */
+.Partner .becomeexponser {
+  background-color: #348F99;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  display: flex;
+  font-weight: 400;
+color: white;
+}
+
+.Partner .btn-primary:hover {
+  background-color: #154068; /* Darker blue on hover */
+}
+
+/* Adjust message textarea */
+.Partner textarea.partnerinputfield {
+  resize: none; /* Prevent resizing */
+}
+
+  
+
+/* Custom CSS for the Sponsor Form */
+
+/* Make inputs and textarea have consistent rounded corners */
+.input-group .form-control,
+.input-group-text,
+.form-select,
+textarea {
+  border-radius: 30px;
+  border: 1px solid #7ecdc3; /* Add a light teal border */
+}
+
+/* Change the focus color for inputs */
+.input-group .form-control:focus,
+textarea:focus,
+.form-select:focus {
+  border-color: #1f5591; /* Focus border color */
+  box-shadow: 0 0 5px rgba(31, 85, 145, 0.5); /* Focus glow */
+  outline: none;
+}
+
+/* Style the submit button */
+.btn-primary {
+  background-color: #1f5591;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #154068; /* Darker blue on hover */
+}
+
+/* Add padding to the input group icons */
+.input-group-text {
+  background-color: #f8f9fa; /* Light background */
+  color: #1f5591; /* Icon color */
+  border: none;
+}
+
+/* Adjust textarea size */
+textarea {
+  resize: none; /* Prevent resizing */
+}
+
+/* Make the form container stand out slightly */
+ 
+
+/* Add subtle hover effects for inputs */
+.input-group .form-control:hover,
+textarea:hover,
+.form-select:hover {
+  border-color: #1f5591; /* Teal border on hover */
+}
+
+/* Center align the form title */
+h2 {
+  color: #1f5591;
+  font-weight: bold;
+}
+
+/* Add some margin to separate form fields */
+.row > .col-md-6 {
+  margin-bottom: 15px;
+}
+
+
+
+.Partner .para{
+  max-width: 109%;
+    color: #333333;
+    font-size: 21px;
+    font-weight: 400;
+}
+
+
+
+
+.partnerimg-container {
+  display: flex
+;
+  justify-content: center;
+  /* align-items: center; */
+  height: 100%;
+  background: #E4FCFF;
+}
+
+.partnerimg {
+  width: 100%;
+  max-width: 73%; /* Restrict width to 73% of the container */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure proper scaling of the image */
+  background-color: #E4FCFF;
+  padding: 91px 21px; /* Keep the padding */
+  border-radius: 8px; /* Optional: Add rounded corners */
+}

@@ -1,0 +1,1526 @@
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1640px !important;
+  }
+}
+
+/* @media (min-width: 768px) {
+  .heros-text {
+      text-align: left !important;
+      margin-left: 44px;
+  }
+} */
+
+/* @media (max-width: 576px) { */
+@media (max-width: 991px) {
+  .homeless-intervention .left-section {
+    background-image: url(http://localhost:3000/static/media/wedobg.064d34f….png);
+    background-color: #fdfbf8;
+    background-position: center;
+    color: #333333;
+    padding: 0px 20px !important;
+    min-height: unset !important;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+  }
+  .homeless-intervention .left-section h2{
+    text-align: center;
+  }
+}
+
+.gethelp {
+  border-radius: 26px;
+  margin-left: 6px;
+}
+
+.highlighted-text {
+  position: relative;
+  color: #fdd22e;
+  /* Adjust color if needed */
+  font-style: italic;
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important;
+  font-family: "Test Signika", serif;
+  font-style: italic;
+  color: #fdd22e !important;
+}
+
+.underline-image {
+  position: absolute;
+  bottom: -5px;
+  /* Adjust this value to control vertical spacing */
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+  /* Adjust to position image more precisely */
+}
+
+.swiper-pagination-bullet {
+  background-color: #fdd22e !important;
+}
+
+.text-warning {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-warning-rgb), var(--bs-text-opacity)) !important;
+  font-family: "Test Signika", serif;
+  font-style: italic;
+  color: #fdd22e !important;
+}
+
+.hero-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.inerhero {
+  background-image: url("../../Assets/images/heroimg.png");
+  /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /* Adjust based on your needs */
+}
+
+.slide-content {
+  padding: 20px;
+  /* max-width: 600px; */
+}
+
+.text-info {
+  color: #348f99 !important;
+
+  font-family: "Inter", sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  .slide-content {
+    padding: 10px;
+    text-align: center;
+    max-width: 100%;
+  }
+}
+
+/* yourwish */
+
+/* General container styling */
+
+/* homeless-intervention */
+
+/* how we Do */
+.homeless-intervention {
+  overflow: hidden;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.wedopara {
+  color: #4d4d4f;
+  letter-spacing: 0px;
+}
+
+.homeless-intervention .how-we-do {
+  left: 0;
+  color: #333333;
+  text-align: left;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 49px;
+  /* Default font size */
+  line-height: 87px;
+  letter-spacing: 0px;
+}
+
+/* For small devices (phones, tablets) */
+@media (max-width: 768px) {
+  .homeless-intervention .how-we-do {
+    font-size: 36px;
+    /* Adjust font size */
+    line-height: 60px;
+    /* Adjust line height */
+  }
+}
+
+/* For very small devices (smaller phones) */
+@media (max-width: 480px) {
+  .homeless-intervention .how-we-do {
+    font-size: 28px;
+    /* Further adjust font size */
+    line-height: 48px;
+    /* Adjust line height */
+  }
+}
+
+/* For larger devices (desktops and larger tablets) */
+@media (min-width: 1024px) {
+  .homeless-intervention .how-we-do {
+    font-size: 60px;
+    /* Larger font size */
+    line-height: 100px;
+    /* Adjust line height */
+  }
+}
+
+.changeworld {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.wedotagline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.text-success {
+  --bs-text-opacity: 1;
+  /* color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important; */
+  color: #fdd22e !important;
+  font-family: text;
+  font-style: italic;
+}
+
+/* Left section background */
+
+.homeless-intervention .lft {
+  background-color: #fdfbf8;
+}
+
+.left-section {
+  background-image: url("../../Assets/images/wedobg.png");
+  background-color: #fdfbf8;
+  background-position: center;
+  color: #333333;
+  padding: 29px 128px;
+  min-height: 400px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+@media (max-width: 1024px) {
+  .left-section {
+    padding: 60px 80px;
+    min-height: 350px;
+    background-size: cover;
+  }
+}
+
+/* Mobile screens (480px and up) */
+@media (max-width: 768px) {
+  .left-section {
+    padding: 40px 20px;
+    min-height: 300px;
+    background-size: cover;
+  }
+}
+
+/* Small mobile screens (below 480px) */
+@media (max-width: 480px) {
+  .left-section {
+    padding: 20px 10px;
+    min-height: 250px;
+    background-size: cover;
+  }
+}
+
+/* Right section background */
+.homeless-intervention .right-section {
+  background-image: url("../../Assets/images/changewishbg.png");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 400px;
+  /* Adjust height as needed */
+}
+
+
+
+
+
+
+
+
+/* .homeless-intervention .right-sectionVision {
+  background-image: url("../../Assets/images/full-shot-volunteers-with-donations.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 400px;
+ 
+} */
+
+
+
+.homeless-intervention .right-sectionVision {
+  position: relative;
+  /* Ensure the container is positioned relative */
+  background-image: url("../../Assets/images/full-shot-volunteers-with-donations.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 400px;
+  /* Adjust height as needed */
+  overflow: hidden;
+  /* Ensure the blur effect doesn't overflow */
+}
+
+.homeless-intervention .right-sectionVision::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  /* Adjust the color and opacity (e.g., black with 50% opacity) */
+  backdrop-filter: blur(5px);
+  /* Adjust the blur intensity */
+  z-index: 1;
+  /* Ensure the overlay is above the background image */
+}
+
+.homeless-intervention .right-sectionVision>* {
+  position: relative;
+  z-index: 2;
+  /* Ensure content is above the overlay */
+}
+
+/* 
+.homeless-intervention .right-sectionVisionApproach {
+  background-image: url("../../Assets/images/business-colleagues-together-teamwork-working-office.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 400px; 
+} */
+
+
+
+
+
+
+
+
+
+.homeless-intervention .right-sectionVisionApproach {
+  position: relative;
+  /* Ensure the container is positioned relative */
+  background-image: url("../../Assets/images/business-colleagues-together-teamwork-working-office.jpg");
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+  min-height: 400px;
+  /* Adjust height as needed */
+  overflow: hidden;
+  /* Ensure the blur effect doesn't overflow */
+}
+
+.homeless-intervention .right-sectionVisionApproach::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(44 44 44 / 50%);
+
+  backdrop-filter: blur(5px);
+  /* Adjust the blur intensity */
+  z-index: 1;
+  /* Ensure the overlay is above the background image */
+}
+
+.homeless-intervention .right-sectionVisionApproach>* {
+  position: relative;
+  z-index: 2;
+  /* Ensure content is above the overlay */
+}
+
+
+
+
+
+
+/* Custom text styling */
+.highlight-text {
+  color: #0056b3;
+  /* Example color, adjust as needed */
+  font-style: italic;
+  font-weight: bold;
+  color: #348f99;
+  font-style: italic;
+  font-weight: bold;
+  font-family: test Signifier;
+  position: relative;
+}
+
+/* Right section text */
+.right-section-text {
+  font-size: 2rem;
+  /* Adjust as needed */
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .right-section-text {
+    font-size: 3rem;
+    color: #ffffff;
+    justify-content: center;
+  }
+}
+
+/* what-sets-us-apart */
+
+.apartunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.setus {
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  font-size: 47px;
+  line-height: 93px;
+  letter-spacing: 0px;
+  color: #fbfbfb;
+  margin: 0;
+}
+
+.what-sets-us-apart {
+  background-image: url("../../Assets/images/Apartbg.png");
+  /* Replace with your image path */
+  background-size: cover;
+  background-position: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fallback color */
+  backdrop-filter: brightness(0.7);
+  /* Darken the background for text readability */
+  padding: 60px 15px;
+}
+
+.what-sets-us-apart h2 span {
+  font-style: italic;
+  /* Italic styling for emphasis */
+}
+
+@media (max-width: 768px) {
+  .what-sets-us-apart {
+    padding: 30px 10px;
+  }
+
+  .what-sets-us-apart h2 {
+    font-size: 1.45rem;
+  }
+
+  .what-sets-us-apart p {
+    font-size: 0.9rem;
+  }
+}
+
+/*help-available  */
+
+.heplcard {
+  transition: transform 0.5s ease !important;
+}
+
+.heplcard:hover {
+  transform: translateY(-15px) !important;
+}
+
+.stat-card:hover {
+  transition: transform 0.5s ease;
+  transform: translateY(-5px) !important;
+  /* Slight lift on hover */
+}
+
+.help-available .parabtn {
+  color: white;
+  border: 1px solid var(--unnamed-color-fdd22e);
+  border: 1px solid #fdd22e;
+  border-radius: 26px;
+  opacity: 1;
+  margin-left: 23px;
+  font-family: "Inter";
+}
+
+
+
+.help-available .parabtn:hover {
+  color: black;
+  border: 1px solid var(--unnamed-color-fdd22e);
+  border: 1px solid #fdd22e;
+  background-color: yellow;
+  border-radius: 26px;
+  opacity: 1;
+  margin-left: 23px;
+  font-family: "Inter";
+}
+
+
+.youthshelter {
+  text-align: left;
+  /* font: italic normal bold  Test Signifier; */
+  font-family: text;
+  font-style: italic;
+  letter-spacing: 0px;
+  color: #348f99 !important;
+}
+
+.help-available .para1 {
+  font-family: "Inter";
+  font-size: 11px;
+}
+
+.cardbtn {
+  background-color: #348f99;
+  color: white;
+  border: #348f99;
+  padding: 8px 16px;
+}
+
+.help-available .cardtitle {
+  color: var(--unnamed-color-333333, #333333);
+  text-align: left;
+  font: normal normal bold 28px / 32px "Inter", sans-serif;
+  letter-spacing: 0px;
+}
+
+.help-available ul {
+  text-align: left;
+}
+
+/* For small devices (phones, tablets) */
+@media (max-width: 768px) {
+  .help-available .cardtitle {
+    font-size: 22px;
+    /* Adjust font size */
+    line-height: 26px;
+    /* Adjust line height */
+  }
+}
+
+/* For very small devices (smaller phones) */
+@media (max-width: 480px) {
+  .help-available .cardtitle {
+    font-size: 18px;
+    /* Further adjust font size */
+    line-height: 22px;
+    /* Adjust line height */
+  }
+}
+
+/* For larger devices (desktops and larger tablets) */
+@media (min-width: 1024px) {
+  .help-available .cardtitle {
+    font-size: 30px;
+    /* Adjust font size for larger screens */
+    line-height: 36px;
+    /* Adjust line height */
+  }
+}
+
+.help-available .para {
+  text-align: left;
+  font: normal normal normal 12px / 24px Inter;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.programunderline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.helped {
+  color: #397177 !important;
+  font-family: "Inter";
+}
+
+/* .eventunderline{
+  vertical-align: middle;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(5px);
+
+} */
+
+/* Events Header Styling */
+.event {
+  font-size: 43px;
+  /* Default font size */
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  position: relative;
+  display: inline-block;
+  color: #333333;
+}
+
+/* For small devices (phones, tablets) */
+@media (max-width: 768px) {
+  .event {
+    font-size: 32px !important;
+    /* Adjust font size for tablets and small screens */
+  }
+}
+
+/* For very small devices (smaller phones) */
+@media (max-width: 480px) {
+  .event {
+    font-size: 24px !important;
+    /* Adjust font size for small phones */
+  }
+}
+
+/* For larger devices (desktops and larger tablets) */
+@media (min-width: 1024px) {
+  .event {
+    font-size: 50px;
+    /* Adjust font size for larger screens */
+  }
+}
+
+/* Events Header Styling */
+/* Container for centering */
+.event-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 2rem;
+  /* Adds space below the header, adjust as needed */
+}
+
+/* Event Heading Styling */
+.event {
+  font-size: 43px;
+  font-family: "Inter", sans-serif;
+  font-weight: bold;
+  position: relative;
+  color: #333333;
+  /* Adjust as needed */
+  display: inline-block;
+  line-height: 1.2;
+}
+
+/* Underline Styling */
+.event-underline {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 115%;
+  height: auto;
+}
+
+.eventlocation {
+  color: #348f99;
+}
+
+/* .event {
+  font-size: 43px;
+  font-family: "Inter";
+  position: relative;
+} */
+.availabletagline {
+  vertical-align: middle;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.helptagline {
+  font: normal normal bold 52px / 93px Inter;
+  letter-spacing: 0px;
+  color: #333333;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .helptagline {
+    font-size: 48px;
+    /* Slightly smaller font size for medium screens */
+    line-height: 80px;
+    /* Adjust line height accordingly */
+  }
+}
+
+@media (max-width: 992px) {
+  .helptagline {
+    font-size: 42px;
+    /* Smaller font size for smaller screens */
+    line-height: 75px;
+    /* Adjust line height for readability */
+  }
+}
+
+@media (max-width: 768px) {
+  .helptagline {
+    font-size: 36px;
+    /* Further reduce font size for even smaller screens */
+    line-height: 60px;
+    /* Adjust line height */
+  }
+}
+
+@media (max-width: 576px) {
+  .helptagline {
+    font-size: 28px;
+    /* Reduce font size for mobile screens */
+    line-height: 50px;
+    /* Adjust line height for mobile readability */
+  }
+}
+
+.helptagline span {
+  color: #348f99 !important;
+  position: relative;
+}
+
+.help-available {
+  background-color: #f9f9f9;
+  /* Light background color */
+  background-image: url("../../Assets/images/helpavailablebg.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.stat-card {
+  background-color: #f6f5f5 !important;
+  /* Default color to override */
+  border-radius: 14px !important;
+  box-shadow: 0 2px 8px 0 #4b494933 !important;
+}
+
+.stat-card:hover {
+  background-color: #f6f5f5 !important;
+  /* Default color to override */
+  box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.2) !important;
+  transition: box-shadow 0.3s cubic-bezier(0.65, -0.33, 0.26, 1.05) !important;
+
+  /* background-color: #007bff!important; */
+  color: white !important;
+  border: none !important;
+  border-radius: 5px !important;
+
+  transition: box-shadow 0.3s ease !important;
+}
+
+.bg-light-green {
+  background-color: #e8f5e9;
+  /* Light green background */
+}
+
+.bg-light-purple {
+  background-color: #f3e5f5;
+  /* Light purple background */
+}
+
+.bg-light-yellow {
+  background-color: #fff9e6;
+  /* Light yellow background */
+}
+
+.stat-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 1rem;
+  color: #6c757d;
+  /* Grey color for supporting text */
+}
+
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 20px;
+  }
+
+  .help-available h2 {
+    font-size: 1.45rem;
+  }
+
+  .help-available p {
+    font-size: 0.9rem;
+  }
+}
+
+/*transitional-housing-section  */
+
+.help-available {
+  overflow: hidden;
+}
+
+.scrollable-container-y {
+  max-height: 500px;
+  /* Adjust the height as needed */
+  overflow-y: scroll;
+  scrollbar-width: none;
+  /* Hide scrollbar for Firefox */
+}
+
+.scrollable-container-y::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar for WebKit browsers */
+}
+
+.info-card {
+  background-color: #ffffff;
+  /* Default card background */
+  /* border-radius: 10px; */
+  background-image: url("../../Assets/images/housingprogrambg.png");
+}
+
+.btn-outline-primary {
+  border-radius: 25px;
+  /* Rounded button */
+  font-weight: bold;
+}
+
+/* .transitionalbg {
+  background-image: url("../../Assets/images/housingprogrambg.png");
+  background-size: cover;
+  background-position: center;
+  color: #333333;
+  padding: 83px;
+  min-height: 400px;
+} */
+
+.transitionalbg {
+  background-image: url("../../Assets/images/housingprogrambg.png");
+  background-size: cover;
+  background-position: center;
+  color: #333333;
+  padding: 80px 59px;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .transitionalbg {
+    padding: 60px;
+    min-height: 350px;
+  }
+}
+
+/* Small screens (mobile, 480px and up) */
+@media (max-width: 768px) {
+  .transitionalbg {
+    padding: 40px;
+    min-height: 300px;
+  }
+}
+
+/* Extra small screens (below 480px) */
+@media (max-width: 480px) {
+  .transitionalbg {
+    padding: 20px;
+    min-height: 250px;
+    background-size: contain;
+    /* Ensures the image fits well in very small screens */
+  }
+}
+
+/* news-section Announcement */
+
+/*  
+.news-section {
+  background-color: #f9f9f9; 
+}
+  */
+
+/* Announcement */
+
+.news-section .allannouncementbtn {
+  /* margin-left: 22px; */
+  border-radius: 50px;
+}
+
+/* General Styling */
+.news-section {
+  background-color: #fdfbf8;
+  /* padding: 2rem 0; */
+  overflow: hidden;
+}
+
+.newsleftsection {
+  background-color: #00796b;
+  /* Background color for the left section */
+  color: #fff;
+  background-image: url("../../Assets/images/housingprogrambg.png");
+  /* Replace with actual path */
+  background-size: cover;
+  background-position: center;
+  padding: 2rem;
+  /* border-radius: 8px; */
+}
+
+.text-content {
+  max-width: 444px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: calc(1.4rem + 1vw);
+  font-weight: bold;
+}
+
+.announcementunderline {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(5px);
+}
+
+.news-section .para {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.btn-outline-light {
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-outline-light:hover {
+  background-color: #ffffff;
+  color: #00796b;
+}
+
+.news-card {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.news-card {
+  transition: transform 0.5s ease;
+  /* Smooth transition for transform */
+}
+
+.news-card:hover {
+  transform: translateY(-15px);
+  /* Lift the card slightly */
+}
+
+.news-card img {
+  width: 100%;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.news-card .text-muted {
+  font-size: 0.8rem;
+}
+
+.news-card h5 {
+  font-size: 1.2rem;
+}
+
+.news-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.news-card .btn-outline-primary {
+  font-size: 0.85rem;
+  color: #00796b;
+  border-color: #00796b;
+}
+
+.news-card .btn-outline-primary:hover {
+  background-color: #00796b;
+  color: #fff;
+}
+
+/* Slick Arrow Styling */
+
+/* Positioning and styling of the slick slider arrows */
+.slick-prev {
+  position: absolute;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  background-color: #6e6e6f;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+/* Responsive adjustments for medium screens */
+@media (max-width: 1200px) {
+  .slick-prev {
+    width: 35px;
+    /* Slightly smaller for medium-sized screens */
+    height: 35px;
+    top: 8px;
+    /* Slight adjustment in position */
+  }
+}
+
+/* For tablets and smaller screens */
+@media (max-width: 992px) {
+  .slick-prev {
+    width: 30px;
+    /* Further reduce size on tablets */
+    height: 30px;
+    top: 5px;
+    /* Adjust position */
+  }
+}
+
+/* For mobile screens (768px and below) */
+@media (max-width: 768px) {
+  .slick-prev {
+    width: 28px;
+    /* Smaller size for mobile */
+    height: 28px;
+    top: 5px;
+    /* Keep button position consistent */
+    margin-bottom: 0;
+    /* Remove bottom margin for compact layout */
+  }
+}
+
+/* For very small screens (600px and below) */
+@media (max-width: 576px) {
+  .slick-prev {
+    width: 24px;
+    /* Smallest size for tiny mobile screens */
+    height: 24px;
+    top: 5px;
+    /* Maintain consistent positioning */
+  }
+}
+
+.slick-next {
+  position: absolute;
+  justify-content: center;
+  top: 10px;
+  width: 40px;
+  /* Default size for larger screens */
+  height: 40px;
+  background-color: #fdd22e;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: #6e6e6f;
+  margin-bottom: 4px;
+}
+
+/* Responsive adjustments for medium screens (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .slick-next {
+    width: 35px;
+    /* Slightly smaller for medium screens */
+    height: 35px;
+    top: 8px;
+    /* Adjust position slightly */
+  }
+}
+
+/* For tablets and smaller screens (max-width: 992px) */
+@media (max-width: 992px) {
+  .slick-next {
+    width: 30px;
+    /* Further reduce the size for tablets */
+    height: 30px;
+    top: 6px;
+    /* Adjust top position */
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+  .slick-next {
+    width: 28px;
+    /* Smaller size for mobile */
+    height: 28px;
+    top: 5px;
+    /* Keep consistent vertical positioning */
+    margin-bottom: 0;
+    /* Remove bottom margin for better layout */
+  }
+}
+
+/* For very small screens (max-width: 576px) */
+@media (max-width: 576px) {
+  .slick-next {
+    width: 24px;
+    /* Smallest size for very small screens */
+    height: 24px;
+    top: 5px;
+    /* Maintain consistent top positioning */
+  }
+}
+
+.slick-prev {
+  left: auto;
+  /* Remove default positioning */
+  right: 60px;
+  /* Adjust as needed */
+}
+
+.slick-next {
+  right: 10px;
+  /* Adjust as needed to be close to the right side */
+}
+
+
+.news-section .slick-prev:hover,
+.slick-prev:focus {
+  position: absolute;
+  top: 10px !important;
+  width: 40px;
+  height: 40px;
+  background-color: #6e6e6f;
+  /* Yellow background */
+  border-radius: 50%;
+  /* Makes the button circular */
+  border: none;
+  /* Remove default border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  /* Ensures buttons are on top of carousel content */
+  color: #fff;
+  /* White arrow icon */
+  margin-bottom: 4px;
+}
+
+.news-section .slick-next:hover,
+.slick-next:focus {
+  position: absolute;
+  top: 10px !important;
+  width: 40px;
+  height: 40px;
+  background-color: #fdd22e;
+  /* Yellow background */
+  border-radius: 50%;
+  /* Makes the button circular */
+  border: none;
+  /* Remove default border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  /* Ensures buttons are on top of carousel content */
+  color: #fff;
+  /* White arrow icon */
+  margin-bottom: 4px;
+}
+
+.slick-prev {
+  right: 80px;
+}
+
+/* Arrow Icon */
+.slick-prev:before,
+.slick-next:before {
+  font-size: 1.5rem;
+  /* color: #fff;  */
+  content: "";
+}
+
+/* Custom icon with background image */
+.slick-prev .arrow-icon,
+.slick-next .arrow-icon {
+  font-size: 1.7rem;
+  /* Default size for larger screens */
+  color: #fff;
+  /* Assuming you want the arrow to remain white */
+}
+
+/* For medium screens (max-width: 1200px) */
+@media (max-width: 1200px) {
+
+  .slick-prev .arrow-icon,
+  .slick-next .arrow-icon {
+    font-size: 1.5rem;
+    /* Slightly smaller for medium screens like large tablets */
+  }
+}
+
+/* For tablets and smaller screens (max-width: 992px) */
+@media (max-width: 992px) {
+
+  .slick-prev .arrow-icon,
+  .slick-next .arrow-icon {
+    font-size: 1.3rem;
+    /* Further reduce size for tablets */
+  }
+}
+
+/* For mobile screens (max-width: 768px) */
+@media (max-width: 768px) {
+
+  .slick-prev .arrow-icon,
+  .slick-next .arrow-icon {
+    font-size: 1.1rem;
+    /* Smaller size for mobile devices */
+  }
+
+  .slick-prev:hover,
+  .slick-prev:focus {
+    position: absolute;
+    top: 10px !important;
+    width: 30px;
+    height: 30px;
+    background-color: #6e6e6f;
+    /* Yellow background */
+    border-radius: 50%;
+    /* Makes the button circular */
+    border: none;
+    /* Remove default border */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* Ensures buttons are on top of carousel content */
+    color: #fff;
+    /* White arrow icon */
+    margin-bottom: 4px;
+  }
+
+  .slick-next:hover,
+  .slick-next:focus {
+    position: absolute;
+    top: 10px !important;
+    width: 30px;
+    height: 30px;
+    background-color: #fdd22e;
+    /* Yellow background */
+    border-radius: 50%;
+    /* Makes the button circular */
+    border: none;
+    /* Remove default border */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* Ensures buttons are on top of carousel content */
+    color: #fff;
+    /* White arrow icon */
+    margin-bottom: 4px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news-section .slick-prev,
+.slick-prev {
+  position: absolute;
+  top: 10px !important;
+  width: 40px;
+  height: 40px;
+  background-color: #6e6e6f !important;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.news-section .slick-next,
+.slick-next {
+  position: absolute;
+  top: 10px !important;
+  width: 40px;
+  height: 40px;
+  background-color: #fdd22e;
+  /* Yellow background */
+  border-radius: 50%;
+  /* Makes the button circular */
+  border: none;
+  /* Remove default border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  /* Ensures buttons are on top of carousel content */
+  color: #fff;
+  /* White arrow icon */
+  margin-bottom: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.news-section .slick-prev,
+.slick-prev {
+  position: absolute;
+  top: 10px !important;
+  width: 40px;
+  height: 40px;
+  background-color: #6e6e6f !important;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.news-section .slick-next,
+.slick-next {
+  position: absolute;
+  top: 10px !important;
+  width: 40px;
+  height: 40px;
+  background-color: #fdd22e;
+  /* Yellow background */
+  border-radius: 50%;
+  /* Makes the button circular */
+  border: none;
+  /* Remove default border */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  /* Ensures buttons are on top of carousel content */
+  color: #fff;
+  /* White arrow icon */
+  margin-bottom: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* For very small screens (max-width: 576px) */
+@media (max-width: 576px) {
+
+  .slick-prev .arrow-icon,
+  .slick-next .arrow-icon {
+    font-size: 1rem;
+    /* Smallest size for very small mobile screens */
+  }
+
+
+
+
+
+
+
+  .slick-prev:hover,
+  .slick-prev:focus {
+    position: absolute;
+    top: 10px !important;
+    width: 30px;
+    height: 30px;
+    background-color: #6e6e6f;
+    /* Yellow background */
+    border-radius: 50%;
+    /* Makes the button circular */
+    border: none;
+    /* Remove default border */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* Ensures buttons are on top of carousel content */
+    color: #fff;
+    /* White arrow icon */
+    margin-bottom: 4px;
+  }
+
+  .slick-next:hover,
+  .slick-next:focus {
+    position: absolute;
+    top: 10px !important;
+    width: 30px;
+    height: 30px;
+    background-color: #fdd22e;
+    /* Yellow background */
+    border-radius: 50%;
+    /* Makes the button circular */
+    border: none;
+    /* Remove default border */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    /* Ensures buttons are on top of carousel content */
+    color: #fff;
+    /* White arrow icon */
+    margin-bottom: 4px;
+  }
+
+  /* .news-section .slick-prev {
+    left: unset !important;
+}
+.news-section .slick-prev:before,
+.news-section .slick-next:before{
+    content: unset !important;
+}
+.news-section .slick-next {
+    right: 0 !important;
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Add a custom arrow icon if needed (e.g., Font Awesome or similar) */
+.slick-prev .arrow-icon::before {
+  content: "←";
+  /* Use a left arrow icon */
+}
+
+.slick-next .arrow-icon::before {
+  content: "→";
+  /* Use a right arrow icon */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .newsleftsection {
+    text-align: left;
+    padding: 1.5rem;
+  }
+
+  .text-content {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  .news-card img {
+    max-height: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .slick-prev,
+  .slick-next {
+    width: 30px;
+    height: 30px;
+  }
+
+  .title {
+    font-size: 1.15rem;
+  }
+
+  .news-card h5 {
+    font-size: 1rem;
+  }
+
+  .news-card p {
+    font-size: 0.85rem;
+  }
+}

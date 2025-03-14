@@ -1,0 +1,88 @@
+/* Event section */
+
+.events-section {
+  overflow: hidden;
+  background-color: #f9f9f9; /* Light background color */
+  background-image: url("../../Assets/images/eventbg.png"); /* Replace with your background pattern */
+  background-size: cover;
+  background-position: center;
+}
+
+.event-card {
+  border-radius: 10px;
+  /* transition: transform 0.2s; */
+}
+
+.event-card:hover {
+  transform: translateY(-15px) !important; /* Slight lift on hover */
+
+  transition: transform 0.2s ease !important;
+}
+
+.event-card img {
+  max-height: 200px; /* Ensure images are uniform */
+  object-fit: cover; /* Maintain aspect ratio */
+}
+
+.event-details h5 {
+  color: #333;
+}
+
+.event-details .text-primary {
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .event-card img {
+    max-height: 150px; /* Smaller image height for mobile */
+  }
+}
+
+.events-section .eventviewallbtn {
+  background: #348f99;
+  color: white;
+  border-radius: 26px;
+  max-width: 100%;
+  width: 229px;
+  border: none;
+  justify-content: center;
+  display: flex;
+  padding: 5px 0px;
+  margin: auto;
+}
+
+.event-card {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 15px;
+  color: white;
+  overflow: hidden;
+}
+
+.event-card .card-title {
+  font-size: 1.25rem;
+  /* font-weight: bold; */
+  font-weight: 500;
+  margin-bottom: 13px;
+}
+
+.event-card .card-text {
+  margin: 5px 0; /* Space between text items */
+}
+
+.event-card:hover {
+  transform: scale(1.02); /* Slight zoom-in on hover */
+  transition: transform 0.3s ease; /* Smooth hover effect */
+
+  box-shadow: 4px 12px 8px rgba(0, 0, 0, 0.2) !important;
+    transition: box-shadow 0.3s cubic-bezier(0.65, -0.33, 0.26, 1.05) !important;
+
+  
+}
