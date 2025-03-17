@@ -149,6 +149,11 @@
   margin: 0 auto; /* Ensures it's centered horizontally if it's a block element */
 }
 
+.inquiries-calltitle a,
+.inquiries-calltitle a:hover{
+    color: #fff !important;
+}
+
 /* Responsive adjustments */
 @media (max-width: 1200px) {
 .inquiries-calltitle {

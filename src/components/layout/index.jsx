@@ -1,21 +1,14 @@
-
-import Footer from '../Footer';
-import Header from '../header';
+import Footer from "../Footer";
+import Header from "../header";
 // import './index.css'
 function Layout(props) {
-
- 
-
-    return (
-        <>
-<Header/>
-{props.children}
-<Footer/>
-
- 
-        </>
-
-    );
+  return (
+    <>
+      <Header />
+      {props.children}
+      <Footer />
+    </>
+  );
 }
 
 export default Layout;

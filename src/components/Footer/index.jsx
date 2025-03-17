@@ -3,9 +3,16 @@ import { Link } from "react-router-dom";
 import bottomfooterlogo3 from "../../Assets/images/bottomfooterlogo3.png";
 import bottomfooterlogo1 from "../../Assets/images/bottomlogo1.png";
 import bottomfooterlogo2 from "../../Assets/images/bottomfooterlogo2.png";
-import charitynavigator from '../../Assets/images/charitynavigator.png'
+import charitynavigator from "../../Assets/images/charitynavigator.png";
 import footerlogo from "../../Assets/images/footerlogo.svg";
-import { useState } from 'react'
+
+import Whistleblowerpolicy  from "../../Assets/pdf/10-Whistleblower-policy.docx.pdf"
+import NondiscriminationPolicy  from "../../Assets/pdf/Non-discrimination-Policy-CLJ-Rev.pdf"
+import GrievanceEnglish  from "../../Assets/pdf/Grievance-12-2021-English.pdf"
+import GrievanceSpanish  from "../../Assets/pdf/Grievance-12-2021-Spanish.pdf"
+import donateform  from "../../Assets/pdf/2025-990-1.pdf"
+
+import { useState } from "react";
 import {
   VolunteerModalsignup,
   VolunteerModalforget,
@@ -16,14 +23,6 @@ function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
-
-
-
-
-
-
-
-
 
   const [naveshow, setNavshow] = useState(false);
   const handleclick = () => {
@@ -62,9 +61,6 @@ function Footer() {
     setShowModalforget2(false);
   };
 
-
-
-
   return (
     <>
       <section className="footer" name="/about">
@@ -87,7 +83,7 @@ function Footer() {
                 </p>
               </div>
               <div className="col-lg-2 col-md-3 text-lg-start text-center">
-                <h5>About HomeAid</h5>
+                <h5>About HIS-OC</h5>
                 <ul className="list-unstyled">
                   <li>
                     <Link to="/about" onClick={scrollToTop} className="">
@@ -120,7 +116,11 @@ function Footer() {
                     </Link>
                   </li>
                   <li>
-                    <Link onClick={scrollToTop} to={"/sponsorship"} className="">
+                    <Link
+                      onClick={scrollToTop}
+                      to={"/sponsorship"}
+                      className=""
+                    >
                       Sponsorship
                     </Link>
                   </li>
@@ -135,7 +135,11 @@ function Footer() {
                 <h5>Get Involved</h5>
                 <ul className="list-unstyled">
                   <li>
-                    <Link onClick={scrollToTop} to={"/top-volunteer"} className="">
+                    <Link
+                      onClick={scrollToTop}
+                      to={"/top-volunteer"}
+                      className=""
+                    >
                       Top Volunteer
                     </Link>
                   </li>
@@ -149,14 +153,17 @@ function Footer() {
                       Our Podcast
                     </Link>
                   </li>
-
                 </ul>
               </div>
               <div className="col-lg-2 col-md-3 text-lg-start text-center">
                 <h5>Resources</h5>
                 <ul className="list-unstyled">
                   <li>
-                    <Link onClick={scrollToTop} to={"/givedonation"} className="">
+                    <Link
+                      onClick={scrollToTop}
+                      to={"/givedonation"}
+                      className=""
+                    >
                       Give Donation
                     </Link>
                   </li>
@@ -167,6 +174,11 @@ function Footer() {
                     </Link>
                   </li>
                 </ul>
+
+                <div className="footer-donate-btns">
+                  <a href={donateform} target="_blank" className="footer-donate-btn footer-donate-btns-1">2025 990</a>
+                  <Link to="/givedonation" className="footer-donate-btn footer-donate-btns-2">Donate</Link>
+                </div>
               </div>
             </div>
           </div>
@@ -191,30 +203,41 @@ function Footer() {
                   src={bottomfooterlogo3}
                   alt="Gold Transparency 2024"
                   className="footer-logo3 me-3"
-                /></Link>
+                />
+              </Link>
 
               <img
                 src={charitynavigator}
                 alt="Nonprofit Central"
                 className="footer-logo3 ml-2 me-3"
               />
-
             </div>
 
             {/* Center section for copyright text */}
             <div className="text-center text-md-end socialicon">
               <div className="d-flex mb-2 justify-content-center justify-content-xl-end">
-                <Link onClick={scrollToTop} to="https://www.facebook.com/homeless.intervention.oc" className="text-white me-3">
+                <Link
+                  onClick={scrollToTop}
+                  to="https://www.facebook.com/homeless.intervention.oc"
+                  className="text-white me-3"
+                >
                   <i className="bi bi-facebook fs-5"></i>
                 </Link>
-                <Link onClick={scrollToTop} to="https://twitter.com/Homeless_Int_OC" className="text-white me-3">
+                <Link
+                  onClick={scrollToTop}
+                  to="https://twitter.com/Homeless_Int_OC"
+                  className="text-white me-3"
+                >
                   <i className="bi bi-x fs-5"></i>
                 </Link>
-                <Link onClick={scrollToTop} to="https://www.instagram.com/homeless_intervention_oc/?hl=en" className="text-white me-3">
+                <Link
+                  onClick={scrollToTop}
+                  to="https://www.instagram.com/homeless_intervention_oc/?hl=en"
+                  className="text-white me-3"
+                >
                   <i className="bi bi-instagram fs-5"></i>
                 </Link>
               </div>
-
 
               {/* <p className="mb-0 text-xl-end text-center">
                 © 2023 Homeless Intervention Services of Orange County | All Rights Reserved
@@ -229,13 +252,13 @@ function Footer() {
                 </Link>
               </p> */}
 
-
               <p className="mb-md-0 mb-2 text-xl-end text-center">
-                © 2023 Homeless Intervention Services of Orange County | All Rights Reserved
-
+                © 2025 Homeless Intervention Services of Orange County | All
+                Rights Reserved
               </p>
               <p className="mb-0 text-xl-end text-center">
-                All gifts to our organization are tax-deductible as allowed by law. 501(c)(3) ID# 84-2790299
+                All gifts to our organization are tax-deductible as allowed by
+                law. 501(c)(3) ID# 84-2790299
                 <Link to={"/"} className="text-white">
                   Legal
                 </Link>{" "}
@@ -244,13 +267,37 @@ function Footer() {
                   Privacy
                 </Link>
               </p>
-
-
+            </div>
+          </div>
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12">
+                <div className="footer-bottom-links">
+                  <a href="javascript:;" target="_blank">
+                    Privacy Notice
+                  </a>{" "}
+                  |{" "}
+                  <a href={GrievanceEnglish} target="_blank">
+                    HMIS Grievance Form (English)
+                  </a>{" "}
+                  |{" "}
+                  <a href={GrievanceSpanish} target="_blank">
+                    HMIS Grievance Form (Spanish)
+                  </a>{" "}
+                  |{" "}
+                  <a href={NondiscriminationPolicy} target="_blank">
+                    Non-Discrimination Policy
+                  </a>{" "}
+                  |{" "}
+                  <a href={Whistleblowerpolicy} target="_blank">
+                    Whistleblower Policy
+                  </a>{" "}
+                </div>
+              </div>
             </div>
           </div>
         </footer>
       </section>
-
 
       <VolunteerModalsignup
         handleClose={handleClose}

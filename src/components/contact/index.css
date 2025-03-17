@@ -3,13 +3,10 @@
 /* General Styling */
 /* Contact Info Panel Styling */
 .contact-us-section .contact-info-panel {
-  background-color: #348F99;
+  background-color: #348f99;
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
 }
-
-
-
 
 .contact-us-section .subtitle {
   width: 100%;
@@ -20,6 +17,13 @@
   /* Add some padding for smaller screens */
   text-align: center;
   /* Optional: adjust if you want centered text */
+}
+
+.his-oc-board-members {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 28px;
 }
 
 /* Responsive Adjustments */
@@ -50,7 +54,6 @@
     /* Full width on very small screens (smartphones) */
   }
 }
-
 
 .contact-us-section .contantunderline {
   vertical-align: middle;
@@ -95,18 +98,12 @@
   line-height: 21px;
 }
 
-
 .contact-us-section .para span {
-  border-bottom: 1px solid #348F99 !important;
+  border-bottom: 1px solid #348f99 !important;
   font-weight: 600;
   font-size: 1.22rem !important;
   color: #333;
 }
-
-
-
-
-
 
 .contact-us-section .title {
   font-size: 45px;
@@ -126,9 +123,8 @@
     font-size: 28px;
   }
 
-
   .contact-us-section .para span {
-    border-bottom: 1px solid #348F99 !important;
+    border-bottom: 1px solid #348f99 !important;
     font-weight: 600;
     font-size: 1 !important;
     color: #333;
@@ -144,7 +140,7 @@
 
 .contact-us-section .contact-item a {
   display: block;
-  color: #6E6E6F;
+  color: #6e6e6f;
   font-size: 0.9rem;
   text-decoration: none;
   margin-top: 0.25rem;
@@ -160,7 +156,6 @@
     font-size: 43px !important;
   }
 
-
   .contact-us-section .contact-form-panel {
     background-color: #ffffff;
     /* border-top-right-radius: 15px;
@@ -171,7 +166,6 @@
   }
 }
 @media (max-width: 767px) {
-  
   .contact-us-section {
     padding-left: 0rem !important;
     padding-right: 0rem !important;
@@ -180,7 +174,7 @@
 
 .contact-us-section {
   padding: 3rem 1rem;
-  background-image: url('../../Assets/images/contantbg.png');
+  background-image: url("../../Assets/images/contantbg.png");
   background-size: cover;
   background-position: center;
   color: #fbfbfb;
@@ -197,7 +191,7 @@
 /* Form Controls */
 .contact-us-section .form-control,
 .form-select {
-  border: 1px solid #6E6E6F;
+  border: 1px solid #6e6e6f;
   border-radius: 20px;
   padding: 0.75rem;
 }
@@ -222,13 +216,12 @@
   transition: background-color 0.3s;
 }
 
-
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .contact-us-section .contact-info-panel {
-    background-color: #348F99;
+    background-color: #348f99;
     /* border-top-left-radius: 15px; */
     /* border-bottom-left-radius: 15px; */
-    margin-bottom: 44px !important;
+    /* margin-bottom: 44px !important; */
     border-radius: 15px !important;
   }
 }
@@ -239,20 +232,27 @@
   --bs-form-select-bg-img: url(data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27%3e%3cpath fill=%27none%27 stroke=%27%23343a40%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%272%27 d=%27m2 5 6 6 6-6%27/%3e%3c/svg%3e);
   display: block;
   width: 100%;
-  padding: .375rem 2.25rem .375rem .75rem;
+  padding: 0.375rem 2.25rem 0.375rem 0.75rem;
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   color: var(--bs-body-color);
   appearance: none;
   background-color: var(--bs-body-bg);
-  background-image: var(--bs-form-select-bg-img), var(--bs-form-select-bg-icon, none);
+  background-image: var(--bs-form-select-bg-img),
+    var(--bs-form-select-bg-icon, none);
   background-repeat: no-repeat;
-  background-position: right .75rem center;
+  background-position: right 0.75rem center;
   background-size: 16px 12px;
   border: var(--bs-border-width) solid var(--bs-border-color);
   border-radius: var(--bs-border-radius);
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-  border: 1px solid #6E6E6F;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border: 1px solid #6e6e6f;
   border-radius: 20px;
+}
+
+@media (max-width: 430px) {
+  .his-oc-board-members {
+    font-size: 23px;
+  }
 }

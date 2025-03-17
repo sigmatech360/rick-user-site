@@ -37,7 +37,7 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const messaging = getMessaging(firebaseApp);
 
-export { messaging, getToken, onMessage };
+export { messaging, getToken, onMessage };   
 
 
 

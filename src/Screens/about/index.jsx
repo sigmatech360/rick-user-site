@@ -1,7 +1,7 @@
 import "./index.css";
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 import AOS from "aos";
-import Leadership from '../../components/Leadership'
+import Leadership from "../../components/Leadership";
 import heropage2 from "../../Assets/images/heropage2.png";
 import Layout from "../../components/layout";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -11,7 +11,7 @@ import missionunderline from "../../Assets/images/missionunderline.png";
 import ourstory from "../../Assets/images/ourstory.png";
 import hopeunderline from "../../Assets/images/hopeunderline.png";
 import HeroSection from "../../components/herosection";
-import tagline from '../../Assets/images/tagline.png'
+import tagline from "../../Assets/images/tagline.png";
 import drivingchangecard1 from "../../Assets/images/drivingchangecard1.png";
 import { Link } from "react-router-dom";
 import drivingchangecard2 from "../../Assets/images/drivingchangecard2.png";
@@ -22,19 +22,27 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";
-import { useGet, usePost } from '../Api/usePost'
+import { useGet, usePost } from "../Api/usePost";
 import { toast } from "react-toastify";
 function About() {
-  const { ApiData: ApiDataGetmembers, loading: loadingGet, error: errorGet, get: getdatamembers } = useGet('/member')
-  const { ApiData: ApiDataotp, loading: loadingotp, error: errorotp, post: postotp } = usePost('/submit-query')
-
-
+  const {
+    ApiData: ApiDataGetmembers,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdatamembers,
+  } = useGet("/member");
+  const {
+    ApiData: ApiDataotp,
+    loading: loadingotp,
+    error: errorotp,
+    post: postotp,
+  } = usePost("/submit-query");
 
   useEffect(() => {
-    getdatamembers()
-    
+    getdatamembers();
+
     document.title = "About - HIS OC " || "HOME- HIS OC";
-  }, [])
+  }, []);
 
   useEffect(() => {
     AOS.init();
@@ -127,13 +135,8 @@ function About() {
     },
   ];
 
-
-
-
-
-
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in formState) {
       formDataMethod.append(key, formState[key]);
@@ -142,7 +145,7 @@ function About() {
     postotp(formDataMethod);
   };
 
-  const [formState, setFormState] = useState({})
+  const [formState, setFormState] = useState({});
 
   useEffect(() => {
     if (ApiDataotp?.status === true) {
@@ -160,7 +163,6 @@ function About() {
       toast.error(ApiDataotp?.message); // Use error notification for failure
     }
   }, [ApiDataotp]);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -188,9 +190,12 @@ function About() {
               {/* Left Section */}
 
               <div className="col-lg-4 col-md-12 right-section d-flex flex-column justify-content-center  text-center text-md-start">
-                <h2 className="right-section-text px-4" data-aos="fade-right"
+                <h2
+                  className="right-section-text px-4"
+                  data-aos="fade-right"
                   data-aos-offset="0"
-                  data-aos-duration="1000">
+                  data-aos-duration="1000"
+                >
                   Transforming Lives Restoring Hope <br />
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="text-success position-relative">
@@ -202,21 +207,28 @@ function About() {
 
               <div className="lft col-lg-8 col-md-12  py-4 d-flex flex-column justify-content-center ">
                 <div className="content left-section px-4">
-                  <h2 className="how-we-do   mb-3" data-aos="fade-up"
+                  <h2
+                    className="how-we-do   mb-3"
+                    data-aos="fade-up"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
+                    data-aos-duration="1000"
+                  >
                     Our{" "}
                     <span className="highlight-text position-relative">
                       Mission{" "}
                       <img src={missionunderline} className="wedotagline" />
                     </span>
                   </h2>
-                  <p className="wedopara px4" data-aos="fade-right"
+                  <p
+                    className="wedopara px4"
+                    data-aos="fade-right"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    The mission of Homeless Intervention Services of Orange County is to provide support and assistance to the underprivileged and unhoused to improve their quality of life,
-
-                    and to help them regain stability and hope.
+                    data-aos-duration="1000"
+                  >
+                    The mission of Homeless Intervention Services of Orange
+                    County is to provide support and assistance to the
+                    underprivileged and unhoused to improve their quality of
+                    life, and to help them regain stability and hope.
                   </p>
                 </div>
               </div>
@@ -230,9 +242,12 @@ function About() {
               {/* Left Section */}
 
               <div className="col-lg-4 col-md-12 right-section d-flex flex-column justify-content-center p-5 text-center text-md-start">
-                <h2 className="right-section-text px-4" data-aos="fade-right"
+                <h2
+                  className="right-section-text px-4"
+                  data-aos="fade-right"
                   data-aos-offset="0"
-                  data-aos-duration="1000">
+                  data-aos-duration="1000"
+                >
                   A{" "}
                   <span className=" text-black  position-relative">
                     Legacy <img className="hopeunderline" src={hopeunderline} />
@@ -245,9 +260,12 @@ function About() {
               {/* in react give full reponsive code using bootstrap */}
 
               <div className="  col-lg-8 col-md-12    d-flex flex-column justify-content-center ">
-                <div className="content left-section px-4 justify-content-center" data-aos="fade-up"
+                <div
+                  className="content left-section px-4 justify-content-center"
+                  data-aos="fade-up"
                   data-aos-offset="0"
-                  data-aos-duration="1000">
+                  data-aos-duration="1000"
+                >
                   <h2 className="how-we-do  mb-3">
                     Our{" "}
                     <span className="highlight-text  position-relative">
@@ -255,107 +273,55 @@ function About() {
                       <img src={missionunderline} className="wedotagline" />{" "}
                     </span>
                   </h2>
-                  <p className="wedopara px4" data-aos="fade-right"
+                  <p
+                    className="wedopara px4"
+                    data-aos="fade-right"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    Homeless Intervention Services of Orange County (HIS-OC) has a remarkable history of helping unhoused and housing-insecure families since 1989. The organization began to take shape by a vision that Placentia Presbyterian Church had by advocating for a local family living in a park. They purchased a farmhouse neighboring their church, which became HIS House, a transitional shelter for underprivileged, unhoused families.
-
-                    For almost 35 years, our transitional housing program has continued to grow and provide comprehensive wraparound services for families, including:
-
-
-
+                    data-aos-duration="1000"
+                  >
+                    Homeless Intervention Services of Orange County (HIS-OC) has
+                    a remarkable history of helping unhoused and
+                    housing-insecure families since 1989. The organization began
+                    to take shape by a vision that Placentia Presbyterian Church
+                    had by advocating for a local family living in a park. They
+                    purchased a farmhouse neighboring their church, which became
+                    HIS House, a transitional shelter for underprivileged,
+                    unhoused families. For almost 35 years, our transitional
+                    housing program has continued to grow and provide
+                    comprehensive wraparound services for families, including:
                     <ul>
-                      <li>The transitional house consists of a private bedroom for each family; the rest of the home is shared living.</li>
-                      <li>On-site weekly Case Management.
+                      <li>
+                        The transitional house consists of a private bedroom for
+                        each family; the rest of the home is shared living.
                       </li>
-                      <li>On-site weekly Case Management.
-                      </li>
-                      <li>Job skills and placement assistance
-                      </li>
-                      <li>On-site weekly Case Management.
-                      </li>
-                      <li>Connections to physical and mental health services
-
-                      </li>
-
-
-
-
-                      <li>Documentation assistance
-
-                      </li>
-                      <li>Family reunification
-
-
-                      </li>
-                      <li>Parenting classes
-
-
-
+                      <li>On-site weekly Case Management.</li>
+                      <li>On-site weekly Case Management.</li>
+                      <li>Job skills and placement assistance</li>
+                      <li>On-site weekly Case Management.</li>
+                      <li>
+                        Connections to physical and mental health services
                       </li>
 
+                      <li>Documentation assistance</li>
+                      <li>Family reunification</li>
+                      <li>Parenting classes</li>
 
-
-
-                      <li>Financial literacy classes.
-
-
-
-
-                      </li>
+                      <li>Financial literacy classes.</li>
                     </ul>
-
-
-
-                    After 30 years in operation, thousands of people served, and numerous additions to the house, in 2020, HIS House became its own 501 (c)(3) nonprofit to expand services beyond the transitional shelter. Our new name is Homeless Intervention Services of Orange County or HIS-OC. While the mission remains the same, we have implemented several new programs to help more people overcome homelessness and achieve independence.
+                    After 30 years in operation, thousands of people served, and
+                    numerous additions to the house, in 2020, HIS House became
+                    its own 501 (c)(3) nonprofit to expand services beyond the
+                    transitional shelter. Our new name is Homeless Intervention
+                    Services of Orange County or HIS-OC. While the mission
+                    remains the same, we have implemented several new programs
+                    to help more people overcome homelessness and achieve
+                    independence.
                   </p>
                 </div>
               </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
           </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <section className="homeless-intervention">
           <div className="container-fluid">
@@ -363,65 +329,54 @@ function About() {
               {/* Left Section */}
 
               <div className="col-lg-4 col-md-12 right-sectionVision d-flex flex-column justify-content-center  text-center text-md-start">
-                <h2 className="right-section-text px-4" data-aos="fade-right"
+                <h2
+                  className="right-section-text px-4"
+                  data-aos="fade-right"
                   data-aos-offset="0"
-                  data-aos-duration="1000">
-                  Empowering instant, secure, and meaningful     <br />
+                  data-aos-duration="1000"
+                >
+                  Empowering instant, secure, and meaningful <br />
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="mb-2 text-success position-relative">
-                    <span className="mb-2">    connections  </span><img className="hopeunderline" src={hopeunderline} />
+                    <span className="mb-2"> connections </span>
+                    <img className="hopeunderline" src={hopeunderline} />
                   </span>
-
                 </h2>
               </div>
               {/* Right Section */}
 
               <div className="lft col-lg-8 col-md-12  py-4 d-flex flex-column justify-content-center ">
                 <div className="content left-section px-4">
-                  <h2 className="how-we-do   mb-3" data-aos="fade-up"
+                  <h2
+                    className="how-we-do   mb-3"
+                    data-aos="fade-up"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    Our
-                    {" "}
+                    data-aos-duration="1000"
+                  >
+                    Our{" "}
                     <span className="highlight-text position-relative">
                       Vision{" "}
                       <img src={missionunderline} className="wedotagline" />
                     </span>
-
-
                     {/* <span className=" text-black  position-relative">
                       Vision <img className="hopeunderline" src={hopeunderline} />
                     </span>{" "} */}
                   </h2>
-                  <p className="wedopara px4" data-aos="fade-right"
+                  <p
+                    className="wedopara px4"
+                    data-aos="fade-right"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    Through various programs and initiatives, we aim to address solutions through education, empowerment, and community engagement.
-
-
+                    data-aos-duration="1000"
+                  >
+                    Through various programs and initiatives, we aim to address
+                    solutions through education, empowerment, and community
+                    engagement.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <section className="homeless-intervention">
           <div className="container-fluid">
@@ -429,58 +384,52 @@ function About() {
               {/* Left Section */}
 
               <div className="col-lg-4 col-md-12 right-sectionVisionApproach d-flex flex-column justify-content-center  text-center text-md-start">
-                <h2 className="right-section-text px-4" data-aos="fade-right"
+                <h2
+                  className="right-section-text px-4"
+                  data-aos="fade-right"
                   data-aos-offset="0"
-                  data-aos-duration="1000">
-                  Our approach focuses on simplicity, security, and        <br />
+                  data-aos-duration="1000"
+                >
+                  Our approach focuses on simplicity, security, and <br />
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="text-success position-relative">
-                    innovation <img className="hopeunderline" src={hopeunderline} />
+                    innovation{" "}
+                    <img className="hopeunderline" src={hopeunderline} />
                   </span>
-
                 </h2>
               </div>
               {/* Right Section */}
 
               <div className="lft col-lg-8 col-md-12  py-4 d-flex flex-column justify-content-center ">
                 <div className="content left-section px-4">
-                  <h2 className="how-we-do   mb-3" data-aos="fade-up"
+                  <h2
+                    className="how-we-do   mb-3"
+                    data-aos="fade-up"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    Our
-
-                    {" "}
+                    data-aos-duration="1000"
+                  >
+                    Our{" "}
                     <span className="highlight-text position-relative">
                       Approach{" "}
                       <img src={missionunderline} className="wedotagline" />
                     </span>
                   </h2>
-                  <p className="wedopara px4" data-aos="fade-right"
+                  <p
+                    className="wedopara px4"
+                    data-aos="fade-right"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    Our approach is rooted in compassion, empathy, and the belief that everyone deserves equal opportunities and a chance to thrive, creating a positive impact and contributing to a more inclusive and equitable society.
-
-
-
+                    data-aos-duration="1000"
+                  >
+                    Our approach is rooted in compassion, empathy, and the
+                    belief that everyone deserves equal opportunities and a
+                    chance to thrive, creating a positive impact and
+                    contributing to a more inclusive and equitable society.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <section className="homeless-intervention">
           <div className="container-fluid">
@@ -502,47 +451,43 @@ function About() {
 
               <div className="  col-lg-8 col-md-12   ">
                 <div className="content left-section text-center px-4">
-                  <h2 className="text-center how-we-do   mb-3" data-aos="fade-up"
+                  <h2
+                    className="text-center how-we-do   mb-3"
+                    data-aos="fade-up"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    Recent
-
-                    {" "}
+                    data-aos-duration="1000"
+                  >
+                    Recent{" "}
                     <span className="highlight-text position-relative">
                       Developments{" "}
                       <img src={missionunderline} className="wedotagline" />
                     </span>
                   </h2>
-                  <p className="wedopara px4" data-aos="fade-right"
+                  <p
+                    className="wedopara px4"
+                    data-aos="fade-right"
                     data-aos-offset="0"
-                    data-aos-duration="1000">
-                    As we continually aim to improve HIS-OC, we have become CalAIM (California Advancing and Innovating Medi-Cal) providers. CalAIM is a long-term commitment to transform Medi-Cal, making the program more equitable, coordinated, and person-centered to help people maximize their health and life trajectories. This program allows us to expand our services to the public by offering Community Support Services: Housing Transition Navigation Services, Housing Deposits, and Housing Tenancy and Sustaining Services.
-
-                    Additionally, since June 2023, we have been under new leadership; we are excited to have Christine Stellino, ASW, as the new Executive Director. She brings a new vision through an equitable, diverse, fair, and inclusive approach.
-
-
-
+                    data-aos-duration="1000"
+                  >
+                    As we continually aim to improve HIS-OC, we have become
+                    CalAIM (California Advancing and Innovating Medi-Cal)
+                    providers. CalAIM is a long-term commitment to transform
+                    Medi-Cal, making the program more equitable, coordinated,
+                    and person-centered to help people maximize their health and
+                    life trajectories. This program allows us to expand our
+                    services to the public by offering Community Support
+                    Services: Housing Transition Navigation Services, Housing
+                    Deposits, and Housing Tenancy and Sustaining Services.
+                    Additionally, since June 2023, we have been under new
+                    leadership; we are excited to have Christine Stellino, ASW,
+                    as the new Executive Director. She brings a new vision
+                    through an equitable, diverse, fair, and inclusive approach.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         {/* <section className="driving-dedication">
           <div className="container my-5">
@@ -595,24 +540,40 @@ function About() {
           <div className="container-fluid my-5">
             <div className="row align-items-center justify-content-between">
               <div className="left-career col-lg-5 col-md-12 me-lg-4 mb-lg-0 mb-3 ">
-
                 <div className="career-contact">
-                  <p className="intershiptitle">Join Our Team To End <span className="hightlight">
-                    Homelessness! <img src={tagline} className="underline-image" /> </span>  </p>
-                  <p className="intershippara" >
-                    Ready for a career with Homeless Intervention Services Orange County to help disrupt homelessness? Become a part of our team today! We’re a passionate team of individuals working towards a worthy cause!
-
-                    We currently do not have any open positions. For any further inquiries regarding careers or applications, please contact us at (714) 993-5774 or email us at info@his-oc.org
+                  <p className="intershiptitle">
+                    Join Our Team To End{" "}
+                    <span className="hightlight">
+                      Homelessness!{" "}
+                      <img src={tagline} className="underline-image" />{" "}
+                    </span>{" "}
                   </p>
-                  <p className=" intershippara">We currently do not have any open positions. For any further inquiries regarding careers or applications, please contact us at:</p>
+                  <p className="intershippara">
+                    Ready for a career with Homeless Intervention Services
+                    Orange County to help disrupt homelessness? Become a part of
+                    our team today! We’re a passionate team of individuals
+                    working towards a worthy cause! We currently do not have any
+                    open positions. For any further inquiries regarding careers
+                    or applications, please contact us at (714) 993-5774 or
+                    email us at info@his-oc.org
+                  </p>
+                  <p className=" intershippara">
+                    We currently do not have any open positions. For any further
+                    inquiries regarding careers or applications, please contact
+                    us at:
+                  </p>
                   <span className=" careerinternsip d-flex gap-4">
-
-
-                    <Link to="tel:(714)%20993-5774" className="careercontact d-flex align-items-center">
+                    <Link
+                      to="tel:(714)%20993-5774"
+                      className="careercontact d-flex align-items-center"
+                    >
                       <i className="bi bi-telephone-fill me-2"></i>
                       (714) 993-5774
                     </Link>
-                    <Link to={"mailto:info@his-oc.org"} className="careercontact d-flex align-items-center">
+                    <Link
+                      to={"mailto:info@his-oc.org"}
+                      className="careercontact d-flex align-items-center"
+                    >
                       <i className="bi bi-envelope me-2"></i>
                       info@his-oc.org
                     </Link>
@@ -621,30 +582,37 @@ function About() {
               </div>
               <div className="right-career col-lg-5 col-md-12 me-lg-4">
                 <div className="career-contact">
-                  <p className="intershiptitleOpportunities ">Internship     <span className="hightlight">
-                    Opportunities <img src={tagline} className="underline-image" /> </span> <br /> At HIS-OC  </p>
-                  <p className="intershippara" >
+                  <p className="intershiptitleOpportunities ">
+                    Internship{" "}
+                    <span className="hightlight">
+                      Opportunities{" "}
+                      <img src={tagline} className="underline-image" />{" "}
+                    </span>{" "}
+                    <br /> At HIS-OC{" "}
+                  </p>
+                  <p className="intershippara">
                     If you need to fulfill an internship requirement, we offer
-                    opportunities at HIS-OC for college students in their junior or senior
-                    year of their studies and to those pursuing advanced degrees.
-                    These internships cover a variety of program experiences including
-                    office support, childcare, client education, and shelter operations.
-                    If you are interested in internship opportunities, please send your
-                    resume and a cover letter indicating your area of interest to:
-                    Internship Coordinator
-                    HIS-OC, PO Box 1293
-                    Placentia, CA 92871.
+                    opportunities at HIS-OC for college students in their junior
+                    or senior year of their studies and to those pursuing
+                    advanced degrees. These internships cover a variety of
+                    program experiences including office support, childcare,
+                    client education, and shelter operations. If you are
+                    interested in internship opportunities, please send your
+                    resume and a cover letter indicating your area of interest
+                    to: Internship Coordinator HIS-OC, PO Box 1293 Placentia, CA
+                    92871.
                   </p>
 
                   <span className="mailinternsip  -flex gap-4">
-
                     {/* <Link to="tel:(714)%20993-5774" className="iternshipcontact d-flex align-items-center">
                       <i className="bi bi-telephone-fill me-2"></i>
                       (714) 993-5774
                     </Link> */}
-                    <Link to={"mailto:info@his-oc.org"} className=" mailinternsip   ">
+                    <Link
+                      to={"mailto:info@his-oc.org"}
+                      className=" mailinternsip   "
+                    >
                       <FaMapMarkerAlt />
-
                       PO Box 1293, Placentia, CA 92871
                     </Link>
                   </span>
@@ -654,11 +622,11 @@ function About() {
           </div>
         </section>
 
-
-
         <Leadership ApiDataGetmembers={ApiDataGetmembers} />
-        <Contact handleChange={handleChange}
-          name={formState?.name} info={formState?.info}
+        <Contact
+          handleChange={handleChange}
+          name={formState?.name}
+          info={formState?.info}
           email={formState?.email}
           handleSubmit={handleSubmit}
           message={formState?.message}

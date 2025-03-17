@@ -6,14 +6,14 @@ import missionunderline from "../../Assets/images/missionunderline.png";
 import React, { useState, useEffect } from "react";
 import aboutherounderline from "../../Assets/images/aboutherounderline.png";
 import housedefaultimg from "../../Assets/images/housedefaultimg.png";
-import resoucecenter from '../../Assets/images/resourcecenter.jpg'
-import { useGet, usePost } from '../Api/usePost'
+import resoucecenter from "../../Assets/images/resourcecenter.jpg";
+import { useGet, usePost } from "../Api/usePost";
 import AOS from "aos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Leadership from "../../components/Leadership";
 import houseprogramunderline from "../../Assets/images/houseprogramunderline.png";
-import connection from '../../Assets/images/connection.png'
+import connection from "../../Assets/images/connection.png";
 import hopeunderline from "../../Assets/images/hopeunderline.png";
 import HeroSection from "../../components/herosection";
 import drivingchangecard1 from "../../Assets/images/drivingchangecard1.png";
@@ -36,17 +36,28 @@ import { base_url_image } from "../Api/base_url";
 
 // import { FaArrowRight } from "react-icons/fa";
 function ProgramsProjects() {
+  const {
+    ApiData: ApiDataGetmembers,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdatamembers,
+  } = useGet("/member");
+  const {
+    ApiData: ApiDataotp,
+    loading: loadingotp,
+    error: errorotp,
+    post: postotp,
+  } = usePost("/submit-query");
 
-  const { ApiData: ApiDataGetmembers, loading: loadingGet, error: errorGet, get: getdatamembers } = useGet('/member')
-  const { ApiData: ApiDataotp, loading: loadingotp, error: errorotp, post: postotp } = usePost('/submit-query')
-
-  const { ApiData: ApiDataGetprogram, loading: loadingGetprogram, error: errorGetprogram, get: getdataprogram } = useGet('/program')
-
-
-
+  const {
+    ApiData: ApiDataGetprogram,
+    loading: loadingGetprogram,
+    error: errorGetprogram,
+    get: getdataprogram,
+  } = useGet("/program");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in formState) {
       formDataMethod.append(key, formState[key]);
@@ -55,7 +66,7 @@ function ProgramsProjects() {
     postotp(formDataMethod);
   };
 
-  const [formState, setFormState] = useState({})
+  const [formState, setFormState] = useState({});
 
   useEffect(() => {
     if (ApiDataotp?.status === true) {
@@ -72,9 +83,7 @@ function ProgramsProjects() {
     } else {
       toast.error(ApiDataotp?.message); // Use error notification for failure
     }
-     
   }, [ApiDataotp]);
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -85,15 +94,13 @@ function ProgramsProjects() {
   };
 
   useEffect(() => {
-    getdatamembers()
-    getdataprogram()
-    
+    getdatamembers();
+    getdataprogram();
+
     document.title = " Our - Work   - HIS OC ";
-  }, [])
+  }, []);
   useEffect(() => {
-
     AOS.init();
-
   }, []);
   const PrevArrow = (props) => {
     const { onClick } = props;
@@ -105,8 +112,6 @@ function ProgramsProjects() {
       >
         <span className="arrow-icon">
           <FaArrowRight />
-
-
         </span>
       </button>
     );
@@ -226,7 +231,7 @@ function ProgramsProjects() {
   const [hoveredProgram, setHoveredProgram] = useState(null);
   const handleprogramdtl = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  };
   return (
     <>
       <Layout>
@@ -240,7 +245,7 @@ function ProgramsProjects() {
         />
 
         <section className="info-section d-flex justify-content-center align-items-center py-5">
-          <div className="container ourprogramgradbg" >
+          <div className="container ourprogramgradbg">
             <p
               className="info-text text-start"
               data-aos="fade-right"
@@ -273,8 +278,9 @@ function ProgramsProjects() {
                   {ApiDataGetprogram?.data?.map((program, index) => (
                     <div
                       key={index}
-                      className={`program-item p-3   d-flex justify-content-between mb-0 align-items-center ${program.highlighted ? "highlighted" : ""
-                        }`}
+                      className={`program-item p-3   d-flex justify-content-between mb-0 align-items-center ${
+                        program.highlighted ? "highlighted" : ""
+                      }`}
                       onMouseEnter={() => setHoveredProgram(program)}
                       onMouseLeave={() => setHoveredProgram(null)}
                     >
@@ -292,31 +298,23 @@ function ProgramsProjects() {
                         </h5>
                         <p
                           className="mb-0 text-muted"
-                          dangerouslySetInnerHTML={{ __html: program.short_description || "Default description here" }}
+                          dangerouslySetInnerHTML={{
+                            __html:
+                              program.short_description ||
+                              "Default description here",
+                          }}
                         ></p>
-
                       </div>
-                      <Link onClick={handleprogramdtl} to={`/our-work/${program?.id}`} className="arrow-con" >
+                      <Link
+                        onClick={handleprogramdtl}
+                        to={`/our-work/${program?.id}`}
+                        className="arrow-con"
+                      >
                         <FontAwesomeIcon icon={faArrowRight} />
                       </Link>
                     </div>
                   ))}
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
                 <div
                   data-aos="fade-up"
@@ -337,96 +335,73 @@ function ProgramsProjects() {
                 </div>
               </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
               {/* Image Section */}
               <div className="col-lg-6   d-lg-block">
                 <div className="image-container position-relative">
                   <img
                     src={
-                      hoveredProgram ? base_url_image + hoveredProgram.image : housedefaultimg
+                      hoveredProgram
+                        ? base_url_image + hoveredProgram.image
+                        : housedefaultimg
                     }
                     alt="Hovered Program"
                     className="img-fluid"
-                    style={{ objectFit: "cover", width: "100%", maxHeight: "651px", }}
+                    style={{
+                      objectFit: "cover",
+                      width: "100%",
+                      maxHeight: "651px",
+                    }}
                   />
                   <div className="overlay"></div>
                 </div>
               </div>
-
-
-
-
-
-
-
-            
-
-
-
             </div>
 
-
             <div className="row align-items-center">
-
-   <div className="col-lg-6 mt-5 ">
+              <div className="col-lg-6 mt-5 ">
                 <div className="text-lg-start text-center">
                   <img src={resoucecenter} className="img-fluid" />
                 </div>
-
-
-
               </div>
-
 
               <div className="col-lg-6 mt-5  ">
                 <div className="   ">
-                  In 2022 HIS-OC began a partnership with Lot 318 and The City of Placentia to operate two resource centers in Placentia. Located at The Gomez Center (1701 Atwood Ave) and The Whitten Center (900 S Melrose St), HIS-OC staffs the center and works with our partners to provide resource connections and housing navigation as well as after-school tutoring; parenting, financial literacy, fitness, and other classes; a food and necessities pantry; and community events throughout the year. The centers are located in two of Orange County’s most under-resourced areas, and are open to all who find themselves in need of assistance. Our Resource Navigator is bilingual in English and Spanish.
-
-                  Resource Centers with the following addresses
+                  In 2022 HIS-OC began a partnership with Lot 318 and The City
+                  of Placentia to operate two resource centers in Placentia.
+                  Located at The Gomez Center (1701 Atwood Ave) and The Whitten
+                  Center (900 S Melrose St), HIS-OC staffs the center and works
+                  with our partners to provide resource connections and housing
+                  navigation as well as after-school tutoring; parenting,
+                  financial literacy, fitness, and other classes; a food and
+                  necessities pantry; and community events throughout the year.
+                  The centers are located in two of Orange County’s most
+                  under-resourced areas, and are open to all who find themselves
+                  in need of assistance. Our Resource Navigator is bilingual in
+                  English and Spanish. Resource Centers with the following
+                  addresses
                   <ul>
+                    <li>Program Called: Resource Connection</li>
                     <li>
-                      Program Called: Resource Connection
-                    </li>
-                    <li>
-
                       Whitten Center 900 S Melrose St, Placentia, CA 92870
                     </li>
-                    <li>
-                      Gomez Center 1701 Atwood Ave, Placentia, CA 92870
-                    </li>
+                    <li>Gomez Center 1701 Atwood Ave, Placentia, CA 92870</li>
                   </ul>
-
                 </div>
-
-
-
               </div>
-
-
-
             </div>
           </div>
         </section>
 
-        <Contact handleChange={handleChange}
-          name={formState?.name} info={formState?.info}
+        <Contact
+          handleChange={handleChange}
+          name={formState?.name}
+          info={formState?.info}
           email={formState?.email}
           handleSubmit={handleSubmit}
           message={formState?.message}
           phone={formState?.phone}
-          ApiDataGetmembers={ApiDataGetmembers} />
+          ApiDataGetmembers={ApiDataGetmembers}
+        />
 
         {/* <Leadership /> */}
         <Sponsor />

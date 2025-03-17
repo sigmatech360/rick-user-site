@@ -215,6 +215,10 @@
   left: -16px;
 }
 
+.get-help-contact-sec .contact-left-col {
+  display: none;
+}
+
 .dedicatd-leadership .para {
   width: 100%; /* Default to full width for flexibility */
   max-width: 1226px; /* Limit maximum width */

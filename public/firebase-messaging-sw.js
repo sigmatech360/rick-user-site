@@ -27,7 +27,7 @@
 
 //   self.registration.showNotification(notificationTitle, notificationOptions);
 // });
-
+   
 
 
 
@@ -63,9 +63,12 @@ const messaging = getMessaging(app);
 export const requestForToken = async () => {
   try {
     const currentToken = await getToken(messaging, {
+      // vapidKey: "BMXsusBZvpnKvJuKk6FAfou4O5BDZMXfmL5j4vqVY1I5zBLWXniCo-7LF0fZi3WtD7sDfLKYBGmHOWhvDNoORYo",
       vapidKey: "BMXsusBZvpnKvJuKk6FAfou4O5BDZMXfmL5j4vqVY1I5zBLWXniCo-7LF0fZi3WtD7sDfLKYBGmHOWhvDNoORYo",
       serviceWorkerRegistration: await navigator.serviceWorker.register('/firebase-messaging-sw.js'),
     });
+
+    console.log("currentToken", currentToken)
 
     if (currentToken) {
       console.log("FCM Token:", currentToken);

@@ -291,13 +291,13 @@ function Givedonation() {
                   <p className="extension font-weight-bold  mb-0  ">
                     Give now by  {" "}
                     <spna className="credit position-relative">
-                      Check{" "}
+                      Cheque{" "}
                       <img
                         className="createdunderline"
                         src={createdunderline}
                       />
                     </spna>{" "}
-                    Card
+                    {/* Card */}
                   </p>
                   <p className="para   mb-2 text-muted  ">
                     Please make checks payable to HIS-OC and mail to P.O. Box

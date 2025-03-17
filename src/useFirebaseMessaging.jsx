@@ -17,8 +17,10 @@ const useFirebaseMessaging = () => {
         const status = await Notification.requestPermission();
         if (status === "granted") {
           const fcmToken = await getToken(messaging, {
+            // vapidKey: "BMXsusBZvpnKvJuKk6FAfou4O5BDZMXfmL5j4vqVY1I5zBLWXniCo-7LF0fZi3WtD7sDfLKYBGmHOWhvDNoORYo",
             vapidKey: "BMXsusBZvpnKvJuKk6FAfou4O5BDZMXfmL5j4vqVY1I5zBLWXniCo-7LF0fZi3WtD7sDfLKYBGmHOWhvDNoORYo",
           });
+          console.log("fcmToken", fcmToken)
           setToken(fcmToken);
           console.log("FCM Token:", fcmToken);
         } else {

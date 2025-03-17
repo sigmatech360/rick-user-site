@@ -524,25 +524,27 @@ function Header() {
               {/* Second logo: visible only in full-screen mode */}
               <div className="d-none d-lg-block">
                 <Link className="navbar-brand" to="/">
-                  <img src={logo} alt="Logo" style={{ height: "40px" }} />
+                  <img src={logo} alt="Logo"/>
                 </Link>
               </div>
 
               {/* Right-aligned buttons and icons */}
               <div className="d-flex align-items-center">
-                <Link to="https://www.facebook.com/homeless.intervention.oc" className="text-dark me-3">
+                <a href="https://www.facebook.com/homeless.intervention.oc" target="_blank" className="text-dark me-3">
                   <i className="bi bi-facebook"></i>
-                </Link>
-                <Link to="https://twitter.com/Homeless_Int_OC" className="text-dark me-3">
+                </a>
+                <a href="https://twitter.com/Homeless_Int_OC" target="_blank" className="text-dark me-3">
                   <i className="bi bi-x"></i>
-                </Link>
-                {/* <Link href="https://www.instagram.com/homeless_intervention_oc/?hl=en" className="text-dark me-3">
-                  <i className="bi bi-instagram"></i>
-                </Link> */}
-
-                <Link to="https://www.instagram.com/homeless_intervention_oc/?hl=en" passHref>
+                </a>
+                <a href="https://www.instagram.com/homeless_intervention_oc/?hl=en" target="_blank" passHref>
                   <i className="bi bi-instagram text-dark me-3"></i>
-                </Link>
+                </a>
+                <a href="https://www.linkedin.com/in/christine-stellino-b31963176/" target="_blank" passHref>
+                  <i className="bi bi-linkedin text-dark me-3"></i>
+                </a>
+                <a href="https://www.tiktok.com/@user4978180667468" target="_blank" passHref>
+                  <i className="bi bi-tiktok text-dark me-3"></i>
+                </a>
                 {!logintoken && (
                   <button onClick={handleShow} className="nav-event btn me-2">
                     Become A Volunteer

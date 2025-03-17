@@ -21,34 +21,39 @@ import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { RiCalendar2Line } from "react-icons/ri";
 import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
-import { useGet } from '../Api/usePost'
+import { useGet } from "../Api/usePost";
 import communityimg from "../../Assets/images/communityimg.png";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { base_url_image } from "../Api/base_url";
 
 function Transitionalagedyouthshelter() {
-
-
   useEffect(() => {
     AOS.init();
-
   }, []);
 
-
-
-  const { id } = useParams()
-  const { ApiData: ApiDataGetprogram, loading: loadingGetprogram, error: errorGetprogram, get: getdataprogram } = useGet(`/program/${id}`)
-  const { ApiData: ApiDataGetprogramlist, loading: loadingGetprogramlist, error: errorGetprogramlist, get: getdataprogramlist } = useGet('/program')
+  const { id } = useParams();
+  const {
+    ApiData: ApiDataGetprogram,
+    loading: loadingGetprogram,
+    error: errorGetprogram,
+    get: getdataprogram,
+  } = useGet(`/program/${id}`);
+  const {
+    ApiData: ApiDataGetprogramlist,
+    loading: loadingGetprogramlist,
+    error: errorGetprogramlist,
+    get: getdataprogramlist,
+  } = useGet("/program");
   useEffect(() => {
-    getdataprogram()
-    
+    getdataprogram();
+
     document.title = ApiDataGetprogram?.data?.title || "HOME - HIS OC";
-  }, [id])
+  }, [id]);
 
   useEffect(() => {
-    getdataprogramlist()
-  }, [])
+    getdataprogramlist();
+  }, []);
 
   const programslist = [
     {
@@ -68,18 +73,20 @@ function Transitionalagedyouthshelter() {
     },
   ];
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const handleroute = (id) => {
-
-    navigate(`/our-work/${id}`)
+    navigate(`/our-work/${id}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  };
   return (
     <>
       <Layout>
         <section className="communityOutreachDay">
           <div className="container">
-            <Link to={"/our-work"} className="communityOutreachDayheader d-flex gap-2 align-items-center">
+            <Link
+              to={"/our-work"}
+              className="communityOutreachDayheader d-flex gap-2 align-items-center"
+            >
               <MdKeyboardDoubleArrowLeft />
               Program Dedail
             </Link>
@@ -105,9 +112,6 @@ function Transitionalagedyouthshelter() {
                     __html: ApiDataGetprogram?.data?.long_description,
                   }}
                 ></p>
-
-
-
               </div>
 
               <div className="programs1 col-md-5 mt-4">
@@ -117,7 +121,10 @@ function Transitionalagedyouthshelter() {
                     className="item d-flex justify-content-between align-items-center my-3"
                   >
                     <h4 className="mb-0">{data?.title}</h4>
-                    <button onClick={() => handleroute(data?.id)} className="btn d-flex align-items-center">
+                    <button
+                      onClick={() => handleroute(data?.id)}
+                      className="btn d-flex align-items-center"
+                    >
                       <MdArrowOutward className="ms-2" size={20} />
                     </button>
                   </div>
@@ -131,6 +138,5 @@ function Transitionalagedyouthshelter() {
     </>
   );
 }
-
 
 export default Transitionalagedyouthshelter;

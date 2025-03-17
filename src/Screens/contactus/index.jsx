@@ -11,7 +11,7 @@ import drivingchangecard1 from "../../Assets/images/drivingchangecard1.png";
 import drivingchangecard2 from "../../Assets/images/drivingchangecard2.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { usePost } from '../Api/usePost'
+import { usePost } from "../Api/usePost";
 import mapimg from "../../Assets/images/mapimg.png";
 import donateunderline from "../../Assets/images/donateunderline.svg";
 import programlegacy from "../../Assets/images/programlegacy.png";
@@ -21,11 +21,13 @@ import contectbf from "../../Assets/images/contactbg.png";
 import { toast } from "react-toastify";
 import { Form } from "react-router-dom";
 function Contactus() {
-
-
-
-  const [formState, setFormState] = useState({})
-  const { ApiData: ApiDataotp, loading: loadingotp, error: errorotp, post: postotp } = usePost('/submit-query')
+  const [formState, setFormState] = useState({});
+  const {
+    ApiData: ApiDataotp,
+    loading: loadingotp,
+    error: errorotp,
+    post: postotp,
+  } = usePost("/submit-query");
 
   useEffect(() => {
     if (ApiDataotp?.status === true) {
@@ -44,20 +46,15 @@ function Contactus() {
     }
   }, [ApiDataotp]);
 
-
-
-
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in formState) {
       formDataMethod.append(key, formState[key]);
     }
 
     postotp(formDataMethod);
-  }
-
-
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -67,11 +64,9 @@ function Contactus() {
     }));
   };
 
-
-
   useEffect(() => {
     AOS.init();
-    
+
     document.title = "Contact - HIS OC" || "HOME - HIS OC";
   }, []);
   const PrevArrow = (props) => {
@@ -269,7 +264,6 @@ function Contactus() {
                         <option value="">General Information</option>
                         <option value="Support">Support</option>
                         <option value="Sales">Sales</option>
-
                       </select>
                     </div>
                   </div>
@@ -309,12 +303,11 @@ function Contactus() {
 
         <section className="inquiries-call d-flex justify-content-center align-items-center">
           <h2 className=" inquiries-calltitle fw-bold text-white">
-            For Any Inquiries Call The Hotline:{" "}
-            <span className="    position-relative">
-              {" "}
-              +1 123 1234 567{" "}
+            For Any Inquiries Call:{" "}
+            <a href="tel:(714) 993-5774" className="position-relative">
+              (714) 993-5774
               <img className="sponsorunderline" src={sponsorunderline} />
-            </span>
+            </a>
           </h2>
         </section>
       </Layout>

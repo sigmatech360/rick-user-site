@@ -8,9 +8,17 @@ import "./index.css";
 import AOS from "aos";
 
 import { Modal, Button, Form } from "react-bootstrap";
-function Contact({ handleSubmit, handleChange, name, email, phone, info, message  , ApiDataGetmembers}) {
+function Contact({
+  handleSubmit,
+  handleChange,
+  name,
+  email,
+  phone,
+  info,
+  message,
+  ApiDataGetmembers,
+}) {
   useEffect(() => {
-
     AOS.init();
   }, []);
   const [donatenotify, setDonatenotiy] = useState(false);
@@ -31,8 +39,6 @@ function Contact({ handleSubmit, handleChange, name, email, phone, info, message
 
     setDonatenotiy(true);
   };
-
-
 
   return (
     <>
@@ -61,27 +67,27 @@ function Contact({ handleSubmit, handleChange, name, email, phone, info, message
             below and one of our team members will be sure to follow up with
             you.
           </p>
-          <div className="row gx-0 d-flex align-items-stretch">
+          <div className="row gx-0 d-flex align-items-stretch justify-content-center">
             {/* <!-- Left Contact Information Panel with Grid Layout --> */}
-            <div className="col-md-12  col-lg-6 mb-4 mb-md-0 d-flex">
+            <div className="col-md-12  col-lg-6 mb-4 mb-lg-0 contact-left-col">
               <div className="contact-info-panel p-4 shadow-sm w-100 rounded-start">
+                <h2 className="his-oc-board-members">HIS-OC Board Members</h2>
                 <div className="contact-grid">
-                {ApiDataGetmembers?.data?.map((items) =>(
-
-                <div className="contact-item p-3 rounded bg-white">
-                    <p className="para mb-0">
-                      <span> {items?.name}</span>
-                      <br />
-                      {items?.designation}
-                    </p>
-                    <a
-                      href="mailto:christine@his-oc.org"
-                      className="text-muted"
-                    >
+                  {ApiDataGetmembers?.data?.filter((member) => member.member_type === 2).slice(0, 10).map((items) => (
+                    <div className="contact-item p-3 rounded bg-white">
+                      <p className="para mb-0">
+                        <span> {items?.name}</span>
+                        <br />
+                        {items?.designation}
+                      </p>
+                      <a
+                        href="mailto:christine@his-oc.org"
+                        className="text-muted"
+                      >
                         {items?.email}
-                    </a>
-                  </div>  ))}
-                
+                      </a>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -127,11 +133,16 @@ function Contact({ handleSubmit, handleChange, name, email, phone, info, message
                     />
                   </div>
                   <div className="mb-3">
-                    <select name="info"  
-                      value={info || ""}  
-                      onChange={handleChange} className="form-select">
-                      <option value="General Information">General Information</option>
-                      <option value="Programs" >Programs</option>
+                    <select
+                      name="info"
+                      value={info || ""}
+                      onChange={handleChange}
+                      className="form-select"
+                    >
+                      <option value="General Information">
+                        General Information
+                      </option>
+                      <option value="Programs">Programs</option>
                       <option value="Donations">Donations</option>
                       <option value="Volunteering">Volunteering</option>
                     </select>

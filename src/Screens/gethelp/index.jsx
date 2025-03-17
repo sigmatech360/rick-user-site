@@ -22,25 +22,27 @@ import gethelpbg from "../../Assets/images/gethelpbg.png";
 
 import ourworkbg from "../../Assets/images/ourworkbg.png";
 
-import { useGet, usePost } from '../Api/usePost'
+import { useGet, usePost } from "../Api/usePost";
 import AOS from "aos";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function GetHelp() {
-
-
-
-
-  const { ApiData: ApiDataGetmembers, loading: loadingGet, error: errorGet, get: getdatamembers } = useGet('/member')
-  const { ApiData: ApiDataotp, loading: loadingotp, error: errorotp, post: postotp } = usePost('/submit-query')
-
-
-
-
+  const {
+    ApiData: ApiDataGetmembers,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdatamembers,
+  } = useGet("/member");
+  const {
+    ApiData: ApiDataotp,
+    loading: loadingotp,
+    error: errorotp,
+    post: postotp,
+  } = usePost("/submit-query");
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in formState) {
       formDataMethod.append(key, formState[key]);
@@ -49,7 +51,7 @@ function GetHelp() {
     postotp(formDataMethod);
   };
 
-  const [formState, setFormState] = useState({})
+  const [formState, setFormState] = useState({});
 
   useEffect(() => {
     if (ApiDataotp?.status === true) {
@@ -67,7 +69,6 @@ function GetHelp() {
     }
   }, [ApiDataotp]);
 
-
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormState((prevData) => ({
@@ -76,15 +77,16 @@ function GetHelp() {
     }));
   };
 
-
   useEffect(() => {
-    getdatamembers()
-    
+    getdatamembers();
+
     document.title = "Get Help - HIS OC " || "HOME- HIS OC";
-  }, [])
+  }, []);
+
   useEffect(() => {
     AOS.init();
   }, []);
+
   const PrevArrow = (props) => {
     const { onClick } = props;
     return (
@@ -116,6 +118,7 @@ function GetHelp() {
       </button>
     );
   };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -216,7 +219,10 @@ function GetHelp() {
           <div className="container gethelpgradbg">
             <div className="text-center mb-3">
               <h2 className="callus">Call Us</h2>
-              <Link className="contectno" to="tel:(714)%20993-5774"> (714) 993-5774 </Link>
+              <Link className="contectno" to="tel:(714)%20993-5774">
+                {" "}
+                (714) 993-5774{" "}
+              </Link>
             </div>
             <p
               className="info-text text-start"
@@ -224,21 +230,24 @@ function GetHelp() {
               data-aos-offset="0"
               data-aos-duration="1000"
             >
-              To get help, just call us. We want to talk to you, get to know what you need and help you home . . . for good.
-
-              If you are familiar with our programs and you know which one you’d like to hear more about or apply to, dial (714) 993-5774 and the extension number:
+              To get help, just call us. We want to talk to you, get to know
+              what you need and help you home . . . for good. If you are
+              familiar with our programs and you know which one you’d like to
+              hear more about or apply to, dial (714) 993-5774 and the extension
+              number:
               <ul>
-                <li> Transitional Housing Program for families – Extension 1009
+                <li>
+                  {" "}
+                  Transitional Housing Program for families – Extension 1009
                 </li>
-                <li> Young Adults Ages 18-24 yr old men –  Extension 1007</li>
-                <li>  HomeShare OC –  Extension 1005. If you are a college student, fill out the Student Interest Form to get started.</li>
-                <li>Housing Connection Program for anyone –  Extension 1019</li>
+                <li> Young Adults Ages 18-24 yr old men – Extension 1007</li>
+                <li>
+                  {" "}
+                  HomeShare OC – Extension 1005. If you are a college student,
+                  fill out the Student Interest Form to get started.
+                </li>
+                <li>Housing Connection Program for anyone – Extension 1019</li>
               </ul>
-
-
-
-
-
             </p>
           </div>
         </section>
@@ -304,7 +313,7 @@ function GetHelp() {
                     data-aos-duration="1000"
                   >
                     <Link to={"https://www.211oc.org/"}>
-                    <img src={helpstar} className="starimg" />
+                      <img src={helpstar} className="starimg" />
                     </Link>
                   </h1>
                   <FaStar className="text-warning star-icon" />
@@ -348,13 +357,18 @@ function GetHelp() {
         </section>
 
         {/* <Leadership /> */}
-        <Contact handleChange={handleChange}
-          name={formState?.name} info={formState?.info}
-          email={formState?.email}
-          handleSubmit={handleSubmit}
-          message={formState?.message}
-          phone={formState?.phone}
-          ApiDataGetmembers={ApiDataGetmembers} />
+        <section className="get-help-contact-sec">
+          <Contact
+            handleChange={handleChange}
+            name={formState?.name}
+            info={formState?.info}
+            email={formState?.email}
+            handleSubmit={handleSubmit}
+            message={formState?.message}
+            phone={formState?.phone}
+            ApiDataGetmembers={ApiDataGetmembers}
+          />
+        </section>
         <Sponsor />
       </Layout>
     </>

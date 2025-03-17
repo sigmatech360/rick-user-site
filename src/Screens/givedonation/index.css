@@ -11,11 +11,6 @@
   letter-spacing: 0px;
 }
 
-
-
-
-
-
 .ourprogramgradbg {
   position: relative;
 }
@@ -26,15 +21,14 @@
   position: absolute;
   top: -71px !important;
 
-  background: url('../../Assets/images/volusteergradiantimg.png') 0% 0% no-repeat;
+  background: url("../../Assets/images/volusteergradiantimg.png") 0% 0%
+    no-repeat;
   background-size: contain;
   padding-left: 0;
   height: 179%;
   width: 205%;
   z-index: -1;
-
 }
-
 
 .how-we-do {
   left: 0px;
@@ -214,17 +208,16 @@
   color: #333333;
 }
 
-
 .donate-section .para {
   color: var(--unnamed-color-333333, #333333);
   text-align: center;
   font-weight: 400;
   font-size: 16px;
   line-height: 27px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   letter-spacing: 0px;
   opacity: 1;
-  max-width: 50%
+  max-width: 50%;
 }
 
 /* Responsive adjustments for max-width and font-size */
@@ -250,7 +243,6 @@
 
 @media (max-width: 576px) {
   .donate-section .para {
-
     max-width: 90%;
     font-size: 13px;
   }
@@ -265,28 +257,7 @@
     font: normal normal bold 18px / 43px Inter, sans-serif;
     letter-spacing: 0px;
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .dedicatd-leadership .card-title {
   font-weight: 500;
@@ -294,8 +265,6 @@
   margin-bottom: 0px;
   text-align: left;
 }
-
-
 
 .dedicatd-leadership .card-text {
   text-align: left;
@@ -308,91 +277,67 @@
   /* border-radius: 5px; */
 }
 
-/* Yellow overlay */
-/* .yellow-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  max-height: 145%;
-  height: 272px;
-  max-width: 100%; 
-  height: 304px;
-  background-color: #FDD22E;
-  z-index: 2;
-  filter: opacity(0.5);
-  width: 61px;
-} */
-
-
-
-
 .yellow-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  height: 309px !important;
-  /* Default height */
-  background-color: #FDD22E;
+  height: 390px !important;
+  background-color: #fdd22e;
   z-index: 2;
   filter: opacity(0.5);
   width: 61px;
-  /* Default width */
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1200px) {
+@media (max-width: 1599px) {
   .yellow-overlay {
-    height: 291px;
-    width: 62px;
+    height: 310px !important;
   }
 }
 
-@media (max-width: 992px) {
+@media (max-width: 1399px) {
   .yellow-overlay {
-    height: 200px;
-    /* Adjust height for smaller screens */
-    width: 45px;
-    /* Adjust width for smaller screens */
+      height: 270px !important;
+      width: 58px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1199px) {
   .yellow-overlay {
-    height: 320px;
-    width: 63px;
+      height: 298px !important;
+      width: 58px;
   }
 }
+
+@media (max-width: 991px) {
+  .yellow-overlay {
+      height: 334px !important;
+      width: 58px;
+  }
+}
+@media (max-width: 767px) {
+  .yellow-overlay {
+    height: 250px !important;
+    width: 58px;
+  }
+
+}
+
+@media (max-width: 575px) {
+  .yellow-overlay {
+      height: 540px !important;
+      width: 58px;
+  }
+}
+
+@media (max-width: 480px) {
+  .yellow-overlay {
+      height: 445px !important;
+      width: 58px;
+  }
+}
+
 
 @media (max-width: 576px) {
-  .yellow-overlay {
-    height: 374px;
-    width: 65px;
-  }
-}
-
-
-
-
-
-
-
-
-/* @media (max-width: 768px) {
-  .yellow-overlay {
-    height: 335px;
-}} */
-
-
-
-@media (max-width: 768px) {
-
-  /* .yellow-overlay {
-    height: 100%;  
-  } */
-}
-
-@media (max-width: 576px) {
-
   /* .yellow-overlay {
     width: 50%;  
   } */
@@ -409,7 +354,7 @@
   text-align: left;
   font: normal normal normal 18px / 23px Inter;
   letter-spacing: 0px;
-  color: #6E6E6F;
+  color: #6e6e6f;
 }
 
 /* Profile image styling */
@@ -421,14 +366,6 @@
   position: relative;
 }
 
-
-
-
-
-
-
-
-
 /* innovation services */
 
 .services-section {
@@ -436,7 +373,6 @@
 }
 
 .services-section .para {
-
   color: var(--unnamed-color-6e6e6f, #6e6e6f);
   text-align: left;
   /* font-weight: normal; */
@@ -455,18 +391,10 @@
   justify-content: start;
 }
 
-
 .donatecard :hover {
   box-shadow: 4px 12px 8px rgba(0, 0, 0, 0.2) !important;
   transition: box-shadow 0.3s cubic-bezier(0.65, -0.33, 0.26, 1.05) !important;
 }
-
-
-
-
-
-
-
 
 /* Container for the service card */
 /* .service-card-wrapper {
@@ -495,15 +423,11 @@
   }
 }
 
-
-
 .service-card:hover {
   transform: translateY(-5px);
 }
 
-
 .services-section .createdunderline {
-
   position: absolute;
   width: 100%;
   bottom: 0px;
@@ -511,100 +435,49 @@
   transform: translateY(5px);
 }
 
-
-
 .services-section .creadetimg {
   height: 67px;
   width: 60px;
-
 }
 
 .donate-button:hover {
-  background-color: #348F99;
+  background-color: #348f99;
   color: #fff;
   border-radius: 30px;
   padding: 5px 21px;
   font-weight: 400;
-
 }
-
 
 .donate-button {
-  background-color: #348F99;
+  background-color: #348f99;
   color: #fff;
   border-radius: 30px;
   padding: 5px 21px;
   font-weight: 400;
-
 }
 
-
-
-.services-section . {
+.services-section {
   max-width: 100%;
-  width: 76px;
+  /* width: 76px; */
 }
 
 .services-section .credit {
-
   font-family: test;
   font-style: italic;
-  color: #348F99;
+  color: #348f99;
 }
 
 .extension {
-
   color: var(--unnamed-color-333333);
   text-align: left;
   font: normal normal bold 18px / 43px Inter, sans-serif;
   letter-spacing: 0px;
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* help-section */
 
-
-
-
 .help-section {
-  background-image: url('../../Assets/images/helpstart.svg');
+  background-image: url("../../Assets/images/helpstart.svg");
   background-position: center;
   background-color: #333333;
   color: #ffffff;
@@ -615,11 +488,10 @@
   position: relative;
   color: #ffffff;
   overflow: hidden;
-
 }
 
 .help-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -683,18 +555,10 @@
   text-decoration: none;
 }
 
-
-
-
-
-
-
-
 /* programs-section */
 .programs-section {
   overflow: hidden;
 }
-
 
 .programs-section .program-card {
   position: relative;
@@ -706,24 +570,21 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
 }
-
 
 .program-title {
   font: normal normal bold 42px / 50px Inter, sans-serif;
   letter-spacing: 0px;
-  color: #FFFFFF;
+  color: #ffffff;
   text-transform: capitalize;
   text-align: start;
 }
 
 .program-title span {
-  color: #FDD22E;
+  color: #fdd22e;
   font-style: italic;
   font-family: test;
 }
-
 
 .programs-section .matchinggiftunderline {
   vertical-align: middle;
@@ -750,7 +611,6 @@
   z-index: 2;
 }
 
-
 .program-description {
   font-size: 1rem;
   line-height: 1.5;
@@ -758,7 +618,6 @@
   max-width: 118vh;
 
   text-align: start;
-
 }
 
 .highlighted-text {
@@ -778,7 +637,6 @@
   }
 } */
 
-
 .legacyunderline {
   vertical-align: middle;
   position: absolute;
@@ -788,11 +646,6 @@
   height: auto;
   transform: translateY(5px);
 }
-
-
-
-
-
 
 @media (max-width: 768px) {
   .programs-section .program-card {
@@ -816,10 +669,8 @@
   }
 }
 
-
 .programs-section {
   background-color: #fdfbf8;
-
 }
 
 /* Additional adjustments for extra small screens */
@@ -841,9 +692,7 @@
   }
 }
 
-
 .givedonationsubtitle {
-
   font-size: 1.1rem;
   font-weight: 400;
   margin-top: 1px;

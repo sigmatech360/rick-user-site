@@ -3,7 +3,7 @@ import dedleadimg2 from "../../Assets/images/dedleadimg2.png";
 import dedleadimg3 from "../../Assets/images/dedleadimg3.png";
 import dedleadimg4 from "../../Assets/images/dedleadimg4.png";
 import Slider from "react-slick";
-import placeholder from '../../Assets/images/placeholder.jpg'
+import placeholder from "../../Assets/images/placeholder.jpg";
 import React, { useEffect } from "react";
 import AOS from "aos";
 import dedicationunderline from "../../Assets/images/dedicationunderline.png";
@@ -16,6 +16,9 @@ function Leadership({ ApiDataGetmembers }) {
   useEffect(() => {
     AOS.init();
   }, []);
+
+  console.log("ApiDataGetmembers", ApiDataGetmembers);
+
   const PrevArrow = (props) => {
     const { onClick } = props;
     return (
@@ -80,7 +83,7 @@ function Leadership({ ApiDataGetmembers }) {
   ];
 
   const settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 4,
@@ -107,7 +110,7 @@ function Leadership({ ApiDataGetmembers }) {
         },
       },
       {
-        breakpoint: 576, // Extra-small screens (below 768px)
+        breakpoint: 575, // Extra-small screens (below 768px)
         settings: {
           slidesToShow: 1,
         },
@@ -144,54 +147,66 @@ function Leadership({ ApiDataGetmembers }) {
                 data-aos-offset="0"
                 data-aos-duration="1000"
               >
-                Our Board of Directors is a dynamic group that has guided the direction of our organization. They are committed to expanding our reach, innovating our programs, and ensuring all the people we serve have access to the tools and resources needed. 100% of the Board of Directors made financial contributions to support the work of Homeless Intervention Services Orange County. 
+                Our Board of Directors is a dynamic group that has guided the
+                direction of our organization. They are committed to expanding
+                our reach, innovating our programs, and ensuring all the people
+                we serve have access to the tools and resources needed. 100% of
+                the Board of Directors made financial contributions to support
+                the work of Homeless Intervention Services Orange County.
               </p>
             </div>
           </div>
           <Slider {...settings}>
-            {ApiDataGetmembers?.data?.map((member, index) => (
-              <div
-                key={index}
-                className="leadershipcards p-2"
-                data-aos={member?.animation}
-                data-aos-offset="0"
-                data-aos-duration="1000"
-              >
-                <div className="card  p-4 border-0   text-center">
-                  <div class="profile-container">
-                    <div class="yellow-overlay"></div>
-                    <img
-                      src={member?.image ? `${base_url_image}${member.image}` : placeholder}
-                      alt={member?.name || "Placeholder"}
-                      class="profile-image"
-                    />
+            {ApiDataGetmembers?.data
+              ?.filter((member) => member.member_type === 1)
+              .map((member, index) => (
+                <div
+                  key={index}
+                  className="leadershipcards p-2"
+                  data-aos={member?.animation}
+                  data-aos-offset="0"
+                  data-aos-duration="1000"
+                >
+                  <div className="card  p-4 border-0   text-center">
+                    <div class="profile-container">
+                      <div class="yellow-overlay"></div>
+                      <img
+                        src={
+                          member?.image
+                            ? `${base_url_image}${member.image}`
+                            : placeholder
+                        }
+                        alt={member?.name || "Placeholder"}
+                        class="profile-image"
+                      />
 
-                    <div className=" gap-2 d-flex">
-                      <p className="hisoc   "> HIS
-                        <br/> OC’s</p>
-                      <div className="mt-3">
-                        <p className="card-title  ">
-                          {member?.designation?.length > 19
-                            ? `${member.designation.slice(0, 19)} :`
-                            : member?.designation}
-
-
-
-                          <br />
-                          {member?.name}
+                      <div className=" gap-2 d-flex">
+                        <p className="hisoc   ">
+                          {" "}
+                          HIS
+                          <br /> OC’s
                         </p>
-                        <p className="card-text   text-muted mb-0">
-                          {member?.email}
-                        </p>
-                        <p className="card-text text-muted   mt=0">
-                          {member?.phone}
-                        </p>
+                        <div className="mt-3">
+                          <p className="card-title  ">
+                            {member?.designation?.length > 19
+                              ? `${member.designation.slice(0, 19)} :`
+                              : member?.designation}
+
+                            <br />
+                            {member?.name}
+                          </p>
+                          <p className="card-text   text-muted mb-0">
+                            {member?.email}
+                          </p>
+                          <p className="card-text text-muted   mt=0">
+                            {member?.phone}
+                          </p>
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </Slider>
         </div>
       </section>
