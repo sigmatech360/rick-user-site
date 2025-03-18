@@ -62,8 +62,6 @@ function Home() {
 
 
 
-  console.log("base_url" ,  base_url_image)
-
   const [userData, setUserData] = useState({
   });
   const handleSubmitforgetotp = (e) => {
@@ -103,7 +101,7 @@ function Home() {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <i className="fa fa-arrow-left" aria-hidden="true"></i>
         </span>
       </button>
     );
@@ -119,7 +117,7 @@ function Home() {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          <i className="fa fa-arrow-right" aria-hidden="true"></i>
         </span>
       </button>
     );

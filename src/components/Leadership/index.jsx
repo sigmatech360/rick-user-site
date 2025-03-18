@@ -29,7 +29,7 @@ function Leadership({ ApiDataGetmembers }) {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <i className="fa fa-arrow-left" aria-hidden="true"></i>
         </span>
       </button>
     );
@@ -45,7 +45,7 @@ function Leadership({ ApiDataGetmembers }) {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          <i className="fa fa-arrow-right" aria-hidden="true"></i>
         </span>
       </button>
     );
@@ -168,8 +168,8 @@ function Leadership({ ApiDataGetmembers }) {
                   data-aos-duration="1000"
                 >
                   <div className="card  p-4 border-0   text-center">
-                    <div class="profile-container">
-                      <div class="yellow-overlay"></div>
+                    <div className="profile-container">
+                      <div className="yellow-overlay"></div>
                       <img
                         src={
                           member?.image
@@ -177,7 +177,7 @@ function Leadership({ ApiDataGetmembers }) {
                             : placeholder
                         }
                         alt={member?.name || "Placeholder"}
-                        class="profile-image"
+                        className="profile-image"
                       />
 
                       <div className=" gap-2 d-flex">

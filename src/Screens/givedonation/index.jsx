@@ -89,7 +89,7 @@ function Givedonation() {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <i className="fa fa-arrow-left" aria-hidden="true"></i>
         </span>
       </button>
     );
@@ -105,7 +105,7 @@ function Givedonation() {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          <i className="fa fa-arrow-right" aria-hidden="true"></i>
         </span>
       </button>
     );

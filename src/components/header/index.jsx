@@ -437,7 +437,7 @@ function Header() {
             {/* Navbar Toggler */}
             <button
               onClick={handleclick}
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-toggle="collapse"
               data-target="#navbarNavDropdown"
@@ -609,19 +609,19 @@ function Header() {
         </nav>
 
         {naveshow === true && (
-          <ul class="responsivenavbar-nav me-auto mb-2 mb-lg-0 d-lg-none ">
+          <ul className="responsivenavbar-nav me-auto mb-2 mb-lg-0 d-lg-none ">
             <div className="responsiveheader">
               {" "}
               <span>
                 {" "}
-                <Link class="navbar-brand techVerse_logo" to={"/"}>
+                <Link className="navbar-brand techVerse_logo" to={"/"}>
                   {/* <img src={logo} alt="" /> */}
                 </Link>
               </span>
               <span>
                 {" "}
                 <i
-                  class="fa-solid fa-times menu-icon"
+                  className="fa-solid fa-times menu-icon"
                   id="close-icon"
                   type="button "
                   onClick={handleclick}
@@ -629,55 +629,55 @@ function Header() {
               </span>
             </div>
             <div className="dropdown_menu_divider"></div>
-            <li class="main-navbar-list">
-              <Link class="new_main-navbar-list" to="/about">
+            <li className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/about">
                 About
               </Link>
             </li>{" "}
             <div className="dropdown_menu_divider"></div>
-            {/* <li class="main-navbar-list">
-              <Link class="new_main-navbar-list" to="/ourwork ">
+            {/* <li className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/ourwork ">
                 Our Work
               </Link>
             </li>{" "} */}
             <div className="dropdown_menu_divider"></div>
-            <li class="main-navbar-list">
-              <Link class="new_main-navbar-list" to="/gethelp">
+            <li className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/gethelp">
                 Get Help
               </Link>
             </li>{" "}
             <div className="dropdown_menu_divider"></div>
-            <li class="main-navbar-list">
-              <Link id="givebutter-widget" class="new_main-navbar-list" to="/givedonation">
+            <li className="main-navbar-list">
+              <Link id="givebutter-widget" className="new_main-navbar-list" to="/givedonation">
                 <givebutter-widget id="pzBZ3p"></givebutter-widget>
               </Link>
             </li>{" "}
             <div className="dropdown_menu_divider"></div>
-            <li class="main-navbar-list">
-              <Link class="new_main-navbar-list" to="/contactus">
+            <li className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/contactus">
                 Contact
               </Link>
             </li>{" "}
             <div className="dropdown_menu_divider"></div>
-            {/* <li class="main-navbar-list">
-              <Link class="new_main-navbar-list" to="/">
+            {/* <li className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/">
                 CONTACT
               </Link>
             </li>{" "} */}
             <div className="dropdown_menu_divider"></div>
-            <li class="main-navbar-list  ">
+            <li className="main-navbar-list  ">
               {logintoken && (
-                <Link onClick={handleShow} class="new_main-navbar-list">
+                <Link onClick={handleShow} className="new_main-navbar-list">
                   Become A Volunteer
                 </Link>
               )}
             </li>
             <div className="dropdown_menu_divider"></div>
-            <li class="main-navbar-list">
+            <li className="main-navbar-list">
               <Link
                 type="button"
                 // onClick={handleDropdownToggle}
-                // class="new_main-navbar-list"
+                // className="new_main-navbar-list"
 
                 className="nav-link dropdown-toggle mb-2"
                 // to="/about"

@@ -98,7 +98,7 @@ function Contactus() {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          <i className="fa fa-arrow-left" aria-hidden="true"></i>
         </span>
       </button>
     );
@@ -114,7 +114,7 @@ function Contactus() {
       >
         <span className="arrow-icon">
           {" "}
-          <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          <i className="fa fa-arrow-right" aria-hidden="true"></i>
         </span>
       </button>
     );
@@ -315,7 +315,7 @@ function Contactus() {
                       <img src={base_url_image + item?.image} className="img-fluid" alt="" />
                     </div>
                     <div className="sponsor-card-body">
-                      <div class="sponsor-card-body-top">
+                      <div className="sponsor-card-body-top">
                         <div className="sponsor-card-body-title">
                           <h3>{item?.title}</h3>
                           <button onClick={() => {
@@ -330,7 +330,7 @@ function Contactus() {
 
 
 
-                      <div class="sponsor-card-body-bottom">
+                      <div className="sponsor-card-body-bottom">
                         <div className="progress">
                           <div
                             className="progress-bar bg-theme"

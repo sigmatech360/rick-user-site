@@ -27,6 +27,7 @@ import Home from "./Screens/Home";
 
 const App = () => {
   useFirebaseMessaging();
+  
 
   return (
     <div>
