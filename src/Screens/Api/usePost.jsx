@@ -86,7 +86,8 @@ export const useGet = (url, initialData = null, idData = '') => {
         }
     };
     return { ApiData, loading, error, get, setData };
-}
+};
+
 
 
 export const useDelete = (url, initialData = null, idData = '') => {

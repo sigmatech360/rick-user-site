@@ -176,8 +176,11 @@ function Footer() {
                 </ul>
 
                 <div className="footer-donate-btns">
-                  <a href={donateform} target="_blank" className="footer-donate-btn footer-donate-btns-1">2025 990</a>
-                  <Link to="/givedonation" className="footer-donate-btn footer-donate-btns-2">Donate</Link>
+                  <div className="btn-group">
+
+                    <a href={donateform} target="_blank" className="footer-donate-btn footer-donate-btns-1">2025 990</a>
+                    <Link to="/givedonation" className="footer-donate-btn footer-donate-btns-2">Donate</Link>
+                  </div>
                 </div>
               </div>
             </div>
