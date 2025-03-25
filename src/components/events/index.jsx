@@ -120,13 +120,15 @@ Events
                 <Link
                   to={`/event/${event?.id}`}
                   onClick={() => scrollToTop(event?.id)}
-                  data-aos={event?.animation}
-                  data-aos-offset="0"
-                  data-aos-duration="1000"
-                  className="event-card text-black shadow-sm"
-                  style={{ backgroundImage: `url(${base_url_image + event.image})` }}
+                  // data-aos={event?.animation}
+                  // data-aos-offset="0"
+                  // data-aos-duration="1000"
+                  className="event-card bg-white text-black shadow-sm"
+                  style={{height:'100%', width:'100%'}}
+                  // style={{ backgroundImage: `url(${base_url_image + event.image})`,height:'300px', width:'300px' }}
                 >
-                  <h5 className="card-title">{event.title}</h5>
+                  <img src={base_url_image + event.image} style={{ width:'100%'}} alt="Event image"/>
+                  <h5 className="card-title mt-3">{event.title}</h5>
                   <p className="card-text">
                     <i className="bi bi-calendar-event"></i> {event.date}
                   </p>

@@ -44,30 +44,38 @@ import Sponsor from "../../components/sponsor";
 import Ourpodcasts from "../../components/ourpodcast";
 import Events from "../../components/events";
 import { useNavigate } from "react-router-dom";
-import Stats from "../../components/stats";
 function Home() {
   const { ApiData: ApiDataGet, loading: loadingGet, error: errorGet, get: getdata } = useGet('/announcement')
   const { ApiData: ApiDataGetprogram, loading: loadingGetprogram, error: errorGetprogram, get: getdataprogram } = useGet('/program')
   const { ApiData: ApiDataevent, loading: loadingevent, error: errorevent, get: getdataevent } = useGet('/event')
   const { ApiData: ApiDatapodcast, loading: loadingpodcast, error: errorpodcast, get: getdatapodcast } = useGet('/podcast')
-  const { ApiData: ApiDatastats, loading: loadingstats, error: errorstats, get: getdatastats } = useGet('/stats')
   const { ApiData: ApiDataotp, loading: loadingotp, error: errorotp, post: postotp } = usePost('/submit-query')
+    const { ApiData: ApiDatastats, loading: loadingstats, error: errorstats, get: getdatastats } = useGet('/stats')
   useEffect(() => {
     getdata()
     getdataprogram()
     getdataevent()
     getdatapodcast()
     getdatastats();
-    // console.log('ApiDatastats?.data',ApiDatastats?.data);
+    console.log('ApiDatastats?.data',ApiDatastats?.data);
     
-    // let filterData = ApiDatastats?.data.filter((stats)=>stats.show_in_web == 1 );
-    // setStatsData(ApiDatastats);
-    
-    // getStats();
+    let filterData = ApiDatastats?.data.filter((stats)=>stats.show_in_web == 1 );
+    setStatsData(ApiDatastats);
     
   document.title = "HOME- HIS OC ";
   }, [])
-  
+  const [statsData, setStatsData] = useState([{
+    title:'',
+    value:'',
+    help:'',
+    number: "",
+    guide: "",
+    percentage: "0",
+  }])
+  useEffect(()=>{
+    console.log('filterData',statsData);
+    
+  },[statsData])
 
 
 
@@ -248,7 +256,7 @@ function Home() {
                         data-aos-offset="0"
                         data-aos-duration="1000"
                       >
-                        Making Them Homes for Life
+                        Helping Them Home For Good
                       </h5>
                       {/* <h1 className="display-4 fw-bold mb-3">
                       We Transition People out of{" "}
@@ -260,14 +268,14 @@ function Home() {
                         data-aos-offset="0"
                         data-aos-duration="1000"
                       >
-                        From Homelessness to {" "}
+                        We Transition People out of{" "}
                         <span
                           className="highlighted-text"
                           data-aos="fade-right"
                           data-aos-offset="0"
                           data-aos-duration="1000"
                         >
-                          Home  
+                          Homelessness
                           <img
                             src={tagline}
                             alt="underline"
@@ -275,7 +283,6 @@ function Home() {
                           />
                         </span>
                       </h1>
-                      <h3>HIS-OC Restoring Hope!</h3>
 
                       <p
                         className="mb-4"
@@ -283,7 +290,8 @@ function Home() {
                         data-aos-offset="0"
                         data-aos-duration="1000"
                       >
-                        Our shelters and supportive services provide comprehensive transitional housing programs for those at risk of or experiencing homelessness in Orange County. Your support helps us provide safe housing, food, and resources to those in desperate need.
+                        Our shelters and supportive service programs assist
+                        people who are homeless or at risk of being homeless.
                       </p>
                       <div className=" ">
                         {/* <button className="btn btn-warning text-dark me-3">
@@ -410,7 +418,6 @@ function Home() {
             </SwiperSlide>
           </Swiper>
         </section>
-        
 
         <section className="homeless-intervention ">
           <div className="container-fluid">
@@ -424,11 +431,11 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    What Is {" "}
+                    How{" "}
                     <span className="highlight-text">
-                    Our  <img src={wedotagline} className="wedotagline" />{" "}
+                      We Do <img src={wedotagline} className="wedotagline" />{" "}
                     </span>
-                    Goal?
+                    It
                   </h2>
                   <p
                     className="wedopara"
@@ -436,9 +443,15 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    At HIS-OC, we believe everyone deserves a chance to rebuild their lives with dignity and stability. We are committed to providing transitional housing, emergency housing, and homeless housing programs without discrimination. Our doors are open to all, regardless of race, color, religion, gender identity, age, national origin, disability, marital status, sexual orientation, or military status.
-                  Through Orange County in-home supportive services, we ensure those we serve receive not just shelter, but the care and resources needed to regain independence. Your support helps us create an inclusive community where no one is left behind.
-
+                    Homeless Intervention Services of Orange County (HIS-OC)
+                    currently runs four programs that assist people who are
+                    homeless or at risk of being homeless. Our shelters and
+                    supportive service programs provide assistance to our
+                    community’s most vulnerable population. HIS-OC does not and
+                    shall not discriminate on the basis of race, color, religion
+                    (creed), gender, gender expression, age, national origin
+                    (ancestry), disability, marital status, sexual orientation,
+                    or military status, in any of its activities or operations.
                   </p>
                 </div>
               </div>
@@ -451,13 +464,13 @@ function Home() {
                   data-aos-offset="0"
                   data-aos-duration="1000"
                 >
-                  Be the {" "}
-                  <span className="text-warning">Change</span> That You Think the {" "}
-                  
+                  You Must Be The <br />
+                  <span className="text-warning">Change</span> You Wish To{" "}
+                  <br />
+                  See In The{" "}
                   <span className="text-success position-relative">
                     World <img className="changeworld" src={changeworld} />
-                  </span>{" "}
-                  {" "}  Deserves! 
+                  </span>
                 </h2>
               </div>
             </div>
@@ -472,9 +485,9 @@ function Home() {
               data-aos-offset="0"
               data-aos-duration="1000"
             >
-              Why Choose Us For Your {" "}
+              What Sets Us{" "}
               <span className="text-warning  position-relative">
-              Donations? <img className="apartunderline" src={apartunderline} />
+                Apart <img className="apartunderline" src={apartunderline} />
               </span>
             </h2>
             <p
@@ -483,15 +496,20 @@ function Home() {
               data-aos-offset="0"
               data-aos-duration="1000"
             >
-              Unlike emergency shelters that provide temporary relief, HIS-OC takes a structured, long-term approach to breaking the cycle of homelessness. Our transitional housing programs in Orange County offer job training, therapy, case management, and education, helping individuals achieve lasting self-sufficiency.
-              Through homeless housing programs, we equip people with the tools and support they need to build a stable future and prevent a return to homelessness. At HIS-OC, we believe stability goes beyond shelter, it’s about empowerment, growth, and a new beginning. Your support helps us continue guiding people toward permanent housing and a better life
-
+              We are different from an emergency shelter or single program
+              shelter because we provide a longer-term guided process to achieve
+              self-sufficiency. Our programs require a commitment on the part of
+              our clients and provide tools so that a return to homelessness is
+              prevented. Homeless Intervention Services of Orange County
+              integrates job training, therapy, case management, and education
+              into a continuum of care that addresses each client’s specific
+              needs.
             </p>
           </div>
         </section>
 
         <section className="help-available py-5 text-lg-start text-center">
-          {/* <div className="container text-center mb-4">
+          <div className="container text-center mb-4">
             <h2
               className="helptagline fw-bold mb-3"
               data-aos="fade-up"
@@ -528,6 +546,7 @@ function Home() {
                 <div className="stat-card   py-4 px-3 shadow-sm rounded h-100">
                   <h3 className="helped fw-bold text-primary">{statsData[0]?.value}</h3>
                   <p className="mb-0">{statsData[0]?.title}</p>
+                  {/* <p className="mb-0">Individuals Helped Last Year</p> */}
                 </div>
               </div>
               <div className="heplcard col-md-4">
@@ -537,8 +556,7 @@ function Home() {
                 </div>
               </div>
             </div>
-          </div> */}
-          <Stats ApiDatastats={ApiDatastats}/>
+          </div>
 
           <div className="  mt-5">
             <div className="row gap-5">
@@ -614,8 +632,6 @@ function Home() {
                         dangerouslySetInnerHTML={{ __html: items?.title }}
 
                       />
-                      {/* <span className="youthshelter">{items?.title}</span> */}
-                      {/* </h5> */}
                       <p
                         className="small mb-2"
                         dangerouslySetInnerHTML={{ __html: items?.short_description }}
@@ -627,13 +643,11 @@ function Home() {
                   ))}
 
 
-                  {/* Add more cards as needed */}
                 </div>
               </div>
             </div>
           </div>
         </section>
-        
 
         <Events ApiDataevent={ApiDataevent} />
 
@@ -653,7 +667,7 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    News, {" "}
+                    News &{" "}
                     <span className="text-warning position-relative">
                       Announcements
                       <img
@@ -662,7 +676,6 @@ function Home() {
                         alt="Underline"
                       />
                     </span>
-                    {" "} and Achievements 
                   </h3>
                   <p
                     className="para "
@@ -670,7 +683,10 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    Last year, we provided homeless housing programs to over 1,000 individuals, guiding 85% of them to permanent housing. Through Orange County in-home supportive services, we offer essential resources to help individuals reintegrate into society. Your donations make these life-changing outcomes possible. Help us continue our mission today either by donating or with your volunteering passion. 
+                    Last year we helped over 1000 people with our programs and
+                    guided 85% of those in our resident programs to permanent
+                    housing. Since 1989, we have guided over 5000 people out of
+                    homelessness and back into productive and fulfilling lives.
                   </p>
                   <button
                     onClick={handleannouncement}
@@ -712,7 +728,6 @@ function Home() {
                       className=" small mb-3"
                       dangerouslySetInnerHTML={{ __html: news.short_description || "No description available" }}
                     ></p>
-                            {/* <p className="small mb-3">{news.short_description}</p> */}
                             <button onClick={() => handlerouteannouncementdetail(news?.id)} className="btn btn-outline-primary btn-sm">
                               Learn More
                             </button>

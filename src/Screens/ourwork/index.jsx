@@ -231,7 +231,7 @@ function OurWork() {
           programprojectsubttle="givedonationsubtitle"
         />
 
-        <section className="info-section d-flex justify-content-center align-items-center py-5">
+        <section className="info-section d-flex  justify-content-center align-items-center py-5">
           <div className="container ourprogramgradbg">
             <p
               className="info-text text-start"
@@ -247,6 +247,19 @@ function OurWork() {
               age, national origin (ancestry), disability, marital status,
               sexual orientation, or military status, in any of its activities
               or operations.
+            </p>
+          </div>
+          <div>
+            <p>
+              At HIS-OC, we go beyond shelter, we provide hope, stability, and lasting change. Through a
+              range of programs, we help individuals and families experiencing or at risk of homelessness
+              rebuild their lives. From safe housing and career development to mental health support
+              and financial literacy, we offer the tools needed for long-term independence.
+            </p>
+            <p>
+                We are committed to inclusivity. HIS-OC welcomes all individuals, regardless of race, color,
+                gender, age, disability, marital status, sexual orientation, military status, or background.
+                Everyone deserves a path to a brighter future.
             </p>
           </div>
         </section>

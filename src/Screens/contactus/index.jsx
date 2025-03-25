@@ -12,7 +12,7 @@ import drivingchangecard2 from "../../Assets/images/drivingchangecard2.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { usePost } from "../Api/usePost";
-import mapimg from "../../Assets/images/mapimg.png";
+import mapimg from "../../Assets/images/mapimg.jpg";
 import donateunderline from "../../Assets/images/donateunderline.svg";
 import programlegacy from "../../Assets/images/programlegacy.png";
 import applyemployeebg from "../../Assets/images/applyemployeebg.png";

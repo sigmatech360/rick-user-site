@@ -244,7 +244,7 @@ function ProgramsProjects() {
           programpojectaboutherounderline="programpojectaboutherounderline"
         />
 
-        <section className="info-section d-flex justify-content-center align-items-center py-5">
+        <section className="info-section d-flex flex-column justify-content-center align-items-center py-5">
           <div className="container ourprogramgradbg">
             <p
               className="info-text text-start"
@@ -261,6 +261,21 @@ function ProgramsProjects() {
               sexual orientation, or military status, in any of its activities
               or operations.
             </p>
+            <hr />
+          <div className="mt-3">
+            <p className="fs-2">Our Work</p>
+            <p>
+              At <span className="fw-bolder">HIS-OC</span>, we go beyond shelter, we provide hope, stability, and lasting change. Through a
+              range of programs, we help individuals and families experiencing or at risk of homelessness
+              rebuild their lives. From safe housing and career development to mental health support
+              and financial literacy, we offer the tools needed for long-term independence.
+            </p>
+            <p>
+                We are committed to inclusivity. HIS-OC welcomes all individuals, regardless of race, color,
+                gender, age, disability, marital status, sexual orientation, military status, or background.
+                Everyone deserves a path to a brighter future.
+            </p>
+          </div>
           </div>
         </section>
 

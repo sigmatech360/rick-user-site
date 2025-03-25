@@ -63,9 +63,7 @@ function Contact({
             data-aos-offset="0"
             data-aos-duration="1000"
           >
-            If you would like to contact HISOC, please fill out the contact form
-            below and one of our team members will be sure to follow up with
-            you.
+            If you have questions or need assistance, fill out the contact form below. Our team is ready to help. Let’s work together to restore hope and create lasting change.
           </p>
           <div className="row gx-0 d-flex align-items-stretch justify-content-center">
             {/* <!-- Left Contact Information Panel with Grid Layout --> */}

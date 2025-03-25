@@ -1,5 +1,5 @@
 // src/hooks/usePost.js
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { base_url } from './base_url';
 
 
@@ -51,7 +51,7 @@ export const usePost = (url, initialData = null) => {
 
 
 
-export const useGet = (url, initialData = null, idData = '') => {
+export const useGet = (url, initialData = '', idData = '') => {
   
 
     const [ApiData, setData] = useState(initialData);

@@ -71,7 +71,7 @@ const useFirebaseMessaging = () => {
         }
 
         const data = await response.json();
-        console.log("Server response:", data); // Handle the response data
+        // console.log("Server response:", data); // Handle the response data
       } catch (err) {
         setError(err.message); // Set error if the fetch fails
         console.error('Fetch error:', err);

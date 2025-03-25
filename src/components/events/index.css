@@ -8,16 +8,8 @@
   background-position: center;
 }
 
-.event-card {
-  border-radius: 10px;
-  /* transition: transform 0.2s; */
-}
 
-.event-card:hover {
-  transform: translateY(-15px) !important; /* Slight lift on hover */
 
-  transition: transform 0.2s ease !important;
-}
 
 .event-card img {
   max-height: 200px; /* Ensure images are uniform */
@@ -64,6 +56,8 @@
   padding: 15px;
   color: white;
   overflow: hidden;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out !important;
 }
 
 .event-card .card-title {
@@ -78,11 +72,11 @@
 }
 
 .event-card:hover {
-  transform: scale(1.02); /* Slight zoom-in on hover */
-  transition: transform 0.3s ease; /* Smooth hover effect */
+  transform: scale(1.02) translateY(-15px); /* Slight zoom-in on hover */
+  /* transition: transform 0.3s ease; Smooth hover effect */
 
   box-shadow: 4px 12px 8px rgba(0, 0, 0, 0.2) !important;
-    transition: box-shadow 0.3s cubic-bezier(0.65, -0.33, 0.26, 1.05) !important;
+    
 
   
 }
