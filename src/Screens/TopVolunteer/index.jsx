@@ -114,8 +114,9 @@ function TopVolunteer() {
                   data-aos-offset="0"
                   data-aos-duration="1000"
                 >
+                  {/* <h3 className="text-dark">Be a Volunteer - Join Us in Restoring Hope. </h3> */}
                   <h2 className="title">
-                    Thrift  Shop {" "}
+                  Be the Top  {" "}
                     <span className="position-relative">
                       {" "}
                       Volunteer{" "}
@@ -134,7 +135,7 @@ function TopVolunteer() {
                   data-aos-duration="1000"
                 >
                   <p className="info-text text-start">
-                    Volunteering with HIS-OC helps all the people we serve and our community. Our opportunities vary throughout the year but are regularly updated on this page, so please check back often for active volunteer opportunities. No matter what your skills, we can find a way for you to help us help them.
+                  Volunteering with HIS-OC transforms lives. Your time helps provide transitional housing, emergency support, and essential services to those in need. Opportunities vary year-round, so check back for updates. No matter your skills, there's a way to make a difference.
  
                
 

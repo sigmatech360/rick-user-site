@@ -608,13 +608,13 @@ function About() {
                       <i className="bi bi-telephone-fill me-2"></i>
                       (714) 993-5774
                     </Link> */}
-                    <Link
-                      to={"mailto:info@his-oc.org"}
+                    <span
+                      // to={"mailto:info@his-oc.org"}
                       className=" mailinternsip   "
                     >
                       <FaMapMarkerAlt />
                       PO Box 1293, Placentia, CA 92871
-                    </Link>
+                    </span>
                   </span>
                 </div>
               </div>

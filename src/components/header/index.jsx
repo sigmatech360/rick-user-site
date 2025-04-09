@@ -26,6 +26,7 @@ import {
   VolunteerModallogin,
   VolunteerModalforget2,
 } from "../modal";
+import GiveButterStyler from "../GiveButter/GiveButterStyler";
 
 function Header() {
   const [userData, setUserData] = useState({
@@ -336,11 +337,30 @@ function Header() {
 
   const location = useLocation();
   // const logintken = localStorage.getItem("login")
-
+  const [scriptLoaded, setScriptLoaded] = useState(false);
+  
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://widgets.givebutter.com/latest.umd.cjs?acct=EEzrwTqr8xPNFSdt&p=other";
+    script.src = "https://widgets.givebutter.com/latest.umd.cjs?acct=EEzrwTqr8xPNFSdt";
+    // script.src = "https://cdn.givebutter.com/widget.v2.js";
+    script.id = "givebutter-script";
     script.async = true;
+    // document.body.appendChild(script);
+    script.onload = () => {
+      // Optional: Set state or perform an action after the script loads
+      setScriptLoaded(true);
+      console.log("Script loaded successfully");
+      if (window.GivebutterWidget) {
+        window.GivebutterWidget.init();
+        console.log("🎉 GivebutterWidget initialized");
+      } else {
+        console.warn("⚠️ GivebutterWidget not found after load");
+      }
+    };
+
+    script.onerror = () => {
+            console.error("❌ Givebutter script failed to load");
+          };
     document.body.appendChild(script);
 
     return () => {
@@ -348,52 +368,40 @@ function Header() {
     };
   }, []);
 
-  // const handleDonateClick = () => {
-  //   window.location.href = "https://widgets.givebutter.com/latest.umd.cjs?acct=EEzrwTqr8xPNFSdt&p=other";
-  // };
+  // useEffect(() => {
+  //   const existingScript = document.getElementById("givebutter-script");
+
+  //   if (!existingScript) {
+  //     const script = document.createElement("script");
+  //     script.src =
+  //       "https://widgets.givebutter.com/latest.umd.min.js?acct=EEzrwTqr8xPNFSdt&embed=modal";
+  //     script.id = "givebutter-script";
+  //     script.async = true;
+
+  //     // console.log('script', script);
+      
+
+  //     script.onload = () => {
+  //       console.log("✅ Givebutter loaded");
+  //     };
+
+  //     script.onerror = () => {
+  //       console.error("❌ Givebutter script failed to load");
+  //     };
+
+  //     document.body.appendChild(script);
+  //   }
+  // }, []);
 
 
-  const handleRedirect = () => {
-    // Redirect to your Givebutter campaign page
-    window.location.href = 'https://givebutter.com/your-campaign-name';
-  };
 
-  const [scriptLoaded, setScriptLoaded] = useState(false);
 
-  const handleClicked = () => {
-    // Triggering the alert message
-    // alert("sa");
 
-    // Create and append the script dynamically
-    const script = document.createElement('script');
-    script.src = "https://widgets.givebutter.com/latest.umd.cjs?acct=19043685971&p=other";
-    script.async = true;
 
-    script.onload = () => {
-      // Optional: Set state or perform an action after the script loads
-      setScriptLoaded(true);
-    };
-
-    document.body.appendChild(script);
-  };
 
 
 
   // const [scriptLoaded, setScriptLoaded] = useState(false);
-
-  const handleClick = () => {
-    // Create and append the script dynamically when the link is clicked
-    const script = document.createElement('script');
-    script.src = "https://widgets.givebutter.com/latest.umd.cjs?acct=EEzrwTqr8xPNFSdt&p=other";
-    script.async = true;
-
-    script.onload = () => {
-      // Set state to true once the script has loaded
-      setScriptLoaded(true);
-    };
-
-    document.body.appendChild(script);
-  };
 
   return (
     <>
@@ -509,7 +517,7 @@ function Header() {
                   </li>
 
                   <li className="nav-item dropdown">
-                    <Link onClick={handleClick} className={`nav-link ${location.pathname.includes('/givedonation') ? 'active' : ''}`} to="/givedonation">
+                    <Link className={`nav-link ${location.pathname.includes('/givedonation') ? 'active' : ''}`} to="/givedonation">
                       Donate
                     </Link>
                   </li>
@@ -594,13 +602,14 @@ function Header() {
 
 
 
-                <Link handleClick={handleClicked}
+                {/* <Link
 
                   id=" " className="    text-dark" to="#">
-                  {/* <givebutter-widget id="pzBZ3p">     <img src={donateicon} alt="Donate" />  </givebutter-widget> */}
-                  <givebutter-widget id="pzBZ3p"></givebutter-widget>
+                  
+                  Donate Now
 
-                </Link>
+                </Link> */}
+                 {scriptLoaded &&  <givebutter-widget class='giveButterBtn'  id="pzBZ3p">Give Donation</givebutter-widget> }
                 {/* {scriptLoaded && <div className="gKNaKL" />} */}
 
               </div>
@@ -647,11 +656,8 @@ function Header() {
               </Link>
             </li>{" "}
             <div className="dropdown_menu_divider"></div>
-            <li className="main-navbar-list">
-              <Link id="givebutter-widget" className="new_main-navbar-list" to="/givedonation">
-                <givebutter-widget id="pzBZ3p"></givebutter-widget>
-              </Link>
-            </li>{" "}
+            
+            {" "}
             <div className="dropdown_menu_divider"></div>
             <li className="main-navbar-list">
               <Link className="new_main-navbar-list" to="/contactus">
@@ -688,31 +694,7 @@ function Header() {
                 Our Initiatives
               </Link>
 
-              {/* <ul className="dropdown-menu">
-                      <li>
-                        <Link to="/sponsorship" className="dropdown-item">
-                          Sponsorship
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="/our-programs">
-                          Programs projects
-                        </Link>
-                      </li>
-                      <li>
-                        <hr className="dropdown-divider" />
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="/topvolunteer">
-                          Top Volunteer
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" to="/ourpodcastlist">
-                          Our Podcast
-                        </Link>
-                      </li>
-                    </ul> */}
+              
 
               {/* Dropdown Menu */}
               {/* {showDropdown && ( */}
@@ -745,10 +727,8 @@ function Header() {
             </li>
             <div className="dropdown_menu_divider"></div>
             <li>
-              <Link className="nav-donate btn btn-warning text-dark">
-                {" "}
-                <givebutter-widget id="pzBZ3p"></givebutter-widget>
-              </Link>
+              
+            {scriptLoaded &&  <givebutter-widget id="pzBZ3p"></givebutter-widget> }
             </li>
             <div className="dropdown_menu_divider"></div>
           </ul>
@@ -810,6 +790,7 @@ function Header() {
         handleClose={handleCloseforget2}
       />
       <ToastContainer />
+      <GiveButterStyler />
     </>
   );
 }

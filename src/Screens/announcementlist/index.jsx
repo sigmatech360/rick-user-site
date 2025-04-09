@@ -84,8 +84,7 @@ function AnnouncementList() {
 
                   </p>
 
-                  <p>It was the best of times, it was the worst of times. This last year has been one of the most
-                    difficult ones for many of us but especially for the poor and housing insecure.</p>
+                  <p>We have been living a comfortable life all year long. However, that is not the case for the poor and the needy. They need our support and last year we have made it happen, for this year to be a success, your time or donations will be appreciated the most.</p>
                 </div>
 
               </div>

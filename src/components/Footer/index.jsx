@@ -1,5 +1,5 @@
 import "./index.css";
-import { Link } from "react-router-dom";
+import { Link, Links } from "react-router-dom";
 import bottomfooterlogo3 from "../../Assets/images/bottomfooterlogo3.png";
 import bottomfooterlogo1 from "../../Assets/images/bottomlogo1.png";
 import bottomfooterlogo2 from "../../Assets/images/bottomfooterlogo2.png";
@@ -69,17 +69,18 @@ function Footer() {
             <div className="row">
               <div className="col-lg-4 mb-3 mb-lg-0 text-lg-start text-center">
                 <img src={footerlogo} className="footerlogo  mb-2  " />
-                <p className="title fw-bold mb-2">
+                {/* <p className="title fw-bold mb-2">
                   Building A Future Without{" "}
                   <span className="text-primary">Homelessness.</span>
-                </p>
+                </p> */}
+                <p>Be the Helping Hand! </p>
+                <p className="fs-5">From Homelessness to <span className="text-primary">Hope</span>.</p>
                 <p>
+                  At{" "}
                   <Link to="/" className="hiscolint  text-primary">
-                    HISOC
+                    HISOC,
                   </Link>{" "}
-                  helps people experiencing or at risk of homelessness build new
-                  lives through construction, community engagement, and
-                  education.
+                  we provide transitional housing, essential support, and community driven solutions to help individuals move from homelessness to stability. Through services like Housing Transition Navigation, Housing Deposits, and Housing Tenancy and Sustaining, we create lasting pathways to permanent housing. Your support makes this possible because everyone deserves a place to call home.
                 </p>
               </div>
               <div className="col-lg-2 col-md-3 text-lg-start text-center">
@@ -149,7 +150,7 @@ function Footer() {
                     </Link>
                   </li> */}
                   <li>
-                    <Link onClick={scrollToTop} to={"/ourpodcast"} className="">
+                    <Link onClick={scrollToTop} to={"/ourpodcastlist"} className="">
                       Our Podcast
                     </Link>
                   </li>
@@ -262,13 +263,7 @@ function Footer() {
               <p className="mb-0 text-xl-end text-center">
                 All gifts to our organization are tax-deductible as allowed by
                 law. 501(c)(3) ID# 84-2790299
-                <Link to={"/"} className="text-white">
-                  Legal
-                </Link>{" "}
-                |{" "}
-                <Link to={"/Privacy-policy"} className="text-white">
-                  Privacy
-                </Link>
+                
               </p>
             </div>
           </div>
@@ -276,9 +271,9 @@ function Footer() {
             <div className="row">
               <div className="col-md-12">
                 <div className="footer-bottom-links">
-                  <a href="javascript:;" target="_blank">
+                  <Link to={"/privacy-notice"}>
                     Privacy Notice
-                  </a>{" "}
+                  </Link>{" "}
                   |{" "}
                   <a href={GrievanceEnglish} target="_blank">
                     HMIS Grievance Form (English)

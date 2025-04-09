@@ -19,7 +19,9 @@ import Announcementdetail from "../Screens/announcementdetail";
 import EventDetail from "../Screens/eventdetail";
 import Podcastdetail from "../Screens/ourpodcast/podcastdetail";
 import AnnouncementList from "../Screens/announcementlist";
+import PrivacyNotice from "../Screens/PrivacyNotice";
 export default function UserRouter() {
+  
   return (
     <BrowserRouter basename="/His-oc">
       <Routes>
@@ -28,6 +30,7 @@ export default function UserRouter() {
         <Route path="/about" element={<About />} />
         {/* <Route path="/ourwork" element={<OurWork />} /> */}
         <Route path="/gethelp" element={<GetHelp />} />
+        <Route path="/privacy-notice" element={<PrivacyNotice />} />
         <Route path="/givedonation" element={<Givedonation />} />
         <Route path="/contactus" element={<Contactus />} />
         <Route path="/sponsorship" element={<Sponsorship />} />
@@ -42,9 +45,11 @@ export default function UserRouter() {
         <Route path="/news-announcements" element={<AnnouncementList />} />
          
         <Route path="/ourpodcastlist/podcast-detail/:id" element={<Podcastdetail />} />
+
          
 
       </Routes>
+        
     </BrowserRouter>
   );
 }

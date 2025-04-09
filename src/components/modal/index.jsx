@@ -3,6 +3,8 @@ import { Modal, Button, Form } from "react-bootstrap";
 import { FaUser, FaEnvelope, FaPhoneAlt, FaLock } from "react-icons/fa";
 import "./index.css";
 
+import TermsAndCondition  from "../../Assets/pdf/Terms-and-Conditions.pdf";
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEyeSlash, faEye } from '@fortawesome/free-solid-svg-icons'
@@ -259,16 +261,17 @@ export function VolunteerModalsignup({ errorslots, errordays, setSelectedItemssl
             </Form.Group>
 
             {/* Terms and Conditions */}
-            {/* <Form.Group className="mt-3 d-flex align-items-center">
+            <Form.Group className="mt-3 d-flex align-items-center">
               <Form.Check
                 type="checkbox"
                 checked={isAccepted}
                 onChange={handleCheckboxChange}
+                required
               />
               <Form.Label className="ms-2 mb-0">
-                I accept the terms and conditions
+                I accept the <a href={TermsAndCondition} target="_blank">Terms and Conditions</a>
               </Form.Label>
-            </Form.Group> */}
+            </Form.Group>
 
             {/* Submit Button */}
             <Button

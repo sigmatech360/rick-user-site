@@ -27,6 +27,7 @@ import dedleadimg2 from "../../Assets/images/dedleadimg2.png";
 import dedleadimg3 from "../../Assets/images/dedleadimg3.png";
 import dedleadimg4 from "../../Assets/images/dedleadimg4.png";
 import { toast } from "react-toastify";
+import GiveButterStyler from "../../components/GiveButter/GiveButterStyler";
 function Givedonation() {
 
   const { ApiData: ApiDataGetmembers, loading: loadingGet, error: errorGet, get: getdatamembers } = useGet('/member')
@@ -78,6 +79,8 @@ function Givedonation() {
   }, [])
   useEffect(() => {
     AOS.init();
+    console.log('give butter', window);
+    
   }, []);
   const PrevArrow = (props) => {
     const { onClick } = props;
@@ -199,6 +202,7 @@ function Givedonation() {
   return (
     <>
       <Layout>
+        
         <HeroSection
           heroimg={donatebg}
           pagetitle="Give  "
@@ -216,9 +220,9 @@ function Givedonation() {
               data-aos-offset="0"
               data-aos-duration="1000"
             >
-              Ways To{" "}
+              Your Donation Can{" "}
               <span className="text-success position-relative">
-                Donate{" "}
+              Save Lives{" "}
                 <img className="availabletagline" src={donateunderline} />
               </span>
             </h2>
@@ -229,7 +233,7 @@ function Givedonation() {
               data-aos-duration="1000"
             >
               {" "}
-              Your generous gift will help provide hope and a place to call home for homeless individuals and families.
+              Your generous gift brings hope and a home to individuals and families experiencing homelessness
 
 
             </p>
@@ -269,7 +273,25 @@ function Givedonation() {
                     generously and support our goal of helping find homes for
                     people in need.
                   </p>
-                  <button className="btn donate-button">DONATE NOW</button>
+                  {/* <button className="btn donate-button">
+                    
+                  </button> */}
+                  <GiveButterStyler />
+                  <givebutter-widget class='giveButterBtn donate' id="pzBZ3p">Donate Now</givebutter-widget>
+                  {/* <button
+                      className="btn donate-button"
+                      onClick={() => {
+                        console.log('Donate btn clicked',window.gbWidgets?.open);
+                        
+                        // if (window.gbWidgets?.open) {
+                        //   window.gbWidgets.open({ id: "pzBZ3p" });
+                        // } else {
+                        //   console.warn("⏳ Widget not ready yet.");
+                        // }
+                      }}
+                    >
+                      Give Help
+                    </button> */}
                 </div>
               </div>
 
@@ -329,7 +351,7 @@ function Givedonation() {
                     #giftsforall #hisoc #unhoused #underprivileged
                     #trasitionalagedyouth.
                   </p>
-                  <button className="btn donate-button">DONATE NOW</button>
+                  <a href="https://a.co/9AuHRkm?fbclid=IwAR0o8R9XPqYGDQCimrfPtPmCI2Ck38WEOcTbYZx5Tj245JTe6nbUer92emA" target="_blank" className="btn donate-button">Add Wishlist</a>
                 </div>
               </div>
             </div>
@@ -372,10 +394,7 @@ function Givedonation() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    Many employers will match a charitable donation to a
-                    non-profit organization, which can double, even triple the
-                    value of your donation. Ask your employer about its matching
-                    grant program.
+                    Many employers match charitable donations to nonprofit organizations, potentially doubling or even tripling your impact. Check with your employer to see if they offer a matching grant program.
                   </p>
                 </div>
               </div>
@@ -415,14 +434,7 @@ function Givedonation() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    Making a commitment to HIS-OC through your will or other
-                    estate planning vehicle is an effective way to ensure that
-                    critical services are provided to low-income families and
-                    seniors for generations to come. A Planned Gift allows you
-                    to manage your assets during your lifetime, while taking
-                    comfort in the knowledge that you have made a commitment to
-                    help disadvantaged children, families and seniors into the
-                    future.
+                    Including HIS-OC in your will or estate plan is a powerful way to support low-income families and seniors for generations. A Planned Gift lets you manage your assets while ensuring that disadvantaged children, families, and seniors receive vital assistance in the future.
                   </p>
                 </div>
               </div>
@@ -443,6 +455,7 @@ function Givedonation() {
           ApiDataGetmembers={ApiDataGetmembers}
         />
         <Sponsor />
+        
       </Layout>
     </>
   );

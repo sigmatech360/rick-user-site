@@ -391,10 +391,19 @@
   justify-content: start;
 }
 
-.donatecard :hover {
+ .service-card:hover , .service-card .donate-button:hover {
   box-shadow: 4px 12px 8px rgba(0, 0, 0, 0.2) !important;
   transition: box-shadow 0.3s cubic-bezier(0.65, -0.33, 0.26, 1.05) !important;
 }
+.service-card .donate-button:hover{
+  color: #fff !important;
+}
+
+.giveButterBtn button[aria-label="Donate"]{
+  background-color: green !important;
+}
+
+
 
 /* Container for the service card */
 /* .service-card-wrapper {

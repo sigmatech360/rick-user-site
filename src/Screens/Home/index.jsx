@@ -100,6 +100,13 @@ function Home() {
   };
   useEffect(() => {
     AOS.init();
+    console.log("Givebutter widget initialized",window );
+    // if (window.gbWidgets.aid) {
+    //   // window.gbWidgets.init(); // In case of React Router SPA behavior
+    //   console.log("Givebutter widget initialized");
+      
+    // }
+
   }, []);
 
   const PrevArrow = (props) => {
@@ -285,28 +292,42 @@ function Home() {
                       >
                         Our shelters and supportive services provide comprehensive transitional housing programs for those at risk of or experiencing homelessness in Orange County. Your support helps us provide safe housing, food, and resources to those in desperate need.
                       </p>
-                      <div className=" ">
+                      <div className="d-flex align-items-center gap-2 ">
                         {/* <button className="btn btn-warning text-dark me-3">
                         Give Help
                       </button> */}
-                        <button
-                          className="nav-donate btn   text-dark"
+                        {/* <button
+                          className="nav-donate btn btn-warning   text-dark"
                           data-aos="fade-up"
                           data-aos-offset="0"
                           data-aos-duration="1000"
-                        >
+                          onClick={() => {
+        if (window.gbWidgets) {
+          window.gbWidgets.open({ id: "pzBZ3p" });
+        }
+      }}
+                        > Give Help Btn
                           {" "}
-                          <givebutter-widget id="pzBZ3p"></givebutter-widget>
+                        </button> */}
+                          <givebutter-widget class="giveButterBtn" id="pzBZ3p">Give Help Widget</givebutter-widget>
+                          <button 
+                          className="nav-donate btn btn-outline-light"
+                          data-aos="fade-up"
+                          data-aos-offset="0"
+                          data-aos-duration="1000"
+                          onClick={handleclick}
+                          >
+                          Get Help
                         </button>
-                        <button
-                          className="gethelp btn btn-outline-light me-3 "
+                        {/* <button
+                          className="gethelp btn btn-outline-light  "
                           data-aos="fade-up"
                           data-aos-offset="0"
                           data-aos-duration="1000"
                           onClick={handleclick}
                         >
-                          Get Help
-                        </button>
+                          Get Help 
+                        </button> */}
                       </div>
                     </div>
                   </div>
@@ -345,11 +366,18 @@ function Home() {
                         Our shelters and supportive service programs assist
                         people who are homeless or at risk of being homeless.
                       </p>
-                      <div className="d-flex">
-                        <button className="btn btn-warning text-dark me-3">
+                      <div className="d-flex gap-2">
+                        {/* <button className="nav-donate btn btn-warning text-dark me-3">
                           Give Help
-                        </button>
-                        <button className="btn btn-outline-light">
+                        </button> */}
+                        <givebutter-widget class="giveButterBtn" id="pzBZ3p">Give Help Widget</givebutter-widget>
+                        <button 
+                        className="nav-donate btn btn-outline-light"
+                        data-aos="fade-up"
+                          data-aos-offset="0"
+                          data-aos-duration="1000"
+                          onClick={handleclick}
+                        >
                           Get Help
                         </button>
                       </div>
@@ -391,15 +419,16 @@ function Home() {
                         people who are homeless or at risk of being homeless.
                       </p>
                       <div
-                        className="d-flex"
+                        className="d-flex gap-2"
                         data-aos="fade-right"
                         data-aos-offset="0"
                         data-aos-duration="1000"
                       >
-                        <button className="btn btn-warning text-dark me-3">
+                        {/* <button className="nav-donate btn btn-warning text-dark me-3">
                           Give Help
-                        </button>
-                        <button className="btn btn-outline-light">
+                        </button> */}
+                        <givebutter-widget class="giveButterBtn" id="pzBZ3p">Give Help Widget</givebutter-widget>
+                        <button className="nav-donate btn btn-outline-light">
                           Get Help
                         </button>
                       </div>

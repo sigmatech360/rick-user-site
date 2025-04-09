@@ -23,7 +23,6 @@ function Contact({
   }, []);
   const [donatenotify, setDonatenotiy] = useState(false);
 
-  console.log("donatenotify", donatenotify);
   const handleClose = (event) => {
     event.preventDefault();
     setDonatenotiy(false);

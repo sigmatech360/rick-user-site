@@ -137,6 +137,10 @@
   z-index: 1;
 }
 
+.slick-slider .slick-slide{
+  width: 324px !important;
+}
+
 
 
 

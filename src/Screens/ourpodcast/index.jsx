@@ -17,6 +17,7 @@ import ourpodcastbg from "../../Assets/images/ourpodcastbg.png";
 import Ourpodcasts from "../../components/ourpodcast";
 
 import { useGet, usePost } from '../Api/usePost'
+import { Link } from "react-router-dom";
 function Ourpodcast() {
 
 
@@ -81,14 +82,16 @@ function Ourpodcast() {
                     impact of our community partnerships.
                   </p>
 
-                  <button
-                    className="volunteerbtn"
+                  <Link
+                  to='https://www.youtube.com/@his-oc'
+                  target="_blank"
+                    className="volunteerbtn d-inline-block"
                     data-aos="fade-up"
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
                     Tune In Now!
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
