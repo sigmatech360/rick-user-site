@@ -188,8 +188,8 @@
 
 .Volunteerinfo .dividervol {
   border-bottom: 1px solid #fdd22e;
-  margin-top: 8px;
-  max-width: 30%;
+  /* margin-top: 8px; */
+  width: 80%;
 }
 
 @media (max-width: 768px) {

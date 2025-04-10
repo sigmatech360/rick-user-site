@@ -68,7 +68,9 @@ function Footer() {
           <div className="container">
             <div className="row">
               <div className="col-lg-4 mb-3 mb-lg-0 text-lg-start text-center">
-                <img src={footerlogo} className="footerlogo  mb-2  " />
+                <Link to={'/'}>
+                  <img src={footerlogo} className="footerlogo  mb-2  " />
+                </Link>
                 {/* <p className="title fw-bold mb-2">
                   Building A Future Without{" "}
                   <span className="text-primary">Homelessness.</span>

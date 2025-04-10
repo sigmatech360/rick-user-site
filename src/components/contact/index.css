@@ -185,7 +185,7 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  filter: opacity(0.5) !important;
+  /* filter: opacity(0.5) !important; */
 }
 
 /* Form Controls */
@@ -197,23 +197,17 @@
 }
 
 .contact-us-section .send-message {
-  border: 1px solid #57a472;
+  border: 1px solid #348f99;
   border-radius: 26px;
-  color: #333;
+  color: #348f99;
   padding: 0.75rem 1.5rem;
   font-weight: 600;
   transition: background-color 0.3s;
 }
 
 .contact-us-section .send-message:hover {
-  border: 1px solid #57a472;
   color: white !important;
-  background-color: #57a472 !important;
-  border-radius: 26px;
-  color: #333;
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
-  transition: background-color 0.3s;
+  background-color: #348f99 !important;
 }
 
 @media (max-width: 991px) {

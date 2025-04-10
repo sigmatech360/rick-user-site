@@ -152,7 +152,7 @@ function TopVolunteer() {
               <div className="row">
                 {ApiDataGet?.data?.map((volunteer, index) => (
                   <div
-                    className="col-lg-4 col-md-12   mb-4  "
+                    className="col-lg-2 col-md-4 col-12   mb-4  "
                     key={index}
                     data-aos={volunteer?.animation}
                     data-aos-offset="0"
@@ -162,15 +162,15 @@ function TopVolunteer() {
                       className={`card top-volunteer-card card-${index % 2 === 0 ? "blue" : "purple"
                         }`}
                     >
-                      <div className="row">
-                        <div className="col-3">
+                      <div className="d-flex flex-column align-items-center justify-content-center gap-3">
+                        <div >
                           <img
                             src={base_url_image + volunteer?.image}
                             className="card-img img-fluid"
                             alt={volunteer?.name}
                           />
                         </div>
-                        <div className="col-9">
+                        <div >
                           <div className="card-body">
                             <h5 className="card-title">{volunteer?.name}</h5>
                             <div className="dividervol"></div>
