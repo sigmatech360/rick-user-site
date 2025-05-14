@@ -25,6 +25,13 @@ code {
   animation: s2 1s infinite linear;
 }
 
+body .uwy.userway_p1 .userway_buttons_wrapper{
+  top: auto !important;
+  right: auto;
+  bottom: 20px !important;
+  left: calc(100vw - 32px) !important;
+}
+
 @keyframes s2 {
   to {
     transform: rotate(1turn)

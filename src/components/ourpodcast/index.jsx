@@ -63,6 +63,7 @@ const Ourpodcasts = ({ ApiDatapodcast, ApiDatapodcastlist, view }) => {
                       className="img-fluid card-img-top"
                       alt="Podcast Thumbnail"
                       controls
+                      
                     />
                   ) : (
                     <img
