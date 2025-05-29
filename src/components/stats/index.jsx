@@ -8,13 +8,10 @@ const Stats = ({ApiDatastats}) => {
     useEffect(() => {
         if (ApiDatastats?.data) {
             const filteredData = ApiDatastats.data.filter((stats) => stats.show_in_web == 1);
-            console.log('Filtered stats:', filteredData);
     
             if (filteredData.length > 0) {
                 setStatsData(filteredData[0]); // Update your state with filtered data
             }
-        } else {
-            console.log('ApiDatastats is not yet available or data is empty');
         }
     }, [ApiDatastats]);
     

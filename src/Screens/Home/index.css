@@ -24,7 +24,8 @@
     background-size: contain;
     text-align: center;
   }
-  .homeless-intervention .left-section h2{
+
+  .homeless-intervention .left-section h2 {
     text-align: center;
   }
 }
@@ -32,6 +33,13 @@
 .gethelp {
   border-radius: 26px;
   margin-left: 6px;
+}
+
+.event-brite-alert {
+  position: absolute;
+  top: 120px;
+  right: 75px;
+  z-index: 100;
 }
 
 .highlighted-text {

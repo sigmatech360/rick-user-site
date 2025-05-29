@@ -32,7 +32,6 @@ function Header() {
   const [userData, setUserData] = useState({
   });
 
-  console.log("userData", userData)
   const [errordays, setErrordays] = useState(true);
   const [errorslots, setErrorslots] = useState(true);
 
@@ -248,7 +247,6 @@ function Header() {
   }, [ApiData]);
 
 
-  console.log("ApiDatalogin" , ApiDatalogin)
 
 
   useEffect(() => {
@@ -307,7 +305,6 @@ function Header() {
   const [showModalreset, setShowModalreset] = useState(false);
 
 
-  console.log("showModalforget2", showModalforget2)
   const handleShowforget2 = () => {
     setShowModalforget(false);
     setShowModalforget2(true);
