@@ -346,7 +346,7 @@ function ProgramsProjects() {
                   data-aos-duration="1000"
                 >
                   <h5 className="title font-bold">
-                    Homless <span> Intervention </span> services Of Orange
+                    Homeless <span> Intervention </span> services Of Orange
                     Country{" "}
                     <span className=" position-relative">
                       ( HIS-OC){" "}

@@ -45,6 +45,7 @@ import Ourpodcasts from "../../components/ourpodcast";
 import Events from "../../components/events";
 import { useNavigate } from "react-router-dom";
 import Stats from "../../components/stats";
+import Testimonial from "../../components/Testimonial";
 
 const parseEventDate = (dateStr) => {
   const cleanDateStr = dateStr.replace(/(\d+)(st|nd|rd|th)/, "$1");
@@ -767,6 +768,9 @@ function Home() {
           view="View all Podcast"
           handlepodcastlistroute={handlepodcastlistroute}
         />
+
+        {/* Testimonial */}
+        <Testimonial/>
 
         {/* Announcement section */}
 

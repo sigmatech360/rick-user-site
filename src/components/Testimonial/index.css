@@ -1,0 +1,125 @@
+.testimonial {
+  padding: 60px 0;
+  background-image: url("../../Assets/images/multiprogrambg.png");
+    background-size: cover;
+    background-color: #fff7ec;
+    background-position: center;
+    overflow: hidden;
+}
+
+
+.testimonial .testimonialhead1 {
+  color: #031243 !important;
+}
+.testimonial-head {
+  margin-bottom: 35px;
+}
+.testimonial .title {
+  font-size: 45px;
+  line-height: 1;
+}
+.testimonial .title span {
+    font-style: italic;
+    color: #348f99;
+    text-transform: capitalize;
+
+}
+.testimonial .title span .underline {
+    vertical-align: middle;
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    transform: translateY(5px);
+}
+
+/* ===================== */
+
+.testimonial-card * {
+  margin: 0;
+  line-height: 1;
+  
+}
+
+.testimonial-cards .slick-track{
+  padding-block: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial-card-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+}
+.testimonial-img img {
+  width: 100%;
+}
+
+.testimonial-card {
+  border: 1px solid #348f99;
+  padding: 20px;
+  border-radius: 30px;
+  margin: 1px 0;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+  /* min-height: 180px; */
+  background-color: #fdfbf8;
+}
+.testimonial-card-body {
+  font-size: 12px;
+  line-height: 1.3;
+  font-weight: 500;
+}
+.testimonial-card-body:before {
+  content: open-quote;
+}
+.testimonial-card-body:after {
+  content: close-quote;
+}
+
+.testimonial-card-head-text .name {
+  color: #348f99;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.testimonial-card-head-text .business {
+  color: #707070;
+  font-size: 14px;
+}
+.testimonial-card-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.testimonial-cards .slick-slide {
+  padding: 0 10px;
+}
+.testimonial-cards .slick-list {
+  margin: 0 -10px;
+}
+
+@media (max-width: 991px) {
+  .testimonial-card-body {
+    font-size: 15px;
+  }
+}
+@media (max-width: 767px) {
+  .testimonial-card-head {
+    margin-bottom: 15px;
+  }
+  .testimonial-head {
+    margin-bottom: 25px;
+    text-align: center;
+  }
+  .testimonial .title {
+    font-size: 33px;
+  }
+}
