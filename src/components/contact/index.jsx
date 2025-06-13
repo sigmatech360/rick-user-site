@@ -23,6 +23,8 @@ function Contact({
   }, []);
   const [donatenotify, setDonatenotiy] = useState(false);
 
+  console.log("ApiDataGetmembers", ApiDataGetmembers);
+
   const handleClose = (event) => {
     event.preventDefault();
     setDonatenotiy(false);
@@ -62,7 +64,9 @@ function Contact({
             data-aos-offset="0"
             data-aos-duration="1000"
           >
-            If you have questions or need assistance, fill out the contact form below. Our team is ready to help. Let’s work together to restore hope and create lasting change.
+            If you have questions or need assistance, fill out the contact form
+            below. Our team is ready to help. Let’s work together to restore
+            hope and create lasting change.
           </p>
           <div className="row gx-0 d-flex align-items-stretch justify-content-center">
             {/* <!-- Left Contact Information Panel with Grid Layout --> */}
@@ -70,7 +74,7 @@ function Contact({
               <div className="contact-info-panel p-4 shadow-sm w-100 rounded-start">
                 <h2 className="his-oc-board-members">HIS-OC Board Members</h2>
                 <div className="contact-grid">
-                  {ApiDataGetmembers?.data?.filter((member) => member.member_type === 2).slice(0, 10).map((items) => (
+                  {/* {ApiDataGetmembers?.data?.filter((member) => member.member_type === 2).slice(0, 10).map((items) => (
                     <div className="contact-item p-3 rounded bg-white">
                       <p className="para mb-0">
                         <span> {items?.name}</span>
@@ -84,7 +88,42 @@ function Contact({
                         {items?.email}
                       </a>
                     </div>
-                  ))}
+                  ))} */}
+                  {ApiDataGetmembers?.data
+                    ?.filter((member) => member.member_type === "2") // Assuming member_type is a string
+                    .slice(0, 10)
+                    .map((items) => (
+                      <div
+                        className="contact-item p-3 rounded bg-white"
+                        key={items?.id}
+                      >
+                        {/* {items?.image && (
+                          <img
+                            src={items?.image}
+                            alt={items?.name}
+                            className="member-image rounded-circle"
+                            style={{
+                              width: "50px",
+                              height: "50px",
+                              objectFit: "cover",
+                            }}
+                          />
+                        )} */}
+                        {/* Text Section */}
+                        <p className="para mb-0">
+                          <span>{items?.name}</span>
+                          <br />
+                          {items?.designation}
+                        </p>
+                        {/* Email Section */}
+                        <a
+                          href={`mailto:${items?.email}`}
+                          className="text-muted"
+                        >
+                          {items?.email}
+                        </a>
+                      </div>
+                    ))}
                 </div>
               </div>
             </div>

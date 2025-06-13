@@ -1,6 +1,7 @@
 // src/hooks/usePost.js
 import React, { useState } from 'react';
 import { base_url } from './base_url';
+import { toast } from 'react-toastify';
 
 
 export const usePost = (url, initialData = null) => {
@@ -27,19 +28,30 @@ export const usePost = (url, initialData = null) => {
 
             const result = await response.json();
 
-            if (!response.ok) {
-                // If the response status is 400, set the error message to the result's error or status text
-                if (response.status === 400) {
-                    throw new Error(result?.error || 'Bad Request');
-                } else {
-                    throw new Error(result?.message || 'Network response was not ok');
+            // if (!response.ok) {
+            //     // If the response status is 400, set the error message to the result's error or status text
+            //     if (response.status === 400) {
+            //         throw new Error(result?.error || 'Bad Request');
+            //     } else {
+            //         throw new Error(result?.message || 'Network response was not ok');
+            //     }
+            // }
+
+             if (result.success === false) {
+                const errorMsg = typeof result.message === 'string'
+                    ? result.message
+                    : Object.values(result.message).flat().join(', '); // flatten nested messages
+                // setError(errorMsg); 
+                throw new Error(errorMsg || 'An error occurred');
                 }
-            }
+
 
             setData(result);
-            setError(result?.error || null); 
+            setError(null); 
         } catch (err) {
             setError(err.message); 
+            toast.error(err.message);
+
         } finally {
             setLoading(false);
             document.querySelector(".loaderBox")?.classList.add("d-none");
@@ -48,7 +60,6 @@ export const usePost = (url, initialData = null) => {
 
     return { ApiData, loading, error, post };
 };
-
 
 
 export const useGet = (url, initialData = '', idData = '') => {

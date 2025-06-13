@@ -157,7 +157,7 @@ function Leadership({ ApiDataGetmembers }) {
             </div>
           </div>
           <Slider {...settings}>
-            {ApiDataGetmembers?.data
+            {/* {ApiDataGetmembers?.data
               ?.filter((member) => member.member_type === 1)
               .map((member, index) => (
                 <div
@@ -201,6 +201,57 @@ function Leadership({ ApiDataGetmembers }) {
                           <p className="card-text text-muted   mt=0">
                             {member?.phone}
                           </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))} */}
+            {ApiDataGetmembers?.data
+              ?.filter((member) => member.member_type === "1")
+              .map((member) => (
+                <div
+                  key={member.id}
+                  className="leadershipcards p-2"
+                  data-aos={member?.animation}
+                  data-aos-offset="0"
+                  data-aos-duration="1000"
+                >
+                  <div className="card p-4 border-0 text-center">
+                    <div className="profile-container">
+                      <div className="yellow-overlay"></div>
+                      <img
+                        src={
+                          member?.image
+                            ? `${base_url_image}${member.image}`
+                            : placeholder
+                        }
+                        alt={member?.name || "Placeholder"}
+                        className="profile-image"
+                      />
+
+                      <div className="gap-2 d-flex">
+                        <p className="hisoc">
+                          HIS
+                          <br /> OC’s
+                        </p>
+
+                        <div className="mt-3 text-start">
+                          <p className="card-title">
+                            {member?.designation?.length > 19
+                              ? `${member.designation.slice(0, 19)}...`
+                              : member?.designation}
+                            <br />
+                            {member?.name}
+                          </p>
+                          <p className="card-text text-muted mb-0">
+                            {member?.email}
+                          </p>
+                          {member?.phone && (
+                            <p className="card-text text-muted mt-0">
+                              {member?.phone}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>

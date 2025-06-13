@@ -10,31 +10,50 @@ import { CiClock2 } from "react-icons/ci";
 import communityimg from "../../Assets/images/communityimg.png";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useGet } from '../Api/usePost'
+import { useGet } from "../Api/usePost";
 import { base_url_image } from "../Api/base_url";
 
-function EventDetail() {
-  const { id } = useParams()
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+import advancedFormat from "dayjs/plugin/advancedFormat";
+dayjs.extend(advancedFormat);
+dayjs.extend(customParseFormat);
 
-  const { ApiData: ApiDataGeteventdetail, loading: loadingGeteventdetail, error: errorGetevent, get: getdataeventdetail } = useGet(`/event/${id}`)
-  const { ApiData: ApiDataGeteventlist, loading: loadingGeteventlist, error: errorGeteventlist, get: getdataeventlist } = useGet('/event')
+function EventDetail() {
+  const { id } = useParams();
+
+  const {
+    ApiData: ApiDataGeteventdetail,
+    loading: loadingGeteventdetail,
+    error: errorGetevent,
+    get: getdataeventdetail,
+  } = useGet(`/event/${id}`);
+  const {
+    ApiData: ApiDataGeteventlist,
+    loading: loadingGeteventlist,
+    error: errorGeteventlist,
+    get: getdataeventlist,
+  } = useGet("/event");
   useEffect(() => {
-    getdataeventdetail()
+    getdataeventdetail();
 
     document.title = ApiDataGeteventdetail?.data?.title || "HOME- HIS OC";
-  }, [id])
+  }, [id]);
 
+  const startTime = ApiDataGeteventdetail?.data?.start_time; // e.g., "12:04"
+  const endTime = ApiDataGeteventdetail?.data?.end_time; // e.g., "14:30"
+
+  const formattedDate = dayjs(ApiDataGeteventdetail?.data?.date).format(
+    "MMMM Do, YYYY"
+  );
+  const formattedStartTime = dayjs(startTime, "HH:mm").format("hh:mm A"); // "12:04 PM"
+  const formattedEndTime = dayjs(endTime, "HH:mm").format("hh:mm A"); // "02:30 PM"
 
   useEffect(() => {
-    getdataeventlist()
+    getdataeventlist();
+  }, []);
 
-  }, [])
-
-
-  const navigate = useNavigate()
-
-
-
+  const navigate = useNavigate();
 
   const agendaItems = [
     { time: "5:00 PM - 6:00 PM", event: "Arrival and Registration" },
@@ -48,19 +67,21 @@ function EventDetail() {
   ];
 
   const handleeventdetail = (id) => {
-
-    navigate(`/event/${id}`)
+    navigate(`/event/${id}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  };
 
   const eventnavigate = () => {
-    navigate("/event")
-  }
+    navigate("/event");
+  };
   return (
     <Layout>
       <section className="communityOutreachDay">
         <div className="container">
-          <Link to={"/event"} className="  communityOutreachDayheader d-flex gap-2 align-items-center">
+          <Link
+            to={"/event"}
+            className="  communityOutreachDayheader d-flex gap-2 align-items-center"
+          >
             <MdKeyboardDoubleArrowLeft />
             All Events
           </Link>
@@ -69,7 +90,7 @@ function EventDetail() {
               <h2 className="communityOutreachDaytitle">
                 {ApiDataGeteventdetail?.data?.title}
               </h2>
-              <div className="communityOutreachDayschedual">
+              {/* <div className="communityOutreachDayschedual">
                 <p className="d-flex align-items-center gap-2">
                   <FiMapPin /> {ApiDataGeteventdetail?.data?.address}
                 </p>
@@ -79,7 +100,21 @@ function EventDetail() {
                 </p>
                 <div className="communityOutreachDayschedualdivider"></div>
                 <p className="d-flex align-items-center gap-2">
-                  <CiClock2 /> {ApiDataGeteventdetail?.data?.start_time}  -{ApiDataGeteventdetail?.data?.end_time}
+                  <CiClock2 /> {ApiDataGeteventdetail?.data?.start_time} -
+                  {ApiDataGeteventdetail?.data?.end_time}
+                </p>
+              </div> */}
+              <div className="communityOutreachDayschedual">
+                <p className="d-flex align-items-center gap-2">
+                  <FiMapPin /> {ApiDataGeteventdetail?.data?.address}
+                </p>
+                <div className="communityOutreachDayschedualdivider"></div>
+                <p className="d-flex align-items-center gap-2">
+                  <RiCalendar2Line /> {formattedDate}
+                </p>
+                <div className="communityOutreachDayschedualdivider"></div>
+                <p className="d-flex align-items-center gap-2">
+                  <CiClock2 /> {formattedStartTime} -{formattedEndTime}
                 </p>
               </div>
             </div>
@@ -93,14 +128,12 @@ function EventDetail() {
             </div>
 
             <div className="col-md-6 mt-4">
-
-
-              <p className="communityOutreachDaypara" dangerouslySetInnerHTML={{
-                __html: ApiDataGeteventdetail?.data?.description
-
-              }}>
-
-              </p>
+              <p
+                className="communityOutreachDaypara"
+                dangerouslySetInnerHTML={{
+                  __html: ApiDataGeteventdetail?.data?.description,
+                }}
+              ></p>
 
               <h3 className="mb-4">Agenda</h3>
 
@@ -128,7 +161,9 @@ function EventDetail() {
                 {ApiDataGeteventlist?.data?.map((items, index) => (
                   <div
                     key={index}
-                    className={`${index === 3 ? "2" : "1"} item d-flex align-items-center gap-3`}
+                    className={`${
+                      index === 3 ? "2" : "1"
+                    } item d-flex align-items-center gap-3`}
                   >
                     <img
                       src={base_url_image + items?.image}
@@ -151,7 +186,6 @@ function EventDetail() {
                 ))}
               </div>
             )}
-
           </div>
         </div>
         <Sponsor />

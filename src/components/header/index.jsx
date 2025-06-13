@@ -4,9 +4,9 @@ import logo from "../../Assets/images/logo.png";
 import donateicon from "../../Assets/images/donateicon.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import placeholder from '../../Assets/images/placeholder.jpg'
-import { usePost, useGet } from '../../Screens/Api/usePost'
-import { base_url_image } from '../../Screens/Api/base_url'
+import placeholder from "../../Assets/images/placeholder.jpg";
+import { usePost, useGet } from "../../Screens/Api/usePost";
+import { base_url_image } from "../../Screens/Api/base_url";
 import {
   faBell,
   faUser,
@@ -14,10 +14,9 @@ import {
   faEllipsisV,
   faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
-import { Navbar, Container, Nav, Dropdown } from "react-bootstrap";
+import { Navbar, Container, Nav, Dropdown, NavDropdown } from "react-bootstrap";
 import "./index.css";
-import { ToastContainer, toast } from 'react-toastify';
-
+import { ToastContainer, toast } from "react-toastify";
 
 import {
   ChangePass,
@@ -29,90 +28,115 @@ import {
 import GiveButterStyler from "../GiveButter/GiveButterStyler";
 
 function Header() {
-  const [userData, setUserData] = useState({
-  });
+  const [userData, setUserData] = useState({});
 
   const [errordays, setErrordays] = useState(true);
   const [errorslots, setErrorslots] = useState(true);
 
   const [selectedItems, setSelectedItems] = useState([]);
 
-  const [getimg, setImg] = useState({})
+  const [getimg, setImg] = useState({});
   const [selectedItemsslots, setSelectedItemsslots] = useState([]);
   const [naveshow, setNavshow] = useState(false);
-  const handleclick = () => { setNavshow((prevState) => !prevState); };
-  const { ApiData: ApiData, loading: loading, error: error, post: post } = usePost('/user-register')
-  const { ApiData: ApiDatalogin, loading: loadinglogin, error: errorlogin, post: postlogin } = usePost('/user-login')
-  const { ApiData: ApiDataotp, loading: loadingotp, error: errorotp, post: postotp } = usePost('/otp-verification')
-  const { ApiData: ApiDatareset, loading: loadingreset, error: errorreset, post: postreset } = usePost('/reset-password')
-  const { ApiData: ApiDataGet, loading: loadingGet, error: errorGet, get: getdata } = useGet('/edit-account')
-  const { ApiData: ApiDataPostforget, loading: Postloadingforget, error: Posterrorforget, post: postforget } = usePost('/forgot-password')
+  const handleclick = () => {
+    setNavshow((prevState) => !prevState);
+  };
+  const {
+    ApiData: ApiData,
+    loading: loading,
+    error: errorRegister,
+    post: post,
+  } = usePost("/user-register");
+  const {
+    ApiData: ApiDatalogin,
+    loading: loadinglogin,
+    error: errorlogin,
+    post: postlogin,
+  } = usePost("/user-login");
+  const {
+    ApiData: ApiDataotp,
+    loading: loadingotp,
+    error: errorotp,
+    post: postotp,
+  } = usePost("/otp-verification");
+  const {
+    ApiData: ApiDatareset,
+    loading: loadingreset,
+    error: errorreset,
+    post: postreset,
+  } = usePost("/reset-password");
+  const {
+    ApiData: ApiDataGet,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdata,
+  } = useGet("/edit-account");
+  const {
+    ApiData: ApiDataPostforget,
+    loading: Postloadingforget,
+    error: Posterrorforget,
+    post: postforget,
+  } = usePost("/forgot-password");
 
   const [logintoken, setLogintoken] = useState("");
-  const token = localStorage.getItem('login')
-
-
-
+  const token = localStorage.getItem("login");
 
   const handleSubmitforget = (e) => {
     e.preventDefault();
     const formDataMethod = new FormData();
 
-
     for (const key in userData) {
-
       formDataMethod.append(key, userData[key]);
     }
 
     postforget(formDataMethod);
-
   };
+
+
+
+
   const handleSubmitforgetotp = (e) => {
     e.preventDefault();
     const formDataMethod = new FormData();
 
-
     for (const key in userData) {
-
       formDataMethod.append(key, userData[key]);
     }
 
     postotp(formDataMethod);
-
   };
   const handleSubmitlogin = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in userData) {
       formDataMethod.append(key, userData[key]);
     }
     postlogin(formDataMethod);
-
   };
 
   let available_slots = [];
 
-  const itmedata = {
+  const itmedata = {};
 
-  }
-  const handleSubmit = (e) => {
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formDataMethod = new FormData();
     const { name, value, selectedOptions } = e.target;
 
     if (userData?.password !== userData.password_confirmation) {
       toast.error("Passwords do not match");
-    }
-    else if (!selectedItems || selectedItems?.length === 0) {
+    } else if (!selectedItems || selectedItems?.length === 0) {
       setErrordays("Please fill this field");
-    }
-    else if (!selectedItemsslots || selectedItemsslots?.length === 0) {
+    } else if (!selectedItemsslots || selectedItemsslots?.length === 0) {
       setErrorslots("Please fill this field");
-    }
-    else {
+    } else {
       for (const key in userData) {
         formDataMethod.append(key, userData[key]);
       }
+
+      
 
       // Ensure selectedItemsslots is an array before pushing it
       // if (Array.isArray(selectedItemsslots)) {
@@ -123,55 +147,55 @@ function Header() {
       // }
 
       // Append available_slots as an array
-      formDataMethod.append("available_slots", JSON.stringify(selectedItemsslots));
+      formDataMethod.append(
+        "available_slots",
+        JSON.stringify(selectedItemsslots)
+      );
       formDataMethod.append("available_days", JSON.stringify(selectedItems));
 
-
-
-
       console.log("available_slots Slot (Array check):", available_slots);
-      console.log("Is available_slots an array?", Array.isArray(available_slots));
+      console.log(
+        "Is available_slots an array?",
+        Array.isArray(available_slots)
+      );
       console.log("available_slots Slot type:", typeof available_slots);
 
-
-      post(formDataMethod);
+      await post(formDataMethod);
+      // if (errorRegister) {
+      //   toast.error(errorRegister);
+      // }
     }
   };
 
   useEffect(() => {
-
     if (ApiDataotp?.status === true) {
-      toast.success(ApiDataotp?.message)
-      setShowModalforget2(false)
+      toast.success(ApiDataotp?.message);
+      setShowModalforget2(false);
       // toast.success("Password updated successfully")
 
       setUserData({});
-      localStorage.setItem("code", ApiDataotp?.data?.code)
-      localStorage.setItem("email", ApiDataotp?.data?.email)
-      setShowModalforget2(false)
+      localStorage.setItem("code", ApiDataotp?.data?.code);
+      localStorage.setItem("email", ApiDataotp?.data?.email);
+      setShowModalforget2(false);
 
-      setShowModalreset(true)
+      setShowModalreset(true);
     } else {
-      toast.success(ApiDataotp?.message)
+      toast.success(ApiDataotp?.message);
     }
-  }, [ApiDataotp])
-
-
-
+  }, [ApiDataotp]);
 
   useEffect(() => {
     if (ApiDataPostforget?.status == true) {
-      setShowModalforget(false)
+      setShowModalforget(false);
       setUserData({});
-      setShowModalforget2(true)
-      toast?.success(ApiDataPostforget?.message)
+      setShowModalforget2(true);
+      toast?.success(ApiDataPostforget?.message);
     }
-  }, [ApiDataPostforget])
-
+  }, [ApiDataPostforget]);
 
   useEffect(() => {
-    getdata()
-  }, [token])
+    getdata();
+  }, [token]);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevData) => ({
@@ -182,50 +206,37 @@ function Header() {
   const [available_days, setWeekDays] = useState([]);
 
   const handleSubmitreset = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in userData) {
       formDataMethod.append(key, userData[key]);
     }
-    const email = localStorage.getItem("email")
-    const code = localStorage.getItem("code")
-    formDataMethod.append('email', email);
-    formDataMethod.append('code', code);
+    const email = localStorage.getItem("email");
+    const code = localStorage.getItem("code");
+    formDataMethod.append("email", email);
+    formDataMethod.append("code", code);
     postreset(formDataMethod);
   };
 
   useEffect(() => {
     if (ApiDatareset == true) {
-      setShowModalreset(false)
+      setShowModalreset(false);
       setUserData({});
-      toast.success(ApiDatareset?.message)
+      toast.success(ApiDatareset?.message);
+    } else {
+      setShowModalreset(false);
+      toast.success(ApiDatareset?.message);
     }
-    else {
-      setShowModalreset(false)
-      toast.success(ApiDatareset?.message)
-    }
+  }, [ApiDatareset]);
 
-
-  }, [ApiDatareset])
-
-
-
-
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const gettoken = () => {
-
     setLogintoken(localStorage.getItem("login"));
-  }
-
+  };
 
   useEffect(() => {
     setLogintoken(localStorage.getItem("login"));
-  }, [])
-
-
-
-
+  }, []);
 
   useEffect(() => {
     if (ApiData?.success) {
@@ -237,41 +248,34 @@ function Header() {
       setUserData({});
       toast.success(ApiData?.message);
 
-      gettoken()
+      gettoken();
     } else if (ApiData && ApiData?.success == false) {
       // Show error toast
 
       // toast.error(ApiData?.message?.email[0]);
-      gettoken()
+      gettoken();
     }
   }, [ApiData]);
-
-
-
 
   useEffect(() => {
     if (ApiDatalogin?.success === true) {
       localStorage.setItem("login", ApiDatalogin?.data?.token);
-      setShowModallogin(false)
+      setShowModallogin(false);
       setUserData(() => {
         console.log("Clearing userData..."); // Debug log
         return {};
       });
-      navigate("/")
-      toast.success(ApiDatalogin?.message)
-      gettoken()
-    } else if(ApiDatalogin?.success == false){
-      
+      navigate("/");
+      toast.success(ApiDatalogin?.message);
+      gettoken();
+    } else if (ApiDatalogin?.success == false) {
       toast.error(ApiDatalogin?.message);
-    }
-     else {
+    } else {
       // setShowModallogin(true)
 
       toast.error(ApiDatalogin?.message);
     }
-  }, [ApiDatalogin])
-
-
+  }, [ApiDatalogin]);
 
   const [showModal, setShowModal] = useState(false);
   const [showModallogin, setShowModallogin] = useState(false);
@@ -280,13 +284,11 @@ function Header() {
     setShowModallogin(true);
   };
 
-
   const Handlelogout = () => {
-
     // const toeken =  localStorage.removeItem('login')
-    setLogintoken(localStorage.removeItem('login'))
-    toast.success("Volunteer Logout Successfully")
-  }
+    setLogintoken(localStorage.removeItem("login"));
+    toast.success("Volunteer Logout Successfully");
+  };
 
   const handleCloselogin = () => setShowModallogin(false);
   const handleShow = () => setShowModal(true);
@@ -304,7 +306,6 @@ function Header() {
   const [showModalforget2, setShowModalforget2] = useState(false);
   const [showModalreset, setShowModalreset] = useState(false);
 
-
   const handleShowforget2 = () => {
     setShowModalforget(false);
     setShowModalforget2(true);
@@ -314,8 +315,6 @@ function Header() {
     event?.preventDefault();
     setShowModalforget2(false);
   };
-
-
 
   const [showDropdown, setShowDropdown] = useState(false);
 
@@ -335,10 +334,11 @@ function Header() {
   const location = useLocation();
   // const logintken = localStorage.getItem("login")
   const [scriptLoaded, setScriptLoaded] = useState(false);
-  
+
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://widgets.givebutter.com/latest.umd.cjs?acct=EEzrwTqr8xPNFSdt";
+    script.src =
+      "https://widgets.givebutter.com/latest.umd.cjs?acct=EEzrwTqr8xPNFSdt";
     // script.src = "https://cdn.givebutter.com/widget.v2.js";
     script.id = "givebutter-script";
     script.async = true;
@@ -356,8 +356,8 @@ function Header() {
     };
 
     script.onerror = () => {
-            console.error("❌ Givebutter script failed to load");
-          };
+      console.error("❌ Givebutter script failed to load");
+    };
     document.body.appendChild(script);
 
     return () => {
@@ -376,7 +376,6 @@ function Header() {
   //     script.async = true;
 
   //     // console.log('script', script);
-      
 
   //     script.onload = () => {
   //       console.log("✅ Givebutter loaded");
@@ -389,14 +388,6 @@ function Header() {
   //     document.body.appendChild(script);
   //   }
   // }, []);
-
-
-
-
-
-
-
-
 
   // const [scriptLoaded, setScriptLoaded] = useState(false);
 
@@ -415,12 +406,18 @@ function Header() {
               Mon – Thu 9AM – 5PM, Fri 9AM – 4PM
             </div>
             <div className="separator d-none d-md-block"></div>
-            <Link to="tel:(714)%20993-5774" className="header-item d-flex align-items-center">
+            <Link
+              to="tel:(714)%20993-5774"
+              className="header-item d-flex align-items-center"
+            >
               <i className="bi bi-telephone-fill me-2"></i>
               (714) 993-5774
             </Link>
             <div className="separator d-none d-md-block"></div>
-            <Link to={"mailto:info@his-oc.org"} className="header-item d-flex align-items-center">
+            <Link
+              to={"mailto:info@his-oc.org"}
+              className="header-item d-flex align-items-center"
+            >
               <i className="bi bi-envelope me-2"></i>
               info@his-oc.org
             </Link>
@@ -460,18 +457,48 @@ function Header() {
               {/* Navigation Links */}
               <div>
                 <ul className="navbar-nav d-flex align-items-center meauto mb2 mb-lg-0">
-                  <li className="nav-item dropdown">
+                  {/* <li className="nav-item dropdown">
                     <Link className={`nav-link ${location.pathname.includes('/about') ? 'active' : ''}`} to="/about">
                       About
                     </Link>
-                  </li>
+                  </li> */}
+                  <NavDropdown title="About" id="about-dropdown">
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/about"
+                      active={location.pathname.includes("/about")}
+                    >
+                      About
+                    </NavDropdown.Item>
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/news-announcements"
+                      active={location.pathname.includes("/news-announcements")}
+                    >
+                      News Announcements
+                    </NavDropdown.Item>
+
+
+                    <NavDropdown.Item
+                      as={Link}
+                      to="/join-our-team"
+                      active={location.pathname.includes("/join-our-team")}
+                    >
+                      Join our team
+                    </NavDropdown.Item>
+                  </NavDropdown>
                   {/* <li className="nav-item dropdown">
                     <Link className={`nav-link ${location.pathname.includes('/ourwork') ? 'active' : ''}`} to="/ourwork">
                       Our Work
                     </Link>
                   </li> */}
                   <li className="nav-item">
-                    <Link className={`nav-link ${location.pathname.includes('/gethelp') ? 'active' : ''}`} to="/gethelp">
+                    <Link
+                      className={`nav-link ${
+                        location.pathname.includes("/gethelp") ? "active" : ""
+                      }`}
+                      to="/gethelp"
+                    >
                       Get Help
                     </Link>
                   </li>
@@ -493,20 +520,41 @@ function Header() {
                         </Link>
                       </li>
                       <li>
-                        <Link className={`dropdown-item ${location.pathname.includes('/our-work') ? 'active' : ''}`} to="/our-work">
-                          Our  Work
+                        <Link
+                          className={`dropdown-item ${
+                            location.pathname.includes("/our-work")
+                              ? "active"
+                              : ""
+                          }`}
+                          to="/our-work"
+                        >
+                          Our Work
                         </Link>
                       </li>
                       <li>
                         <hr className="dropdown-divider" />
                       </li>
                       <li>
-                        <Link className={`dropdown-item ${location.pathname.includes('/top-volunteer') ? 'active' : ''}`} to="/top-volunteer">
+                        <Link
+                          className={`dropdown-item ${
+                            location.pathname.includes("/top-volunteer")
+                              ? "active"
+                              : ""
+                          }`}
+                          to="/top-volunteer"
+                        >
                           Top Volunteer
                         </Link>
                       </li>
                       <li>
-                        <Link className={`dropdown-item ${location.pathname.includes('/ourpodcastlist') ? 'active' : ''}`} to="/ourpodcastlist">
+                        <Link
+                          className={`dropdown-item ${
+                            location.pathname.includes("/ourpodcastlist")
+                              ? "active"
+                              : ""
+                          }`}
+                          to="/ourpodcastlist"
+                        >
                           Our Podcast
                         </Link>
                       </li>
@@ -514,12 +562,36 @@ function Header() {
                   </li>
 
                   <li className="nav-item dropdown">
-                    <Link className={`nav-link ${location.pathname.includes('/givedonation') ? 'active' : ''}`} to="/givedonation">
+                    <Link
+                      // onClick={handleClick}
+                      className={`nav-link ${
+                        location.pathname.includes("/event") ? "active" : ""
+                      }`}
+                      to="/event"
+                    >
+                      Event
+                    </Link>
+                  </li>
+
+                  <li className="nav-item dropdown">
+                    <Link
+                      className={`nav-link ${
+                        location.pathname.includes("/givedonation")
+                          ? "active"
+                          : ""
+                      }`}
+                      to="/givedonation"
+                    >
                       Donate
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className={`nav-link ${location.pathname.includes('/contactus') ? 'active' : ''}`} to="/contactus">
+                    <Link
+                      className={`nav-link ${
+                        location.pathname.includes("/contactus") ? "active" : ""
+                      }`}
+                      to="/contactus"
+                    >
                       Contact Us
                     </Link>
                   </li>
@@ -529,25 +601,45 @@ function Header() {
               {/* Second logo: visible only in full-screen mode */}
               <div className="d-none d-lg-block">
                 <Link className="navbar-brand" to="/">
-                  <img src={logo} alt="Logo"/>
+                  <img src={logo} alt="Logo" />
                 </Link>
               </div>
 
               {/* Right-aligned buttons and icons */}
               <div className="d-flex align-items-center">
-                <a href="https://www.facebook.com/homeless.intervention.oc" target="_blank" className="text-dark me-3">
+                <a
+                  href="https://www.facebook.com/homeless.intervention.oc"
+                  target="_blank"
+                  className="text-dark me-3"
+                >
                   <i className="bi bi-facebook"></i>
                 </a>
-                <a href="https://twitter.com/Homeless_Int_OC" target="_blank" className="text-dark me-3">
+                <a
+                  href="https://twitter.com/Homeless_Int_OC"
+                  target="_blank"
+                  className="text-dark me-3"
+                >
                   <i className="bi bi-x"></i>
                 </a>
-                <a href="https://www.instagram.com/homeless_intervention_oc/?hl=en" target="_blank" passHref>
+                <a
+                  href="https://www.instagram.com/homeless_intervention_oc/?hl=en"
+                  target="_blank"
+                  passHref
+                >
                   <i className="bi bi-instagram text-dark me-3"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/christine-stellino-b31963176/" target="_blank" passHref>
+                <a
+                  href="https://www.linkedin.com/in/christine-stellino-b31963176/"
+                  target="_blank"
+                  passHref
+                >
                   <i className="bi bi-linkedin text-dark me-3"></i>
                 </a>
-                <a href="https://www.tiktok.com/@user4978180667468" target="_blank" passHref>
+                <a
+                  href="https://www.tiktok.com/@user4978180667468"
+                  target="_blank"
+                  passHref
+                >
                   <i className="bi bi-tiktok text-dark me-3"></i>
                 </a>
                 {!logintoken && (
@@ -556,48 +648,52 @@ function Header() {
                   </button>
                 )}
 
-
-                {logintoken && <Dropdown className="userDropdown">
-                  <Dropdown.Toggle
-                    variant="transparent"
-                    className="notButton toggleButton"
-                  >
-                    <div className="userImage">
-                      <img
-                        src={ApiDataGet?.data?.image ? base_url_image + ApiDataGet?.data?.image : placeholder}
-                        alt=""
-                        className="img-fluid"
-                      />
-                    </div>
-                  </Dropdown.Toggle>
-                  <Dropdown.Menu className="userMenu" align="end">
-                    <Link className="userMenuItem" to={'/profile'}>
-                      <FontAwesomeIcon
-                        className="me-2 yellow-text"
-                        icon={faUser}
-                      />{" "}
-                      Profile
-                    </Link>
-                    <Link to="#" className="userMenuItem" onClick={Handlelogout}>
-                      <FontAwesomeIcon
-
-                        className="me-1 yellow-text"
-                        icon={faSignOut}
-
-                      />{" "}
-                      Logout
-                    </Link>
-                  </Dropdown.Menu>
-                </Dropdown>
-                }
+                {logintoken && (
+                  <Dropdown className="userDropdown">
+                    <Dropdown.Toggle
+                      variant="transparent"
+                      className="notButton toggleButton"
+                    >
+                      <div className="userImage">
+                        <img
+                          src={
+                            ApiDataGet?.data?.image
+                              ? base_url_image + ApiDataGet?.data?.image
+                              : placeholder
+                          }
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </div>
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="userMenu" align="end">
+                      <Link className="userMenuItem" to={"/profile"}>
+                        <FontAwesomeIcon
+                          className="me-2 yellow-text"
+                          icon={faUser}
+                        />{" "}
+                        Profile
+                      </Link>
+                      <Link
+                        to="#"
+                        className="userMenuItem"
+                        onClick={Handlelogout}
+                      >
+                        <FontAwesomeIcon
+                          className="me-1 yellow-text"
+                          icon={faSignOut}
+                        />{" "}
+                        Logout
+                      </Link>
+                    </Dropdown.Menu>
+                  </Dropdown>
+                )}
 
                 {/* 
                 <Link className="nav-donate btn btn-warning text-dark">
                   {" "}
                   <img src={donateicon} /> Donate
                 </Link> */}
-
-
 
                 {/* <Link
 
@@ -606,9 +702,12 @@ function Header() {
                   Donate Now
 
                 </Link> */}
-                 {scriptLoaded &&  <givebutter-widget class='giveButterBtn'  id="pzBZ3p">Give Donation</givebutter-widget> }
+                {scriptLoaded && (
+                  <givebutter-widget class="giveButterBtn" id="pzBZ3p">
+                    Give Donation
+                  </givebutter-widget>
+                )}
                 {/* {scriptLoaded && <div className="gKNaKL" />} */}
-
               </div>
             </div>
           </div>
@@ -635,11 +734,36 @@ function Header() {
               </span>
             </div>
             <div className="dropdown_menu_divider"></div>
-            <li className="main-navbar-list">
+            {/* <li className="main-navbar-list">
               <Link className="new_main-navbar-list" to="/about">
                 About
               </Link>
-            </li>{" "}
+            </li>{" "} */}
+            <NavDropdown title="About" id="about-dropdown">
+              <NavDropdown.Item
+                as={Link}
+                to="/about"
+                active={location.pathname.includes("/about")}
+              >
+                About
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/news-announcements"
+                active={location.pathname.includes("/news-announcements")}
+              >
+                News Announcements
+              </NavDropdown.Item>
+
+
+              <NavDropdown.Item
+                as={Link}
+                to="/join-our-team"
+                active={location.pathname.includes("/join-our-team")}
+              >
+                Join our team
+              </NavDropdown.Item>
+            </NavDropdown>
             <div className="dropdown_menu_divider"></div>
             {/* <li className="main-navbar-list">
               <Link className="new_main-navbar-list" to="/ourwork ">
@@ -652,10 +776,13 @@ function Header() {
                 Get Help
               </Link>
             </li>{" "}
+            <div className="dropdown_menu_divider"></div>{" "}
             <div className="dropdown_menu_divider"></div>
-            
-            {" "}
-            <div className="dropdown_menu_divider"></div>
+            <li className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/event">
+                Event
+              </Link>
+            </li>{" "}
             <li className="main-navbar-list">
               <Link className="new_main-navbar-list" to="/contactus">
                 Contact
@@ -691,8 +818,6 @@ function Header() {
                 Our Initiatives
               </Link>
 
-              
-
               {/* Dropdown Menu */}
               {/* {showDropdown && ( */}
               <ul className="dropdown-menu">
@@ -724,8 +849,9 @@ function Header() {
             </li>
             <div className="dropdown_menu_divider"></div>
             <li>
-              
-            {scriptLoaded &&  <givebutter-widget id="pzBZ3p"></givebutter-widget> }
+              {scriptLoaded && (
+                <givebutter-widget id="pzBZ3p"></givebutter-widget>
+              )}
             </li>
             <div className="dropdown_menu_divider"></div>
           </ul>
@@ -745,11 +871,14 @@ function Header() {
         loginbtn={handleShowlogin}
         username={userData.name}
         password_confirmation={userData.password_confirmation}
-        password={userData.password} phone={userData.phone} email={userData.email}
+        password={userData.password}
+        phone={userData.phone}
+        email={userData.email}
         handleChange={handleChange}
       />
       <VolunteerModallogin
-        password={userData.password} email={userData.email}
+        password={userData.password}
+        email={userData.email}
         handleClose={handleCloselogin}
         show={showModallogin}
         forgetbtn={handleShowforget}
@@ -769,19 +898,16 @@ function Header() {
         handleChange={handleChange}
         email={userData.email}
         otp={userData.otp}
-
         handleSubmitforgetotp={handleSubmitforgetotp}
         show={showModalforget2}
         handleClose={handleCloseforget2}
       />
-
 
       <ChangePass
         handleChange={handleChange}
         email={userData.email}
         password_confirmation={userData.password_confirmation}
         password={userData.password}
-
         handleSubmitreset={handleSubmitreset}
         show={showModalreset}
         handleClose={handleCloseforget2}

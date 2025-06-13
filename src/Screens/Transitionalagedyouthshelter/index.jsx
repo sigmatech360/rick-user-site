@@ -32,13 +32,13 @@ function Transitionalagedyouthshelter() {
     AOS.init();
   }, []);
 
-  const { id } = useParams();
+  const { id, slug } = useParams();
   const {
     ApiData: ApiDataGetprogram,
     loading: loadingGetprogram,
     error: errorGetprogram,
     get: getdataprogram,
-  } = useGet(`/program/${id}`);
+  } = useGet(`/program/${slug}`);
   const {
     ApiData: ApiDataGetprogramlist,
     loading: loadingGetprogramlist,
@@ -49,7 +49,7 @@ function Transitionalagedyouthshelter() {
     getdataprogram();
 
     document.title = ApiDataGetprogram?.data?.title || "HOME - HIS OC";
-  }, [id]);
+  }, [slug]);
 
   useEffect(() => {
     getdataprogramlist();

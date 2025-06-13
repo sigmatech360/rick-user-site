@@ -262,20 +262,24 @@ function ProgramsProjects() {
               or operations.
             </p>
             <hr />
-          <div className="mt-3">
-            <p className="fs-2">Our Work</p>
-            <p>
-              At <span className="fw-bolder">HIS-OC</span>, we go beyond shelter, we provide hope, stability, and lasting change. Through a
-              range of programs, we help individuals and families experiencing or at risk of homelessness
-              rebuild their lives. From safe housing and career development to mental health support
-              and financial literacy, we offer the tools needed for long-term independence.
-            </p>
-            <p>
-                We are committed to inclusivity. HIS-OC welcomes all individuals, regardless of race, color,
-                gender, age, disability, marital status, sexual orientation, military status, or background.
-                Everyone deserves a path to a brighter future.
-            </p>
-          </div>
+            <div className="mt-3">
+              <p className="fs-2">Our Work</p>
+              <p>
+                At <span className="fw-bolder">HIS-OC</span>, we go beyond
+                shelter, we provide hope, stability, and lasting change. Through
+                a range of programs, we help individuals and families
+                experiencing or at risk of homelessness rebuild their lives.
+                From safe housing and career development to mental health
+                support and financial literacy, we offer the tools needed for
+                long-term independence.
+              </p>
+              <p>
+                We are committed to inclusivity. HIS-OC welcomes all
+                individuals, regardless of race, color, gender, age, disability,
+                marital status, sexual orientation, military status, or
+                background. Everyone deserves a path to a brighter future.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -291,43 +295,48 @@ function ProgramsProjects() {
                   data-aos-duration="1000"
                 >
                   {ApiDataGetprogram?.data?.map((program, index) => (
-                    <div
+                    <Link
+                      onClick={handleprogramdtl}
+                      to={`/our-work/${program?.slug}`}
                       key={index}
-                      className={`program-item p-3   d-flex justify-content-between mb-0 align-items-center ${
-                        program.highlighted ? "highlighted" : ""
-                      }`}
-                      onMouseEnter={() => setHoveredProgram(program)}
-                      onMouseLeave={() => setHoveredProgram(null)}
                     >
-                      <div>
-                        <h5 className="mb-1">
-                          {program?.title}
-                          <span className="highlighted-word position-relative">
-                            {program?.highlightedWords} {""}
-                            <img
-                              src={aboutherounderline}
-                              className="programunderlines"
-                            />
-                          </span>
-                          {/* {program?.title2} */}
-                        </h5>
-                        <p
-                          className="mb-0 text-muted"
-                          dangerouslySetInnerHTML={{
-                            __html:
-                              program.short_description ||
-                              "Default description here",
-                          }}
-                        ></p>
-                      </div>
-                      <Link
-                        onClick={handleprogramdtl}
-                        to={`/our-work/${program?.id}`}
-                        className="arrow-con"
+                      <div
+                        className={`program-item p-3   d-flex justify-content-between mb-0 align-items-center ${
+                          program.highlighted ? "highlighted" : ""
+                        }`}
+                        onMouseEnter={() => setHoveredProgram(program)}
+                        onMouseLeave={() => setHoveredProgram(null)}
                       >
-                        <FontAwesomeIcon icon={faArrowRight} />
-                      </Link>
-                    </div>
+                        <div>
+                          <h5 className="mb-1">
+                            {program?.title}
+                            <span className="highlighted-word position-relative">
+                              {program?.highlightedWords} {""}
+                              <img
+                                src={aboutherounderline}
+                                className="programunderlines"
+                              />
+                            </span>
+                            {/* {program?.title2} */}
+                          </h5>
+                          <p
+                            className="mb-0 text-muted"
+                            dangerouslySetInnerHTML={{
+                              __html:
+                                program.short_description ||
+                                "Default description here",
+                            }}
+                          ></p>
+                        </div>
+                        <Link
+                          onClick={handleprogramdtl}
+                          to={`/our-work/${program?.slug}`}
+                          className="arrow-con"
+                        >
+                          <FontAwesomeIcon icon={faArrowRight} />
+                        </Link>
+                      </div>
+                    </Link>
                   ))}
                 </div>
 

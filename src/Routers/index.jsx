@@ -20,6 +20,7 @@ import EventDetail from "../Screens/eventdetail";
 import Podcastdetail from "../Screens/ourpodcast/podcastdetail";
 import AnnouncementList from "../Screens/announcementlist";
 import PrivacyNotice from "../Screens/PrivacyNotice";
+import JoinOurTeam from "../Screens/JoinOurTeam";
 export default function UserRouter() {
   
   return (
@@ -38,13 +39,17 @@ export default function UserRouter() {
         <Route path="/top-volunteer" element={<TopVolunteer />} />
         <Route path="/ourpodcastlist" element={<Ourpodcast />} />
         {/* <Route path="/our-work/:id" element={<TransitionalHousingProgram />} /> */}
-        <Route path="/our-work/:id" element={<Transitionalagedyouthshelter />} />
+        <Route path="/our-work/:slug" element={<Transitionalagedyouthshelter />} />
         <Route path="/event" element={<Event />} />
         <Route path="/event/:id" element={<EventDetail />} />
         <Route path="/news-announcements/:id" element={<Announcementdetail />} />
         <Route path="/news-announcements" element={<AnnouncementList />} />
          
         <Route path="/ourpodcastlist/podcast-detail/:id" element={<Podcastdetail />} />
+
+        {/* New Pages */}
+        <Route path="/join-our-team" element={<JoinOurTeam />} />
+
 
          
 
