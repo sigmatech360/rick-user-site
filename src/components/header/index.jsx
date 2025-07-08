@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import logo from "../../Assets/images/logo.png";
 import donateicon from "../../Assets/images/donateicon.png";
@@ -18,6 +18,7 @@ import { Navbar, Container, Nav, Dropdown, NavDropdown } from "react-bootstrap";
 import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 
+
 import {
   ChangePass,
   VolunteerModalsignup,
@@ -26,6 +27,7 @@ import {
   VolunteerModalforget2,
 } from "../modal";
 import GiveButterStyler from "../GiveButter/GiveButterStyler";
+import { AuthContext } from "../../Routers/AuthContext";
 
 function Header() {
   const [userData, setUserData] = useState({});
@@ -38,6 +40,9 @@ function Header() {
   const [getimg, setImg] = useState({});
   const [selectedItemsslots, setSelectedItemsslots] = useState([]);
   const [naveshow, setNavshow] = useState(false);
+
+  const { setIsLoggedIn } = useContext(AuthContext);
+
   const handleclick = () => {
     setNavshow((prevState) => !prevState);
   };
@@ -77,6 +82,12 @@ function Header() {
     error: Posterrorforget,
     post: postforget,
   } = usePost("/forgot-password");
+  const {
+    ApiData: ApiDataLogout,
+    loading: loadingLogout,
+    error: errorLogout,
+    post: postLogout,
+  } = usePost("/logout");
 
   const [logintoken, setLogintoken] = useState("");
   const token = localStorage.getItem("login");
@@ -105,13 +116,14 @@ function Header() {
 
     postotp(formDataMethod);
   };
-  const handleSubmitlogin = (e) => {
+  const handleSubmitlogin = async (e) => {
     e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in userData) {
       formDataMethod.append(key, userData[key]);
     }
-    postlogin(formDataMethod);
+    await postlogin(formDataMethod);
+    navigate("/");
   };
 
   let available_slots = [];
@@ -267,6 +279,7 @@ function Header() {
       });
       navigate("/");
       toast.success(ApiDatalogin?.message);
+      setIsLoggedIn(true);
       gettoken();
     } else if (ApiDatalogin?.success == false) {
       toast.error(ApiDatalogin?.message);
@@ -284,10 +297,12 @@ function Header() {
     setShowModallogin(true);
   };
 
-  const Handlelogout = () => {
+  const Handlelogout = async () => {
     // const toeken =  localStorage.removeItem('login')
+    await postLogout();
     setLogintoken(localStorage.removeItem("login"));
     toast.success("Volunteer Logout Successfully");
+    setIsLoggedIn(false);
   };
 
   const handleCloselogin = () => setShowModallogin(false);
@@ -452,7 +467,7 @@ function Header() {
 
             <div
               className="collapse navbar-collapse justify-content-between"
-              id="navbarNav"
+              // id="navbarNav"
             >
               {/* Navigation Links */}
               <div>

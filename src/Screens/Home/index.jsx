@@ -11,9 +11,11 @@ import { FiSmartphone } from "react-icons/fi";
 import { RiLockPasswordLine } from "react-icons/ri";
 import { base_url_image } from "../Api/base_url";
 
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import announcementunderline from "../../Assets/images/announcementunderline.svg";
+import googlePlay from "../../Assets/images/Google_Play_Store_badge.svg";
+import applePlay from "../../Assets/images/Apple_Play_Store_badge.png";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -46,22 +48,30 @@ import Events from "../../components/events";
 import { useNavigate } from "react-router-dom";
 import Stats from "../../components/stats";
 import Testimonial from "../../components/Testimonial";
+import { AuthContext } from "../../Routers/AuthContext";
 
 const parseEventDate = (dateStr) => {
   const cleanDateStr = dateStr.replace(/(\d+)(st|nd|rd|th)/, "$1");
   return new Date(cleanDateStr);
 };
 
+
 const isLessThan7Days = (eventDate) => {
   const today = new Date();
-  const dateObj = new Date(eventDate);
-  const currentday = String(today.getDate()).padStart(2, "0");
-  const day = String(dateObj.getDate()).padStart(2, "0");
-  const dayDiff = day - currentday;
-  console.log("day diff", currentday, day, dayDiff);
+  const targetDate = new Date(eventDate);
 
-  return dayDiff <= 7 && dayDiff >= 0;
+  // Remove time part (midnight set) for accurate comparison
+  today.setHours(0, 0, 0, 0);
+  targetDate.setHours(0, 0, 0, 0);
+
+  const diffInMs = targetDate - today;
+  const diffInDays = diffInMs / (1000 * 60 * 60 * 24); // convert ms to days
+
+  // console.log(`Diff in days: ${diffInDays} and event date is ${eventDate}`);
+
+  return diffInDays >= 0 && diffInDays <= 7;
 };
+
 
 function Home() {
   const {
@@ -137,7 +147,6 @@ function Home() {
   };
   useEffect(() => {
     AOS.init();
-    console.log("Givebutter widget initialized", window);
     // if (window.gbWidgets.aid) {
     //   // window.gbWidgets.init(); // In case of React Router SPA behavior
     //   console.log("Givebutter widget initialized");
@@ -224,6 +233,8 @@ function Home() {
 
   const navigate = useNavigate();
 
+  const { isLoggedIn } = useContext(AuthContext);
+
   const handleclick = () => {
     navigate("/gethelp");
   };
@@ -266,7 +277,6 @@ function Home() {
   const [showTicketAlert, setShowTicketAlert] = useState(false);
   const [ticketData, setTicketData] = useState(false);
   useEffect(() => {
-    console.log("ApiDataevent", ApiDataevent.data);
     if (ApiDataevent?.data?.length > 0) {
       let data = ApiDataevent?.data;
       // data.forEach(event => {
@@ -285,12 +295,19 @@ function Home() {
 
         if (hasTicket && isLessThan7Days(eventDate)) {
           setShowTicketAlert(true);
-          setTicketData({ticket_link: event.ticketing_link, title: event.title,})
+          setTicketData({
+            ticket_link: event.ticketing_link,
+            title: event.title,
+          });
           break;
         }
       }
     }
   }, [ApiDataevent]);
+
+  useEffect(() => {
+      getdataevent();
+  }, [isLoggedIn]);
 
   // news - announcements
   return (
@@ -302,7 +319,8 @@ function Home() {
             variant={"danger"}
             className="event-brite-alert"
           >
-            <strong>{ticketData.title}</strong> is coming soon! Book your ticket now.{" "}
+            <strong>{ticketData.title}</strong> is coming soon! Book your ticket
+            now.{" "}
             <Alert.Link href={ticketData.ticket_link}>Ticket Link</Alert.Link>.
           </Alert>
         )}
@@ -394,6 +412,7 @@ function Home() {
                         >
                           Get Help
                         </button>
+
                         {/* <button
                           className="gethelp btn btn-outline-light  "
                           data-aos="fade-up"
@@ -403,6 +422,28 @@ function Home() {
                         >
                           Get Help 
                         </button> */}
+                      </div>
+                      <div className="row">
+                      <div
+                        className="col-12 d-flex justify-content-center justify-content-md-start gap-3 mt-5 "
+                        data-aos="fade-up"
+                        data-aos-offset="0"
+                        data-aos-duration="1000"
+                      >
+                        <Link
+                          className="appLink"
+                          target="_blank"
+                          to={
+                            "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
+                          }
+                        >
+                          <img src={googlePlay} className="w-100" alt="" />
+                        </Link>
+                        <Link target="_blank" className="appLink">
+                          <img src={applePlay} className="w-100" alt="" />
+                        </Link>
+                      </div>
+
                       </div>
                     </div>
                   </div>
@@ -760,8 +801,10 @@ function Home() {
             </div>
           </div>
         </section>
+        {ApiDataevent?.data?.length > 0 && (
+          <Events ApiDataevent={ApiDataevent} />
 
-        <Events ApiDataevent={ApiDataevent} />
+        )}
 
         <Ourpodcasts
           ApiDatapodcast={ApiDatapodcast}
@@ -770,7 +813,7 @@ function Home() {
         />
 
         {/* Testimonial */}
-        <Testimonial/>
+        <Testimonial />
 
         {/* Announcement section */}
 

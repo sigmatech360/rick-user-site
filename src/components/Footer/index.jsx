@@ -5,12 +5,14 @@ import bottomfooterlogo1 from "../../Assets/images/bottomlogo1.png";
 import bottomfooterlogo2 from "../../Assets/images/bottomfooterlogo2.png";
 import charitynavigator from "../../Assets/images/charitynavigator.png";
 import footerlogo from "../../Assets/images/footerlogo.svg";
+import googlePlay from "../../Assets/images/Google_Play_Store_badge.svg";
+import applePlay from "../../Assets/images/Apple_Play_Store_badge.png";
 
-import Whistleblowerpolicy  from "../../Assets/pdf/10-Whistleblower-policy.docx.pdf"
-import NondiscriminationPolicy  from "../../Assets/pdf/Non-discrimination-Policy-CLJ-Rev.pdf"
-import GrievanceEnglish  from "../../Assets/pdf/Grievance-12-2021-English.pdf"
-import GrievanceSpanish  from "../../Assets/pdf/Grievance-12-2021-Spanish.pdf"
-import donateform  from "../../Assets/pdf/2025-990-1.pdf"
+import Whistleblowerpolicy from "../../Assets/pdf/10-Whistleblower-policy.docx.pdf";
+import NondiscriminationPolicy from "../../Assets/pdf/Non-discrimination-Policy-CLJ-Rev.pdf";
+import GrievanceEnglish from "../../Assets/pdf/Grievance-12-2021-English.pdf";
+import GrievanceSpanish from "../../Assets/pdf/Grievance-12-2021-Spanish.pdf";
+import donateform from "../../Assets/pdf/2025-990-1.pdf";
 
 import { useState } from "react";
 import {
@@ -68,7 +70,7 @@ function Footer() {
           <div className="container">
             <div className="row">
               <div className="col-lg-4 mb-3 mb-lg-0 text-lg-start text-center">
-                <Link to={'/'}>
+                <Link to={"/"}>
                   <img src={footerlogo} className="footerlogo  mb-2  " />
                 </Link>
                 {/* <p className="title fw-bold mb-2">
@@ -76,87 +78,133 @@ function Footer() {
                   <span className="text-primary">Homelessness.</span>
                 </p> */}
                 <p>Be the Helping Hand! </p>
-                <p className="fs-5">From Homelessness to <span className="text-primary">Hope</span>.</p>
+                <p className="fs-5">
+                  From Homelessness to{" "}
+                  <span className="text-primary">Hope</span>.
+                </p>
                 <p>
                   At{" "}
                   <Link to="/" className="hiscolint  text-primary">
                     HISOC,
                   </Link>{" "}
-                  we provide transitional housing, essential support, and community driven solutions to help individuals move from homelessness to stability. Through services like Housing Transition Navigation, Housing Deposits, and Housing Tenancy and Sustaining, we create lasting pathways to permanent housing. Your support makes this possible because everyone deserves a place to call home.
+                  we provide transitional housing, essential support, and
+                  community driven solutions to help individuals move from
+                  homelessness to stability. Through services like Housing
+                  Transition Navigation, Housing Deposits, and Housing Tenancy
+                  and Sustaining, we create lasting pathways to permanent
+                  housing. Your support makes this possible because everyone
+                  deserves a place to call home.
                 </p>
               </div>
-              <div className="col-lg-2 col-md-3 text-lg-start text-center">
-                <h5>About HIS-OC</h5>
-                <ul className="list-unstyled">
-                  <li>
-                    <Link to="/about" onClick={scrollToTop} className="">
-                      About Us
-                    </Link>
-                  </li>
-                  {/* <li>
-                    <Link onClick={scrollToTop} to={"/ourwork"} className="">
-                    Our Work
-                    </Link>
-                  </li> */}
-                  <li>
-                    <Link onClick={scrollToTop} to={"/gethelp"} className="">
-                      Get Help
-                    </Link>
-                  </li>
-                  <li>
-                    <Link onClick={handleShow} href="#!" className="">
-                      Become A Volunteer
-                    </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-lg-2 col-md-3 text-lg-start text-center">
-                <h5>Our Impact</h5>
-                <ul className="list-unstyled">
-                  <li>
-                    <Link onClick={scrollToTop} to={"/our-work"} className="">
-                      Our Work
-                    </Link>
-                  </li>
-                  <li>
+              <div className="col-lg-6 col-md-9">
+                <div className="row">
+                  <div className="col-md-4  text-lg-start text-center">
+                    <h5>About HIS-OC</h5>
+                    <ul className="list-unstyled">
+                      <li>
+                        <Link to="/about" onClick={scrollToTop} className="">
+                          About Us
+                        </Link>
+                      </li>
+                      {/* <li>
+                        <Link onClick={scrollToTop} to={"/ourwork"} className="">
+                        Our Work
+                        </Link>
+                      </li> */}
+                      <li>
+                        <Link
+                          onClick={scrollToTop}
+                          to={"/gethelp"}
+                          className=""
+                        >
+                          Get Help
+                        </Link>
+                      </li>
+                      <li>
+                        <Link onClick={handleShow} href="#!" className="">
+                          Become A Volunteer
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="col-md-4  text-lg-start text-center">
+                    <h5>Our Impact</h5>
+                    <ul className="list-unstyled">
+                      <li>
+                        <Link
+                          onClick={scrollToTop}
+                          to={"/our-work"}
+                          className=""
+                        >
+                          Our Work
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          onClick={scrollToTop}
+                          to={"/sponsorship"}
+                          className=""
+                        >
+                          Sponsorship
+                        </Link>
+                      </li>
+                      <li>
+                        <Link onClick={scrollToTop} to={"/"} className="">
+                          HISOC Works
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="col-md-4  text-lg-start text-center">
+                    <h5>Get Involved</h5>
+                    <ul className="list-unstyled">
+                      <li>
+                        <Link
+                          onClick={scrollToTop}
+                          to={"/top-volunteer"}
+                          className=""
+                        >
+                          Top Volunteer
+                        </Link>
+                      </li>
+                      {/* <li>
+                        <Link onClick={scrollToTop} to={"/"} className="">
+                          Events
+                        </Link>
+                      </li> */}
+                      <li>
+                        <Link
+                          onClick={scrollToTop}
+                          to={"/ourpodcastlist"}
+                          className=""
+                        >
+                          Our Podcast
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="row">
+                  <div
+                    className="d-flex justify-content-center justify-content-md-start gap-3 mt-md-5 my-3"
+                    data-aos="fade-up"
+                    data-aos-offset="0"
+                    data-aos-duration="1000"
+                  >
                     <Link
-                      onClick={scrollToTop}
-                      to={"/sponsorship"}
-                      className=""
+                      className="appLink"
+                      target="_blank"
+                      to={
+                        "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
+                      }
                     >
-                      Sponsorship
+                      <img src={googlePlay} className="w-100" alt="" />
                     </Link>
-                  </li>
-                  <li>
-                    <Link onClick={scrollToTop} to={"/"} className="">
-                      HISOC Works
+                    <Link target="_blank" className="appLink">
+                      <img src={applePlay} className="w-100" alt="" />
                     </Link>
-                  </li>
-                </ul>
-              </div>
-              <div className="col-lg-2 col-md-3 text-lg-start text-center">
-                <h5>Get Involved</h5>
-                <ul className="list-unstyled">
-                  <li>
-                    <Link
-                      onClick={scrollToTop}
-                      to={"/top-volunteer"}
-                      className=""
-                    >
-                      Top Volunteer
-                    </Link>
-                  </li>
-                  {/* <li>
-                    <Link onClick={scrollToTop} to={"/"} className="">
-                      Events
-                    </Link>
-                  </li> */}
-                  <li>
-                    <Link onClick={scrollToTop} to={"/ourpodcastlist"} className="">
-                      Our Podcast
-                    </Link>
-                  </li>
-                </ul>
+                  </div>
+                </div>
               </div>
               <div className="col-lg-2 col-md-3 text-lg-start text-center">
                 <h5>Resources</h5>
@@ -180,9 +228,19 @@ function Footer() {
 
                 <div className="footer-donate-btns">
                   <div className="btn-group">
-
-                    <a href={donateform} target="_blank" className="footer-donate-btn footer-donate-btns-1">2023 990</a>
-                    <Link to="/givedonation" className="footer-donate-btn footer-donate-btns-2">Donate</Link>
+                    <a
+                      href={donateform}
+                      target="_blank"
+                      className="footer-donate-btn footer-donate-btns-1"
+                    >
+                      2023 990
+                    </a>
+                    <Link
+                      to="/givedonation"
+                      className="footer-donate-btn footer-donate-btns-2"
+                    >
+                      Donate
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -265,7 +323,6 @@ function Footer() {
               <p className="mb-0 text-xl-end text-center">
                 All gifts to our organization are tax-deductible as allowed by
                 law. 501(c)(3) ID# 84-2790299
-                
               </p>
             </div>
           </div>
@@ -273,10 +330,7 @@ function Footer() {
             <div className="row">
               <div className="col-md-12">
                 <div className="footer-bottom-links">
-                  <Link to={"/privacy-notice"}>
-                    Privacy Notice
-                  </Link>{" "}
-                  |{" "}
+                  <Link to={"/privacy-notice"}>Privacy Notice</Link> |{" "}
                   <a href={GrievanceEnglish} target="_blank">
                     HMIS Grievance Form (English)
                   </a>{" "}
