@@ -44,11 +44,8 @@ function Event() {
 
         <section className="community  ">
           <div className="container  py-5">
-            <div className="mt-5 mb-4 d-flex flex-wrap gap-4">
-              {/* <button className="todaybtn">Today</button>
-              <button className="todaybtn">Upcoming Events</button> */}
-            </div>
-            {ApiDataGet?.data?.map((items, index) => (
+            
+            {ApiDataGet?.data?.length > 0 ? (ApiDataGet?.data?.map((items, index) => (
               <div className="row">
                 <div className="col-md-7 mt-5">
                   <div className=" d-flex gap-4">
@@ -107,7 +104,11 @@ function Event() {
                   />
                 </div>
               </div>
-            ))}
+            ))):(
+              <div className="text-center ">
+                <h2 className="text-black">No Events Available!</h2>
+              </div>
+            )}
           </div>
         </section>
 

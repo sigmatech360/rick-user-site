@@ -3,7 +3,7 @@
   box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
   border-radius: 20px;
   margin-bottom: 1.5rem;
-  height: 299px;
+  height: fit-content;
   padding: 20px;
   
   flex-direction: column;

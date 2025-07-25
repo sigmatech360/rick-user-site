@@ -74,8 +74,8 @@ function Transitionalagedyouthshelter() {
   ];
 
   const navigate = useNavigate();
-  const handleroute = (id) => {
-    navigate(`/our-work/${id}`);
+  const handleroute = (slug) => {
+    navigate(`/our-work/${slug}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
@@ -88,7 +88,7 @@ function Transitionalagedyouthshelter() {
               className="communityOutreachDayheader d-flex gap-2 align-items-center"
             >
               <MdKeyboardDoubleArrowLeft />
-              Program Dedail
+              Program Details
             </Link>
             <div className="row">
               <div className="col-md-12 mt-5">
@@ -97,15 +97,12 @@ function Transitionalagedyouthshelter() {
                 </h2>
               </div>
 
-              <div className="col-md-12 mt-4">
+              <div className="col-md-8 mt-4">
                 <img
                   src={base_url_image + ApiDataGetprogram?.data?.image}
                   alt="Community Event"
-                  className="communityimg"
+                  className="w-100 rounded-2 mb-3"
                 />
-              </div>
-
-              <div className="col-md-6 mt-4">
                 <p
                   className="communityOutreachDaypara mb-4"
                   dangerouslySetInnerHTML={{
@@ -113,23 +110,28 @@ function Transitionalagedyouthshelter() {
                   }}
                 ></p>
               </div>
-
-              <div className="programs1 col-md-5 mt-4">
+              <div className="programs1 col-md-4 mt-4">
                 {ApiDataGetprogramlist?.data?.map((data, index) => (
                   <div
+                  type="button"
+                  onClick={() => handleroute(data?.slug)}
                     key={index}
-                    className="item d-flex justify-content-between align-items-center my-3"
+                    className="item c-pointer d-flex justify-content-between align-items-center my-3"
                   >
-                    <h4 className="mb-0">{data?.title}</h4>
+                    <h5 className={`mb-0 ${ApiDataGetprogram?.data?.title ==  data?.title ? '':'text-dark'}`}>{data?.title}</h5>
                     <button
-                      onClick={() => handleroute(data?.id)}
+                      
                       className="btn d-flex align-items-center"
                     >
-                      <MdArrowOutward className="ms-2" size={20} />
+                      <MdArrowOutward className={`ms-2 ${ApiDataGetprogram?.data?.title ==  data?.title ? '':'text-dark'}`} size={20} />
                     </button>
                   </div>
                 ))}
               </div>
+
+              
+
+              
             </div>
           </div>
           <Sponsor />
