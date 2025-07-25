@@ -164,12 +164,26 @@ const Profile = () => {
                         {/* Profile Section */}
                         <div className="col-md-6 text-center mb 4 mb-md-0 py-5 profile-section">
                             <div className="profile-picture-container">
+                                {formdata?.imageFile && formdata?.imageFile?.startsWith("blob:")? (
+                                    <>
+                                    <img
+                                        src={formdata?.imageFile
+                                                
+                                        }
+                                        alt="User"
+                                        className="profile-picture"
+                                    />
+                                <button className="edit-button">
+
+                                    <label htmlFor="profileImage" className="imageUploadButton">      <i className="bi bi-pencil">
+                                    </i></label>
+                                </button>
+                                <input type="file" id="profileImage" accept="img/*" className="d-none" onChange={filehandleChange} />
+                                    </>
+                                ):formdata?.image && (
+                                    <>
                                 <img
-                                    src={
-                                        formdata?.imageFile?.startsWith("blob:")
-                                            ? formdata?.imageFile
-                                            : base_url_image + formdata?.image
-                                    }
+                                    src={base_url_image + formdata?.image}
                                     alt="User"
                                     className="profile-picture"
                                 />
@@ -179,6 +193,9 @@ const Profile = () => {
                                     </i></label>
                                 </button>
                                 <input type="file" id="profileImage" accept="img/*" className="d-none" onChange={filehandleChange} />
+                                    </>
+
+                                )}
 
 
 

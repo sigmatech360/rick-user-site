@@ -415,6 +415,7 @@ function ProgramsProjects() {
             </div>
           </div>
         </section>
+        <section className="no-board-contact-sec">
 
         <Contact
           handleChange={handleChange}
@@ -426,6 +427,8 @@ function ProgramsProjects() {
           phone={formState?.phone}
           ApiDataGetmembers={ApiDataGetmembers}
         />
+        </section>
+
 
         {/* <Leadership /> */}
         <Sponsor />

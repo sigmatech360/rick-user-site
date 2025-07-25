@@ -200,9 +200,9 @@ function Footer() {
                     >
                       <img src={googlePlay} className="w-100" alt="" />
                     </Link>
-                    <Link target="_blank" className="appLink">
+                    <span target="_blank" className="appLink">
                       <img src={applePlay} className="w-100" alt="" />
-                    </Link>
+                    </span>
                   </div>
                 </div>
               </div>

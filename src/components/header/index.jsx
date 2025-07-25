@@ -4,7 +4,7 @@ import logo from "../../Assets/images/logo.png";
 import donateicon from "../../Assets/images/donateicon.png";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import placeholder from "../../Assets/images/placeholder.jpg";
+import placeholder from "../../Assets/images/placeholder.png";
 import { usePost, useGet } from "../../Screens/Api/usePost";
 import { base_url_image } from "../../Screens/Api/base_url";
 import {
@@ -90,7 +90,7 @@ function Header() {
   } = usePost("/logout");
 
   const [logintoken, setLogintoken] = useState("");
-  const token = localStorage.getItem("login");
+  const token = localStorage.getItem("token");
 
   const handleSubmitforget = (e) => {
     e.preventDefault();
@@ -243,16 +243,16 @@ function Header() {
 
   const navigate = useNavigate();
   const gettoken = () => {
-    setLogintoken(localStorage.getItem("login"));
+    setLogintoken(localStorage.getItem("token"));
   };
 
   useEffect(() => {
-    setLogintoken(localStorage.getItem("login"));
+    setLogintoken(localStorage.getItem("token"));
   }, []);
 
   useEffect(() => {
     if (ApiData?.success) {
-      localStorage.setItem("login", ApiData?.data?.token);
+      localStorage.setItem("token", ApiData?.data?.token);
       // setLogintoken(logintken);
       // Close modal
       setShowModal(false);
@@ -271,7 +271,7 @@ function Header() {
 
   useEffect(() => {
     if (ApiDatalogin?.success === true) {
-      localStorage.setItem("login", ApiDatalogin?.data?.token);
+      localStorage.setItem("token", ApiDatalogin?.data?.token);
       setShowModallogin(false);
       setUserData(() => {
         console.log("Clearing userData..."); // Debug log
@@ -298,9 +298,9 @@ function Header() {
   };
 
   const Handlelogout = async () => {
-    // const toeken =  localStorage.removeItem('login')
+    // const toeken =  localStorage.removeItem('token')
     await postLogout();
-    setLogintoken(localStorage.removeItem("login"));
+    setLogintoken(localStorage.removeItem("token"));
     toast.success("Volunteer Logout Successfully");
     setIsLoggedIn(false);
   };

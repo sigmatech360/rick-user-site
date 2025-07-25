@@ -9,7 +9,7 @@ export const usePost = (url, initialData = null) => {
     const [ApiData, setData] = useState(initialData);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const LogoutData = localStorage.getItem('login');
+    const LogoutData = localStorage.getItem('token');
 
     const post = async (postData) => {
         setLoading(true);
@@ -68,7 +68,7 @@ export const useGet = (url, initialData = '', idData = '') => {
     const [ApiData, setData] = useState(initialData);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const LogoutData = localStorage.getItem('login');
+    const LogoutData = localStorage.getItem('token');
     const [isTriggered, setIsTriggered] = useState(false);
     const get = async () => {
         setLoading(true);
@@ -105,7 +105,7 @@ export const useDelete = (url, initialData = null, idData = '') => {
     const [ApiData, setData] = useState(initialData);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const LogoutData = localStorage.getItem('login');
+    const LogoutData = localStorage.getItem('token');
     const [isTriggered, setIsTriggered] = useState(false);
     const del = async () => {
         setLoading(true);

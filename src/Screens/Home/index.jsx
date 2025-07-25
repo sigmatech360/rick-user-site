@@ -439,9 +439,9 @@ function Home() {
                         >
                           <img src={googlePlay} className="w-100" alt="" />
                         </Link>
-                        <Link target="_blank" className="appLink">
+                        <span target="_blank" className="appLink">
                           <img src={applePlay} className="w-100" alt="" />
-                        </Link>
+                        </span>
                       </div>
 
                       </div>
@@ -709,28 +709,28 @@ function Home() {
               {/* Left Card */}
               <div className="transitionalbg  col-md-12 col-lg-5 mb-4 mb-md-0">
                 <div className=" p4    ">
-                  <p
+                  {/* <p
                     className="para1 text-uppercase mb-2 px-4  text-white "
                     data-aos="fade-right"
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
                     Providing Shelter and Reunification for Families
-                  </p>
+                  </p> */}
                   <h2
                     className="fw-bold text-white  px-4 "
                     data-aos="fade-right"
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    Transitional Housing{" "}
+                   HIS-OC{" "}
                     <span
                       className="text-warning position-relative"
                       data-aos="fade-right"
                       data-aos-offset="0"
                       data-aos-duration="1000"
                     >
-                      Program{" "}
+                      Programs{" "}
                       <img
                         className="programunderline"
                         src={programunderline}
@@ -743,13 +743,7 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    We have 54 beds in 3 shelters that provide a safe place to
-                    stay for families. Residents can stay for 4 to 6 months, in
-                    a home-like environment, while they establish themselves in
-                    a career and build up savings in order to transition into
-                    permanent housing. We house over 150 men, women and children
-                    each year in a spirit of dignity and love through our three
-                    residences.
+                    We have multiple programs that assist people who are homeless or at risk of being homeless. Our shelters and supportive service programs provide assistance to our community’s most vulnerable population. HIS-OC does not and shall not discriminate on the basis of race, color, religion (creed), gender, gender expression, age, national origin (ancestry), disability, marital status, sexual orientation, or military status, in any of its activities or operations.
                   </p>
                   <button
                     className="parabtn  btn px-4 "
@@ -758,7 +752,7 @@ function Home() {
                     data-aos-duration="1000"
                     onClick={handleroute}
                   >
-                    Learn More
+                    View All
                   </button>
                 </div>
               </div>
@@ -787,7 +781,7 @@ function Home() {
                         }}
                       />
                       <button
-                        onClick={() => handleroutelist(items?.id)}
+                        onClick={() => handleroutelist(items?.slug)}
                         className="cardbtn btn btn-outline-primary btn-sm"
                       >
                         Learn More

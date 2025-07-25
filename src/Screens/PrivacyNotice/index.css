@@ -223,8 +223,11 @@
   left: -16px;
 }
 
-.get-help-contact-sec .contact-left-col {
+.no-board-contact-sec .contact-left-col {
   display: none;
+}
+.no-board-contact-sec.map-image .rounded-end{
+  border-radius: 0.375rem;
 }
 
 .dedicatd-leadership .para {

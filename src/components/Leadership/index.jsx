@@ -4,7 +4,7 @@ import dedleadimg3 from "../../Assets/images/dedleadimg3.png";
 import dedleadimg4 from "../../Assets/images/dedleadimg4.png";
 import Slider from "react-slick";
 import placeholder from "../../Assets/images/placeholder.jpg";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import dedicationunderline from "../../Assets/images/dedicationunderline.png";
 import "slick-carousel/slick/slick.css";
@@ -16,8 +16,17 @@ function Leadership({ ApiDataGetmembers }) {
   useEffect(() => {
     AOS.init();
   }, []);
+  const [executiveMembers, setExecutiveMembers] = useState([]);
+  useEffect(() => {
+    if(ApiDataGetmembers?.data){
 
-  console.log("ApiDataGetmembers", ApiDataGetmembers);
+      setExecutiveMembers(ApiDataGetmembers?.data
+                ?.filter((member) => ( member.designation === "Executive Director")));
+    }
+    // console.log('executiveMembers : ', executiveMembers);
+     
+  }, [ApiDataGetmembers]);
+
 
   const PrevArrow = (props) => {
     const { onClick } = props;
@@ -84,7 +93,7 @@ function Leadership({ ApiDataGetmembers }) {
 
   const settings = {
     // dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -94,7 +103,7 @@ function Leadership({ ApiDataGetmembers }) {
       {
         breakpoint: 1200, // Large screens
         settings: {
-          slidesToShow: 3,
+          slidesToShow: executiveMembers?.length > 3 ? 3 : executiveMembers.length, // Show 3 slides if more than 3 members
         },
       },
       {
@@ -208,18 +217,18 @@ function Leadership({ ApiDataGetmembers }) {
                 </div>
               ))} */}
             {ApiDataGetmembers?.data
-              ?.filter((member) => member.member_type === "1")
+              ?.filter((member) => ( member.designation === "Executive Director"))
               .map((member) => (
                 <div
                   key={member.id}
-                  className="leadershipcards p-2"
+                  className={`leadershipcards p-2 ${member.id}`}
                   data-aos={member?.animation}
                   data-aos-offset="0"
                   data-aos-duration="1000"
                 >
                   <div className="card p-4 border-0 text-center">
                     <div className="profile-container">
-                      <div className="yellow-overlay"></div>
+                      {/* <div className="yellow-overlay"></div> */}
                       <img
                         src={
                           member?.image

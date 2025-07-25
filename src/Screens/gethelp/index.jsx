@@ -357,7 +357,7 @@ function GetHelp() {
         </section>
 
         {/* <Leadership /> */}
-        <section className="get-help-contact-sec">
+        <section className="no-board-contact-sec">
           <Contact
             handleChange={handleChange}
             name={formState?.name}

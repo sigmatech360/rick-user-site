@@ -185,7 +185,7 @@ function Contactus() {
         />
         <section className="map-form">
           <div className="container-fluid">
-            <div className="row gx-0 mb-5">
+            <div className="row gx-0 mb-5 align-items-center">
               {/* Left side with form and text */}
               <div className="contactformleft col-lg-6 p-4 p-md-5">
                 <h1
@@ -201,7 +201,7 @@ function Contactus() {
                   </span>
                 </h1>
                 <p
-                  className="text-muted mb-3 w-50"
+                  className="text-muted mb-3 "
                   data-aos="fade-right"
                   data-aos-offset="0"
                   data-aos-duration="1000"
@@ -295,7 +295,10 @@ function Contactus() {
 
               {/* Right side with map image */}
               <div className="col-lg-6   d-lg-block">
+                <a href={mapimg}>
                 <img src={mapimg} alt="Map" className="img-fluid map-image" />
+
+                </a>
               </div>
             </div>
           </div>

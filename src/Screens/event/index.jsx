@@ -10,27 +10,28 @@ import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
 import communityimg from "../../Assets/images/communityimg.png";
 import { useNavigate } from "react-router-dom";
-import { useGet } from '../Api/usePost'
+import { useGet } from "../Api/usePost";
+import { base_url_image } from "../Api/base_url";
 function Event() {
-
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const learnnavigate = (items) => {
-
-    navigate(`${items}`)
+    navigate(`${items}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
-  const { ApiData: ApiDataGet, loading: loadingGet, error: errorGet, get: getdata } = useGet('/event')
-
+  };
+  const {
+    ApiData: ApiDataGet,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdata,
+  } = useGet("/event");
 
   useEffect(() => {
-    getdata()
-    
-    document.title = "Event - HIS OC" || "HOME - HIS OC";
-  }, [])
+    getdata();
 
+    document.title = "Event - HIS OC" || "HOME - HIS OC";
+  }, []);
 
   return (
-
     <>
       <Layout>
         <HeroSection
@@ -48,10 +49,7 @@ function Event() {
               <button className="todaybtn">Upcoming Events</button> */}
             </div>
             {ApiDataGet?.data?.map((items, index) => (
-
               <div className="row">
-
-
                 <div className="col-md-7 mt-5">
                   <div className=" d-flex gap-4">
                     <p className="monday-text">
@@ -79,7 +77,7 @@ function Event() {
                         <p className="d-flex gap-2 align-items-center">
                           {" "}
                           <CiClock2 />
-                          {items?.start_time} -    {items?.end_time}
+                          {items?.start_time} - {items?.end_time}
                         </p>
                       </div>
 
@@ -88,17 +86,28 @@ function Event() {
                         dangerouslySetInnerHTML={{ __html: items?.description }}
                       ></p>
 
-                      <button onClick={() => learnnavigate(items?.id)} className="todaybtn">Learn more</button>
+                      <button
+                        onClick={() => learnnavigate(items?.id)}
+                        className="todaybtn"
+                      >
+                        Learn more
+                      </button>
                     </div>
                   </div>
                 </div>
 
                 <div className="col-md-5 mt-5">
-                  <img src={communityimg} className="img-fluid" />
+                  <img
+                    src={
+                      items?.image
+                        ? `${base_url_image}${items.image}`
+                        : communityimg
+                    }
+                    className="img-fluid eventimg"
+                  />
                 </div>
               </div>
             ))}
-
           </div>
         </section>
 

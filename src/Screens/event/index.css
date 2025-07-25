@@ -63,6 +63,13 @@
   vertical-align: middle;
 }
 
+.eventimg {
+  height: 540px;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
 /* Media Queries for Responsiveness */
 
 /* Small Devices (Phones) */
