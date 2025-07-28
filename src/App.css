@@ -4,8 +4,11 @@
   }
 }
 
+.colorGreen{
+  color: #348F99;
+}
 .bg-theme {
-  background-color: #348F99;
+  background-color: #348f99;
 }
 
 .sponsor-project-sec {
@@ -39,16 +42,16 @@
   gap: 10px;
   margin-bottom: 10px;
 }
-.text-primary{
-  color: #348F99 !important;
+.text-primary {
+  color: #348f99 !important;
 }
 
 .sponsor-card .sponsor-card-body-title button {
   padding: 5px 10px;
   white-space: nowrap;
-  border: 2px solid #348F99;
+  border: 2px solid #348f99;
   background: transparent;
-  color: #348F99;
+  color: #348f99;
   font-weight: 500;
   font-size: 15px;
   border-radius: 10px;
@@ -81,21 +84,17 @@
 }
 
 .sponsor-card .sponsor-card-colledted-amount {
-  color: #348F99;
+  color: #348f99;
   font-weight: 500;
 }
 
 .sponsor-card .sponsor-card-target-amount {
-  color: #6E6E6F;
+  color: #6e6e6f;
 }
 
 .sponsor-card .sponsor-card-body .progress {
   height: 10px;
 }
-
-
-
-
 
 .top-volunteer-card {
   background-color: #367379 !important;
@@ -103,16 +102,16 @@
   height: 100%;
 }
 
-.top-volunteer-card .card-title{
+.top-volunteer-card .card-title {
   color: #fff;
 }
-.top-volunteer-card .card-img{
+.top-volunteer-card .card-img {
   width: 80px;
   height: 80px;
   object-fit: contain;
   object-position: center;
 }
-.top-volunteer-card .col-3{
+.top-volunteer-card .col-3 {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -120,12 +119,32 @@
 .top-volunteer-card .row {
   align-items: center;
 }
-.top-volunteer-card .card-body{
+.top-volunteer-card .card-body {
   padding: 0 !important;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.heplcard:hover h3.helped {
+  color: #fdd22e !important;
+}
+
+.heplcard h3.helped {
+  transition: all 0.5s ease;
+}
+/* Our Work */
+.programaList {
+  height: 500px;
+  overflow: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+/* For WebKit browsers (Chrome, Safari) */
+.programaList::-webkit-scrollbar {
+  display: none;
 }
 
 @media (max-width: 1399px) {
@@ -158,10 +177,18 @@
   .sponsor-card .sponsor-card-body p {
     font-size: 14px;
   }
+  .programaList {
+    height: unset;
+  }
 }
 
+@media (max-width: 767px) {
+  .communityOutreachDayschedualdivider {
+    height: unset;
+  }
+}
 @media (max-width: 480px) {
   .sponsor-card .sponsor-card-body-title h3 {
-      font-size: 19px;
+    font-size: 19px;
   }
 }

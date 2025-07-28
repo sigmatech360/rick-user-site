@@ -6,7 +6,7 @@ import AOS from "aos";
 import { Modal, Button, Form } from "react-bootstrap";
 import Layout from "../../components/layout";
 import sponsorunderline from "../../Assets/images/sponsorunderline.svg";
-import sponsorshipsectionimg from '../../Assets/images/sponsorshipsectionimg.png'
+import sponsorshipsectionimg from "../../Assets/images/sponsorshipsectionimg.png";
 import { FiSmartphone } from "react-icons/fi";
 import createdunderline from "../../Assets/images/createdunderline.png";
 import HeroSection from "../../components/herosection";
@@ -33,58 +33,71 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
-
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
-
 
 const sponsorData = [
   {
     id: 1,
     image: sponsorimg1,
     title: "Street Outreach Program Sponsorship",
-    description: "By sponsoring our Street Outreach Program, you can ensure that our team has the resources needed to connect with individuals living on the streets, providing immediate assistance, and guiding them to safety and support.",
+    description:
+      "By sponsoring our Street Outreach Program, you can ensure that our team has the resources needed to connect with individuals living on the streets, providing immediate assistance, and guiding them to safety and support.",
     collectedAmount: 4599,
-    targetAmount: 10000
+    targetAmount: 10000,
   },
   {
     id: 2,
     image: sponsorimg2,
     title: "Housing First Initiative Sponsorship",
-    description: "Sponsor our Housing First Initiative to support efforts in quickly moving individuals and families into permanent housing, providing them with stability and the opportunity to rebuild their lives.",
+    description:
+      "Sponsor our Housing First Initiative to support efforts in quickly moving individuals and families into permanent housing, providing them with stability and the opportunity to rebuild their lives.",
     collectedAmount: 4599,
-    targetAmount: 10000
+    targetAmount: 10000,
   },
   {
     id: 3,
     image: sponsorimg3,
     title: "Housing First Initiative Sponsorship",
-    description: "Sponsor our Housing First Initiative to support efforts in quickly moving individuals and families into permanent housing, providing them with stability and the opportunity to rebuild their lives.",
+    description:
+      "Sponsor our Housing First Initiative to support efforts in quickly moving individuals and families into permanent housing, providing them with stability and the opportunity to rebuild their lives.",
     collectedAmount: 4599,
-    targetAmount: 10000
+    targetAmount: 10000,
   },
-]
+];
 
 function Contactus() {
-  const [formState, setFormState] = useState({})
-  const { ApiData: ApiDataotp, loading: loadingotp, error: errorotp, post: postotp } = usePost('/sponsorship-request')
-  const { ApiData: ApiDataGet, loading: loadingGet, error: errorGet, get: getdata } = useGet('/project')
-  const { ApiData: SponsoredprogramApiDataGet, loading: sponsoredprogramloadingGet, error: sponsoredprogramerrorGet, get: getsponsoredprogramdata } = useGet('/sponsored-program')
+  const [formState, setFormState] = useState({});
+  const {
+    ApiData: ApiDataotp,
+    loading: loadingotp,
+    error: errorotp,
+    post: postotp,
+  } = usePost("/sponsorship-request");
+  const {
+    ApiData: ApiDataGet,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdata,
+  } = useGet("/project");
+  console.log("projects data", ApiDataGet);
+  const {
+    ApiData: SponsoredprogramApiDataGet,
+    loading: sponsoredprogramloadingGet,
+    error: sponsoredprogramerrorGet,
+    get: getsponsoredprogramdata,
+  } = useGet("/sponsored-program");
 
-
-
-
-
-  const [selectedprogrammodal, setSelectedprogrammodal] = useState(false)
+  const [selectedprogrammodal, setSelectedprogrammodal] = useState(false);
   useEffect(() => {
-    getdata()
-    getsponsoredprogramdata()
+    getdata();
+    getsponsoredprogramdata();
 
     document.title = "Sponsorship - HIS OC" || "HOME - HIS OC";
-  }, [])
+  }, []);
 
   const handleprogramClose = () => {
-    setSelectedprogrammodal(false)
-  }
+    setSelectedprogrammodal(false);
+  };
   useEffect(() => {
     AOS.init();
   }, []);
@@ -192,7 +205,7 @@ function Contactus() {
   const [hoveredProgram, setHoveredProgram] = useState(null);
 
   const [donatenotify, setDonatenotiy] = useState(false);
- 
+
   const handleClose = (event) => {
     event.preventDefault();
     setDonatenotiy(false);
@@ -211,7 +224,6 @@ function Contactus() {
 
   useEffect(() => {
     if (ApiDataotp?.status === true) {
-
       toast.success(ApiDataotp?.message);
 
       // Reset all fields in formState to empty strings
@@ -228,14 +240,14 @@ function Contactus() {
   }, [ApiDataotp]);
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const formDataMethod = new FormData();
     for (const key in formState) {
       formDataMethod.append(key, formState[key]);
     }
 
     postotp(formDataMethod);
-  }
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -245,25 +257,7 @@ function Contactus() {
     }));
   };
 
-
-
-
-
-
-
-
-
-
-
-
-
-  const [formdata, setFormdata] = useState({ program_title: "" })
-
-
-
-
-
-
+  const [formdata, setFormdata] = useState({ program_title: "" });
 
   const handleChangeprogram = (e) => {
     const { name, value } = e.target;
@@ -279,17 +273,9 @@ function Contactus() {
     for (const key in formdata) {
       formDataMethod.append(key, formdata[key]); // Fixed: used correct state
     }
-    setSelectedprogrammodal(false)
+    setSelectedprogrammodal(false);
     postotp(formDataMethod);
   };
-
-
-
-
-
-
- 
-
 
   return (
     <>
@@ -302,63 +288,75 @@ function Contactus() {
           programpojectaboutherounderline="hopeunderline"
         />
 
-
-
         <section className="sponsor-project-sec">
           <div className="container">
             <div className="row">
-
               {SponsoredprogramApiDataGet?.data?.map((item, index) => (
                 <div className="col-lg-4 mb-4">
                   <div className="sponsor-card h-100">
                     <div className="sponsor-card-header">
-                      <img src={base_url_image + item?.image} className="img-fluid" alt="" />
+                      <img
+                        src={base_url_image + item?.image}
+                        className="img-fluid"
+                        alt=""
+                      />
                     </div>
                     <div className="sponsor-card-body">
                       <div className="sponsor-card-body-top">
                         <div className="sponsor-card-body-title">
                           <h3>{item?.title}</h3>
-                          <button onClick={() => {
-                            setSelectedprogrammodal(true);
-                            setFormdata({ project_id: item?.id });
-                          }}>Sponsor Now</button>
+                          <button
+                            onClick={() => {
+                              setSelectedprogrammodal(true);
+                              setFormdata({ project_id: item?.id });
+                            }}
+                          >
+                            Sponsor Now
+                          </button>
                         </div>
 
-                        <p dangerouslySetInnerHTML={{ __html: item?.short_description }}></p>
+                        <p
+                          dangerouslySetInnerHTML={{
+                            __html: item?.short_description,
+                          }}
+                        ></p>
                       </div>
-
-
-
 
                       <div className="sponsor-card-body-bottom">
                         <div className="progress">
                           <div
                             className="progress-bar bg-theme"
                             role="progressbar"
-                            style={{ width: `${item?.collected_amount && item?.targeted_amount ? (item.collected_amount / item.targeted_amount) * 100 : 0}%` }}
+                            style={{
+                              width: `${
+                                item?.collected_amount && item?.targeted_amount
+                                  ? (item.collected_amount /
+                                      item.targeted_amount) *
+                                    100
+                                  : 0
+                              }%`,
+                            }}
                             aria-valuenow={item?.collected_amount || 0}
                             aria-valuemin="0"
                             aria-valuemax={item?.targeted_amount || 100}
-                          >
-                          </div>
+                          ></div>
                         </div>
                         <div className="sponsor-card-body-footer">
-                          <h6 className="sponsor-card-colledted-amount">Collected: ${item?.collected_amount}</h6>
-                          <h6 className="sponsor-card-target-amount">Target: ${item?.targeted_amount}</h6>
+                          <h6 className="sponsor-card-colledted-amount">
+                            Collected: ${item?.collected_amount}
+                          </h6>
+                          <h6 className="sponsor-card-target-amount">
+                            Target: ${item?.targeted_amount}
+                          </h6>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
               ))}
-
-
             </div>
           </div>
         </section>
-
-
-
 
         <section className="Partner">
           <div className="container-fluid">
@@ -452,7 +450,8 @@ function Contactus() {
                         <span className="input-group-text">
                           <i className="bi bi-list-task"></i>
                         </span>
-                        <select name="program_title" // Name should match the key in the state
+                        <select
+                          name="program_title" // Name should match the key in the state
                           value={formState?.program_title || ""} // Default value to prevent uncontrolled warning
                           onChange={handleChange}
                           className="partnerinputfield form-select"
@@ -460,34 +459,16 @@ function Contactus() {
                         >
                           <option value="">Select Project</option>
 
-                          {ApiDataGet?.data?.map((items) => (
-
-                            <option value={items?.program_title}>{items?.title}</option>
+                          {SponsoredprogramApiDataGet?.data?.map((items) => (
+                            <option value={items?.program_title}>
+                              {items?.title}
+                            </option>
                           ))}
                           {/* <option value="project2">Project 2</option>
                           <option value="project3">Project 3</option> */}
                         </select>
-
-
-
-
-
-
                       </div>
                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
                   </div>
 
                   {/* Message Textarea */}
@@ -535,7 +516,7 @@ function Contactus() {
               </div>
             </div>
           </div>
-        </section >
+        </section>
 
         <section className="inquiries-call d-flex justify-content-center align-items-center">
           <h2 className=" inquiries-calltitle fw-bold text-white">
@@ -547,8 +528,7 @@ function Contactus() {
             </span>
           </h2>
         </section>
-      </Layout >
-
+      </Layout>
       <section className="VolunteerModal">
         <Modal size="md" show={donatenotify} onHide={handleClose} centered>
           <Modal.Header>
@@ -586,38 +566,14 @@ function Contactus() {
             </Form>
           </Modal.Body>
         </Modal>
-
-
-
-
-
-
-
-
-
       </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <section className="VolunteerModal">
-        <Modal size="md" show={selectedprogrammodal} onHide={handleprogramClose} centered>
+        <Modal
+          size="md"
+          show={selectedprogrammodal}
+          onHide={handleprogramClose}
+          centered
+        >
           <Modal.Header closeButton>
             <Modal.Title>
               {/* <h4 className="modaltitle text-center">Unite With Us To Rewrite</h4> */}
@@ -625,7 +581,8 @@ function Contactus() {
           </Modal.Header>
           <Modal.Body>
             <p className="modaltitle">
-              Sponsorship opportunities allow you to make a significant difference by supporting our programs.
+              Sponsorship opportunities allow you to make a significant
+              difference by supporting our programs.
             </p>
             <h4 className="modaltitle">
               <span> Life Stories. </span>
@@ -659,13 +616,6 @@ function Contactus() {
                     required
                     placeholder="Email"
                     value={formdata?.email || ""}
-
-
-
-
-
-
-
                     onChange={handleChangeprogram}
                     name="email"
                     className="border-0"
@@ -722,7 +672,10 @@ function Contactus() {
                 <div className="position-relative">
                   {/* Icon inside the textarea field */}
                   <span className="sponsor-programmessage position-absolute   start-0 translate-middle-y px-3">
-                    <FontAwesomeIcon icon={faCommentDots} className="text-muted" />
+                    <FontAwesomeIcon
+                      icon={faCommentDots}
+                      className="text-muted"
+                    />
                   </span>
 
                   {/* Textarea Field */}
@@ -739,17 +692,18 @@ function Contactus() {
                 </div>
               </Form.Group>
               {/* Submit Button */}
-              <Button variant="success" type="submit" className="mt-4 w-100 becomeavalbtn">
+              <Button
+                variant="success"
+                type="submit"
+                className="mt-4 w-100 becomeavalbtn"
+              >
                 Submit Form
               </Button>
             </Form>
           </Modal.Body>
         </Modal>
       </section>
-
-
       export default VolunteerModal;
-
     </>
   );
 }

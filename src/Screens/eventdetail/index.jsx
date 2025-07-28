@@ -105,26 +105,52 @@ function EventDetail() {
                 </p>
               </div> */}
               <div className="communityOutreachDayschedual">
-                <p className="d-flex align-items-center gap-2">
+                <p className="d-flex align-items-center gap-md-2 gap-0 mb-0">
                   <FiMapPin /> {ApiDataGeteventdetail?.data?.address}
                 </p>
                 <div className="communityOutreachDayschedualdivider"></div>
-                <p className="d-flex align-items-center gap-2">
+                <p className="d-flex align-items-center gap-md-2 gap-0 mb-0">
                   <RiCalendar2Line /> {formattedDate}
                 </p>
                 <div className="communityOutreachDayschedualdivider"></div>
-                <p className="d-flex align-items-center gap-2">
+                <p className="d-flex align-items-center gap-md-2 gap-0 mb-0">
                   <CiClock2 /> {formattedStartTime} -{formattedEndTime}
                 </p>
               </div>
             </div>
 
-            <div className="col-md-12 mt-4">
+            <div className="col-lg-6 mt-4">
               <img
                 src={base_url_image + ApiDataGeteventdetail?.data?.image}
                 alt="Community Event"
-                className="communityimg"
+                className="img-fluid"
               />
+              {/* communityimg image old class */}
+              {/* <div className="mt-4">
+                <p
+                  className="communityOutreachDaypara"
+                  dangerouslySetInnerHTML={{
+                    __html: ApiDataGeteventdetail?.data?.description,
+                  }}
+                ></p>
+
+                <h3 className="mb-4">Agenda</h3>
+
+                <div className="timeline">
+                  {ApiDataGeteventdetail?.data?.agenda.map((item, index) => (
+                    <div key={index} className="timeline-item d-flex ">
+                      <div className="timeline-dotparent">
+                        {" "}
+                        <div className="timeline-dot"></div>{" "}
+                      </div>
+                      <div className="timeline-content">
+                        <p className="time mb-0">{item.time}</p>
+                        <p className="event">{item.title}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div> */}
             </div>
 
             <div className="col-md-6 mt-4">
@@ -155,8 +181,8 @@ function EventDetail() {
 
             {ApiDataGeteventlist?.data?.length > 1 && (
               <div
-                className="VolunteerOrientationblg mb-3 col-md-5 mt-4"
-                style={{ maxHeight: "450px", overflowY: "scroll" }}
+                className="VolunteerOrientationblg mb-3 col-lg-6 mt-4"
+                // style={{ maxHeight: "450px", overflowY: "scroll" }}
               >
                 {ApiDataGeteventlist?.data?.map((items, index) => (
                   <div

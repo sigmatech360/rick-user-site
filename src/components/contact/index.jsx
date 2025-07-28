@@ -72,7 +72,7 @@ function Contact({
             {/* <!-- Left Contact Information Panel with Grid Layout --> */}
             <div className="col-md-12  col-lg-6 mb-4 mb-lg-0 contact-left-col">
               <div className="contact-info-panel p-4 shadow-sm w-100 rounded-start">
-                <h2 className="his-oc-board-members">HIS-OC Board Members</h2>
+                <h2 className="his-oc-board-members">HIS-OC Team Members</h2>
                 <div className="contact-grid">
                   {/* {ApiDataGetmembers?.data?.filter((member) => member.member_type === 2).slice(0, 10).map((items) => (
                     <div className="contact-item p-3 rounded bg-white">
@@ -90,7 +90,7 @@ function Contact({
                     </div>
                   ))} */}
                   {ApiDataGetmembers?.data
-                    ?.filter((member) => member.member_type === "2") // Assuming member_type is a string
+                    ?.filter((member) => member.member_type === "1") // team member: 1
                     .slice(0, 10)
                     .map((items) => (
                       <div

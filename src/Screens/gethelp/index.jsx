@@ -324,7 +324,7 @@ function GetHelp() {
               {/* Right Section with Description and Button */}
               <div className="col-lg-6">
                 <p
-                  className="description mb-4"
+                  className="description mb-4 text-white"
                   data-aos="fade-left"
                   data-aos-offset="0"
                   data-aos-duration="1000"
@@ -333,7 +333,7 @@ function GetHelp() {
                   local health and human services programs in Orange County.
                 </p>
                 <p
-                  className="description mb-4"
+                  className="description mb-4 text-white"
                   data-aos="fade-left"
                   data-aos-offset="0"
                   data-aos-duration="1000"

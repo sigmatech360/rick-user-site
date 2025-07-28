@@ -6,6 +6,7 @@ import missionunderline from "../../Assets/images/missionunderline.png";
 import React, { useState, useEffect } from "react";
 import aboutherounderline from "../../Assets/images/aboutherounderline.png";
 import housedefaultimg from "../../Assets/images/housedefaultimg.png";
+import loader from "../../Assets/images/loader.gif";
 import resoucecenter from "../../Assets/images/resourcecenter.jpg";
 import { useGet, usePost } from "../Api/usePost";
 import AOS from "aos";
@@ -55,6 +56,8 @@ function ProgramsProjects() {
     error: errorGetprogram,
     get: getdataprogram,
   } = useGet("/program");
+
+  console.log("ApiDataGetprogram", ApiDataGetprogram);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -232,6 +235,11 @@ function ProgramsProjects() {
   const handleprogramdtl = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  useEffect(() => {
+    if (ApiDataGetprogram?.data?.length > 0) {
+      setHoveredProgram(ApiDataGetprogram.data[0]);
+    }
+  }, [ApiDataGetprogram]);
   return (
     <>
       <Layout>
@@ -289,7 +297,7 @@ function ProgramsProjects() {
               {/* Program List Section */}
               <div className="programs-section-left col-lg-6">
                 <div
-                  className="bordertop mb-0"
+                  className="bordertop programaList mb-3"
                   data-aos="fade-right"
                   data-aos-offset="0"
                   data-aos-duration="1000"
@@ -301,40 +309,63 @@ function ProgramsProjects() {
                       key={index}
                     >
                       <div
-                        className={`program-item p-3   d-flex justify-content-between mb-0 align-items-center ${
+                        className={`program-item p-3 ${
                           program.highlighted ? "highlighted" : ""
                         }`}
                         onMouseEnter={() => setHoveredProgram(program)}
-                        onMouseLeave={() => setHoveredProgram(null)}
+                        onMouseLeave={() => setHoveredProgram(program)}
                       >
-                        <div>
-                          <h5 className="mb-1">
-                            {program?.title}
-                            <span className="highlighted-word position-relative">
-                              {program?.highlightedWords} {""}
-                              <img
-                                src={aboutherounderline}
-                                className="programunderlines"
-                              />
-                            </span>
-                            {/* {program?.title2} */}
-                          </h5>
-                          <p
-                            className="mb-0 text-muted"
-                            dangerouslySetInnerHTML={{
-                              __html:
-                                program.short_description ||
-                                "Default description here",
-                            }}
-                          ></p>
+                        <div className="programImage d-lg-none mb-3 text-center">
+                          <img
+                            // src={
+                            //   hoveredProgram
+                            //     ? base_url_image + hoveredProgram.image
+                            //     : housedefaultimg
+                            // }
+                            src={
+                              program.image
+                                ? base_url_image + program.image
+                                : loader
+                            }
+                            alt="Hovered Program"
+                            className="img-fluid"
+                            // style={{
+                            //   objectFit: "cover",
+                            //   width: "100%",
+                            //   maxHeight: "651px",
+                            // }}
+                          />
                         </div>
-                        <Link
-                          onClick={handleprogramdtl}
-                          to={`/our-work/${program?.slug}`}
-                          className="arrow-con"
-                        >
-                          <FontAwesomeIcon icon={faArrowRight} />
-                        </Link>
+                        <div className="d-flex justify-content-between mb-0 align-items-center">
+                          <div>
+                            <h5 className="mb-1">
+                              {program?.title}
+                              <span className="highlighted-word position-relative">
+                                {program?.highlightedWords} {""}
+                                <img
+                                  src={aboutherounderline}
+                                  className="programunderlines"
+                                />
+                              </span>
+                              {/* {program?.title2} */}
+                            </h5>
+                            <p
+                              className="mb-0 text-muted"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  program.short_description ||
+                                  "Default description here",
+                              }}
+                            ></p>
+                          </div>
+                          <Link
+                            onClick={handleprogramdtl}
+                            to={`/our-work/${program?.slug}`}
+                            className="arrow-con"
+                          >
+                            <FontAwesomeIcon icon={faArrowRight} />
+                          </Link>
+                        </div>
                       </div>
                     </Link>
                   ))}
@@ -360,20 +391,20 @@ function ProgramsProjects() {
               </div>
 
               {/* Image Section */}
-              <div className="col-lg-6   d-lg-block">
-                <div className="image-container position-relative">
+              <div className="col-lg-6   d-lg-block d-none">
+                <div className="image-container position-relative text-center">
                   <img
                     src={
                       hoveredProgram
                         ? base_url_image + hoveredProgram.image
-                        : housedefaultimg
+                        : loader
                     }
                     alt="Hovered Program"
                     className="img-fluid"
                     style={{
                       objectFit: "cover",
-                      width: "100%",
-                      maxHeight: "651px",
+                      // width: "100%",
+                      // maxHeight: "651px",
                     }}
                   />
                   <div className="overlay"></div>
@@ -416,19 +447,17 @@ function ProgramsProjects() {
           </div>
         </section>
         <section className="no-board-contact-sec">
-
-        <Contact
-          handleChange={handleChange}
-          name={formState?.name}
-          info={formState?.info}
-          email={formState?.email}
-          handleSubmit={handleSubmit}
-          message={formState?.message}
-          phone={formState?.phone}
-          ApiDataGetmembers={ApiDataGetmembers}
-        />
+          <Contact
+            handleChange={handleChange}
+            name={formState?.name}
+            info={formState?.info}
+            email={formState?.email}
+            handleSubmit={handleSubmit}
+            message={formState?.message}
+            phone={formState?.phone}
+            ApiDataGetmembers={ApiDataGetmembers}
+          />
         </section>
-
 
         {/* <Leadership /> */}
         <Sponsor />

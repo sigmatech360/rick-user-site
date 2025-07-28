@@ -18,15 +18,15 @@ function Leadership({ ApiDataGetmembers }) {
   }, []);
   const [executiveMembers, setExecutiveMembers] = useState([]);
   useEffect(() => {
-    if(ApiDataGetmembers?.data){
-
-      setExecutiveMembers(ApiDataGetmembers?.data
-                ?.filter((member) => ( member.designation === "Executive Director")));
+    if (ApiDataGetmembers?.data) {
+      setExecutiveMembers(
+        ApiDataGetmembers?.data?.filter(
+          (member) => member.designation === "Executive Director"
+        )
+      );
     }
     // console.log('executiveMembers : ', executiveMembers);
-     
   }, [ApiDataGetmembers]);
-
 
   const PrevArrow = (props) => {
     const { onClick } = props;
@@ -103,7 +103,8 @@ function Leadership({ ApiDataGetmembers }) {
       {
         breakpoint: 1200, // Large screens
         settings: {
-          slidesToShow: executiveMembers?.length > 3 ? 3 : executiveMembers.length, // Show 3 slides if more than 3 members
+          slidesToShow:
+            executiveMembers?.length > 3 ? 3 : executiveMembers.length, // Show 3 slides if more than 3 members
         },
       },
       {
@@ -217,7 +218,8 @@ function Leadership({ ApiDataGetmembers }) {
                 </div>
               ))} */}
             {ApiDataGetmembers?.data
-              ?.filter((member) => ( member.designation === "Executive Director"))
+              // ?.filter((member) => ( member.designation === "Executive Director"))
+              ?.filter((member) => member.member_type === "2") // borad member 2
               .map((member) => (
                 <div
                   key={member.id}
@@ -226,7 +228,7 @@ function Leadership({ ApiDataGetmembers }) {
                   data-aos-offset="0"
                   data-aos-duration="1000"
                 >
-                  <div className="card p-4 border-0 text-center">
+                  <div className="card p-3 border-0 text-center">
                     <div className="profile-container">
                       {/* <div className="yellow-overlay"></div> */}
                       <img
@@ -245,7 +247,7 @@ function Leadership({ ApiDataGetmembers }) {
                           <br /> OC’s
                         </p>
 
-                        <div className="mt-3 text-start">
+                        <div className="mt-2 text-start">
                           <p className="card-title">
                             {member?.designation?.length > 19
                               ? `${member.designation.slice(0, 19)}...`

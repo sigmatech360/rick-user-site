@@ -48,7 +48,7 @@ const Stats = ({ApiDatastats}) => {
                 >
                   <div className="heplcard  col-md-4 mb-3 mb-md-0">
                     <div className="stat-card   py-4 px-3 shadow-sm rounded h-100">
-                      <h3 className="helped fw-bold text-success">{statsData?.number}</h3>
+                      <h3 className="helped fw-bold">{statsData?.number}</h3>
                       <p className="mb-0">{statsData?.help}</p>
                     </div>
                   </div>

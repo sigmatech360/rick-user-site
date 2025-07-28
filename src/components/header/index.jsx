@@ -303,6 +303,7 @@ function Header() {
     setLogintoken(localStorage.removeItem("token"));
     toast.success("Volunteer Logout Successfully");
     setIsLoggedIn(false);
+    navigate("/")
   };
 
   const handleCloselogin = () => setShowModallogin(false);
