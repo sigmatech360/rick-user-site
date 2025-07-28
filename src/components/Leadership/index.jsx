@@ -11,21 +11,30 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
 import "./index.css";
+import 'swiper/css/navigation';
 import { base_url_image } from "../../Screens/Api/base_url";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+// import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css";
+import { Navigation, Pagination } from "swiper/modules";
+// import { SwiperSlide } from "swiper/react";
+
 function Leadership({ ApiDataGetmembers }) {
   useEffect(() => {
     AOS.init();
   }, []);
-  const [executiveMembers, setExecutiveMembers] = useState([]);
+  const [boardMembers, setBoardMembers] = useState([]);
   useEffect(() => {
     if (ApiDataGetmembers?.data) {
-      setExecutiveMembers(
-        ApiDataGetmembers?.data?.filter(
-          (member) => member.designation === "Executive Director"
-        )
+      setBoardMembers(
+        ApiDataGetmembers?.data?.filter((member) => member.member_type === "2")
       );
     }
-    // console.log('executiveMembers : ', executiveMembers);
+    // console.log('boardMembers : ', boardMembers);
   }, [ApiDataGetmembers]);
 
   const PrevArrow = (props) => {
@@ -101,10 +110,16 @@ function Leadership({ ApiDataGetmembers }) {
     nextArrow: <NextArrow />,
     responsive: [
       {
+        breakpoint: 1400,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
         breakpoint: 1200, // Large screens
         settings: {
-          slidesToShow:
-            executiveMembers?.length > 3 ? 3 : executiveMembers.length, // Show 3 slides if more than 3 members
+          slidesToShow: 4,
+          // boardMembers?.length > 3 ? 3 : boardMembers.length, // Show 3 slides if more than 3 members
         },
       },
       {
@@ -121,6 +136,12 @@ function Leadership({ ApiDataGetmembers }) {
       },
       {
         breakpoint: 575, // Extra-small screens (below 768px)
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 400, // Extra-small screens (below 768px)
         settings: {
           slidesToShow: 1,
         },
@@ -166,110 +187,139 @@ function Leadership({ ApiDataGetmembers }) {
               </p>
             </div>
           </div>
-          <Slider {...settings}>
-            {/* {ApiDataGetmembers?.data
-              ?.filter((member) => member.member_type === 1)
-              .map((member, index) => (
-                <div
-                  key={index}
-                  className="leadershipcards p-2"
-                  data-aos={member?.animation}
-                  data-aos-offset="0"
-                  data-aos-duration="1000"
-                >
-                  <div className="card  p-4 border-0   text-center">
-                    <div className="profile-container">
-                      <div className="yellow-overlay"></div>
-                      <img
-                        src={
-                          member?.image
-                            ? `${base_url_image}${member.image}`
-                            : placeholder
-                        }
-                        alt={member?.name || "Placeholder"}
-                        className="profile-image"
-                      />
-
-                      <div className=" gap-2 d-flex">
-                        <p className="hisoc   ">
-                          {" "}
-                          HIS
-                          <br /> OC’s
-                        </p>
-                        <div className="mt-3">
-                          <p className="card-title  ">
-                            {member?.designation?.length > 19
-                              ? `${member.designation.slice(0, 19)} :`
-                              : member?.designation}
-
-                            <br />
-                            {member?.name}
-                          </p>
-                          <p className="card-text   text-muted mb-0">
-                            {member?.email}
-                          </p>
-                          <p className="card-text text-muted   mt=0">
-                            {member?.phone}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))} */}
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={20}
+            slidesPerView={1}
+            loop={false}
+            // centeredSlides={true}
+            speed={1000}
+            // autoplay={{
+            //   delay: 3000,
+            //   disableOnInteraction: false,
+            // }}
+            onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+            breakpoints={{
+              500: { slidesPerView: 2 },
+              768: { slidesPerView: 2 },
+              992: { slidesPerView: 3 },
+              1200: { slidesPerView: 4 },
+            }}
+            // pagination={{ clickable: true }}
+            navigation
+          >
             {ApiDataGetmembers?.data
-              // ?.filter((member) => ( member.designation === "Executive Director"))
-              ?.filter((member) => member.member_type === "2") // borad member 2
-              .map((member) => (
-                <div
-                  key={member.id}
-                  className={`leadershipcards p-2 ${member.id}`}
-                  data-aos={member?.animation}
-                  data-aos-offset="0"
-                  data-aos-duration="1000"
-                >
-                  <div className="card p-3 border-0 text-center">
-                    <div className="profile-container">
-                      {/* <div className="yellow-overlay"></div> */}
-                      <img
-                        src={
-                          member?.image
-                            ? `${base_url_image}${member.image}`
-                            : placeholder
-                        }
-                        alt={member?.name || "Placeholder"}
-                        className="profile-image"
-                      />
+                // ?.filter((member) => ( member.designation === "Executive Director"))
+                ?.filter((member) => member.member_type === "2") // borad member 2
+                .map((member) => (
+                  <SwiperSlide>
+                  <div
+                    key={member.id}
+                    className={`leadershipcards p-2 ${member.id}`}
+                    // data-aos={member?.animation}
+                    // data-aos-offset="0"
+                    // data-aos-duration="1000"
+                  >
+                    <div className="card p-3 border-0 text-center">
+                      <div className="profile-container">
+                        {/* <div className="yellow-overlay"></div> */}
+                        <img
+                          src={
+                            member?.image
+                              ? `${base_url_image}${member.image}`
+                              : placeholder
+                          }
+                          alt={member?.name || "Placeholder"}
+                          className="profile-image"
+                        />
 
-                      <div className="gap-2 d-flex">
-                        <p className="hisoc">
-                          HIS
-                          <br /> OC’s
-                        </p>
+                        <div className="gap-2 d-flex">
+                          <p className="hisoc">
+                            HIS
+                            <br /> OC’s
+                          </p>
 
-                        <div className="mt-2 text-start">
-                          <p className="card-title">
-                            {member?.designation?.length > 19
-                              ? `${member.designation.slice(0, 19)}...`
-                              : member?.designation}
-                            <br />
-                            {member?.name}
-                          </p>
-                          <p className="card-text text-muted mb-0">
-                            {member?.email}
-                          </p>
-                          {member?.phone && (
-                            <p className="card-text text-muted mt-0">
-                              {member?.phone}
+                          <div className="mt-2 text-start">
+                            <p className="card-title">
+                              {member?.designation?.length > 19
+                                ? `${member.designation.slice(0, 19)}...`
+                                : member?.designation}
+                              <br />
+                              {member?.name}
                             </p>
-                          )}
+                            <p className="card-text text-muted mb-0">
+                              {member?.email}
+                            </p>
+                            {member?.phone && (
+                              <p className="card-text text-muted mt-0">
+                                {member?.phone}
+                              </p>
+                            )}
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              ))}
-          </Slider>
+
+                  </SwiperSlide>
+                ))}
+
+          </Swiper>
+          {/* <Slider {...settings} className="dedicatd-leadership">
+          {ApiDataGetmembers?.data
+                ?.filter((member) => member.member_type === "2") // borad member 2
+                .map((member) => (
+                  <div
+                    key={member.id}
+                    className={`leadershipcards p-2 ${member.id}`}
+                    data-aos={member?.animation}
+                    data-aos-offset="0"
+                    data-aos-duration="1000"
+                  >
+                    <div className="card p-3 border-0 text-center">
+                      <div className="profile-container">
+                        <img
+                          src={
+                            member?.image
+                              ? `${base_url_image}${member.image}`
+                              : placeholder
+                          }
+                          alt={member?.name || "Placeholder"}
+                          className="profile-image"
+                        />
+
+                        <div className="gap-2 d-flex">
+                          <p className="hisoc">
+                            HIS
+                            <br /> OC’s
+                          </p>
+
+                          <div className="mt-2 text-start">
+                            <p className="card-title">
+                              {member?.designation?.length > 19
+                                ? `${member.designation.slice(0, 19)}...`
+                                : member?.designation}
+                              <br />
+                              {member?.name}
+                            </p>
+                            <p className="card-text text-muted mb-0">
+                              {member?.email}
+                            </p>
+                            {member?.phone && (
+                              <p className="card-text text-muted mt-0">
+                                {member?.phone}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+
+          </Slider> */}
+
+          
         </div>
       </section>
     </>

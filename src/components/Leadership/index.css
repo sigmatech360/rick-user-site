@@ -50,10 +50,31 @@
   transition: transform 0.5s ease !important;
 
 }
+.leadershipcards .card {
+  height: 370px;
+}
 
 .card:hover {
   transform: translateY(-15px);
   transition: transform 0.2s ease !important;
+}
+.swiper-button-prev, 
+.swiper-button-next {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50%;
+  background-color: #fdd22e;
+  
+}
+.dedicatd-leadership .swiper-button-prev::after{
+  content: '←';
+      font-size: 25px;
+    color: white;
+} 
+.dedicatd-leadership .swiper-button-next::after {
+  content: '→'; /* Right arrow */
+      font-size: 25px;
+    color: white;
 }
 
 
@@ -63,6 +84,12 @@
   background-color: #fefbeb;
 
   box-shadow: 0px 1px 17px 4px rgb(145 145 145 / 10%);
+}
+
+.dedicatd-leadership .slick-track{
+  display: flex;
+  align-items: center;
+  /* padding-block: 10px; */
 }
 
 .dedicatd-leadership .slick-next {
