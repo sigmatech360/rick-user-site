@@ -9,29 +9,35 @@ import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
 import communityimg from "../../Assets/images/communityimg.png";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
-import { useGet } from '../Api/usePost'
-import {Link} from 'react-router-dom'
+import { useGet } from "../Api/usePost";
+import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 import { base_url_image } from "../Api/base_url";
 
-import Placeholder from '../../Assets/images/placeholder.jpg'
+import Placeholder from "../../Assets/images/placeholder.jpg";
 function Announcementdetail() {
-
-  const { id } = useParams()
-  const { ApiData: ApiDataGet, loading: loadingGet, error: errorGet, get: getdata } = useGet(`/announcement/${id}`)
-  const { ApiData: ApiDataGetlist, loading: loadingGetlist, error: errorGetlist, get: getdatalist } = useGet('/announcement')
+  const { id } = useParams();
+  const {
+    ApiData: ApiDataGet,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdata,
+  } = useGet(`/announcement/${id}`);
+  const {
+    ApiData: ApiDataGetlist,
+    loading: loadingGetlist,
+    error: errorGetlist,
+    get: getdatalist,
+  } = useGet("/announcement");
 
   useEffect(() => {
-    getdata()
+    getdata();
     document.title = ApiDataGet?.data?.title || "HOME- HIS OC";
-
-  }, [id])
+  }, [id]);
   useEffect(() => {
-    getdatalist()
-    
-
-  }, [])
-  console.log("ApiDataGetlist", ApiDataGetlist)
+    getdatalist();
+  }, []);
+  console.log("ApiDataGetlist", ApiDataGetlist);
 
   const agendaItems = [
     { time: "5:00 PM - 6:00 PM", event: "Arrival and Registration" },
@@ -43,18 +49,20 @@ function Announcementdetail() {
       event: "Special Presentations & Closing Remarks",
     },
   ];
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handlerouteannouncementlist = (id) => {
-
-    navigate(`/news-announcements/${id}`)
+    navigate(`/news-announcements/${id}`);
     window.scrollTo({ top: 0, behavior: "smooth" });
-  }
+  };
   return (
     <Layout>
       <section className="communityOutreachDay">
         <div className="container">
-          <Link  to="/news-announcements" className="communityOutreachDayheader d-flex gap-2 align-items-center">
+          <Link
+            to="/news-announcements"
+            className="communityOutreachDayheader d-flex gap-2 align-items-center"
+          >
             <MdKeyboardDoubleArrowLeft />
             All Announcement
           </Link>
@@ -69,7 +77,8 @@ function Announcementdetail() {
                 </p> */}
 
                 <p className="d-flex align-items-center gap-2">
-                  <RiCalendar2Line /> <span className="me-2"> {ApiDataGet?.data?.date}</span>
+                  <RiCalendar2Line />{" "}
+                  <span className="me-2"> {ApiDataGet?.data?.date}</span>
                 </p>
                 {/* <div className="communityOutreachDayschedualdivider"></div>
                 <p className="d-flex align-items-center">
@@ -78,21 +87,22 @@ function Announcementdetail() {
               </div>
             </div>
 
-            <div className="col-md-12 mt-4">
+            <div className="col-lg-6 mt-4">
               <img
                 src={base_url_image + ApiDataGet?.data?.image}
                 alt="Community Event"
-                className="communityimg"
+                className="img-fluid"
+                // className="communityimg"
               />
             </div>
 
-            <div className="col-md-6 mt-4">
-              <p className="communityOutreachDaypara" dangerouslySetInnerHTML={{
-                __html: ApiDataGet?.data?.long_description
-
-              }}>
-
-              </p>
+            <div className="col-lg-6 mt-4">
+              <p
+                className="communityOutreachDaypara"
+                dangerouslySetInnerHTML={{
+                  __html: ApiDataGet?.data?.long_description,
+                }}
+              ></p>
               {/* 
               <h3 className="mb-4">Agenda</h3>
 
@@ -110,37 +120,36 @@ function Announcementdetail() {
                   </div>
                 ))}
               </div> */}
-
-
-
-
-              
             </div>
             <div
-              className="VolunteerOrientationblg mb-3 col-md-5 mt-4"
+              className="VolunteerOrientationblg mb-3 col-lg-6 mt-4"
               style={{ maxHeight: "450px", overflowY: "scroll" }} // Add height and scroll
             >
               {ApiDataGetlist?.data?.map((items, index) => (
-
-
                 <div
                   key={index}
-                  className={` ${index === 3 ? "2" : "1"
-                    } item d-flex  align-items-center gap-3`}
+                  className={` ${
+                    index === 3 ? "2" : "1"
+                  } item d-flex  align-items-center gap-3`}
                 >
                   <img
-                    src={items?.image ? base_url_image + items.image : Placeholder}
+                    src={
+                      items?.image ? base_url_image + items.image : Placeholder
+                    }
                     alt="Volunteer Orientation"
                     className="VolunteerOrientationblgimg"
                   />
 
-                  <div>
 
+                  <div>
                     <p className="VolunteerOrientationblgtitledate">
                       {items?.date}
                     </p>
                     <h4>{items?.title}</h4>
-                    <button onClick={() => handlerouteannouncementlist(items?.id)} className="btn VolunteerOrientationblgtitledatereade">
+                    <button
+                      onClick={() => handlerouteannouncementlist(items?.id)}
+                      className="btn VolunteerOrientationblgtitledatereade"
+                    >
                       Read more <MdOutlineKeyboardDoubleArrowRight />
                     </button>
                   </div>
@@ -151,7 +160,7 @@ function Announcementdetail() {
         </div>
         <Sponsor />
       </section>
-    </Layout >
+    </Layout>
   );
 }
 
