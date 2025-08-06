@@ -8,6 +8,7 @@ import aboutherounderline from "../../Assets/images/aboutherounderline.png";
 import housedefaultimg from "../../Assets/images/housedefaultimg.png";
 import loader from "../../Assets/images/loader.gif";
 import resoucecenter from "../../Assets/images/resourcecenter.jpg";
+import programAfter from "../../Assets/images/programAfter.svg";
 import { useGet, usePost } from "../Api/usePost";
 import AOS from "aos";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -316,25 +317,28 @@ function ProgramsProjects() {
                         onMouseLeave={() => setHoveredProgram(program)}
                       >
                         <div className="programImage d-lg-none mb-3 text-center">
-                          <img
-                            // src={
-                            //   hoveredProgram
-                            //     ? base_url_image + hoveredProgram.image
-                            //     : housedefaultimg
-                            // }
-                            src={
-                              program.image
-                                ? base_url_image + program.image
-                                : loader
-                            }
-                            alt="Hovered Program"
-                            className="img-fluid"
-                            // style={{
-                            //   objectFit: "cover",
-                            //   width: "100%",
-                            //   maxHeight: "651px",
-                            // }}
-                          />
+                          
+                          <div className="d-flex justify-content-center">
+                            <div className="programImgSec">
+                              <div className="programImg">
+                              <img
+                                src={
+                                  program.image
+                                    ? base_url_image + program.image
+                                    : loader
+                                }
+                                alt="Program Image"
+                                className="img-fluid mb-2"
+                              />
+
+                              </div>
+                              <img
+                                src={programAfter}
+                                alt="programAfter"
+                                className="programAfter"
+                              />
+                            </div>
+                          </div>
                         </div>
                         <div className="d-flex justify-content-between mb-0 align-items-center">
                           <div>
@@ -392,22 +396,27 @@ function ProgramsProjects() {
 
               {/* Image Section */}
               <div className="col-lg-6   d-lg-block d-none">
-                <div className="image-container position-relative text-center">
-                  <img
-                    src={
-                      hoveredProgram
-                        ? base_url_image + hoveredProgram.image
-                        : loader
-                    }
-                    alt="Hovered Program"
-                    className="img-fluid"
-                    style={{
-                      objectFit: "cover",
-                      // width: "100%",
-                      // maxHeight: "651px",
-                    }}
-                  />
-                  <div className="overlay"></div>
+                <div className="d-flex justify-content-center">
+                  <div className="programImgSec">
+                    <div className="programImg">
+                    <img
+                      src={
+                        hoveredProgram
+                          ? base_url_image + hoveredProgram.image
+                          : loader
+                      }
+                      alt="Hovered Program"
+                      className="img-fluid "
+                    />
+
+                    </div>
+                    <img
+                      src={programAfter}
+                      alt="programAfter"
+                      className="programAfter"
+                    />
+                    <div className="overlay"></div>
+                  </div>
                 </div>
               </div>
             </div>

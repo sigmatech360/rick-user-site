@@ -94,32 +94,12 @@ function Announcementdetail() {
                 className="img-fluid"
                 // className="communityimg"
               />
-            </div>
-
-            <div className="col-lg-6 mt-4">
               <p
-                className="communityOutreachDaypara"
+                className="communityOutreachDaypara mt-3"
                 dangerouslySetInnerHTML={{
                   __html: ApiDataGet?.data?.long_description,
                 }}
               ></p>
-              {/* 
-              <h3 className="mb-4">Agenda</h3>
-
-              <div className="timeline">
-                {agendaItems.map((item, index) => (
-                  <div key={index} className="timeline-item d-flex ">
-                    <div className="timeline-dotparent">
-                      {" "}
-                      <div className="timeline-dot"></div>{" "}
-                    </div>
-                    <div className="timeline-content">
-                      <p className="time mb-0">{item.time}</p>
-                      <p className="event">{item.event}</p>
-                    </div>
-                  </div>
-                ))}
-              </div> */}
             </div>
             <div
               className="VolunteerOrientationblg mb-3 col-lg-6 mt-4"
@@ -156,6 +136,33 @@ function Announcementdetail() {
                 </div>
               ))}
             </div>
+
+            {/* <div className="col-lg-6 mt-4">
+              <p
+                className="communityOutreachDaypara"
+                dangerouslySetInnerHTML={{
+                  __html: ApiDataGet?.data?.long_description,
+                }}
+              ></p>
+              
+              <h3 className="mb-4">Agenda</h3>
+
+              <div className="timeline">
+                {agendaItems.map((item, index) => (
+                  <div key={index} className="timeline-item d-flex ">
+                    <div className="timeline-dotparent">
+                      {" "}
+                      <div className="timeline-dot"></div>{" "}
+                    </div>
+                    <div className="timeline-content">
+                      <p className="time mb-0">{item.time}</p>
+                      <p className="event">{item.event}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div> */}
+            
           </div>
         </div>
         <Sponsor />

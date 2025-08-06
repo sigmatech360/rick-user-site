@@ -9,6 +9,7 @@ import { MdArrowOutward } from "react-icons/md";
 
 import Sponsor from "../../components/sponsor";
 import houseimg from "../../Assets/images/houseimg.png";
+import programAfter from "../../Assets/images/programAfter.svg";
 import youth from "../../Assets/images/youth.png";
 import Oc from "../../Assets/images/Oc.png";
 import Closet from "../../Assets/images/closet.png";
@@ -97,12 +98,31 @@ function Transitionalagedyouthshelter() {
                 </h2>
               </div>
 
-              <div className="col-md-8 mt-4">
-                <img
+              <div className="col-lg-8 mt-4">
+                {/* <img
                   src={base_url_image + ApiDataGetprogram?.data?.image}
                   alt="Community Event"
                   className="w-100 rounded-2 mb-3"
-                />
+                /> */}
+                <div className="d-flex justify-content-center mb-3">
+                  <div className="programImgSec">
+                    <div className="programImg">
+                      <img
+                        src={base_url_image + ApiDataGetprogram?.data?.image}
+                        alt="Hovered Program"
+                        className="img-fluid "
+                      />
+
+                    </div>
+                    <img
+                      src={programAfter}
+                      alt="programAfter"
+                      className="programAfter"
+                      style={{bottom:'-16px'}}
+                    />
+                    <div className="overlay"></div>
+                  </div>
+                </div>
                 <p
                   className="communityOutreachDaypara mb-4"
                   dangerouslySetInnerHTML={{
@@ -110,28 +130,36 @@ function Transitionalagedyouthshelter() {
                   }}
                 ></p>
               </div>
-              <div className="programs1 col-md-4 mt-4">
+              <div className="programs1 col-lg-4 mt-4">
                 {ApiDataGetprogramlist?.data?.map((data, index) => (
                   <div
-                  type="button"
-                  onClick={() => handleroute(data?.slug)}
+                    type="button"
+                    onClick={() => handleroute(data?.slug)}
                     key={index}
                     className="item c-pointer d-flex justify-content-between align-items-center my-3"
                   >
-                    <h5 className={`mb-0 ${ApiDataGetprogram?.data?.title ==  data?.title ? '':'text-dark'}`}>{data?.title}</h5>
-                    <button
-                      
-                      className="btn d-flex align-items-center"
+                    <h5
+                      className={`mb-0 ${
+                        ApiDataGetprogram?.data?.title == data?.title
+                          ? ""
+                          : "text-dark"
+                      }`}
                     >
-                      <MdArrowOutward className={`ms-2 ${ApiDataGetprogram?.data?.title ==  data?.title ? '':'text-dark'}`} size={20} />
+                      {data?.title}
+                    </h5>
+                    <button className="btn d-flex align-items-center">
+                      <MdArrowOutward
+                        className={`ms-2 ${
+                          ApiDataGetprogram?.data?.title == data?.title
+                            ? ""
+                            : "text-dark"
+                        }`}
+                        size={20}
+                      />
                     </button>
                   </div>
                 ))}
               </div>
-
-              
-
-              
             </div>
           </div>
           <Sponsor />

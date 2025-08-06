@@ -14,6 +14,7 @@ import { base_url_image } from "../Api/base_url";
 import React, { useContext, useEffect, useState } from "react";
 
 import announcementunderline from "../../Assets/images/announcementunderline.svg";
+import programAfter from "../../Assets/images/programAfter.svg";
 import googlePlay from "../../Assets/images/Google_Play_Store_badge.svg";
 import applePlay from "../../Assets/images/Apple_Play_Store_badge.png";
 import Slider from "react-slick";
@@ -55,7 +56,6 @@ const parseEventDate = (dateStr) => {
   return new Date(cleanDateStr);
 };
 
-
 const isLessThan7Days = (eventDate) => {
   const today = new Date();
   const targetDate = new Date(eventDate);
@@ -71,7 +71,6 @@ const isLessThan7Days = (eventDate) => {
 
   return diffInDays >= 0 && diffInDays <= 7;
 };
-
 
 function Home() {
   const {
@@ -306,7 +305,7 @@ function Home() {
   }, [ApiDataevent]);
 
   useEffect(() => {
-      getdataevent();
+    getdataevent();
   }, [isLoggedIn]);
 
   // news - announcements
@@ -332,6 +331,7 @@ function Home() {
             className="mySwiper"
           >
             <SwiperSlide>
+              <div className="heroOverlay"></div>
               <div className="inerhero">
                 <div className="container slide-content d-flex flex-column justify-content-center align-items-start text-white h-100">
                   <div className="row">
@@ -342,7 +342,8 @@ function Home() {
                         data-aos-offset="0"
                         data-aos-duration="1000"
                       >
-                        Making Them Homes for Life
+                        {/* Making Them Homes for Life */}
+                        From Crisis to Comfort
                       </h5>
                       {/* <h1 className="display-4 fw-bold mb-3">
                       We Transition People out of{" "}
@@ -354,7 +355,7 @@ function Home() {
                         data-aos-offset="0"
                         data-aos-duration="1000"
                       >
-                        From Homelessness to{" "}
+                        Supporting Your Journey{" "}
                         <span
                           className="highlighted-text"
                           data-aos="fade-right"
@@ -369,7 +370,7 @@ function Home() {
                           />
                         </span>
                       </h1>
-                      <h3>HIS-OC Restoring Hope!</h3>
+                      {/* <h3>HIS-OC Restoring Hope!</h3> */}
 
                       <p
                         className="mb-4"
@@ -377,29 +378,24 @@ function Home() {
                         data-aos-offset="0"
                         data-aos-duration="1000"
                       >
-                        Our shelters and supportive services provide
+                        {/* Our shelters and supportive services provide
                         comprehensive transitional housing programs for those at
                         risk of or experiencing homelessness in Orange County.
                         Your support helps us provide safe housing, food, and
-                        resources to those in desperate need.
+                        resources to those in desperate need. */}
+                        Homeless Intervention Services of Orange County (HIS-OC)
+                        restores hope by offering more than just shelter—we are
+                        a comprehensive program providing in-reach and outreach
+                        services for families, transitional-aged youth, and
+                        seniors who are at risk or currently experiencing
+                        homelessness. Through trauma-informed care, personalized
+                        case management, and access to vital resources, we guide
+                        individuals from crisis to stability. Rooted in
+                        compassion, our work empowers people to rebuild their
+                        lives with dignity and rediscover a future filled with
+                        purpose.
                       </p>
                       <div className="d-flex align-items-center gap-2 ">
-                        {/* <button className="btn btn-warning text-dark me-3">
-                        Give Help
-                      </button> */}
-                        {/* <button
-                          className="nav-donate btn btn-warning   text-dark"
-                          data-aos="fade-up"
-                          data-aos-offset="0"
-                          data-aos-duration="1000"
-                          onClick={() => {
-        if (window.gbWidgets) {
-          window.gbWidgets.open({ id: "pzBZ3p" });
-        }
-      }}
-                        > Give Help Btn
-                          {" "}
-                        </button> */}
                         <givebutter-widget class="giveButterBtn" id="pzBZ3p">
                           Give Help Widget
                         </givebutter-widget>
@@ -424,26 +420,25 @@ function Home() {
                         </button> */}
                       </div>
                       <div className="row">
-                      <div
-                        className="col-12 d-flex justify-content-center justify-content-md-start gap-3 mt-5 "
-                        data-aos="fade-up"
-                        data-aos-offset="0"
-                        data-aos-duration="1000"
-                      >
-                        <Link
-                          className="appLink"
-                          target="_blank"
-                          to={
-                            "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
-                          }
+                        <div
+                          className="col-12 d-flex justify-content-center justify-content-md-start gap-3 mt-5 "
+                          data-aos="fade-up"
+                          data-aos-offset="0"
+                          data-aos-duration="1000"
                         >
-                          <img src={googlePlay} className="w-100" alt="" />
-                        </Link>
-                        <span target="_blank" className="appLink">
-                          <img src={applePlay} className="w-100" alt="" />
-                        </span>
-                      </div>
-
+                          <Link
+                            className="appLink"
+                            target="_blank"
+                            to={
+                              "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
+                            }
+                          >
+                            <img src={googlePlay} className="w-100" alt="" />
+                          </Link>
+                          <span target="_blank" className="appLink">
+                            <img src={applePlay} className="w-100" alt="" />
+                          </span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -452,6 +447,7 @@ function Home() {
             </SwiperSlide>
 
             <SwiperSlide>
+              <div className="heroOverlay"></div>
               <div className="inerhero">
                 <div className="container slide-content d-flex flex-column justify-content-center align-items-start text-white h-100">
                   <div className="row">
@@ -506,6 +502,7 @@ function Home() {
             </SwiperSlide>
 
             <SwiperSlide>
+              <div className="heroOverlay"></div>
               <div className="inerhero">
                 <div className="container slide-content d-flex flex-column justify-content-center align-items-start text-white h-100">
                   <div className="row">
@@ -723,7 +720,7 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                   HIS-OC{" "}
+                    HIS-OC{" "}
                     <span
                       className="text-warning position-relative"
                       data-aos="fade-right"
@@ -743,7 +740,14 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    We have multiple programs that assist people who are homeless or at risk of being homeless. Our shelters and supportive service programs provide assistance to our community’s most vulnerable population. HIS-OC does not and shall not discriminate on the basis of race, color, religion (creed), gender, gender expression, age, national origin (ancestry), disability, marital status, sexual orientation, or military status, in any of its activities or operations.
+                    We have multiple programs that assist people who are
+                    homeless or at risk of being homeless. Our shelters and
+                    supportive service programs provide assistance to our
+                    community’s most vulnerable population. HIS-OC does not and
+                    shall not discriminate on the basis of race, color, religion
+                    (creed), gender, gender expression, age, national origin
+                    (ancestry), disability, marital status, sexual orientation,
+                    or military status, in any of its activities or operations.
                   </p>
                   <button
                     className="parabtn  btn px-4 "
@@ -763,11 +767,22 @@ function Home() {
                   {/* Individual Cards */}
                   {ApiDataGetprogram?.data?.map((items, index) => (
                     <div key={index} className="p-3 mb-3 rounded">
-                      <img
-                        src={base_url_image + items?.image}
-                        alt={items?.title || "Image"}
-                        className="img-fluid rounded mb-2"
-                      />
+                      <div className="d-flex justify-content-center">
+                        <div className="programImgSec">
+                          <div className="programImg">
+                            <img
+                              src={base_url_image + items?.image}
+                              alt={items?.title || "Image"}
+                              className="img-fluid mb-2"
+                            />
+                          </div>
+                          <img
+                            src={programAfter}
+                            alt="programAfter"
+                            className="programAfter"
+                          />
+                        </div>
+                      </div>
                       <h5
                         className="cardtitle fw-bold text-lg-start text-center"
                         dangerouslySetInnerHTML={{ __html: items?.title }}
@@ -797,7 +812,6 @@ function Home() {
         </section>
         {ApiDataevent?.data?.length > 0 && (
           <Events ApiDataevent={ApiDataevent} />
-
         )}
 
         <Ourpodcasts

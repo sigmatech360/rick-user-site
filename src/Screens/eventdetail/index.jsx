@@ -124,7 +124,36 @@ function EventDetail() {
                 src={base_url_image + ApiDataGeteventdetail?.data?.image}
                 alt="Community Event"
                 className="img-fluid"
+                style={{
+                  height: '500px',
+                  width:'100%',
+                  objectFit:'contain',
+                  objectPosition:'center'
+                }}
               />
+              <p
+                className="communityOutreachDaypara"
+                dangerouslySetInnerHTML={{
+                  __html: ApiDataGeteventdetail?.data?.description,
+                }}
+              ></p>
+
+              <h3 className="mb-4">Agenda</h3>
+
+              <div className="timeline">
+                {ApiDataGeteventdetail?.data?.agenda.map((item, index) => (
+                  <div key={index} className="timeline-item d-flex ">
+                    <div className="timeline-dotparent">
+                      {" "}
+                      <div className="timeline-dot"></div>{" "}
+                    </div>
+                    <div className="timeline-content">
+                      <p className="time mb-0">{item.time}</p>
+                      <p className="event">{item.title}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
               {/* communityimg image old class */}
               {/* <div className="mt-4">
                 <p
@@ -153,7 +182,7 @@ function EventDetail() {
               </div> */}
             </div>
 
-            <div className="col-md-6 mt-4">
+            {/* <div className="col-md-6 mt-4">
               <p
                 className="communityOutreachDaypara"
                 dangerouslySetInnerHTML={{
@@ -177,12 +206,12 @@ function EventDetail() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
 
             {ApiDataGeteventlist?.data?.length > 1 && (
               <div
                 className="VolunteerOrientationblg mb-3 col-lg-6 mt-4"
-                // style={{ maxHeight: "450px", overflowY: "scroll" }}
+                style={{ height:'fit-content', maxHeight: "500px", overflowY: "scroll" }}
               >
                 {ApiDataGeteventlist?.data?.map((items, index) => (
                   <div

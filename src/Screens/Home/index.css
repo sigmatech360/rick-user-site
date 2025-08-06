@@ -83,12 +83,19 @@
 }
 
 .inerhero {
-  background-image: url("../../Assets/images/heroimg.png");
+  background-image: url("../../Assets/images/heroimg2.jpg");
   /* Replace with your image path */
   background-size: cover;
   background-position: center;
   height: 100vh;
   /* Adjust based on your needs */
+}
+
+.heroOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00000080;
 }
 
 .slide-content {
@@ -501,6 +508,11 @@
   color: white;
   border: #348f99;
   padding: 8px 16px;
+  transition: all 0.3s;
+}
+
+.cardbtn:hover {
+  background-color: #2d767e !important;
 }
 
 .help-available .cardtitle {
@@ -522,7 +534,8 @@
     line-height: 26px;
     /* Adjust line height */
   }
-  .event-brite-alert{
+
+  .event-brite-alert {
     top: 190px;
     right: 10px;
     left: 10px;
@@ -1342,6 +1355,47 @@
   color: #fff;
   /* White arrow icon */
   margin-bottom: 4px;
+}
+
+
+
+.programImgSec {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 1rem;
+  /* height: 400px;
+  width: 400px; */
+}
+.programImgSec .programImg {
+  height: 365px;
+  width: 400px;
+  overflow: hidden;
+}
+
+.programImgSec .programImg img {
+  height: 400px;
+  /* width: 400px; */
+  border-radius: 50% !important
+}
+
+.programImgSec .programAfter {
+  position: absolute;
+  bottom: -16px;
+}
+
+@media (max-width: 465px) {
+  .programImgSec .programImg {
+    height: 74vw;
+    width: 100%;
+  }
+  .programImgSec .programImg img {
+    height: 80vw;
+  }
+  .programImgSec .programAfter {
+    bottom: -5%;
+  }
+
 }
 
 
