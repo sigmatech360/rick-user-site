@@ -335,8 +335,9 @@ export function VolunteerModalsignup({
                 checked={isAccepted}
                 onChange={handleCheckboxChange}
                 required
+                id="TermsAndCondition"
               />
-              <Form.Label className="ms-2 mb-0">
+              <Form.Label htmlFor="TermsAndCondition" className="ms-2 mb-0">
                 I accept the{" "}
                 <a
                   href={TermsAndCondition}
@@ -350,7 +351,7 @@ export function VolunteerModalsignup({
 
             {/* Submit Button */}
             <Button
-              variant="success"
+              variant=""
               type="submit"
               className="mt-4 w-100 becomeavalbtn"
             >

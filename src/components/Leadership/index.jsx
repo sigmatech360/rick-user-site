@@ -152,10 +152,10 @@ function Leadership({ ApiDataGetmembers }) {
     <>
       <section className="dedicatd-leadership">
         <div className="container my-5">
-          <div className="row     mb-5">
+          <div className="row justify-content-center    mb-5">
             <div className="col-md-6">
               <h2
-                className="title   mb-4"
+                className="title text-center  mb-4"
                 data-aos="fade-right"
                 data-aos-offset="0"
                 data-aos-duration="1000"
@@ -171,7 +171,7 @@ function Leadership({ ApiDataGetmembers }) {
                 Team
               </h2>
             </div>
-            <div className="col-md-6">
+            {/* <div className="col-md-6">
               <p
                 className="para   text-muted mb-5"
                 data-aos="fade-up"
@@ -185,7 +185,7 @@ function Leadership({ ApiDataGetmembers }) {
                 the Board of Directors made financial contributions to support
                 the work of Homeless Intervention Services Orange County.
               </p>
-            </div>
+            </div> */}
           </div>
           <Swiper
             modules={[Navigation]}

@@ -51,28 +51,32 @@
   color: #6c757d;
   /* Light gray */
 }
+.form-check-input{
+  border: 2px solid #348F99;
+}
 
 .form-check-input:checked {
-  accent-color: #128c7e;
+  border: 2px solid #348F99;
+  background-color: #348F99;
+
   /* Green checkbox */
 }
 
 
 .becomeavalbtn {
-  border: none;
   background-color: #348F99;
-  border: none;
   font-weight: 300;
   border: none;
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
-
+  color: white;
 }
 
-.becomeavalbtn :hover {
-  background-color: #348F99;
+.becomeavalbtn:hover {
+  background-color: #277e88;
+  color: white;
 }
 
 
@@ -103,8 +107,8 @@
 
 
 .btn-close {
-  border: 2px solid black;
-  border-radius: 50%;
+  /* border: 2px solid black; */
+  /* border-radius: 50%; */
   width: 15px;
   height: 15px;
   color: black !important;

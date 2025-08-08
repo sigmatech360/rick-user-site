@@ -703,7 +703,6 @@ function Contactus() {
           </Modal.Body>
         </Modal>
       </section>
-      export default VolunteerModal;
     </>
   );
 }

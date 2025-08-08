@@ -313,7 +313,7 @@ function Givedonation() {
                   <p className="extension font-weight-bold  mb-0  ">
                     Give now by  {" "}
                     <spna className="credit position-relative">
-                      Cheque{" "}
+                      Check{" "}
                       <img
                         className="createdunderline"
                         src={createdunderline}
