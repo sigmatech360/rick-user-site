@@ -797,7 +797,12 @@
 
 /* Background images for each section */
 .careersinternships .left-career {
-  background-image: url("../../Assets/images/careerbg.png");
+  background: url("../../Assets/images/careerbg.jfif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  
 }
 
 .careersinternships .right-career {
@@ -834,6 +839,7 @@
   text-align: left;
   /* Default for larger screens */
   padding-left: 56px;
+  z-index: 0;
   /* Default margin for desktop */
 }
 

@@ -296,10 +296,39 @@ function Footer() {
                 </Link>
                 <Link
                   onClick={scrollToTop}
-                  to="https://www.instagram.com/homeless_intervention_oc/?hl=en"
+                  to="https://www.linkedin.com/company/hisoc/"
+                  className="text-white me-3"
+                >
+                  <i className="bi bi-linkedin fs-5"></i>
+                </Link>
+                <Link
+                  onClick={scrollToTop}
+                  to="https://www.instagram.com/homelessintoc/?hl=en"
                   className="text-white me-3"
                 >
                   <i className="bi bi-instagram fs-5"></i>
+                </Link>
+                <Link
+                  onClick={scrollToTop}
+                  to="https://www.snapchat.com/@his-oc"
+                  className="text-white me-3"
+                >
+                  <i className="bi bi-snapchat fs-5"></i>
+                </Link>
+                
+                <Link
+                  onClick={scrollToTop}
+                  to="https://www.tiktok.com/@HIS-OC"
+                  className="text-white me-3"
+                >
+                  <i className="bi bi-tiktok fs-5"></i>
+                </Link>
+                <Link
+                  onClick={scrollToTop}
+                  to="https://www.youtube.com/@his-oc"
+                  className="text-white me-3"
+                >
+                  <i className="bi bi-youtube fs-5"></i>
                 </Link>
               </div>
 

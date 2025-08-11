@@ -638,25 +638,40 @@ function Header() {
                   <i className="bi bi-x"></i>
                 </a>
                 <a
-                  href="https://www.instagram.com/homeless_intervention_oc/?hl=en"
-                  target="_blank"
-                  passHref
-                >
-                  <i className="bi bi-instagram text-dark me-3"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/christine-stellino-b31963176/"
+                  href="https://www.linkedin.com/company/hisoc/"
                   target="_blank"
                   passHref
                 >
                   <i className="bi bi-linkedin text-dark me-3"></i>
                 </a>
                 <a
-                  href="https://www.tiktok.com/@user4978180667468"
+                  href="https://www.instagram.com/homelessintoc/?hl=en"
+                  target="_blank"
+                  passHref
+                >
+                  <i className="bi bi-instagram text-dark me-3"></i>
+                </a>
+                
+                <a
+                  href="https://www.snapchat.com/@his-oc"
+                  target="_blank"
+                  passHref
+                >
+                  <i className="bi bi-snapchat text-dark me-3"></i>
+                </a>
+                <a
+                  href="https://www.tiktok.com/@HIS-OC"
                   target="_blank"
                   passHref
                 >
                   <i className="bi bi-tiktok text-dark me-3"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/@his-oc"
+                  target="_blank"
+                  passHref
+                >
+                  <i className="bi bi-youtube text-dark me-3"></i>
                 </a>
                 {!logintoken && (
                   <button onClick={handleShow} className="nav-event btn me-2">

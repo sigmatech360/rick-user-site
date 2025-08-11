@@ -239,6 +239,7 @@ function JoinOurTeam() {
           <div className="container-fluid my-5">
             <div className="row align-items-center justify-content-between">
               <div className="left-career col-lg-5 col-md-12 me-lg-4 mb-lg-0 mb-3 ">
+                <div className="heroOverlay"></div>
                 <div className="career-contact">
                   <p className="intershiptitle">
                     Join Our Team To End{" "}
