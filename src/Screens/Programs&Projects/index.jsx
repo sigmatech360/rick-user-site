@@ -1,5 +1,5 @@
 import "./index.css";
-import heropage2 from "../../Assets/images/heropage2.png";
+import heropage2 from "../../Assets/images/heropage2.webp";
 import Layout from "../../components/layout";
 import ourmission from "../../Assets/images/ourmission.png";
 import missionunderline from "../../Assets/images/missionunderline.png";
@@ -31,6 +31,8 @@ import youth from "../../Assets/images/youth.png";
 import Oc from "../../Assets/images/Oc.png";
 import Closet from "../../Assets/images/closet.png";
 import ourworkbg from "../../Assets/images/ourworkbg.png";
+import ourWorkBanner from "../../Assets/images/ourWorkBanner.png";
+import ourWorkBanner1 from "../../Assets/images/ourWorkBanner1.jpeg";
 import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
@@ -245,7 +247,8 @@ function ProgramsProjects() {
     <>
       <Layout>
         <HeroSection
-          heroimg={ourworkbg}
+          className="ourWorkBanner-sec"
+          heroimg={ourWorkBanner}
           pagetitle="Our"
           pagename="  Work "
           title2="Work "
@@ -317,20 +320,18 @@ function ProgramsProjects() {
                         onMouseLeave={() => setHoveredProgram(program)}
                       >
                         <div className="programImage d-lg-none mb-3 text-center">
-                          
                           <div className="d-flex justify-content-center">
                             <div className="programImgSec">
                               <div className="programImg">
-                              <img
-                                src={
-                                  program.image
-                                    ? base_url_image + program.image
-                                    : loader
-                                }
-                                alt="Program Image"
-                                className="img-fluid mb-2"
-                              />
-
+                                <img
+                                  src={
+                                    program.image
+                                      ? base_url_image + program.image
+                                      : loader
+                                  }
+                                  alt="Program Image"
+                                  className="img-fluid mb-2"
+                                />
                               </div>
                               <img
                                 src={programAfter}
@@ -399,16 +400,15 @@ function ProgramsProjects() {
                 <div className="d-flex justify-content-center">
                   <div className="programImgSec">
                     <div className="programImg">
-                    <img
-                      src={
-                        hoveredProgram
-                          ? base_url_image + hoveredProgram.image
-                          : loader
-                      }
-                      alt="Hovered Program"
-                      className="img-fluid "
-                    />
-
+                      <img
+                        src={
+                          hoveredProgram
+                            ? base_url_image + hoveredProgram.image
+                            : loader
+                        }
+                        alt="Hovered Program"
+                        className="img-fluid "
+                      />
                     </div>
                     <img
                       src={programAfter}
@@ -421,7 +421,7 @@ function ProgramsProjects() {
               </div>
             </div>
 
-            <div className="row align-items-center">
+            {/* <div className="row align-items-center">
               <div className="col-lg-6 mt-5 ">
                 <div className="text-lg-start text-center">
                   <img src={resoucecenter} className="img-fluid" />
@@ -452,7 +452,7 @@ function ProgramsProjects() {
                   </ul>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </section>
         <section className="no-board-contact-sec">

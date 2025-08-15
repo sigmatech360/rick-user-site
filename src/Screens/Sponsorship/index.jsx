@@ -3,6 +3,12 @@ import "./index.css";
 import React, { useState, useEffect } from "react";
 import AOS from "aos";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import { Modal, Button, Form } from "react-bootstrap";
 import Layout from "../../components/layout";
 import sponsorunderline from "../../Assets/images/sponsorunderline.svg";
@@ -290,7 +296,7 @@ function Contactus() {
 
         <section className="sponsor-project-sec">
           <div className="container">
-            <div className="row">
+            {/* <div className="row">
               {SponsoredprogramApiDataGet?.data?.map((item, index) => (
                 <div className="col-lg-4 mb-4">
                   <div className="sponsor-card h-100">
@@ -354,6 +360,92 @@ function Contactus() {
                   </div>
                 </div>
               ))}
+            </div> */}
+            <div className="row">
+              <div className="col-md-12 sponsorProjectSlider">
+                <Swiper
+                  modules={[Navigation, Pagination]}
+                  spaceBetween={30}
+                  // navigation
+                  pagination={{ clickable: true }}
+                  breakpoints={{
+                    320: {
+                      slidesPerView: 1,
+                    },
+                    768: {
+                      slidesPerView: 2,
+                    },
+                    992: {
+                      slidesPerView: 3,
+                    },
+                  }}
+                >
+                  {SponsoredprogramApiDataGet?.data?.map((item, index) => (
+                    <SwiperSlide key={item.id || index}>
+                      <div className="sponsor-card h-100">
+                        <div className="sponsor-card-header">
+                          <img
+                            src={base_url_image + item?.image}
+                            className="img-fluid"
+                            alt=""
+                          />
+                        </div>
+                        <div className="sponsor-card-body">
+                          <div className="sponsor-card-body-top">
+                            <div className="sponsor-card-body-title">
+                              <h3>{item?.title}</h3>
+                              <button
+                                onClick={() => {
+                                  setSelectedprogrammodal(true);
+                                  setFormdata({ project_id: item?.id });
+                                }}
+                              >
+                                Sponsor Now
+                              </button>
+                            </div>
+
+                            <p
+                              dangerouslySetInnerHTML={{
+                                __html: item?.short_description,
+                              }}
+                            ></p>
+                          </div>
+
+                          <div className="sponsor-card-body-bottom">
+                            <div className="progress">
+                              <div
+                                className="progress-bar bg-theme"
+                                role="progressbar"
+                                style={{
+                                  width: `${
+                                    item?.collected_amount &&
+                                    item?.targeted_amount
+                                      ? (item.collected_amount /
+                                          item.targeted_amount) *
+                                        100
+                                      : 0
+                                  }%`,
+                                }}
+                                aria-valuenow={item?.collected_amount || 0}
+                                aria-valuemin="0"
+                                aria-valuemax={item?.targeted_amount || 100}
+                              ></div>
+                            </div>
+                            <div className="sponsor-card-body-footer">
+                              <h6 className="sponsor-card-colledted-amount">
+                                Collected: ${item?.collected_amount}
+                              </h6>
+                              <h6 className="sponsor-card-target-amount">
+                                Target: ${item?.targeted_amount}
+                              </h6>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
+              </div>
             </div>
           </div>
         </section>
@@ -521,11 +613,11 @@ function Contactus() {
         <section className="inquiries-call d-flex justify-content-center align-items-center">
           <h2 className=" inquiries-calltitle fw-bold text-white">
             For Any Inquiries Call The Hotline:{" "}
-            <span className="    position-relative">
+            <a href="tel:(714)%20993-5774" className="position-relative">
               {" "}
-              +1 123 1234 567{" "}
+              (714) 993-5774{" "}
               <img className="sponsorunderline" src={sponsorunderline} />
-            </span>
+            </a>
           </h2>
         </section>
       </Layout>

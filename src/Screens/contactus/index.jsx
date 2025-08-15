@@ -18,6 +18,7 @@ import programlegacy from "../../Assets/images/programlegacy.png";
 import applyemployeebg from "../../Assets/images/applyemployeebg.png";
 
 import contectbf from "../../Assets/images/contactbg.png";
+import contactUsBanner from "../../Assets/images/contactUsBanner.png";
 import { toast } from "react-toastify";
 import { Form } from "react-router-dom";
 function Contactus() {
@@ -176,7 +177,7 @@ function Contactus() {
     <>
       <Layout>
         <HeroSection
-          heroimg={contectbf}
+          heroimg={contactUsBanner}
           pagetitle="Contact  "
           pagename="  Contact Us"
           title2="  Us"

@@ -15,12 +15,12 @@ import 'swiper/css/navigation';
 import { base_url_image } from "../../Screens/Api/base_url";
 
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 // import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css";
-import { Navigation, Pagination } from "swiper/modules";
 // import { SwiperSlide } from "swiper/react";
 
 function Leadership({ ApiDataGetmembers }) {
@@ -148,6 +148,8 @@ function Leadership({ ApiDataGetmembers }) {
       },
     ],
   };
+
+
   return (
     <>
       <section className="dedicatd-leadership">
@@ -210,7 +212,7 @@ function Leadership({ ApiDataGetmembers }) {
           >
             {ApiDataGetmembers?.data
                 // ?.filter((member) => ( member.designation === "Executive Director"))
-                ?.filter((member) => member.member_type === "2") // borad member 2
+                ?.filter((member) => member.member_type === "1") // borad member 2 AND team member 1
                 .map((member) => (
                   <SwiperSlide>
                   <div

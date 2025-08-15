@@ -1,5 +1,5 @@
 import "./index.css";
-import heropage2 from "../../Assets/images/heropage2.png";
+import heropage2 from "../../Assets/images/heropage2.webp";
 import Layout from "../../components/layout";
 import ourmission from "../../Assets/images/ourmission.png";
 import missionunderline from "../../Assets/images/missionunderline.png";

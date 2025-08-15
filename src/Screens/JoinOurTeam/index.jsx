@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import Leadership from "../../components/Leadership";
-import heropage2 from "../../Assets/images/heropage2.png";
+import heropage2 from "../../Assets/images/heropage2.webp";
 import Layout from "../../components/layout";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
@@ -41,7 +41,7 @@ function JoinOurTeam() {
   useEffect(() => {
     getdatamembers();
 
-    document.title = "About - HIS OC " || "HOME- HIS OC";
+    document.title = "Join Our Team - HIS OC " || "HOME- HIS OC";
   }, []);
 
   useEffect(() => {

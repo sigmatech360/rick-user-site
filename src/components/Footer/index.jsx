@@ -1,5 +1,5 @@
 import "./index.css";
-import { Link, Links } from "react-router-dom";
+import { Link, Links, useNavigate } from "react-router-dom";
 import bottomfooterlogo3 from "../../Assets/images/bottomfooterlogo3.png";
 import bottomfooterlogo1 from "../../Assets/images/bottomlogo1.png";
 import bottomfooterlogo2 from "../../Assets/images/bottomfooterlogo2.png";
@@ -14,22 +14,134 @@ import GrievanceEnglish from "../../Assets/pdf/Grievance-12-2021-English.pdf";
 import GrievanceSpanish from "../../Assets/pdf/Grievance-12-2021-Spanish.pdf";
 import donateform from "../../Assets/pdf/2025-990-1.pdf";
 
-import { useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
+
+import { useContext, useEffect, useState } from "react";
 import {
   VolunteerModalsignup,
   VolunteerModalforget,
   VolunteerModallogin,
   VolunteerModalforget2,
 } from "../modal";
+import { useGet, usePost } from "../../Screens/Api/usePost";
+import { AuthContext } from "../../Routers/AuthContext";
 function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+  const [userData, setUserData] = useState({});
+
+  const [errordays, setErrordays] = useState(true);
+  const [errorslots, setErrorslots] = useState(true);
+
+  const [selectedItems, setSelectedItems] = useState([]);
+  const [selectedItemsslots, setSelectedItemsslots] = useState([]);
+
+  const { setIsLoggedIn } = useContext(AuthContext);
 
   const [naveshow, setNavshow] = useState(false);
   const handleclick = () => {
     setNavshow((prevState) => !prevState);
   };
+
+  const navigate = useNavigate();
+
+  const gettoken = () => {
+    setLogintoken(localStorage.getItem("token"));
+  };
+
+  const {
+    ApiData: ApiData,
+    loading: loading,
+    error: errorRegister,
+    post: post,
+  } = usePost("/user-register");
+  const {
+    ApiData: ApiDatalogin,
+    loading: loadinglogin,
+    error: errorlogin,
+    post: postlogin,
+  } = usePost("/user-login");
+  const {
+    ApiData: ApiDataotp,
+    loading: loadingotp,
+    error: errorotp,
+    post: postotp,
+  } = usePost("/otp-verification");
+  const {
+    ApiData: ApiDatareset,
+    loading: loadingreset,
+    error: errorreset,
+    post: postreset,
+  } = usePost("/reset-password");
+  const {
+    ApiData: ApiDataGet,
+    loading: loadingGet,
+    error: errorGet,
+    get: getdata,
+  } = useGet("/edit-account");
+  const {
+    ApiData: ApiDataPostforget,
+    loading: Postloadingforget,
+    error: Posterrorforget,
+    post: postforget,
+  } = usePost("/forgot-password");
+
+  const [logintoken, setLogintoken] = useState("");
+  const token = localStorage.getItem("token");
+
+  const handleSubmitforget = (e) => {
+    e.preventDefault();
+    const formDataMethod = new FormData();
+
+    for (const key in userData) {
+      formDataMethod.append(key, userData[key]);
+    }
+
+    postforget(formDataMethod);
+  };
+
+  const handleSubmitforgetotp = (e) => {
+    e.preventDefault();
+    const formDataMethod = new FormData();
+
+    for (const key in userData) {
+      formDataMethod.append(key, userData[key]);
+    }
+
+    postotp(formDataMethod);
+  };
+  const handleSubmitlogin = async (e) => {
+    e.preventDefault();
+    const formDataMethod = new FormData();
+    for (const key in userData) {
+      formDataMethod.append(key, userData[key]);
+    }
+    await postlogin(formDataMethod);
+    navigate("/");
+  };
+  useEffect(() => {
+    if (ApiDatalogin?.success === true) {
+      localStorage.setItem("token", ApiDatalogin?.data?.token);
+      setShowModallogin(false);
+      setUserData(() => {
+        console.log("Clearing userData..."); // Debug log
+        return {};
+      });
+      navigate("/");
+      toast.success(ApiDatalogin?.message);
+      setIsLoggedIn(true);
+      gettoken();
+    } else if (ApiDatalogin?.success == false) {
+      toast.error(ApiDatalogin?.message);
+    } else {
+      // setShowModallogin(true)
+
+      toast.error(ApiDatalogin?.message);
+    }
+  }, [ApiDatalogin]);
+
+  let available_slots = [];
 
   const [showModal, setShowModal] = useState(false);
   const [showModallogin, setShowModallogin] = useState(false);
@@ -61,6 +173,109 @@ function Footer() {
   const handleCloseforget2 = (event) => {
     event.preventDefault();
     setShowModalforget2(false);
+  };
+
+  useEffect(() => {
+    if (ApiDataotp?.status === true) {
+      toast.success(ApiDataotp?.message);
+      setShowModalforget2(false);
+      // toast.success("Password updated successfully")
+
+      setUserData({});
+      localStorage.setItem("code", ApiDataotp?.data?.code);
+      localStorage.setItem("email", ApiDataotp?.data?.email);
+      setShowModalforget2(false);
+
+      setShowModalreset(true);
+    } else {
+      toast.success(ApiDataotp?.message);
+    }
+  }, [ApiDataotp]);
+
+  useEffect(() => {
+    if (ApiDataPostforget?.status == true) {
+      setShowModalforget(false);
+      setUserData({});
+      setShowModalforget2(true);
+      toast?.success(ApiDataPostforget?.message);
+    }
+  }, [ApiDataPostforget]);
+
+  useEffect(() => {
+    getdata();
+  }, [token]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setUserData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+  const [available_days, setWeekDays] = useState([]);
+
+  useEffect(() => {
+    if (ApiData?.success) {
+      localStorage.setItem("token", ApiData?.data?.token);
+      // setLogintoken(logintken);
+      // Close modal
+      setShowModal(false);
+
+      setUserData({});
+      toast.success(ApiData?.message);
+
+      gettoken();
+    } else if (ApiData && ApiData?.success == false) {
+      // Show error toast
+
+      // toast.error(ApiData?.message?.email[0]);
+      gettoken();
+    }
+  }, [ApiData]);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const formDataMethod = new FormData();
+    const { name, value, selectedOptions } = e.target;
+
+    if (userData?.password !== userData.password_confirmation) {
+      toast.error("Passwords do not match");
+    } else if (!selectedItems || selectedItems?.length === 0) {
+      setErrordays("Please fill this field");
+    } else if (!selectedItemsslots || selectedItemsslots?.length === 0) {
+      setErrorslots("Please fill this field");
+    } else {
+      for (const key in userData) {
+        formDataMethod.append(key, userData[key]);
+      }
+
+      // Ensure selectedItemsslots is an array before pushing it
+      // if (Array.isArray(selectedItemsslots)) {
+      //   available_slots = [...selectedItemsslots]; // Overwrite available_slots with the selected slots
+      // } else {
+      //   // If it's not an array, you might want to handle it differently, maybe wrap it in an array
+      //   available_slots.push(selectedItemsslots);
+      // }
+
+      // Append available_slots as an array
+      formDataMethod.append(
+        "available_slots",
+        JSON.stringify(selectedItemsslots)
+      );
+      formDataMethod.append("available_days", JSON.stringify(selectedItems));
+
+      console.log("available_slots Slot (Array check):", available_slots);
+      console.log(
+        "Is available_slots an array?",
+        Array.isArray(available_slots)
+      );
+      console.log("available_slots Slot type:", typeof available_slots);
+
+      await post(formDataMethod);
+      // if (errorRegister) {
+      //   toast.error(errorRegister);
+      // }
+    }
   };
 
   return (
@@ -120,11 +335,13 @@ function Footer() {
                           Get Help
                         </Link>
                       </li>
-                      <li>
-                        <Link onClick={handleShow} href="#!" className="">
-                          Become A Volunteer
-                        </Link>
-                      </li>
+                      {!token && (
+                        <li>
+                          <Link onClick={handleShow} href="#!" className="">
+                            Become A Volunteer
+                          </Link>
+                        </li>
+                      )}
                     </ul>
                   </div>
                   <div className="col-md-4  text-lg-start text-center">
@@ -172,7 +389,7 @@ function Footer() {
                           Events
                         </Link>
                       </li> */}
-                      <li>
+                      {/* <li>
                         <Link
                           onClick={scrollToTop}
                           to={"/ourpodcastlist"}
@@ -180,7 +397,7 @@ function Footer() {
                         >
                           Our Podcast
                         </Link>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>
@@ -315,7 +532,7 @@ function Footer() {
                 >
                   <i className="bi bi-snapchat fs-5"></i>
                 </Link>
-                
+
                 <Link
                   onClick={scrollToTop}
                   to="https://www.tiktok.com/@HIS-OC"
@@ -382,23 +599,68 @@ function Footer() {
         </footer>
       </section>
 
-      <VolunteerModalsignup
+      {/* <VolunteerModalsignup 
         handleClose={handleClose}
         show={showModal}
         loginbtn={handleShowlogin}
+      /> */}
+      <VolunteerModalsignup
+        errordays={errordays}
+        setSelectedItems={setSelectedItems}
+        selectedItems={selectedItems}
+        errorslots={errorslots}
+        setSelectedItemsslots={setSelectedItemsslots}
+        selectedItemsslots={selectedItemsslots}
+        handleClose={handleClose}
+        show={showModal}
+        handleSubmit={handleSubmit}
+        weekDays={available_days}
+        loginbtn={handleShowlogin}
+        username={userData.name}
+        password_confirmation={userData.password_confirmation}
+        password={userData.password}
+        phone={userData.phone}
+        email={userData.email}
+        handleChange={handleChange}
       />
-      <VolunteerModallogin
+      {/* <VolunteerModallogin
         handleClose={handleCloselogin}
         show={showModallogin}
         forgetbtn={handleShowforget}
+      /> */}
+      <VolunteerModallogin
+        password={userData.password}
+        email={userData.email}
+        handleClose={handleCloselogin}
+        show={showModallogin}
+        forgetbtn={handleShowforget}
+        handleChange={handleChange}
+        handleSubmitlogin={handleSubmitlogin}
       />
 
+      {/* <VolunteerModalforget
+        handleClose={handleCloseforget}
+        show={showModalforget}
+        handleShowforget2={handleShowforget2}
+      /> */}
       <VolunteerModalforget
+        handleChange={handleChange}
+        email={userData.email}
+        handleSubmitforget={handleSubmitforget}
         handleClose={handleCloseforget}
         show={showModalforget}
         handleShowforget2={handleShowforget2}
       />
+
+      {/* <VolunteerModalforget2
+        show={showModalforget2}
+        handleClose={handleCloseforget2}
+      /> */}
       <VolunteerModalforget2
+        handleChange={handleChange}
+        email={userData.email}
+        otp={userData.otp}
+        handleSubmitforgetotp={handleSubmitforgetotp}
         show={showModalforget2}
         handleClose={handleCloseforget2}
       />

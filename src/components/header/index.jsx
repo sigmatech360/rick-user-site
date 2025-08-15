@@ -18,7 +18,6 @@ import { Navbar, Container, Nav, Dropdown, NavDropdown } from "react-bootstrap";
 import "./index.css";
 import { ToastContainer, toast } from "react-toastify";
 
-
 import {
   ChangePass,
   VolunteerModalsignup,
@@ -103,9 +102,6 @@ function Header() {
     postforget(formDataMethod);
   };
 
-
-
-
   const handleSubmitforgetotp = (e) => {
     e.preventDefault();
     const formDataMethod = new FormData();
@@ -130,8 +126,6 @@ function Header() {
 
   const itmedata = {};
 
-
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formDataMethod = new FormData();
@@ -147,8 +141,6 @@ function Header() {
       for (const key in userData) {
         formDataMethod.append(key, userData[key]);
       }
-
-      
 
       // Ensure selectedItemsslots is an array before pushing it
       // if (Array.isArray(selectedItemsslots)) {
@@ -208,6 +200,7 @@ function Header() {
   useEffect(() => {
     getdata();
   }, [token]);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setUserData((prevData) => ({
@@ -303,7 +296,7 @@ function Header() {
     setLogintoken(localStorage.removeItem("token"));
     toast.success("Volunteer Logout Successfully");
     setIsLoggedIn(false);
-    navigate("/")
+    navigate("/");
   };
 
   const handleCloselogin = () => setShowModallogin(false);
@@ -409,19 +402,19 @@ function Header() {
 
   return (
     <>
-      <section className="header-section">
+      <section className="header-section d-md-block d-none">
         <div className="container py-2">
-          <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-between align-items-center text-white">
+          <div className="d-flex flex-wrap gap-2 justify-content-center justify-content-xl-between align-items-center text-white">
             <div className="header-item d-flex align-items-center">
               <i className="bi bi-geo-alt-fill me-2"></i>
               PO Box 1293, Placentia, CA 92871
             </div>
-            <div className="separator d-none d-md-block"></div>
+            <div className="separator"></div>
             <div className="header-item d-flex align-items-center">
               <i className="bi bi-clock me-2"></i>
               Mon – Thu 9AM – 5PM, Fri 9AM – 4PM
             </div>
-            <div className="separator d-none d-md-block"></div>
+            <div className="separator"></div>
             <Link
               to="tel:(714)%20993-5774"
               className="header-item d-flex align-items-center"
@@ -429,7 +422,7 @@ function Header() {
               <i className="bi bi-telephone-fill me-2"></i>
               (714) 993-5774
             </Link>
-            <div className="separator d-none d-md-block"></div>
+            <div className="separator"></div>
             <Link
               to={"mailto:info@his-oc.org"}
               className="header-item d-flex align-items-center"
@@ -437,6 +430,64 @@ function Header() {
               <i className="bi bi-envelope me-2"></i>
               info@his-oc.org
             </Link>
+            <div className="separator"></div>
+            <div className="headerSocialIcons">
+              <a
+                href="https://www.facebook.com/homeless.intervention.oc"
+                target="_blank"
+                className="text-white"
+              >
+                <i className="bi bi-facebook"></i>
+              </a>
+              <a
+                href="https://twitter.com/Homeless_Int_OC"
+                target="_blank"
+                className="text-white"
+              >
+                <i className="bi bi-x"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/hisoc/"
+                target="_blank"
+                className="text-white"
+                passHref
+              >
+                <i className="bi bi-linkedin"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/homelessintoc/?hl=en"
+                target="_blank"
+                className="text-white"
+                passHref
+              >
+                <i className="bi bi-instagram"></i>
+              </a>
+
+              <a
+                href="https://www.snapchat.com/@his-oc"
+                target="_blank"
+                className="text-white"
+                passHref
+              >
+                <i className="bi bi-snapchat"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@HIS-OC"
+                className="text-white"
+                target="_blank"
+                passHref
+              >
+                <i className="bi bi-tiktok"></i>
+              </a>
+              <a
+                href="https://www.youtube.com/@his-oc"
+                target="_blank"
+                className="text-white"
+                passHref
+              >
+                <i className="bi bi-youtube"></i>
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -471,7 +522,7 @@ function Header() {
               // id="navbarNav"
             >
               {/* Navigation Links */}
-              <div>
+              <div className="lgHeaderLeft">
                 <ul className="navbar-nav d-flex align-items-center meauto mb2 mb-lg-0">
                   {/* <li className="nav-item dropdown">
                     <Link className={`nav-link ${location.pathname.includes('/about') ? 'active' : ''}`} to="/about">
@@ -493,7 +544,6 @@ function Header() {
                     >
                       News Announcements
                     </NavDropdown.Item>
-
 
                     <NavDropdown.Item
                       as={Link}
@@ -547,6 +597,18 @@ function Header() {
                           Our Work
                         </Link>
                       </li>
+                      <li className="d-xl-none">
+                        <Link
+                          className={`dropdown-item ${
+                            location.pathname.includes("/event")
+                              ? "active"
+                              : ""
+                          }`}
+                          to="/event"
+                        >
+                          Event
+                        </Link>
+                      </li>
                       <li>
                         <hr className="dropdown-divider" />
                       </li>
@@ -562,7 +624,7 @@ function Header() {
                           Top Volunteer
                         </Link>
                       </li>
-                      <li>
+                      {/* <li>
                         <Link
                           className={`dropdown-item ${
                             location.pathname.includes("/ourpodcastlist")
@@ -573,11 +635,11 @@ function Header() {
                         >
                           Our Podcast
                         </Link>
-                      </li>
+                      </li> */}
                     </ul>
                   </li>
 
-                  <li className="nav-item dropdown">
+                  <li className="nav-item dropdown d-xl-block d-none">
                     <Link
                       // onClick={handleClick}
                       className={`nav-link ${
@@ -615,64 +677,66 @@ function Header() {
               </div>
 
               {/* Second logo: visible only in full-screen mode */}
-              <div className="d-none d-lg-block">
+              <div className="d-none d-lg-block lgHeaderLogo">
                 <Link className="navbar-brand" to="/">
                   <img src={logo} alt="Logo" />
                 </Link>
               </div>
 
               {/* Right-aligned buttons and icons */}
-              <div className="d-flex align-items-center">
-                <a
-                  href="https://www.facebook.com/homeless.intervention.oc"
-                  target="_blank"
-                  className="text-dark me-3"
-                >
-                  <i className="bi bi-facebook"></i>
-                </a>
-                <a
-                  href="https://twitter.com/Homeless_Int_OC"
-                  target="_blank"
-                  className="text-dark me-3"
-                >
-                  <i className="bi bi-x"></i>
-                </a>
-                <a
-                  href="https://www.linkedin.com/company/hisoc/"
-                  target="_blank"
-                  passHref
-                >
-                  <i className="bi bi-linkedin text-dark me-3"></i>
-                </a>
-                <a
-                  href="https://www.instagram.com/homelessintoc/?hl=en"
-                  target="_blank"
-                  passHref
-                >
-                  <i className="bi bi-instagram text-dark me-3"></i>
-                </a>
-                
-                <a
-                  href="https://www.snapchat.com/@his-oc"
-                  target="_blank"
-                  passHref
-                >
-                  <i className="bi bi-snapchat text-dark me-3"></i>
-                </a>
-                <a
-                  href="https://www.tiktok.com/@HIS-OC"
-                  target="_blank"
-                  passHref
-                >
-                  <i className="bi bi-tiktok text-dark me-3"></i>
-                </a>
-                <a
-                  href="https://www.youtube.com/@his-oc"
-                  target="_blank"
-                  passHref
-                >
-                  <i className="bi bi-youtube text-dark me-3"></i>
-                </a>
+              <div className="d-flex align-items-center lgHeaderRight">
+                {/* <div className="headerSocialIcons">
+                  <a
+                    href="https://www.facebook.com/homeless.intervention.oc"
+                    target="_blank"
+                    className="text-dark"
+                  >
+                    <i className="bi bi-facebook"></i>
+                  </a>
+                  <a
+                    href="https://twitter.com/Homeless_Int_OC"
+                    target="_blank"
+                    className="text-dark"
+                  >
+                    <i className="bi bi-x"></i>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/company/hisoc/"
+                    target="_blank"
+                    passHref
+                  >
+                    <i className="bi bi-linkedin text-dark"></i>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/homelessintoc/?hl=en"
+                    target="_blank"
+                    passHref
+                  >
+                    <i className="bi bi-instagram text-dark"></i>
+                  </a>
+                  
+                  <a
+                    href="https://www.snapchat.com/@his-oc"
+                    target="_blank"
+                    passHref
+                  >
+                    <i className="bi bi-snapchat text-dark"></i>
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@HIS-OC"
+                    target="_blank"
+                    passHref
+                  >
+                    <i className="bi bi-tiktok text-dark"></i>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@his-oc"
+                    target="_blank"
+                    passHref
+                  >
+                    <i className="bi bi-youtube text-dark"></i>
+                  </a>
+                </div> */}
                 {!logintoken && (
                   <button onClick={handleShow} className="nav-event btn me-2">
                     Become A Volunteer
@@ -786,7 +850,6 @@ function Header() {
                 News Announcements
               </NavDropdown.Item>
 
-
               <NavDropdown.Item
                 as={Link}
                 to="/join-our-team"
@@ -870,11 +933,11 @@ function Header() {
                     Top Volunteer
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link to="/ourpodcastlist" className="dropdown-item">
                     Our Podcast
                   </Link>
-                </li>
+                </li> */}
               </ul>
               {/* )} */}
             </li>
@@ -888,6 +951,7 @@ function Header() {
           </ul>
         )}
       </section>
+
       <VolunteerModalsignup
         errordays={errordays}
         setSelectedItems={setSelectedItems}

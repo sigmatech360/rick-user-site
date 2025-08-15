@@ -49,10 +49,6 @@ export default function UserRouter() {
 
         {/* New Pages */}
         <Route path="/join-our-team" element={<JoinOurTeam />} />
-
-
-         
-
       </Routes>
         
     </BrowserRouter>

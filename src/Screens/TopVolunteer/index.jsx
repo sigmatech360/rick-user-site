@@ -9,6 +9,7 @@ import HeroSection from "../../components/herosection";
 
 import Sponsor from "../../components/sponsor";
 import ourworkbg from "../../Assets/images/ourworkbg.png";
+import topVolunteerBanner from "../../Assets/images/topVolunteerBanner.png";
 import partnerunderline from "../../Assets/images/programunderline.svg";
 import topvolusteersmanimages from '../../Assets/images/topvolusteersmanimages.png'
 import Volunteerman1 from "../../Assets/images/Volunteerman1.png";
@@ -96,7 +97,7 @@ function TopVolunteer() {
     <>
       <Layout>
         <HeroSection
-          heroimg={ourworkbg}
+          heroimg={topVolunteerBanner}
           pagetitle="Top"
           pagename="  Top Volunteer"
           title2="  Volunteer"
@@ -150,7 +151,7 @@ function TopVolunteer() {
             <div className="container py-4">
               {/* <div className="row d-flex  gap-4"> */}
               <div className="row">
-                {ApiDataGet?.data?.map((volunteer, index) => (
+                {ApiDataGet?.data?.filter(volunteer => volunteer?.is_active === "1")?.map((volunteer, index) => (
                   <div
                     className="col-lg-2 col-md-4 col-12   mb-4  "
                     key={index}

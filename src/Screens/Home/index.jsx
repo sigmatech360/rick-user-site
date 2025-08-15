@@ -1,6 +1,3 @@
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import AOS from "aos";
 
 import { Modal, Button, Form, Alert } from "react-bootstrap";
@@ -12,6 +9,9 @@ import { RiLockPasswordLine } from "react-icons/ri";
 import { base_url_image } from "../Api/base_url";
 
 import React, { useContext, useEffect, useState } from "react";
+
+import placeholder from "../../Assets/images/placeholder.jpg";
+import dedicationunderline from "../../Assets/images/dedicationunderline.png";
 
 import announcementunderline from "../../Assets/images/announcementunderline.svg";
 import programAfter from "../../Assets/images/programAfter.svg";
@@ -27,6 +27,9 @@ import donateicon from "../../Assets/images/donateicon.png";
 import availabletagline from "../../Assets/images/availabletagline.png";
 import apartunderline from "../../Assets/images/apartunderline.png";
 import "./index.css";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css";
@@ -37,6 +40,10 @@ import announcement1 from "../../Assets/images/announcement1.png";
 import announcement2 from "../../Assets/images/announcement2.png";
 
 import changeworld from "../../Assets/images/changeworld.png";
+
+import homeBanner1 from "../../Assets/images/homeBanner-1.webp";
+import homeBanner2 from "../../Assets/images/homeBanner-2.webp";
+import homeBanner3 from "../../Assets/images/homeBanner-3.webp";
 
 import wedotagline from "../../Assets/images/wedotagline.png";
 import { useGet, usePost } from "../Api/usePost";
@@ -98,6 +105,12 @@ function Home() {
     get: getdatapodcast,
   } = useGet("/podcast");
   const {
+    ApiData: ApiDataSponsorBrands,
+    loading: loadingSponsorBrands,
+    error: errorSponsorBrands,
+    get: getdataSponsorBrands,
+  } = useGet("/sponsor-brands");
+  const {
     ApiData: ApiDatastats,
     loading: loadingstats,
     error: errorstats,
@@ -115,6 +128,7 @@ function Home() {
     getdataevent();
     getdatapodcast();
     getdatastats();
+    getdataSponsorBrands();
     // console.log('ApiDatastats?.data',ApiDatastats?.data);
 
     // let filterData = ApiDatastats?.data.filter((stats)=>stats.show_in_web == 1 );
@@ -332,7 +346,10 @@ function Home() {
           >
             <SwiperSlide>
               <div className="heroOverlay"></div>
-              <div className="inerhero">
+              <div
+                className="inerhero"
+                style={{ backgroundImage: `url(${homeBanner1})` }}
+              >
                 <div className="container slide-content d-flex flex-column justify-content-center align-items-start text-white h-100">
                   <div className="row">
                     <div className="col-md-7 heros-text text-center text-md-start">
@@ -448,7 +465,10 @@ function Home() {
 
             <SwiperSlide>
               <div className="heroOverlay"></div>
-              <div className="inerhero">
+              <div
+                className="inerhero"
+                style={{ backgroundImage: `url(${homeBanner2})` }}
+              >
                 <div className="container slide-content d-flex flex-column justify-content-center align-items-start text-white h-100">
                   <div className="row">
                     <div className="col-md-7 heros-text text-center text-md-start">
@@ -503,7 +523,10 @@ function Home() {
 
             <SwiperSlide>
               <div className="heroOverlay"></div>
-              <div className="inerhero">
+              <div
+                className="inerhero"
+                style={{ backgroundImage: `url(${homeBanner3})` }}
+              >
                 <div className="container slide-content d-flex flex-column justify-content-center align-items-start text-white h-100">
                   <div className="row">
                     <div className="col-md-7 heros-text text-center text-md-start">
@@ -569,11 +592,16 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    What Is{" "}
+                    {/* What Is{" "}
                     <span className="highlight-text">
                       Our <img src={wedotagline} className="wedotagline" />{" "}
                     </span>
-                    Goal?
+                    Goal? */}
+                    <span className="highlight-text">
+                      Empowering{" "}
+                      <img src={wedotagline} className="wedotagline" />{" "}
+                    </span>
+                    Change. Building Stability.
                   </h2>
                   <p
                     className="wedopara"
@@ -581,17 +609,16 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    At HIS-OC, we believe everyone deserves a chance to rebuild
-                    their lives with dignity and stability. We are committed to
-                    providing transitional housing, emergency housing, and
-                    homeless housing programs without discrimination. Our doors
-                    are open to all, regardless of race, color, religion, gender
-                    identity, age, national origin, disability, marital status,
-                    sexual orientation, or military status. Through Orange
-                    County in-home supportive services, we ensure those we serve
-                    receive not just shelter, but the care and resources needed
-                    to regain independence. Your support helps us create an
-                    inclusive community where no one is left behind.
+                    At HIS-OC, we believe every person deserves the opportunity
+                    to rebuild their life with dignity, stability, and hope. We
+                    provide transitional, emergency, and homeless housing
+                    programs that welcome all, without discrimination based on
+                    race, color, religion, gender identity, age, national
+                    origin, disability, marital status, sexual orientation, or
+                    military status. We believe sustainability means more than
+                    providing shelter—HIS-OC empowers individuals to rewrite
+                    their story through wraparound services that foster
+                    independence, resilience, and lasting change.
                   </p>
                 </div>
               </div>
@@ -636,17 +663,20 @@ function Home() {
               data-aos-offset="0"
               data-aos-duration="1000"
             >
-              Unlike emergency shelters that provide temporary relief, HIS-OC
-              takes a structured, long-term approach to breaking the cycle of
-              homelessness. Our transitional housing programs in Orange County
-              offer job training, therapy, case management, and education,
-              helping individuals achieve lasting self-sufficiency. Through
-              homeless housing programs, we equip people with the tools and
-              support they need to build a stable future and prevent a return to
-              homelessness. At HIS-OC, we believe stability goes beyond shelter,
-              it’s about empowerment, growth, and a new beginning. Your support
-              helps us continue guiding people toward permanent housing and a
-              better life
+              HIS-OC offers outreach, emergency shelter, and transitional
+              housing programs designed to address homelessness at every stage.
+              While emergency shelters provide critical short-term relief, our
+              approach goes further, focusing on structured, long-term solutions
+              that break the cycle of homelessness. Our transitional housing
+              programs in Orange County provide job training, therapy, case
+              management, and educational opportunities, empowering individuals
+              to achieve lasting self-sufficiency. Through our homeless housing
+              programs, we equip people with the tools, resources, and support
+              needed to build stable futures and prevent a return to
+              homelessness. At HIS-OC, we believe stability means more than a
+              roof—it’s about empowerment, growth, and the opportunity for a
+              fresh start. With your support, we can continue guiding people
+              toward permanent housing and a better life.
             </p>
           </div>
         </section>
@@ -740,14 +770,12 @@ function Home() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    We have multiple programs that assist people who are
-                    homeless or at risk of being homeless. Our shelters and
-                    supportive service programs provide assistance to our
-                    community’s most vulnerable population. HIS-OC does not and
-                    shall not discriminate on the basis of race, color, religion
-                    (creed), gender, gender expression, age, national origin
-                    (ancestry), disability, marital status, sexual orientation,
-                    or military status, in any of its activities or operations.
+                    HIS-OC offers a range of programs to support individuals and
+                    families who are homeless or at risk of homelessness. Our
+                    shelters and supportive services are dedicated to meeting
+                    the needs of our community’s most vulnerable, providing
+                    safety, stability, and pathways toward independence. We are
+                    firmly committed to equity and inclusion.
                   </p>
                   <button
                     className="parabtn  btn px-4 "
@@ -814,11 +842,11 @@ function Home() {
           <Events ApiDataevent={ApiDataevent} />
         )}
 
-        <Ourpodcasts
+        {/* <Ourpodcasts
           ApiDatapodcast={ApiDatapodcast}
           view="View all Podcast"
           handlepodcastlistroute={handlepodcastlistroute}
-        />
+        /> */}
 
         {/* Testimonial */}
         <Testimonial />
@@ -927,6 +955,66 @@ function Home() {
         </section>
 
         {/* Contact */}
+
+        <section className="dedicatd-leadership">
+          <div className="container my-5">
+            <div className="row justify-content-center    mb-5">
+              <div className="col-md-6">
+                <h2
+                  className="title text-center  mb-4"
+                  data-aos="fade-right"
+                  data-aos-offset="0"
+                  data-aos-duration="1000"
+                >
+                  {/* Text Here */}
+                  <span className="dedication  position-relative">
+                    Sponsor Brands{" "}
+                    <img
+                      className="dedicationunderline"
+                      src={dedicationunderline}
+                    />
+                  </span>
+                </h2>
+              </div>
+            </div>
+            {ApiDataSponsorBrands?.data?.length > 0 && (
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={20}
+                slidesPerView={1}
+                loop={false}
+                speed={1000}
+                breakpoints={{
+                  500: { slidesPerView: 2 },
+                  768: { slidesPerView: 2 },
+                  992: { slidesPerView: 3 },
+                  1200: { slidesPerView: 4 },
+                }}
+                navigation
+              >
+                {ApiDataSponsorBrands.data.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div className=" p-2">
+                      <div className="card p-3 border-0 text-center sponsorBrands_cards">
+                        <div className="profile-container">
+                          <img
+                            src={
+                              item?.image
+                                ? `${base_url_image}${item.image}`
+                                : placeholder
+                            }
+                            alt="Sponsor Brand"
+                            className="profile-image"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            )}
+          </div>
+        </section>
 
         <Sponsor />
       </Layout>

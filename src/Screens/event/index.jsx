@@ -5,6 +5,7 @@ import React, { useState, useEffect } from "react";
 import HeroSection from "../../components/herosection";
 import Sponsor from "../../components/sponsor";
 import ourworkbg from "../../Assets/images/ourworkbg.png";
+import eventBannerImg from "../../Assets/images/eventBannerImg.png";
 import { RiCalendar2Line } from "react-icons/ri";
 import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
@@ -35,7 +36,7 @@ function Event() {
     <>
       <Layout>
         <HeroSection
-          heroimg={ourworkbg}
+          heroimg={eventBannerImg}
           pagename="Our Events"
           title2="Events"
           programpojectaboutherounderline="houseprogramunderlineourwork"
@@ -46,7 +47,7 @@ function Event() {
           <div className="container  py-5">
             
             {ApiDataGet?.data?.length > 0 ? (ApiDataGet?.data?.map((items, index) => (
-              <div className="row">
+              <div className="row" key={index}>
                 <div className="col-md-7 mt-5">
                   <div className=" d-flex gap-4">
                     <p className="monday-text">
@@ -83,12 +84,16 @@ function Event() {
                         dangerouslySetInnerHTML={{ __html: items?.description }}
                       ></p>
 
-                      <button
-                        onClick={() => learnnavigate(items?.id)}
-                        className="todaybtn"
-                      >
-                        Learn more
-                      </button>
+
+                      <div className="d-flex gap-2">
+                        <button
+                          onClick={() => learnnavigate(items?.id)}
+                          className="todaybtn"
+                        >
+                          Learn more
+                        </button>
+                        <a href={items.ticketing_link} className="todaybtn" target="_blank">Become a Volunteer</a>
+                      </div>
                     </div>
                   </div>
                 </div>

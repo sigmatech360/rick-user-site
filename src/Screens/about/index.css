@@ -797,7 +797,8 @@
 
 /* Background images for each section */
 .careersinternships .left-career {
-  background: url("../../Assets/images/careerbg.jfif");
+  /* background: url("../../Assets/images/careerbg.jfif"); */
+  background: url("../../Assets/images/careerbg1.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;

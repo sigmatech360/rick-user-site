@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
 import "./index.css";
-import heropage2 from "../../Assets/images/heropage2.png";
+import heropage2 from "../../Assets/images/heropage2.webp";
 import aboutherounderline from "../../Assets/images/aboutherounderline.png";
-import ourprogramsunderline from '../../Assets/images/ourprogramsunderline.svg'
+import ourprogramsunderline from "../../Assets/images/ourprogramsunderline.svg";
 import AOS from "aos";
 
 function HeroSection(props) {
@@ -12,11 +12,14 @@ function HeroSection(props) {
   }, []);
   return (
     <>
-      <div className="hero-section position-relative text-white">
+      <div
+        className={`hero-section position-relative text-white ${props.className}`}
+        // style={{ backgroundImage: `url(${props?.heroimg})` }}
+      >
         <img
-          src={props?.heroimg} // replace with actual path to your image
+          src={props?.heroimg}
           alt="Hero Background"
-          className="img-fluid w-100"
+          className="img-fluid w-100 hero-bgImage"
           style={{ objectFit: "cover", height: "100vh" }}
         />
         <div className="herotitle overlay position-absolute top-0 start-0 w-100 h-100 ">
@@ -41,10 +44,12 @@ function HeroSection(props) {
             {/* <p className="breadcrumb text-light">
       Home &gt; {props?.pagename}
     </p> */}
-            <p className={`${props?.programprojectsubttle} text-light`}   data-aos="fade-up"
-                        data-aos-offset="0"
-                        data-aos-duration="1000"
->
+            <p
+              className={`${props?.programprojectsubttle} text-light`}
+              data-aos="fade-up"
+              data-aos-offset="0"
+              data-aos-duration="1000"
+            >
               Home &gt; {props?.pagename}
             </p>
           </div>

@@ -2,7 +2,7 @@ import "./index.css";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import Leadership from "../../components/Leadership";
-import heropage2 from "../../Assets/images/heropage2.png";
+import heropage2 from "../../Assets/images/heropage2.webp";
 import Layout from "../../components/layout";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
@@ -616,6 +616,13 @@ function About() {
                       PO Box 1293, Placentia, CA 92871
                     </span>
                   </span>
+                  <a
+                    href="mailto:info@his-oc.org"
+                    className="careercontact d-flex align-items-center justify-content-end"
+                  >
+                    <i className="bi bi-envelope me-2"></i>
+                    info@his-oc.org
+                  </a>
                 </div>
               </div>
             </div>

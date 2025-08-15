@@ -17,6 +17,8 @@ import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";
 
 import gethelpbg from "../../Assets/images/gethelpbg.png";
+import getHelpBannerImg from "../../Assets/images/getHelpBannerImg.png";
+// import getHelpBannerImg from "../../Assets/images/getHelpBannerImg.jpeg";
 // import program1 from "../../Assets/images/program1.svg.png";
 // import program2 from "../../Assets/images/program2.png";
 
@@ -207,7 +209,7 @@ function GetHelp() {
     <>
       <Layout>
         <HeroSection
-          heroimg={gethelpbg}
+          heroimg={getHelpBannerImg}
           pagetitle="Get  "
           pagename="Get Help"
           title2="Help"

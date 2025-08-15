@@ -4,8 +4,8 @@
   }
 }
 
-.colorGreen{
-  color: #348F99;
+.colorGreen {
+  color: #348f99;
 }
 .bg-theme {
   background-color: #348f99;
@@ -46,6 +46,19 @@
   color: #348f99 !important;
 }
 
+.sponsorProjectSlider .swiper-wrapper {
+  padding-bottom: 60px;
+}
+.sponsorProjectSlider .swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #348f99 !important;
+}
+.sponsorProjectSlider .swiper-pagination-bullet {
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+}
+
 .sponsor-card .sponsor-card-body-title button {
   padding: 5px 10px;
   white-space: nowrap;
@@ -55,6 +68,10 @@
   font-weight: 500;
   font-size: 15px;
   border-radius: 10px;
+}
+
+.sponsor-card-header img {
+  height: 274px;
 }
 
 .sponsor-card .sponsor-card-body-title h3 {
@@ -67,6 +84,11 @@
   font-size: 12px;
   margin-bottom: 15px;
   line-height: 1.4;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 }
 
 .sponsor-card .sponsor-card-body-footer {

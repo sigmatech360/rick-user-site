@@ -121,7 +121,7 @@ a:hover {
   height: 40px;
 }
 
-@media (max-width: 1199px) {
+@media (max-width: 1399px) {
   .navbar-brand img {
     height: 28px;
   }
@@ -133,6 +133,8 @@ a:hover {
   height: 24px !important;
   color: #333;
   /* Adjust color as needed */
+  /* padding-left: 0px !important;
+  padding-right: 8px !important; */
 }
 
 nav .btn-warning {
@@ -271,4 +273,51 @@ a {
   text-decoration: none;
   transition: 0.3s linear;
   top: 40px;
+}
+
+.headerSocialIcons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.headerSocialIcons a {
+  line-height: 1;
+  width: 20px;
+}
+.lgHeaderLeft {
+  flex: 0 0 40%;
+}
+.lgHeaderRight {
+  flex: 0 0 40%;
+  justify-content: end;
+}
+@media (max-width: 1399px) {
+  .navbar-nav .nav-link {
+    font-size: 15px;
+    /* Adjust color as needed */
+    /* padding-left: 0px !important;
+    padding-right: 10px !important; */
+  }
+  .lgHeaderLeft {
+  flex: 0 0 44%;
+}
+.lgHeaderRight {
+  flex: 0 0 44%;
+
+}
+}
+@media (max-width: 1199px) {
+  .navbar-brand img {
+    height: 25px;
+  }
+  .navbar-nav .nav-link {
+    padding-right: 7px !important;
+  }
+  .lgHeaderRight {
+    flex: 0 0 43%;
+  }
+  .lgHeaderLeft {
+    flex: 0 0 45%;
+  }
 }

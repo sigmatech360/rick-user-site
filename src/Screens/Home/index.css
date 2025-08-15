@@ -1,3 +1,7 @@
+.sponsorBrands_cards {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px !important;
+}
+
 @media (min-width: 1600px) {
   .container {
     max-width: 1640px !important;
@@ -80,6 +84,13 @@
 .hero-section {
   position: relative;
   overflow: hidden;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.ourWorkBanner-sec .hero-bgImage {
+  height: 100% !important;
+  object-position: top;
 }
 
 .inerhero {
@@ -261,15 +272,8 @@
   /* Adjust height as needed */
 }
 
-
-
-
-
-
-
-
 /* .homeless-intervention .right-sectionVision {
-  background-image: url("../../Assets/images/full-shot-volunteers-with-donations.jpg");
+  background-image: url("../../Assets/images/full-shot-volunteers-with-donations.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -277,12 +281,10 @@
  
 } */
 
-
-
 .homeless-intervention .right-sectionVision {
   position: relative;
   /* Ensure the container is positioned relative */
-  background-image: url("../../Assets/images/full-shot-volunteers-with-donations.jpg");
+  background-image: url("../../Assets/images/full-shot-volunteers-with-donations.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -307,7 +309,7 @@
   /* Ensure the overlay is above the background image */
 }
 
-.homeless-intervention .right-sectionVision>* {
+.homeless-intervention .right-sectionVision > * {
   position: relative;
   z-index: 2;
   /* Ensure content is above the overlay */
@@ -315,25 +317,17 @@
 
 /* 
 .homeless-intervention .right-sectionVisionApproach {
-  background-image: url("../../Assets/images/business-colleagues-together-teamwork-working-office.jpg");
+  background-image: url("../../Assets/images/business-colleagues-together-teamwork-working-office.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
   min-height: 400px; 
 } */
 
-
-
-
-
-
-
-
-
 .homeless-intervention .right-sectionVisionApproach {
   position: relative;
   /* Ensure the container is positioned relative */
-  background-image: url("../../Assets/images/business-colleagues-together-teamwork-working-office.jpg");
+  background-image: url("../../Assets/images/business-colleagues-together-teamwork-working-office.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -358,16 +352,11 @@
   /* Ensure the overlay is above the background image */
 }
 
-.homeless-intervention .right-sectionVisionApproach>* {
+.homeless-intervention .right-sectionVisionApproach > * {
   position: relative;
   z-index: 2;
   /* Ensure content is above the overlay */
 }
-
-
-
-
-
 
 /* Custom text styling */
 .highlight-text {
@@ -476,8 +465,6 @@
   font-family: "Inter";
 }
 
-
-
 .help-available .parabtn:hover {
   color: black;
   border: 1px solid var(--unnamed-color-fdd22e);
@@ -488,7 +475,6 @@
   margin-left: 23px;
   font-family: "Inter";
 }
-
 
 .youthshelter {
   text-align: left;
@@ -1156,7 +1142,6 @@
   /* Adjust as needed to be close to the right side */
 }
 
-
 .news-section .slick-prev:hover,
 .slick-prev:focus {
   position: absolute;
@@ -1226,7 +1211,6 @@
 
 /* For medium screens (max-width: 1200px) */
 @media (max-width: 1200px) {
-
   .slick-prev .arrow-icon,
   .slick-next .arrow-icon {
     font-size: 1.5rem;
@@ -1236,7 +1220,6 @@
 
 /* For tablets and smaller screens (max-width: 992px) */
 @media (max-width: 992px) {
-
   .slick-prev .arrow-icon,
   .slick-next .arrow-icon {
     font-size: 1.3rem;
@@ -1246,7 +1229,6 @@
 
 /* For mobile screens (max-width: 768px) */
 @media (max-width: 768px) {
-
   .slick-prev .arrow-icon,
   .slick-next .arrow-icon {
     font-size: 1.1rem;
@@ -1300,23 +1282,6 @@
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .news-section .slick-prev,
 .slick-prev {
   position: absolute;
@@ -1357,8 +1322,6 @@
   /* White arrow icon */
   margin-bottom: 4px;
 }
-
-
 
 .programImgSec {
   display: flex;
@@ -1377,7 +1340,7 @@
 .programImgSec .programImg img {
   height: 400px;
   /* width: 400px; */
-  border-radius: 50% !important
+  border-radius: 50% !important;
 }
 
 .programImgSec .programAfter {
@@ -1396,25 +1359,7 @@
   .programImgSec .programAfter {
     bottom: -5%;
   }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 .news-section .slick-prev,
 .slick-prev {
@@ -1457,37 +1402,13 @@
   margin-bottom: 4px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* For very small screens (max-width: 576px) */
 @media (max-width: 576px) {
-
   .slick-prev .arrow-icon,
   .slick-next .arrow-icon {
     font-size: 1rem;
     /* Smallest size for very small mobile screens */
   }
-
-
-
-
-
-
 
   .slick-prev:hover,
   .slick-prev:focus {
@@ -1545,23 +1466,6 @@
 .news-section .slick-next {
     right: 0 !important;
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 /* Add a custom arrow icon if needed (e.g., Font Awesome or similar) */
@@ -1593,7 +1497,6 @@
 }
 
 @media (max-width: 576px) {
-
   .slick-prev,
   .slick-next {
     width: 30px;
