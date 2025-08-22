@@ -92,7 +92,7 @@ function Event() {
                         >
                           Learn more
                         </button>
-                        <a href={items.ticketing_link} className="todaybtn" target="_blank">Become a Volunteer</a>
+                        <a href={items?.ticketing_link} className="todaybtn" target="_blank">Get Your Ticket</a>
                       </div>
                     </div>
                   </div>

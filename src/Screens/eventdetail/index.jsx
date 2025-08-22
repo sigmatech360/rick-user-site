@@ -74,6 +74,7 @@ function EventDetail() {
   const eventnavigate = () => {
     navigate("/event");
   };
+
   return (
     <Layout>
       <section className="communityOutreachDay">
@@ -140,11 +141,11 @@ function EventDetail() {
 
               <div className="d-flex">
                 <a
-                  href={ApiDataGeteventdetail?.data.ticketing_link}
+                  href={ApiDataGeteventdetail?.data?.ticketing_link}
                   className="todaybtn mb-4"
                   target="_blank"
                 >
-                  Become a Volunteer
+                  Get Your Ticket
                 </a>
               </div>
 

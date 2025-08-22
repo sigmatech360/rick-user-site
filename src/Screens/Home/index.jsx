@@ -601,7 +601,12 @@ function Home() {
                       Empowering{" "}
                       <img src={wedotagline} className="wedotagline" />{" "}
                     </span>
-                    Change. Building Stability.
+                    Change. Building{" "}
+                    <span className="highlight-text">
+                      Stability
+                      <img src={wedotagline} className="wedotagline" />{" "}
+                    </span>
+                    .
                   </h2>
                   <p
                     className="wedopara"
