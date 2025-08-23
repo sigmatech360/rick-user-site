@@ -117,6 +117,7 @@ function Footer() {
     for (const key in userData) {
       formDataMethod.append(key, userData[key]);
     }
+    formDataMethod.append("device_token", localStorage.getItem("device_token"));
     await postlogin(formDataMethod);
     navigate("/");
   };
@@ -202,7 +203,10 @@ function Footer() {
   }, [ApiDataPostforget]);
 
   useEffect(() => {
-    getdata();
+    if(token){
+
+      getdata();
+    }
   }, [token]);
 
   const handleChange = (e) => {

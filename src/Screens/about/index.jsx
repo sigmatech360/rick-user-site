@@ -182,6 +182,7 @@ function About() {
           title2="HIS-OC"
           programpojectaboutherounderline="programpojectaboutherounderlinemain"
           programprojectsubttle="givedonationsubtitle"
+          objectPosition="0px -70px"
         />
 
         <section className="homeless-intervention">

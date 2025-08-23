@@ -115,7 +115,7 @@ Events
         </div> */}
         <div className="d-flex justify-content-center">
           <div className="row g-4 justify-content-center">
-            {ApiDataevent?.data?.map((event, index) => (
+            {ApiDataevent?.data?.slice(0,3).map((event, index) => (
               <div key={index} className={`evemtcard ${ApiDataevent?.data?.length === 1 ? 'col-md-12' : ApiDataevent?.data?.length === 2 ? 'col-md-5' : 'col-md-4'} mb-4`}>
                 <Link
                   to={`/event/${event?.id}`}

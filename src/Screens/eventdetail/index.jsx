@@ -1,6 +1,6 @@
 import "./index.css";
 import Layout from "../../components/layout";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import VolunteerOrientationimg from "../../Assets/images/VolunteerOrientationimg.png";
 import Sponsor from "../../components/sponsor";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
@@ -10,17 +10,20 @@ import { CiClock2 } from "react-icons/ci";
 import communityimg from "../../Assets/images/communityimg.png";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { useGet } from "../Api/usePost";
+import { useGet, usePost } from "../Api/usePost";
 import { base_url_image } from "../Api/base_url";
 
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 import advancedFormat from "dayjs/plugin/advancedFormat";
+import { FaHeart, FaRegHeart } from "react-icons/fa";
+import { toast } from "react-toastify";
 dayjs.extend(advancedFormat);
 dayjs.extend(customParseFormat);
 
 function EventDetail() {
   const { id } = useParams();
+  const [interestedEvents, setInterestedeEvents] = useState([]);
 
   const {
     ApiData: ApiDataGeteventdetail,
@@ -29,6 +32,14 @@ function EventDetail() {
     get: getdataeventdetail,
   } = useGet(`/event/${id}`);
   const {
+    ApiData: ApiInterestedEventGet,
+    loading: loadingInterestedEventGet,
+    error: errorInterestedEventGet,
+    get: getInterestedEvents,
+  } = useGet("/my-interested-events");
+
+
+  const {
     ApiData: ApiDataGeteventlist,
     loading: loadingGeteventlist,
     error: errorGeteventlist,
@@ -36,8 +47,6 @@ function EventDetail() {
   } = useGet("/event");
   useEffect(() => {
     getdataeventdetail();
-
-    document.title = ApiDataGeteventdetail?.data?.title || "HOME- HIS OC";
   }, [id]);
 
   const startTime = ApiDataGeteventdetail?.data?.start_time; // e.g., "12:04"
@@ -51,7 +60,14 @@ function EventDetail() {
 
   useEffect(() => {
     getdataeventlist();
+    let token = localStorage.getItem("token");
+    if (token) {
+      getInterestedEvents();
+    }
   }, []);
+  useEffect(() => {
+    document.title = ApiDataGeteventdetail?.data?.title || "HOME- HIS OC";
+  }, [ApiDataGeteventdetail]);
 
   const navigate = useNavigate();
 
@@ -74,6 +90,51 @@ function EventDetail() {
   const eventnavigate = () => {
     navigate("/event");
   };
+
+  const handleWishList = async (eventId) => {
+    const token = localStorage.getItem("token");
+    const base_url = `${import.meta.env.VITE_API_URL}api`;
+    if (!token) {
+      toast.error("Please login first!");
+      return;
+    }
+    const formDataMethod = new FormData();
+    formDataMethod.append("event_id", eventId);
+    let endpoint = "";
+    if (isInWishlist(eventId)) {
+      // await postNotInterest(formDataMethod);
+      endpoint = "/not-interested-event";
+    } else {
+      endpoint = "/interested-event";
+    }
+
+    const response = await fetch(base_url + endpoint, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: formDataMethod,
+    });
+
+    const result = await response.json();
+    if (result?.status == true) {
+      toast.success(result?.message);
+      getInterestedEvents();
+    }
+  };
+  const isInWishlist = (EventId) => {
+    return interestedEvents.some((item) => item == EventId);
+  };
+
+  useEffect(() => {
+    if (ApiInterestedEventGet?.status === true) {
+      let interestedeEventsTemp = ApiInterestedEventGet.data.map((item) => {
+        return item.id;
+      });
+      setInterestedeEvents(interestedeEventsTemp);
+    }
+  }, [ApiInterestedEventGet]);
 
   return (
     <Layout>
@@ -120,7 +181,18 @@ function EventDetail() {
               </div>
             </div>
 
-            <div className="col-lg-6 mt-4">
+            <div className="col-lg-6 mt-4 position-relative">
+              <button
+                className="favorite-btn"
+                onClick={() => handleWishList(ApiDataGeteventdetail?.data?.id)}
+              >
+                {/* <FaRegHeart /> */}
+                {isInWishlist(ApiDataGeteventdetail?.data?.id) ? (
+                  <FaHeart color="red" />
+                ) : (
+                  <FaRegHeart />
+                )}
+              </button>
               <img
                 src={base_url_image + ApiDataGeteventdetail?.data?.image}
                 alt="Community Event"
@@ -138,16 +210,20 @@ function EventDetail() {
                   __html: ApiDataGeteventdetail?.data?.description,
                 }}
               ></p>
-
+              {ApiDataGeteventdetail?.data?.ticketing_link && (
               <div className="d-flex">
                 <a
                   href={ApiDataGeteventdetail?.data?.ticketing_link}
                   className="todaybtn mb-4"
                   target="_blank"
                 >
-                  Get Your Ticket
+                  {ApiDataGeteventdetail?.data?.ticketing_button_text}
+                  
                 </a>
               </div>
+
+              )}
+
 
               {ApiDataGeteventdetail?.data?.agenda?.length > 0 && (
                 <>

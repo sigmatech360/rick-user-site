@@ -24,6 +24,7 @@ import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";
 import { useGet, usePost } from "../Api/usePost";
 import { toast } from "react-toastify";
+import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
 function JoinOurTeam() {
   const {
     ApiData: ApiDataGetmembers,
@@ -182,6 +183,7 @@ function JoinOurTeam() {
           title2="Team"
           programpojectaboutherounderline="programpojectaboutherounderlinemain"
           programprojectsubttle="givedonationsubtitle"
+          objectPosition="0px -70px"
         />
 
         

@@ -21,7 +21,9 @@ const useFirebaseMessaging = () => {
           });
 
           setToken(fcmToken);
-          console.log("FCM Token:", fcmToken);
+          localStorage.setItem("device_token", fcmToken);
+          console.log("Permission granted.");
+          
         } else {
           console.error("Permission denied for notifications");
         }
@@ -37,9 +39,9 @@ const useFirebaseMessaging = () => {
       console.log("Message received:", payload);
       toast(
         <div>
-          <p className="fw-bold mb-0">
+          <p className="text-dark fw-bold mb-0">
             {payload.notification.title}</p>
-          <p className="mb-0">
+          <p className="text-dark  mb-0">
             {payload.notification.body}
           </p>
         </div>,{autoClose: false}

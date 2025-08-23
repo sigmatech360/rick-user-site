@@ -85,7 +85,6 @@ function Contactus() {
     error: errorGet,
     get: getdata,
   } = useGet("/project");
-  console.log("projects data", ApiDataGet);
   const {
     ApiData: SponsoredprogramApiDataGet,
     loading: sponsoredprogramloadingGet,

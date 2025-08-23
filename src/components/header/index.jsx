@@ -118,6 +118,7 @@ function Header() {
     for (const key in userData) {
       formDataMethod.append(key, userData[key]);
     }
+    formDataMethod.append("device_token", localStorage.getItem("device_token"));
     await postlogin(formDataMethod);
     navigate("/");
   };
@@ -292,7 +293,9 @@ function Header() {
 
   const Handlelogout = async () => {
     // const toeken =  localStorage.removeItem('token')
-    await postLogout();
+    const formDataMethod = new FormData();
+    formDataMethod.append("device_token", localStorage.getItem("device_token"));
+    await postLogout(formDataMethod);
     setLogintoken(localStorage.removeItem("token"));
     toast.success("Volunteer Logout Successfully");
     setIsLoggedIn(false);

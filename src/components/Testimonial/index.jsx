@@ -150,8 +150,8 @@ const Testimonial = () => {
   return (
     <section className="testimonial">
       <div className="container">
-        <div class="row">
-          <div class="col-md-12">
+        <div className="row">
+          <div className="col-md-12">
             <div className="testimonial-head">
               {/* <h6
                 className="testimonialhead1 text-center"
@@ -182,10 +182,10 @@ const Testimonial = () => {
           </div>
         </div>
       </div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="testimonial-cards mb-4">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-md-12">
+            <div className="testimonial-cards mb-4">
               <Slider {...settings}>
                 {testimonials.map((testimonial, index) => (
                   <div className="testimonial-card" key={index}>

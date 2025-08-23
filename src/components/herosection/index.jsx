@@ -20,7 +20,7 @@ function HeroSection(props) {
           src={props?.heroimg}
           alt="Hero Background"
           className="img-fluid w-100 hero-bgImage"
-          style={{ objectFit: "cover", height: "100vh" }}
+          style={{objectFit: "cover", height: "100vh", objectPosition: props?.objectPosition || "top" }}
         />
         <div className="herotitle overlay position-absolute top-0 start-0 w-100 h-100 ">
           <div className="title container text-center text-md-start mb-3">

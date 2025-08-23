@@ -87,7 +87,22 @@ export const useGet = (url, initialData = '', idData = '') => {
                 throw new Error('Network response was not ok');
             }
             const result = await response.json();
-            setData(result);
+            if(url != '/edit-account' && url != '/top-volunteer'){
+                console.log(`${url} response:`, result);
+                let tempResponse = result;
+                let data = result.data;
+                let newData = data.filter((item)=>{
+                    return item.show_in_web == 1;
+                })
+                tempResponse.data = newData;
+                setData(tempResponse);
+
+            }
+            else{
+
+                setData(result);
+            }
+            
 
         } catch (err) {
             setError(err);

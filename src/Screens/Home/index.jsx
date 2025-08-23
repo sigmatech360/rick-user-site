@@ -29,7 +29,7 @@ import apartunderline from "../../Assets/images/apartunderline.png";
 import "./index.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css";
@@ -288,7 +288,7 @@ function Home() {
   };
 
   const [showTicketAlert, setShowTicketAlert] = useState(false);
-  const [ticketData, setTicketData] = useState(false);
+  const [ticketData, setTicketData] = useState({});
   useEffect(() => {
     if (ApiDataevent?.data?.length > 0) {
       let data = ApiDataevent?.data;
@@ -311,6 +311,7 @@ function Home() {
           setTicketData({
             ticket_link: event.ticketing_link,
             title: event.title,
+            link_text: event.ticketing_button_text,
           });
           break;
         }
@@ -334,14 +335,21 @@ function Home() {
           >
             <strong>{ticketData.title}</strong> is coming soon! Book your ticket
             now.{" "}
-            <Alert.Link href={ticketData.ticket_link}>Ticket Link</Alert.Link>.
+            <Alert.Link href={ticketData.ticket_link}>{ticketData?.link_text}</Alert.Link>.
           </Alert>
         )}
         <section className="homeless-intervention">
           <Swiper
-            pagination={true}
+            // pagination={true}
             modules={[Pagination]}
+            // modules={[Pagination, Autoplay]}
             slidesPerView={"auto"}
+            loop={true}
+            pagination={{ clickable: true }}
+            autoplay={{
+              delay: 4000, // 3 seconds between slides
+              disableOnInteraction: false, // keeps autoplay going after interaction
+            }}
             className="mySwiper"
           >
             <SwiperSlide>
@@ -995,6 +1003,11 @@ function Home() {
                   992: { slidesPerView: 3 },
                   1200: { slidesPerView: 4 },
                 }}
+                className={
+                  ApiDataSponsorBrands?.data?.length > 4
+                    ? ""
+                    : "sponsored_brands_slider"
+                }
                 navigation
               >
                 {ApiDataSponsorBrands.data.map((item, index) => (
