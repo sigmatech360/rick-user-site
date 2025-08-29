@@ -250,7 +250,7 @@ function ProgramsProjects() {
           className="ourWorkBanner-sec"
           heroimg={ourWorkBanner}
           pagetitle="Our"
-          pagename="  Work "
+          pagename=" Our Work "
           title2="Work "
           programprojectsubttle="programprojectsubttle"
           programpojectaboutherounderline="programpojectaboutherounderline"

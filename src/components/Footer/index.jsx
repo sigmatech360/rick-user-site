@@ -25,6 +25,7 @@ import {
 } from "../modal";
 import { useGet, usePost } from "../../Screens/Api/usePost";
 import { AuthContext } from "../../Routers/AuthContext";
+import { requestPermission } from "../../useFirebaseMessaging";
 function Footer() {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -117,6 +118,9 @@ function Footer() {
     for (const key in userData) {
       formDataMethod.append(key, userData[key]);
     }
+    if (!localStorage.getItem("device_token")) {
+      requestPermission();
+    }
     formDataMethod.append("device_token", localStorage.getItem("device_token"));
     await postlogin(formDataMethod);
     navigate("/");
@@ -126,7 +130,7 @@ function Footer() {
       localStorage.setItem("token", ApiDatalogin?.data?.token);
       setShowModallogin(false);
       setUserData(() => {
-        console.log("Clearing userData..."); // Debug log
+        // console.log("Clearing userData..."); // Debug log
         return {};
       });
       navigate("/");
@@ -203,8 +207,7 @@ function Footer() {
   }, [ApiDataPostforget]);
 
   useEffect(() => {
-    if(token){
-
+    if (token) {
       getdata();
     }
   }, [token]);
@@ -267,6 +270,13 @@ function Footer() {
         JSON.stringify(selectedItemsslots)
       );
       formDataMethod.append("available_days", JSON.stringify(selectedItems));
+      if (!localStorage.getItem("device_token")) {
+        requestPermission();
+      }
+      formDataMethod.append(
+        "device_token",
+        localStorage.getItem("device_token")
+      );
 
       console.log("available_slots Slot (Array check):", available_slots);
       console.log(

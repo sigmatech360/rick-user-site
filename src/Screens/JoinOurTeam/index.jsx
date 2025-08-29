@@ -173,6 +173,29 @@ function JoinOurTeam() {
     }));
   };
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenWidth = () => {
+      if (window.innerWidth < 1150) {
+        setIsMobile(true);
+      } else {
+        setIsMobile(false);
+      }
+    };
+
+    // Pehli baar component mount hone pe check karo
+    checkScreenWidth();
+
+    // Jab window resize ho tab bhi check karo
+    window.addEventListener("resize", checkScreenWidth);
+
+    // Clean up event listener jab component unmount ho
+    return () => {
+      window.removeEventListener("resize", checkScreenWidth);
+    };
+  }, []);
+
   return (
     <>
       <Layout>
@@ -183,7 +206,7 @@ function JoinOurTeam() {
           title2="Team"
           programpojectaboutherounderline="programpojectaboutherounderlinemain"
           programprojectsubttle="givedonationsubtitle"
-          objectPosition="0px -70px"
+          objectPosition={!isMobile && "0px -70px"}
         />
 
         

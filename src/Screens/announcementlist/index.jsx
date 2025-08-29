@@ -52,7 +52,7 @@ function AnnouncementList() {
         <HeroSection
           heroimg={announcementbg}
           pagetitle="News &"
-          pagename="news-announcements"
+          pagename="News & Announcements"
           title2="Announcements"
 
           programprojectsubttle="givedonationsubtitle"
@@ -93,10 +93,11 @@ function AnnouncementList() {
               {ApiDatapodcast?.data?.map((items) => (
 
                 <div className="row  align-items-center">
-                  <div className="borderstop"></div>
+                  {/* <div className="borderstop"></div> */}
+                  <hr />
                   <div className="  col-md-6 mb-4">
-                    <div>
-                      <img src={base_url_image + items?.image} className="anmouncementlist1 img-fluid " />
+                    <div className="text-center">
+                      <img src={base_url_image + items?.image} className="anmouncementlist1  " />
                     </div>
                   </div>
                   <div className="  col-md-6 mb-4">

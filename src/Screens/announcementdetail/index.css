@@ -180,13 +180,18 @@
   padding: 6px 24px;
   border: 1px solid #348f99;
   background: #fdfbf8;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease !important;
 }
 
 .todaybtn:hover {
   color: white;
   background: #348f99;
   border-color: #348f99;
+}
+img.anmouncementlist2 {
+    height: 450px;
+    width: 100%;
+    object-fit: contain;
 }
 
 /* Media Queries */

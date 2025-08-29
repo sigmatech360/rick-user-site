@@ -1,14 +1,23 @@
 // /* public/firebase-messaging-sw.js */
  importScripts("https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js");
  importScripts("https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js");
+//  const firebaseConfig = {
+//    apiKey: "AIzaSyCcY6_r7kHQOQAeajr39MuWXHvq8bZ9N5Q",
+//    authDomain: "hisoc-23836.firebaseapp.com",
+//    projectId: "hisoc-23836",
+//    storageBucket: "hisoc-23836.firebasestorage.app",
+//    messagingSenderId: "112902329407",
+//    appId: "1:112902329407:web:2b3dce23b5d96defd2d48a",
+//    measurementId: "G-DVJJ2WY7Z1"
+//  };
  const firebaseConfig = {
-   apiKey: "AIzaSyCcY6_r7kHQOQAeajr39MuWXHvq8bZ9N5Q",
-   authDomain: "hisoc-23836.firebaseapp.com",
-   projectId: "hisoc-23836",
-   storageBucket: "hisoc-23836.firebasestorage.app",
-   messagingSenderId: "112902329407",
-   appId: "1:112902329407:web:2b3dce23b5d96defd2d48a",
-   measurementId: "G-DVJJ2WY7Z1"
+   apiKey: "AIzaSyCm1NOoAB7eVTXfD3ZG0dxaq3PpD-C40Tg",
+   authDomain: "his-oc.firebaseapp.com",
+   projectId: "his-oc",
+   storageBucket: "his-oc.firebasestorage.app",
+   messagingSenderId: "623658638893",
+   appId: "1:623658638893:web:1cc6378b6b53e74d3062a4",
+   measurementId: "G-2GKCDP7GZ8"
  };
  
  firebase.initializeApp(firebaseConfig);

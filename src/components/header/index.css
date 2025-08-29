@@ -206,7 +206,7 @@ nav .btn-warning {
   padding: 21px;
 
   position: relative;
-  z-index: 9999;
+  z-index: 50;
   position: absolute;
   list-style-type: none;
   width: 100%;

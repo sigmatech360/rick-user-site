@@ -287,7 +287,7 @@ function Contactus() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                     type="submit"
-                    className="contactussubmit btn  text-white fw-bold"
+                    className="todaybtn"
                   >
                     Send Message
                   </button>

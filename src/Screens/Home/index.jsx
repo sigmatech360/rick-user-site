@@ -341,8 +341,8 @@ function Home() {
         <section className="homeless-intervention">
           <Swiper
             // pagination={true}
-            modules={[Pagination]}
-            // modules={[Pagination, Autoplay]}
+            // modules={[Pagination]}
+            modules={[Pagination, Autoplay]}
             slidesPerView={"auto"}
             loop={true}
             pagination={{ clickable: true }}

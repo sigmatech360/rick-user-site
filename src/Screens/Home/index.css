@@ -99,8 +99,8 @@
 .inerhero {
   background-image: url("../../Assets/images/heroimg2.jpg");
   /* Replace with your image path */
-  background-size: cover;
   background-position: 0px -70px;
+  background-size: cover;
   height: 100vh;
   /* Adjust based on your needs */
 }
@@ -124,6 +124,11 @@
   font-family: "Inter", sans-serif !important;
 }
 
+@media (max-width: 1150px) {
+  .inerhero {
+  background-position: 0px;
+  }
+}
 @media (max-width: 768px) {
   .slide-content {
     padding: 10px;

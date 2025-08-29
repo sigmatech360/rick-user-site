@@ -17,12 +17,14 @@ import { base_url_image } from "../Api/base_url";
 import Placeholder from "../../Assets/images/placeholder.jpg";
 function Announcementdetail() {
   const { id } = useParams();
+
   const {
     ApiData: ApiDataGet,
     loading: loadingGet,
     error: errorGet,
     get: getdata,
   } = useGet(`/announcement/${id}`);
+  
   const {
     ApiData: ApiDataGetlist,
     loading: loadingGetlist,
@@ -37,7 +39,8 @@ function Announcementdetail() {
   useEffect(() => {
     getdatalist();
   }, []);
-  console.log("ApiDataGetlist", ApiDataGetlist);
+
+  console.log("ApiDataGet", ApiDataGet);
 
   const agendaItems = [
     { time: "5:00 PM - 6:00 PM", event: "Arrival and Registration" },
@@ -49,6 +52,7 @@ function Announcementdetail() {
       event: "Special Presentations & Closing Remarks",
     },
   ];
+
   const navigate = useNavigate();
 
   const handlerouteannouncementlist = (id) => {
@@ -64,7 +68,7 @@ function Announcementdetail() {
             className="communityOutreachDayheader d-flex gap-2 align-items-center"
           >
             <MdKeyboardDoubleArrowLeft />
-            All Announcement
+            All Announcements
           </Link>
           <div className="row">
             <div className="col-md-12 mt-5">
@@ -91,7 +95,7 @@ function Announcementdetail() {
               <img
                 src={base_url_image + ApiDataGet?.data?.image}
                 alt="Community Event"
-                className="img-fluid"
+                className="anmouncementlist2 "
                 // className="communityimg"
               />
               <p

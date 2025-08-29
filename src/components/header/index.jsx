@@ -27,6 +27,9 @@ import {
 } from "../modal";
 import GiveButterStyler from "../GiveButter/GiveButterStyler";
 import { AuthContext } from "../../Routers/AuthContext";
+import useFirebaseMessaging, {
+  requestPermission,
+} from "../../useFirebaseMessaging";
 
 function Header() {
   const [userData, setUserData] = useState({});
@@ -118,6 +121,9 @@ function Header() {
     for (const key in userData) {
       formDataMethod.append(key, userData[key]);
     }
+    if (!localStorage.getItem("device_token")) {
+      requestPermission();
+    }
     formDataMethod.append("device_token", localStorage.getItem("device_token"));
     await postlogin(formDataMethod);
     navigate("/");
@@ -158,12 +164,20 @@ function Header() {
       );
       formDataMethod.append("available_days", JSON.stringify(selectedItems));
 
-      console.log("available_slots Slot (Array check):", available_slots);
-      console.log(
-        "Is available_slots an array?",
-        Array.isArray(available_slots)
+      // console.log("available_slots Slot (Array check):", available_slots);
+      // console.log(
+      //   "Is available_slots an array?",
+      //   Array.isArray(available_slots)
+      // );
+      // console.log("available_slots Slot type:", typeof available_slots);
+
+      if (!localStorage.getItem("device_token")) {
+        requestPermission();
+      }
+      formDataMethod.append(
+        "device_token",
+        localStorage.getItem("device_token")
       );
-      console.log("available_slots Slot type:", typeof available_slots);
 
       await post(formDataMethod);
       // if (errorRegister) {
@@ -199,7 +213,9 @@ function Header() {
   }, [ApiDataPostforget]);
 
   useEffect(() => {
-    getdata();
+    if (token) {
+      getdata();
+    }
   }, [token]);
 
   const handleChange = (e) => {
@@ -268,7 +284,7 @@ function Header() {
       localStorage.setItem("token", ApiDatalogin?.data?.token);
       setShowModallogin(false);
       setUserData(() => {
-        console.log("Clearing userData..."); // Debug log
+        // console.log("Clearing userData..."); // Debug log
         return {};
       });
       navigate("/");
@@ -505,20 +521,62 @@ function Header() {
             >
               <img src={logo} alt="Logo" className="mainheaderimg" />
             </Link>
+            <div className="d-flex align-items-center d-lg-none">
+              {logintoken && (
+                <Dropdown className="userDropdown">
+                  <Dropdown.Toggle
+                    variant="transparent"
+                    className="notButton toggleButton"
+                  >
+                    <div className="userImage">
+                      <img
+                        src={
+                          ApiDataGet?.data?.image
+                            ? base_url_image + ApiDataGet?.data?.image
+                            : placeholder
+                        }
+                        alt=""
+                        className="img-fluid"
+                      />
+                    </div>
+                  </Dropdown.Toggle>
+                  <Dropdown.Menu className="userMenu" align="end">
+                    <Link className="userMenuItem" to={"/profile"}>
+                      <FontAwesomeIcon
+                        className="me-2 yellow-text"
+                        icon={faUser}
+                      />{" "}
+                      Profile
+                    </Link>
+                    <Link
+                      to="#"
+                      className="userMenuItem"
+                      onClick={Handlelogout}
+                    >
+                      <FontAwesomeIcon
+                        className="me-1 yellow-text"
+                        icon={faSignOut}
+                      />{" "}
+                      Logout
+                    </Link>
+                  </Dropdown.Menu>
+                </Dropdown>
+              )}
 
-            {/* Navbar Toggler */}
-            <button
-              onClick={handleclick}
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarNavDropdown"
-              aria-controls="navbarNavDropdown"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
+              {/* Navbar Toggler */}
+              <button
+                onClick={handleclick}
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+            </div>
 
             <div
               className="collapse navbar-collapse justify-content-between"
@@ -603,9 +661,7 @@ function Header() {
                       <li className="d-xl-none">
                         <Link
                           className={`dropdown-item ${
-                            location.pathname.includes("/event")
-                              ? "active"
-                              : ""
+                            location.pathname.includes("/event") ? "active" : ""
                           }`}
                           to="/event"
                         >
@@ -688,60 +744,8 @@ function Header() {
 
               {/* Right-aligned buttons and icons */}
               <div className="d-flex align-items-center lgHeaderRight">
-                {/* <div className="headerSocialIcons">
-                  <a
-                    href="https://www.facebook.com/homeless.intervention.oc"
-                    target="_blank"
-                    className="text-dark"
-                  >
-                    <i className="bi bi-facebook"></i>
-                  </a>
-                  <a
-                    href="https://twitter.com/Homeless_Int_OC"
-                    target="_blank"
-                    className="text-dark"
-                  >
-                    <i className="bi bi-x"></i>
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/company/hisoc/"
-                    target="_blank"
-                    passHref
-                  >
-                    <i className="bi bi-linkedin text-dark"></i>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/homelessintoc/?hl=en"
-                    target="_blank"
-                    passHref
-                  >
-                    <i className="bi bi-instagram text-dark"></i>
-                  </a>
-                  
-                  <a
-                    href="https://www.snapchat.com/@his-oc"
-                    target="_blank"
-                    passHref
-                  >
-                    <i className="bi bi-snapchat text-dark"></i>
-                  </a>
-                  <a
-                    href="https://www.tiktok.com/@HIS-OC"
-                    target="_blank"
-                    passHref
-                  >
-                    <i className="bi bi-tiktok text-dark"></i>
-                  </a>
-                  <a
-                    href="https://www.youtube.com/@his-oc"
-                    target="_blank"
-                    passHref
-                  >
-                    <i className="bi bi-youtube text-dark"></i>
-                  </a>
-                </div> */}
                 {!logintoken && (
-                  <button onClick={handleShow} className="nav-event btn me-2">
+                  <button onClick={handleShow} className="nav-event todaybtn  btn me-2">
                     Become A Volunteer
                   </button>
                 )}
@@ -786,20 +790,6 @@ function Header() {
                     </Dropdown.Menu>
                   </Dropdown>
                 )}
-
-                {/* 
-                <Link className="nav-donate btn btn-warning text-dark">
-                  {" "}
-                  <img src={donateicon} /> Donate
-                </Link> */}
-
-                {/* <Link
-
-                  id=" " className="    text-dark" to="#">
-                  
-                  Donate Now
-
-                </Link> */}
                 {scriptLoaded && (
                   <givebutter-widget class="giveButterBtn" id="pzBZ3p">
                     Give Donation
@@ -832,11 +822,6 @@ function Header() {
               </span>
             </div>
             <div className="dropdown_menu_divider"></div>
-            {/* <li className="main-navbar-list">
-              <Link className="new_main-navbar-list" to="/about">
-                About
-              </Link>
-            </li>{" "} */}
             <NavDropdown title="About" id="about-dropdown">
               <NavDropdown.Item
                 as={Link}
@@ -862,11 +847,6 @@ function Header() {
               </NavDropdown.Item>
             </NavDropdown>
             <div className="dropdown_menu_divider"></div>
-            {/* <li className="main-navbar-list">
-              <Link className="new_main-navbar-list" to="/ourwork ">
-                Our Work
-              </Link>
-            </li>{" "} */}
             <div className="dropdown_menu_divider"></div>
             <li className="main-navbar-list">
               <Link className="new_main-navbar-list" to="/gethelp">
@@ -886,65 +866,40 @@ function Header() {
               </Link>
             </li>{" "}
             <div className="dropdown_menu_divider"></div>
-            {/* <li className="main-navbar-list">
-              <Link className="new_main-navbar-list" to="/">
-                CONTACT
-              </Link>
-            </li>{" "} */}
+            <div className="dropdown_menu_divider"></div>
+            <div className="dropdown_menu_divider"></div>
+            <NavDropdown title="Our Initiatives" id="our-initiative-dropdown">
+              <NavDropdown.Item
+                as={Link}
+                to="/sponsorship"
+                active={location.pathname.includes("/sponsorship")}
+              >
+                Sponsorship
+              </NavDropdown.Item>
+              <NavDropdown.Item
+                as={Link}
+                to="/our-work"
+                active={location.pathname.includes("/our-work")}
+              >
+                Our Work
+              </NavDropdown.Item>
+
+              <NavDropdown.Item
+                as={Link}
+                to="/top-volunteer"
+                active={location.pathname.includes("/top-volunteer")}
+              >
+                Top Volunteer
+              </NavDropdown.Item>
+            </NavDropdown>
             <div className="dropdown_menu_divider"></div>
             <li className="main-navbar-list  ">
-              {logintoken && (
-                <Link onClick={handleShow} className="new_main-navbar-list">
+              {!logintoken && (
+                <button onClick={handleShow} className="nav-event btn me-2">
                   Become A Volunteer
-                </Link>
+                </button>
               )}
             </li>
-            <div className="dropdown_menu_divider"></div>
-            <li className="main-navbar-list">
-              <Link
-                type="button"
-                // onClick={handleDropdownToggle}
-                // className="new_main-navbar-list"
-
-                className="nav-link dropdown-toggle mb-2"
-                // to="/about"
-                // role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Our Initiatives
-              </Link>
-
-              {/* Dropdown Menu */}
-              {/* {showDropdown && ( */}
-              <ul className="dropdown-menu">
-                <li>
-                  <Link to="/sponsorship" className="dropdown-item">
-                    Sponsorship
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/our-work" className="dropdown-item">
-                    Our Work
-                  </Link>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <Link to="/top-volunteer" className="dropdown-item">
-                    Top Volunteer
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link to="/ourpodcastlist" className="dropdown-item">
-                    Our Podcast
-                  </Link>
-                </li> */}
-              </ul>
-              {/* )} */}
-            </li>
-            <div className="dropdown_menu_divider"></div>
             <li>
               {scriptLoaded && (
                 <givebutter-widget id="pzBZ3p"></givebutter-widget>

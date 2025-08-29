@@ -107,10 +107,10 @@ const Profile = () => {
   ];
 
   const availabilityData = [
-    "9:00 am to 11:00 am",
+    "09:00 AM to 11:00 AM",
     "11:00 AM to 1:00 PM",
-    "1:00 PM to 3:00 PM",
-    "3:00 PM to 5:00 PM",
+    "01:00 PM to 3:00 PM",
+    "03:00 PM to 5:00 PM",
   ];
 
   const handleSelection = (option) => {
@@ -267,7 +267,8 @@ const Profile = () => {
                       value={formdata?.email}
                       type="email"
                       name="email"
-                      onChange={handleChange}
+                      disabled
+                      // onChange={handleChange}
                       className="form-control"
                       placeholder="Email"
                     />

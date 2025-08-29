@@ -86,7 +86,7 @@ function Event() {
 
   
   useEffect(() => {
-    if (ApiInterestedEventGet?.status === true) {
+    if (ApiInterestedEventGet?.status === true && ApiInterestedEventGet?.data) {
       let interestedeEventsTemp = ApiInterestedEventGet.data.map((item) => {
         return item.id;
       });

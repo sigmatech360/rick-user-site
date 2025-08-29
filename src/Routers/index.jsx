@@ -24,7 +24,7 @@ import JoinOurTeam from "../Screens/JoinOurTeam";
 export default function UserRouter() {
   
   return (
-    <BrowserRouter basename="/His-oc">
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<ProtectedRoutes Components={Profile} />} />

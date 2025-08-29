@@ -8,6 +8,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <AuthProvider>
       <App />
+      <div className="loaderBox d-none">
+        <div className="custom-loader"></div>
+      </div>
     </AuthProvider>
   </React.StrictMode>
 );

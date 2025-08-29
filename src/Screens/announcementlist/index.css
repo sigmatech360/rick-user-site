@@ -29,6 +29,12 @@ body {
   opacity: 1;
 }
 
+img.anmouncementlist1 {
+    height: 324px;
+    width: 100%;
+    object-fit: cover;
+}
+
 /* Responsive font adjustments */
 @media (min-width: 1200px) {
   .Announcementlist .info-text {
