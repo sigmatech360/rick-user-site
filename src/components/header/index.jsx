@@ -522,6 +522,19 @@ function Header() {
               <img src={logo} alt="Logo" className="mainheaderimg" />
             </Link>
             <div className="d-flex align-items-center d-lg-none">
+              {/* Navbar Toggler */}
+              <button
+                onClick={handleclick}
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
               {logintoken && (
                 <Dropdown className="userDropdown">
                   <Dropdown.Toggle
@@ -563,19 +576,7 @@ function Header() {
                 </Dropdown>
               )}
 
-              {/* Navbar Toggler */}
-              <button
-                onClick={handleclick}
-                className="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
-                <span className="navbar-toggler-icon"></span>
-              </button>
+              
             </div>
 
             <div
