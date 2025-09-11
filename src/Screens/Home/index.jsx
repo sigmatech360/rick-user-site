@@ -303,7 +303,9 @@ function Home() {
       //   }
       // });
       for (const event of data) {
-        const hasTicket = !!event.ticketing_link;
+        
+        // const hasTicket = !!event.ticketing_link;
+        const hasTicket =  event.ticketing_link !== null && event.ticketing_link !== "null";
         const eventDate = parseEventDate(event.date);
 
         if (hasTicket && isLessThan7Days(eventDate)) {
@@ -319,9 +321,9 @@ function Home() {
     }
   }, [ApiDataevent]);
 
-  useEffect(() => {
-    getdataevent();
-  }, [isLoggedIn]);
+  // useEffect(() => {
+  //   getdataevent();
+  // }, [isLoggedIn]);
 
   // news - announcements
   return (
