@@ -314,6 +314,7 @@ function Home() {
             ticket_link: event.ticketing_link,
             title: event.title,
             link_text: event.ticketing_button_text,
+            alert_message: event.alert_message,
           });
           break;
         }
@@ -335,9 +336,7 @@ function Home() {
             variant={"danger"}
             className="event-brite-alert"
           >
-            <strong>{ticketData.title}</strong> is coming soon! Book your ticket
-            now.{" "}
-            <Alert.Link href={ticketData.ticket_link}>{ticketData?.link_text}</Alert.Link>.
+            <Alert.Link href={ticketData.ticket_link}><strong>{ticketData.alert_message}</strong> </Alert.Link>
           </Alert>
         )}
         <section className="homeless-intervention">

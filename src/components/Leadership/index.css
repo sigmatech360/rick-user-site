@@ -76,6 +76,16 @@
       font-size: 25px;
     color: white;
 }
+.swiperArrowStyle .swiper-button-prev::after{
+  content: '←';
+      font-size: 25px;
+    color: white;
+} 
+.swiperArrowStyle .swiper-button-next::after {
+  content: '→'; /* Right arrow */
+      font-size: 25px;
+    color: white;
+}
 
 
 .card {

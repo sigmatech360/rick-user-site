@@ -10,7 +10,7 @@ import { RiCalendar2Line } from "react-icons/ri";
 import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
 import communityimg from "../../Assets/images/communityimg.png";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useGet, usePost } from "../Api/usePost";
 import { base_url_image } from "../Api/base_url";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
@@ -117,7 +117,7 @@ function Event() {
                         <br /> <span className="monday2">{index + 1}</span>
                       </p>
                       <div className="position-relative">
-                        <h2 className="communitytitle ext-black">
+                        <h2 onClick={() => learnnavigate(items?.id)} className="communitytitle ext-black hoverLink">
                           {items?.title}
                         </h2>
                         <button
@@ -188,7 +188,8 @@ function Event() {
                           ? `${base_url_image}${items.image}`
                           : communityimg
                       }
-                      className="img-fluid eventimg"
+                      onClick={() => learnnavigate(items?.id)}
+                      className="img-fluid eventimg hoverLink"
                     />
                   </div>
                 </div>

@@ -82,7 +82,7 @@ export const useGet = (url, initialData = "", idData = "") => {
       }
       const result = await response.json();
       if (url != "/edit-account" && url != "/top-volunteer") {
-        // console.log(`${url} response:`, result);
+        console.log(`${url} response:`, result);
         let tempResponse = result;
         let data = result.data;
         if (Array.isArray(data) == true) {

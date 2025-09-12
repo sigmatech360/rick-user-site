@@ -29,6 +29,15 @@ import AOS from "aos";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+// import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
+import "swiper/css";
+import { Accordion } from "react-bootstrap";
+
 function GetHelp() {
   const {
     ApiData: ApiDataGetmembers,
@@ -42,6 +51,28 @@ function GetHelp() {
     error: errorotp,
     post: postotp,
   } = usePost("/submit-query");
+
+  const {
+    ApiData: ApiDataGetExtension,
+    loading: loadingGetExtension,
+    error: errorGetExtension,
+    get: getdataExtension,
+  } = useGet("/extension");
+  const {
+    ApiData: ApiDataGetFaq,
+    loading: loadingGetFaq,
+    error: errorGetFaq,
+    get: getdataFaq,
+  } = useGet("/faq");
+
+  useEffect(() => {
+    getdataExtension();
+  }, []);
+  useEffect(() => {
+    getdataFaq();
+  }, []);
+
+  console.log("ApiDataGetFaq", ApiDataGetFaq);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -227,7 +258,7 @@ function GetHelp() {
               </Link>
             </div>
             <p
-              className="info-text text-start"
+              className="info-text text-center"
               data-aos="fade-right"
               data-aos-offset="0"
               data-aos-duration="1000"
@@ -237,7 +268,7 @@ function GetHelp() {
               familiar with our programs and you know which one you’d like to
               hear more about or apply to, dial (714) 993-5774 and the extension
               number:
-              <ul>
+              {/* <ul>
                 <li>
                   {" "}
                   Transitional Housing Program for families – Extension 1009
@@ -249,40 +280,62 @@ function GetHelp() {
                   fill out the Student Interest Form to get started.
                 </li>
                 <li>Housing Connection Program for anyone – Extension 1019</li>
-              </ul>
+              </ul> */}
             </p>
           </div>
         </section>
 
-        <section className="services-section  py-5">
+        <section className="services-section swiperArrowStyle  py-5">
           <div className="container">
             <div className="row justify-content-center text-center">
-              {services.map((service, index) => (
-                <div
-                  key={index}
-                  className="col-12 col-md-6 col-lg-3 mb-4"
-                  data-aos={service?.animation}
-                  data-aos-offset="0"
-                  data-aos-duration="1000"
-                >
-                  <div
-                    className="service-card p-3 text-center h-100"
-                    style={{
-                      // backgroundColor: service.bgColor,
-                      borderRadius: "12px",
-                    }}
-                  >
-                    <img
-                      src={helpcontecticon}
-                      className="img-fluid helpcontecticon"
-                    />
-                    {/* <FaPhoneAlt size={30} color="#348F99" /> */}
-                    <p className="para mt-3 mb-2 text-muted text-center">
-                      {service.description.split(" ").map((word, i) =>
-                        word === service.linkText ? (
+              <Swiper
+                modules={[Navigation]}
+                spaceBetween={20}
+                slidesPerView={1}
+                loop={true}
+                // centeredSlides={true}
+                speed={1000}
+                // autoplay={{
+                //   delay: 3000,
+                //   disableOnInteraction: false,
+                // }}
+                // onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
+                breakpoints={{
+                  500: { slidesPerView: 2 },
+                  768: { slidesPerView: 2 },
+                  992: { slidesPerView: 3 },
+                  1200: { slidesPerView: 4 },
+                }}
+                // pagination={{ clickable: true }}
+                navigation
+              >
+                {ApiDataGetExtension?.data?.map((item, index) => (
+                  <SwiperSlide key={index}>
+                    <div
+                      // className="col-12 col-md-6 col-lg-3 mb-4"
+                      className="mb-4"
+                      // data-aos={service?.animation}
+                      data-aos-offset="0"
+                      data-aos-duration="1000"
+                    >
+                      <div
+                        className="service-card extensionCard p-3 text-center h-100"
+                        style={{
+                          // backgroundColor: service.bgColor,
+                          borderRadius: "12px",
+                        }}
+                      >
+                        <img
+                          src={helpcontecticon}
+                          className="img-fluid helpcontecticon"
+                        />
+                        {/* <FaPhoneAlt size={30} color="#348F99" /> */}
+                        {/* <p className="para mt-3 mb-2 text-muted text-center">
+                      {item.description.split(" ").map((word, i) =>
+                        word === item.linkText ? (
                           <a
                             key={i}
-                            href={service.linkHref}
+                            href={item.linkHref}
                             className="text-decoration-none"
                           >
                             {word}
@@ -291,13 +344,19 @@ function GetHelp() {
                           <span key={i}>{word} </span>
                         )
                       )}
-                    </p>
-                    <p className="extension font-weight-bold text-center">
-                      Extension {service.extension}
-                    </p>
-                  </div>
-                </div>
-              ))}
+                    </p> */}
+                        <p
+                          className="para mt-3 mb-2 text-muted text-center"
+                          dangerouslySetInnerHTML={{ __html: item.description }}
+                        ></p>
+                        <p className="extension font-weight-bold text-center">
+                          Extension {item.title}
+                        </p>
+                      </div>
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </section>
@@ -353,6 +412,33 @@ function GetHelp() {
                 >
                   www.211oc.org
                 </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="faqsSection">
+          <div className="container">
+            <div className="row align-items-center">
+              <div className="col-lg-6">
+                <div className="secHead">
+                  <h2>Frequently Asked Questions</h2>
+                  <p>
+                    Find answer to common questions about our programs and
+                    services. If you don't find the information you need. please
+                    contact us directly.
+                  </p>
+                </div>
+              </div>
+              <div className="col-lg-6">
+                <Accordion defaultActiveKey="0">
+                  {ApiDataGetFaq?.data?.map((item, index) => (
+                    <Accordion.Item eventKey={index.toString()} key={index}>
+                      <Accordion.Header>{item?.title}</Accordion.Header>
+                      <Accordion.Body>{item?.description}</Accordion.Body>
+                    </Accordion.Item>
+                  ))}
+                </Accordion>
               </div>
             </div>
           </div>

@@ -18,6 +18,11 @@
   font-size: 14px;
 }
 
+/* .headerSocialIcons a:hover,
+a.header-item:hover {
+  color: #fdd22e !important;
+} */
+
 .nav-link:hover,
 .nav-link.active {
   color: #3e949e;
@@ -33,10 +38,10 @@
   font-size: 24px;
 }
 
-.bi-instagram:hover {
+/* .bi-instagram:hover {
   content: "\f437";
   color: #16becf;
-}
+} */
 
 .bi-instagram::before {
   content: "\f437";
@@ -300,12 +305,11 @@ a {
     padding-right: 10px !important; */
   }
   .lgHeaderLeft {
-  flex: 0 0 44%;
-}
-.lgHeaderRight {
-  flex: 0 0 44%;
-
-}
+    flex: 0 0 44%;
+  }
+  .lgHeaderRight {
+    flex: 0 0 44%;
+  }
 }
 @media (max-width: 1199px) {
   .navbar-brand img {

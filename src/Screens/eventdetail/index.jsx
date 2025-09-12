@@ -308,6 +308,7 @@ function EventDetail() {
                   overflowY: "scroll",
                 }}
               >
+                <h3 className="mb-3">More Events</h3>
                 {ApiDataGeteventlist?.data?.map((items, index) => (
                   <div
                     key={index}
@@ -318,16 +319,17 @@ function EventDetail() {
                     <img
                       src={base_url_image + items?.image}
                       alt="Volunteer Orientation"
-                      className="VolunteerOrientationblgimg"
+                      className="VolunteerOrientationblgimg hoverLink"
+                      onClick={() => handleeventdetail(items?.id)}
                     />
                     <div>
                       <p className="VolunteerOrientationblgtitledate">
                         {items?.date}
                       </p>
-                      <h4>{items?.title}</h4>
+                      <h4 className="hoverLink" onClick={() => handleeventdetail(items?.id)}>{items?.title}</h4>
                       <button
                         onClick={() => handleeventdetail(items?.id)}
-                        className="btn VolunteerOrientationblgtitledatereade"
+                        className="btn VolunteerOrientationblgtitledatereade ps-0"
                       >
                         Read more <MdOutlineKeyboardDoubleArrowRight />
                       </button>

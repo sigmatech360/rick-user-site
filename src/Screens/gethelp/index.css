@@ -5,9 +5,9 @@
   padding: 0;
 }
 
-.services-section{
-  overflow: hidden!important;
-  background-color: rgb(253 251 248)!important;
+.services-section {
+  overflow: hidden !important;
+  background-color: rgb(253 251 248) !important;
   box-shadow: 4px 12px 8px rgba(0, 0, 0, 0.2) !important;
   transition: box-shadow 0.3s cubic-bezier(0.65, -0.33, 0.26, 1.05) !important;
 }
@@ -57,7 +57,7 @@
   font-family: text;
   font-style: italic;
 }
- 
+
 /* Custom text styling */
 .highlight-text {
   color: #0056b3; /* Example color, adjust as needed */
@@ -134,7 +134,7 @@
   font-family: text;
   font-style: italic;
 }
- 
+
 /* Custom text styling */
 .highlight-text {
   color: #0056b3; /* Example color, adjust as needed */
@@ -163,7 +163,6 @@
   height: auto;
 }
 
- 
 .dedicatd-leadership .dedication {
   font-family: test Signifier;
   color: #348f99;
@@ -339,7 +338,7 @@
 }
 
 /* info-section */
- 
+
 /* innovation services */
 
 .services-section {
@@ -380,65 +379,32 @@
   opacity: 1;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.extensionCard {
+  min-height: 220px;
+}
+.extensionCard p {
+  /* font-size: 16px; */
+  font-weight: 400;
+}
 
 /* help-section */
 
-
-
-
 .help-section {
-background-image: url('../../Assets/images/helpstart.svg');
-background-position: center;
-background-color: #333333;
-color: #ffffff;
-background-size: contain;
-background-repeat: no-repeat;
-max-width: 100%;
- 
+  background-image: url("../../Assets/images/helpstart.svg");
+  background-position: center;
+  background-color: #333333;
+  color: #ffffff;
+  background-size: contain;
+  background-repeat: no-repeat;
+  max-width: 100%;
+
   position: relative;
   color: #ffffff;
   overflow: hidden;
-
 }
 
 .help-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -470,13 +436,6 @@ max-width: 100%;
   margin-left: 10px;
 } */
 
-
-
-
-
-
-
-
 /* Default styles */
 .display-1 {
   font-size: 3.5rem; /* Large font for larger screens */
@@ -494,62 +453,61 @@ max-width: 100%;
 /* Media queries for responsiveness */
 @media (max-width: 1200px) {
   .display-1 {
-    font-size: 3rem;  /* Adjust the heading size */
+    font-size: 3rem; /* Adjust the heading size */
   }
 
   .star-icon {
-    font-size: 1.8rem;  /* Smaller icon size */
+    font-size: 1.8rem; /* Smaller icon size */
   }
 
   .oc-text {
-    font-size: 1.3rem;  /* Slightly smaller text size */
+    font-size: 1.3rem; /* Slightly smaller text size */
   }
 }
 
 @media (max-width: 992px) {
   .display-1 {
-    font-size: 2.5rem;  /* Further adjust the heading size */
+    font-size: 2.5rem; /* Further adjust the heading size */
   }
 
   .star-icon {
-    font-size: 1.6rem;  /* Further reduce icon size */
+    font-size: 1.6rem; /* Further reduce icon size */
   }
 
   .oc-text {
-    font-size: 1.2rem;  /* Even smaller text size */
+    font-size: 1.2rem; /* Even smaller text size */
   }
 }
 
 @media (max-width: 768px) {
   .display-1 {
-    font-size: 2rem;  /* Make the heading much smaller for smaller screens */
+    font-size: 2rem; /* Make the heading much smaller for smaller screens */
   }
 
   .star-icon {
-    font-size: 1.4rem;  /* Smaller icon size */
+    font-size: 1.4rem; /* Smaller icon size */
   }
 
   .oc-text {
-    font-size: 1.1rem;  /* Smaller text size */
+    font-size: 1.1rem; /* Smaller text size */
   }
 }
 
 @media (max-width: 576px) {
-  .starimg{
+  .starimg {
     width: 265px;
-  
-}
+  }
 
   .display-1 {
-    font-size: 1.75rem;  /* Further reduce heading size */
+    font-size: 1.75rem; /* Further reduce heading size */
   }
 
   .star-icon {
-    font-size: 1.3rem;  /* Icon size reduced */
+    font-size: 1.3rem; /* Icon size reduced */
   }
 
   .oc-text {
-    font-size: 1rem;  /* Smallest text size for mobile */
+    font-size: 1rem; /* Smallest text size for mobile */
   }
 }
 
@@ -576,14 +534,6 @@ max-width: 100%;
   transition: all 0.3s ease;
 } */
 
-
-
-
-
-
-
-
-
 /* Default styles */
 .description {
   font-size: 1.25rem; /* Default font size */
@@ -602,47 +552,47 @@ max-width: 100%;
 /* Large screens (lg and above) */
 @media (max-width: 1200px) {
   .description {
-    font-size: 1.1rem;  /* Slightly smaller text for medium screens */
+    font-size: 1.1rem; /* Slightly smaller text for medium screens */
   }
 
   .btn-link {
-    font-size: 1rem;  /* Slightly smaller link font */
+    font-size: 1rem; /* Slightly smaller link font */
   }
 }
 
 /* Medium screens (md and below) */
 @media (max-width: 992px) {
   .description {
-    font-size: 1rem;  /* Reduce text size for smaller screens */
+    font-size: 1rem; /* Reduce text size for smaller screens */
   }
 
   .btn-link {
-    font-size: 0.9rem;  /* Smaller link font for mobile */
+    font-size: 0.9rem; /* Smaller link font for mobile */
   }
 }
 
 /* Small screens (sm and below) */
 @media (max-width: 768px) {
   .description {
-    font-size: 0.9rem;  /* Even smaller text for mobile */
-    line-height: 1.5;  /* Adjust line-height for better readability */
+    font-size: 0.9rem; /* Even smaller text for mobile */
+    line-height: 1.5; /* Adjust line-height for better readability */
   }
 
   .btn-link {
-    font-size: 0.85rem;  /* Smaller link font */
-    width: 90%; 
+    font-size: 0.85rem; /* Smaller link font */
+    width: 90%;
   }
 }
 
 /* Extra small screens (xs and below) */
 @media (max-width: 576px) {
   .description {
-    font-size: 0.85rem;  /* Make the text smaller for extra small devices */
+    font-size: 0.85rem; /* Make the text smaller for extra small devices */
   }
 
   .btn-link {
-    font-size: 0.8rem;  /* Even smaller link font */
-    width: 100%;  
+    font-size: 0.8rem; /* Even smaller link font */
+    width: 100%;
   }
 }
 
@@ -652,34 +602,30 @@ max-width: 100%;
   text-decoration: none;
 } */
 
-
-
-.gethelpgradbg{
+.gethelpgradbg {
   position: relative;
 }
 
 .gethelpgradbg::before {
   left: 0px !important;
- content: "";
- position: absolute;
- top: 0px!important ;
- 
- background: url('../../Assets/images/volusteergradiantimg.png') 0% 0% no-repeat;
- background-size: contain;
- padding-left: 0;
- height: 179%;
- width: 205%;
- z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0px !important ;
 
+  background: url("../../Assets/images/volusteergradiantimg.png") 0% 0%
+    no-repeat;
+  background-size: contain;
+  padding-left: 0;
+  height: 179%;
+  width: 205%;
+  z-index: -1;
 }
 
-
-.helpcontecticon{
-width: 32px!important;  
+.helpcontecticon {
+  width: 32px !important;
 }
 
-
-.contectno{
+.contectno {
   text-decoration: underline !important;
   text-decoration-color: #3c787e !important;
   text-decoration-thickness: 2px;
@@ -689,25 +635,18 @@ width: 32px!important;
   font-size: 43px;
 }
 
-
-
-.callus{
-      /* text-decoration: underline !important; */
-      text-decoration-color: #3c787e !important;
-      text-decoration-thickness: 2px;
-      /* border-bottom: 1px solid; */
-      color: #1fbac5;
-      font-weight: 600 !important;
-      font-size: 43px;
+.callus {
+  /* text-decoration: underline !important; */
+  text-decoration-color: #3c787e !important;
+  text-decoration-thickness: 2px;
+  /* border-bottom: 1px solid; */
+  color: #1fbac5;
+  font-weight: 600 !important;
+  font-size: 43px;
 }
 
 @media (max-width: 480px) {
-  .contectno{
+  .contectno {
     font-size: 19px;
   }
 }
-
-
-
-
- 
