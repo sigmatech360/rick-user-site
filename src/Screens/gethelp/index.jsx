@@ -350,7 +350,7 @@ function GetHelp() {
                           dangerouslySetInnerHTML={{ __html: item.description }}
                         ></p>
                         <p className="extension font-weight-bold text-center">
-                          Extension {item.title}
+                         {item.title}
                         </p>
                       </div>
                     </div>
