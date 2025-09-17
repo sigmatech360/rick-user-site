@@ -303,9 +303,9 @@ function Home() {
       //   }
       // });
       for (const event of data) {
-        
         // const hasTicket = !!event.ticketing_link;
-        const hasTicket =  event.ticketing_link !== null && event.ticketing_link !== "null";
+        const hasTicket =
+          event.ticketing_link !== null && event.ticketing_link !== "null";
         const eventDate = parseEventDate(event.date);
 
         if (hasTicket && isLessThan7Days(eventDate)) {
@@ -336,7 +336,9 @@ function Home() {
             variant={"danger"}
             className="event-brite-alert"
           >
-            <Alert.Link href={ticketData.ticket_link}><strong>{ticketData.alert_message}</strong> </Alert.Link>
+            <Alert.Link href={ticketData.ticket_link}>
+              <strong>{ticketData.alert_message}</strong>{" "}
+            </Alert.Link>
           </Alert>
         )}
         <section className="homeless-intervention">
@@ -1016,15 +1018,17 @@ function Home() {
                     <div className=" p-2">
                       <div className="card p-3 border-0 text-center sponsorBrands_cards">
                         <div className="profile-container">
-                          <img
-                            src={
-                              item?.image
-                                ? `${base_url_image}${item.image}`
-                                : placeholder
-                            }
-                            alt="Sponsor Brand"
-                            className="profile-image"
-                          />
+                          <a href={item.link}>
+                            <img
+                              src={
+                                item?.image
+                                  ? `${base_url_image}${item.image}`
+                                  : placeholder
+                              }
+                              alt="Sponsor Brand"
+                              className="profile-image"
+                            />
+                          </a>
                         </div>
                       </div>
                     </div>

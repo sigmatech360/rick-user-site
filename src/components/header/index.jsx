@@ -499,7 +499,7 @@ function Header() {
                 <i className="bi bi-tiktok"></i>
               </a>
               <a
-                href="https://www.youtube.com/@his-oc"
+                href="https://www.youtube.com/@HISOC"
                 target="_blank"
                 className="text-white"
                 passHref

@@ -83,7 +83,7 @@ function Ourpodcast() {
                   </p>
 
                   <Link
-                  to='https://www.youtube.com/@his-oc'
+                  to='https://www.youtube.com/@HISOC'
                   target="_blank"
                     className="volunteerbtn d-inline-block"
                     data-aos="fade-up"

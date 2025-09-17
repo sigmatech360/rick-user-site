@@ -556,7 +556,7 @@ function Footer() {
                 </Link>
                 <Link
                   onClick={scrollToTop}
-                  to="https://www.youtube.com/@his-oc"
+                  to="https://www.youtube.com/@HISOC"
                   className="text-white me-3"
                 >
                   <i className="bi bi-youtube fs-5"></i>
