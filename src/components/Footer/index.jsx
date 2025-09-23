@@ -431,9 +431,13 @@ function Footer() {
                     >
                       <img src={googlePlay} className="w-100" alt="" />
                     </Link>
-                    <span target="_blank" className="appLink">
+                    <Link
+                      to={"https://apps.apple.com/us/app/hisocapp/id6749266767"}
+                      target="_blank"
+                      className="appLink"
+                    >
                       <img src={applePlay} className="w-100" alt="" />
-                    </span>
+                    </Link>
                   </div>
                 </div>
               </div>
