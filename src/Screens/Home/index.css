@@ -21,7 +21,7 @@
 /* @media (max-width: 576px) { */
 @media (max-width: 991px) {
   .homeless-intervention .left-section {
-    background-image: url(http://localhost:3000/static/media/wedobg.064d34f….png);
+    background-image: url(http://localhost:3000/static/media/wedobg.064d34f….webp);
     background-color: #fdfbf8;
     background-position: center;
     color: #333333;
@@ -97,7 +97,7 @@
 }
 
 .inerhero {
-  background-image: url("../../Assets/images/heroimg2.jpg");
+  background-image: url("../../Assets/images/heroimg2.webp");
   /* Replace with your image path */
   background-position: 0px -70px;
   background-size: cover;
@@ -234,7 +234,7 @@
 }
 
 .left-section {
-  background-image: url("../../Assets/images/wedobg.png");
+  background-image: url("../../Assets/images/wedobg.webp");
   background-color: #fdfbf8;
   background-position: center;
   color: #333333;
@@ -272,7 +272,7 @@
 
 /* Right section background */
 .homeless-intervention .right-section {
-  background-image: url("../../Assets/images/changewishbg.png");
+  background-image: url("../../Assets/images/changewishbg.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -417,7 +417,7 @@
 }
 
 .what-sets-us-apart {
-  background-image: url("../../Assets/images/Apartbg.png");
+  background-image: url("../../Assets/images/Apartbg.webp");
   /* Replace with your image path */
   background-size: cover;
   background-position: center;
@@ -729,7 +729,7 @@
 .help-available {
   background-color: #f9f9f9;
   /* Light background color */
-  background-image: url("../../Assets/images/helpavailablebg.png");
+  background-image: url("../../Assets/images/helpavailablebg.webp");
   background-size: cover;
   background-position: center;
 }
@@ -817,7 +817,7 @@
   background-color: #ffffff;
   /* Default card background */
   /* border-radius: 10px; */
-  background-image: url("../../Assets/images/housingprogrambg.png");
+  background-image: url("../../Assets/images/housingprogrambg.webp");
 }
 
 .btn-outline-primary {
@@ -827,7 +827,7 @@
 }
 
 /* .transitionalbg {
-  background-image: url("../../Assets/images/housingprogrambg.png");
+  background-image: url("../../Assets/images/housingprogrambg.webp");
   background-size: cover;
   background-position: center;
   color: #333333;
@@ -836,7 +836,7 @@
 } */
 
 .transitionalbg {
-  background-image: url("../../Assets/images/housingprogrambg.png");
+  background-image: url("../../Assets/images/housingprogrambg.webp");
   background-size: cover;
   background-position: center;
   color: #333333;
@@ -897,7 +897,7 @@
   background-color: #00796b;
   /* Background color for the left section */
   color: #fff;
-  background-image: url("../../Assets/images/housingprogrambg.png");
+  background-image: url("../../Assets/images/housingprogrambg.webp");
   /* Replace with actual path */
   background-size: cover;
   background-position: center;
@@ -1354,6 +1354,7 @@
 .programImgSec .programAfter {
   position: absolute;
   bottom: -16px;
+  width: 100%;
 }
 
 @media (max-width: 465px) {

@@ -1,13 +1,13 @@
 import "./index.css";
 import Layout from "../../components/layout";
 import React, { useEffect, useState } from "react";
-import VolunteerOrientationimg from "../../Assets/images/VolunteerOrientationimg.png";
+import VolunteerOrientationimg from "../../Assets/images/VolunteerOrientationimg.webp";
 import Sponsor from "../../components/sponsor";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { RiCalendar2Line } from "react-icons/ri";
 import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
-import communityimg from "../../Assets/images/communityimg.png";
+import communityimg from "../../Assets/images/communityimg.webp";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useGet, usePost } from "../Api/usePost";

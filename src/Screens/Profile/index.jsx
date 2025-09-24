@@ -1,4 +1,4 @@
-import placeholderimage from "../../Assets/images/placeholder.jpg";
+import placeholderimage from "../../Assets/images/placeholder.webp";
 import { useGet, usePost } from "../Api/usePost";
 import React, { useEffect, useRef, useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";

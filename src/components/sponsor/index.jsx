@@ -1,11 +1,11 @@
-import donateicon from "../../Assets/images/donateicon.png";
+import donateicon from "../../Assets/images/donateicon.webp";
 // import { Link } from "react-router-dom";
 
 import { useEffect } from "react";
 import AOS from "aos";
 
-import sponsorunderline from "../../Assets/images/sponsorunderline.svg";
-import contantunderline from "../../Assets/images/contantunderline.png";
+import sponsorunderline from "../../Assets/images/sponsorunderline.webp";
+import contantunderline from "../../Assets/images/contantunderline.webp";
 import "./index.css";
 function Sponsor() {
   useEffect(() => {

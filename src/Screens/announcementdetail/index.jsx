@@ -1,20 +1,20 @@
 import "./index.css";
 import Layout from "../../components/layout";
 import React, { useEffect } from "react";
-import VolunteerOrientationimg from "../../Assets/images/VolunteerOrientationimg.png";
+import VolunteerOrientationimg from "../../Assets/images/VolunteerOrientationimg.webp";
 import Sponsor from "../../components/sponsor";
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { RiCalendar2Line } from "react-icons/ri";
 import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
-import communityimg from "../../Assets/images/communityimg.png";
+import communityimg from "../../Assets/images/communityimg.webp";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { useGet } from "../Api/usePost";
 import { Link } from "react-router-dom";
 import { useNavigate, useParams } from "react-router-dom";
 import { base_url_image } from "../Api/base_url";
 
-import Placeholder from "../../Assets/images/placeholder.jpg";
+import Placeholder from "../../Assets/images/placeholder.webp";
 function Announcementdetail() {
   const { id } = useParams();
 

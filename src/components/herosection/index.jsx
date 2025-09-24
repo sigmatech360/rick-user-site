@@ -2,8 +2,8 @@ import { useEffect } from "react";
 
 import "./index.css";
 import heropage2 from "../../Assets/images/heropage2.webp";
-import aboutherounderline from "../../Assets/images/aboutherounderline.png";
-import ourprogramsunderline from "../../Assets/images/ourprogramsunderline.svg";
+import aboutherounderline from "../../Assets/images/aboutherounderline.webp";
+import ourprogramsunderline from "../../Assets/images/ourprogramsunderline.webp";
 import AOS from "aos";
 
 function HeroSection(props) {

@@ -16,7 +16,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./App.css";
 import "./index.css";
-import logo from "../src/Assets/images/logo.png";
+import logo from "../src/Assets/images/logo.webp";
 // import 'swiper/swiper-bundle.min.css';
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";

@@ -1,10 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import logo from "../../Assets/images/logo.png";
-import donateicon from "../../Assets/images/donateicon.png";
+import logo from "../../Assets/images/logo.webp";
+import donateicon from "../../Assets/images/donateicon.webp";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import placeholder from "../../Assets/images/placeholder.png";
+import placeholder from "../../Assets/images/placeholder.webp";
 import { usePost, useGet } from "../../Screens/Api/usePost";
 import { base_url_image } from "../../Screens/Api/base_url";
 import {

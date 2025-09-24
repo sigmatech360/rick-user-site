@@ -3,10 +3,10 @@ import "./index.css";
 
 import AOS from "aos";
 import { Link, useNavigate } from 'react-router-dom'
-import podcastimg1 from "../../Assets/images/podcastimg1.png";
-import podcastimg2 from "../../Assets/images/podcastimg2.png";
-import podcastimg3 from "../../Assets/images/podcastimg3.png";
-import partnerunderline from "../../Assets/images/programunderline.svg";
+import podcastimg1 from "../../Assets/images/podcastimg1.webp";
+import podcastimg2 from "../../Assets/images/podcastimg2.webp";
+import podcastimg3 from "../../Assets/images/podcastimg3.webp";
+import partnerunderline from "../../Assets/images/programunderline.webp";
 import { base_url_image } from "../../Screens/Api/base_url";
 const Ourpodcasts = ({ ApiDatapodcast, ApiDatapodcastlist, view }) => {
   useEffect(() => {
@@ -67,7 +67,7 @@ const Ourpodcasts = ({ ApiDatapodcast, ApiDatapodcastlist, view }) => {
                     />
                   ) : (
                     <img
-                      src={`${base_url_image}default-thumbnail.jpg`}
+                      src={`${base_url_image}default-thumbnail.webp`}
                       className="img-fluid card-img-top"
                       alt="Default Thumbnail"
                     />
@@ -124,7 +124,7 @@ const Ourpodcasts = ({ ApiDatapodcast, ApiDatapodcastlist, view }) => {
                 ) : (
                   // Fallback in case video_src is missing or invalid
                   <img
-                    src={`${base_url_image}default-thumbnail.jpg`}
+                    src={`${base_url_image}default-thumbnail.webp`}
                     className="img-fluid card-img-top"
                     alt="Default Thumbnail"
                   />

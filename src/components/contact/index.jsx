@@ -1,8 +1,8 @@
-import logo from "../../Assets/images/logo.png";
-import donateicon from "../../Assets/images/donateicon.png";
+import logo from "../../Assets/images/logo.webp";
+import donateicon from "../../Assets/images/donateicon.webp";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import contantunderline from "../../Assets/images/contantunderline.png";
+import contantunderline from "../../Assets/images/contantunderline.webp";
 import "./index.css";
 
 import AOS from "aos";

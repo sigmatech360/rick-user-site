@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import partnerunderline from "../../Assets/images/programunderline.svg";
+import partnerunderline from "../../Assets/images/programunderline.webp";
 
 import "./index.css";
 

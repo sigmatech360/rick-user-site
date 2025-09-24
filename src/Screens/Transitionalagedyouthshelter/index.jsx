@@ -8,22 +8,22 @@ import "slick-carousel/slick/slick-theme.css";
 import { MdArrowOutward } from "react-icons/md";
 
 import Sponsor from "../../components/sponsor";
-import houseimg from "../../Assets/images/houseimg.png";
-import programAfter from "../../Assets/images/programAfter.svg";
-import youth from "../../Assets/images/youth.png";
-import Oc from "../../Assets/images/Oc.png";
-import Closet from "../../Assets/images/closet.png";
+import houseimg from "../../Assets/images/houseimg.webp";
+import programAfter from "../../Assets/images/programAfter.webp";
+import youth from "../../Assets/images/youth.webp";
+import Oc from "../../Assets/images/Oc.webp";
+import Closet from "../../Assets/images/closet.webp";
 
 import AOS from "aos";
 
-import VolunteerOrientationimg from "../../Assets/images/VolunteerOrientationimg.png";
+import VolunteerOrientationimg from "../../Assets/images/VolunteerOrientationimg.webp";
 
 import { MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 import { RiCalendar2Line } from "react-icons/ri";
 import { FiMapPin } from "react-icons/fi";
 import { CiClock2 } from "react-icons/ci";
 import { useGet } from "../Api/usePost";
-import communityimg from "../../Assets/images/communityimg.png";
+import communityimg from "../../Assets/images/communityimg.webp";
 import { MdKeyboardDoubleArrowLeft } from "react-icons/md";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { base_url_image } from "../Api/base_url";

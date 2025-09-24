@@ -1,24 +1,24 @@
 import "./index.css";
 
 import Layout from "../../components/layout";
-import sponsorunderline from "../../Assets/images/sponsorunderline.svg";
+import sponsorunderline from "../../Assets/images/sponsorunderline.webp";
 import React, { useState, useEffect } from "react";
 
 import AOS from "aos";
 
 import HeroSection from "../../components/herosection";
-import drivingchangecard1 from "../../Assets/images/drivingchangecard1.png";
-import drivingchangecard2 from "../../Assets/images/drivingchangecard2.png";
+import drivingchangecard1 from "../../Assets/images/drivingchangecard1.webp";
+import drivingchangecard2 from "../../Assets/images/drivingchangecard2.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { usePost } from "../Api/usePost";
-import mapimg from "../../Assets/images/mapimg.jpg";
-import donateunderline from "../../Assets/images/donateunderline.svg";
-import programlegacy from "../../Assets/images/programlegacy.png";
-import applyemployeebg from "../../Assets/images/applyemployeebg.png";
+import mapimg from "../../Assets/images/mapimg.webp";
+import donateunderline from "../../Assets/images/donateunderline.webp";
+import programlegacy from "../../Assets/images/programlegacy.webp";
+import applyemployeebg from "../../Assets/images/applyemployeebg.webp";
 
-import contectbf from "../../Assets/images/contactbg.png";
-import contactUsBanner from "../../Assets/images/contactUsBanner.png";
+import contectbf from "../../Assets/images/contactbg.webp";
+import contactUsBanner from "../../Assets/images/contactUsBanner.webp";
 import { toast } from "react-toastify";
 import { Form } from "react-router-dom";
 function Contactus() {

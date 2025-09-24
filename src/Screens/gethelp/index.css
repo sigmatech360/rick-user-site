@@ -390,7 +390,7 @@
 /* help-section */
 
 .help-section {
-  background-image: url("../../Assets/images/helpstart.svg");
+  background-image: url("../../Assets/images/helpstart.webp");
   background-position: center;
   background-color: #333333;
   color: #ffffff;
@@ -612,7 +612,7 @@
   position: absolute;
   top: 0px !important ;
 
-  background: url("../../Assets/images/volusteergradiantimg.png") 0% 0%
+  background: url("../../Assets/images/volusteergradiantimg.webp") 0% 0%
     no-repeat;
   background-size: contain;
   padding-left: 0;

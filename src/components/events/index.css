@@ -3,7 +3,7 @@
 .events-section {
   overflow: hidden;
   background-color: #f9f9f9; /* Light background color */
-  background-image: url("../../Assets/images/eventbg.png"); /* Replace with your background pattern */
+  background-image: url("../../Assets/images/eventbg.webp"); /* Replace with your background pattern */
   background-size: cover;
   background-position: center;
 }

@@ -4,8 +4,8 @@
   /* background: linear-gradient(
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.9)
-    ), url('../../Assets/images/multiprogrambg.png');  */
-  background-image: url("../../Assets/images/volunteerbg.png");
+    ), url('../../Assets/images/multiprogrambg.webp');  */
+  background-image: url("../../Assets/images/volunteerbg.webp");
   background-size: cover;
   background-color: #fdfbf8;
   background-position: center;
@@ -24,7 +24,7 @@
  position: absolute;
  top: -71px!important ;
  left: 0;
- background: url('../../Assets/images/volusteergradiantimg.png') 0% 0% no-repeat;
+ background: url('../../Assets/images/volusteergradiantimg.webp') 0% 0% no-repeat;
  background-size: contain;
  padding-left: 0;
  height: 179%;

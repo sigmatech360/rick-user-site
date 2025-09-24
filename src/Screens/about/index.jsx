@@ -6,16 +6,16 @@ import heropage2 from "../../Assets/images/heropage2.webp";
 import Layout from "../../components/layout";
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-import ourmission from "../../Assets/images/ourmission.png";
-import missionunderline from "../../Assets/images/missionunderline.png";
-import ourstory from "../../Assets/images/ourstory.png";
-import hopeunderline from "../../Assets/images/hopeunderline.png";
+import ourmission from "../../Assets/images/ourmission.webp";
+import missionunderline from "../../Assets/images/missionunderline.webp";
+import ourstory from "../../Assets/images/ourstory.webp";
+import hopeunderline from "../../Assets/images/hopeunderline.webp";
 import HeroSection from "../../components/herosection";
-import tagline from "../../Assets/images/tagline.png";
-import drivingchangecard1 from "../../Assets/images/drivingchangecard1.png";
+import tagline from "../../Assets/images/tagline.webp";
+import drivingchangecard1 from "../../Assets/images/drivingchangecard1.webp";
 import { Link } from "react-router-dom";
-import drivingchangecard2 from "../../Assets/images/drivingchangecard2.png";
-import dedicationunderline from "../../Assets/images/dedicationunderline.png";
+import drivingchangecard2 from "../../Assets/images/drivingchangecard2.webp";
+import dedicationunderline from "../../Assets/images/dedicationunderline.webp";
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";

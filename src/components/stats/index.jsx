@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import availabletagline from "../../Assets/images/availabletagline.png";
+import availabletagline from "../../Assets/images/availabletagline.webp";
 
 const Stats = ({ApiDatastats}) => {
     

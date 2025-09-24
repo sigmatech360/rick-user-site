@@ -10,9 +10,9 @@ import HeroSection from "../../components/herosection";
 
 import Sponsor from "../../components/sponsor";
 
-import partnerunderline from "../../Assets/images/programunderline.svg";
+import partnerunderline from "../../Assets/images/programunderline.webp";
 
-import ourpodcastbg from "../../Assets/images/ourpodcastbg.png";
+import ourpodcastbg from "../../Assets/images/ourpodcastbg.webp";
 
 import Ourpodcasts from "../../components/ourpodcast";
 

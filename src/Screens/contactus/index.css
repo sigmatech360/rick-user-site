@@ -59,7 +59,7 @@
 
 /* Left section background */
 /* .left-section {
-  background-image: url("../../Assets/images/wedobg.png");
+  background-image: url("../../Assets/images/wedobg.webp");
   background-size: cover;
   background-position: center;
   color: #333333;
@@ -71,7 +71,7 @@
 
 /* Right section background */
 .right-section {
-  background-image: url("../../Assets/images/ourmission.png");
+  background-image: url("../../Assets/images/ourmission.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;

@@ -4,24 +4,24 @@ import Layout from "../../components/layout";
 import React, { useState, useEffect } from "react";
 import { FaPhoneAlt } from "react-icons/fa"; // Font Awesome phone icon (React Icons)
 import { FaStar } from "react-icons/fa";
-import helpstar from "../../Assets/images/helpstar.svg";
+import helpstar from "../../Assets/images/helpstar.webp";
 import Leadership from "../../components/Leadership/index";
-import helpcontecticon from "../../Assets/images/helpcontecticon.svg";
+import helpcontecticon from "../../Assets/images/helpcontecticon.webp";
 import HeroSection from "../../components/herosection";
-import drivingchangecard1 from "../../Assets/images/drivingchangecard1.png";
-import drivingchangecard2 from "../../Assets/images/drivingchangecard2.png";
-import LogoIcon from "../../Assets/images/Logo_Icon_1.svg";
+import drivingchangecard1 from "../../Assets/images/drivingchangecard1.webp";
+import drivingchangecard2 from "../../Assets/images/drivingchangecard2.webp";
+import LogoIcon from "../../Assets/images/Logo_Icon_1.webp";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";
 
-import gethelpbg from "../../Assets/images/gethelpbg.png";
-// import program1 from "../../Assets/images/program1.svg.png";
-// import program2 from "../../Assets/images/program2.png";
+import gethelpbg from "../../Assets/images/gethelpbg.webp";
+// import program1 from "../../Assets/images/program1.webp.webp";
+// import program2 from "../../Assets/images/program2.webp";
 
-import ourworkbg from "../../Assets/images/ourworkbg.png";
+import ourworkbg from "../../Assets/images/ourworkbg.webp";
 
 import { useGet, usePost } from "../Api/usePost";
 import AOS from "aos";

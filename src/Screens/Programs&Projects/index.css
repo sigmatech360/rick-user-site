@@ -69,7 +69,7 @@
 
 /* Left section background */
 /* .left-section {
-  background-image: url("../../Assets/images/wedobg.png");
+  background-image: url("../../Assets/images/wedobg.webp");
   background-size: cover;
   background-position: center;
   color: #333333;
@@ -82,7 +82,7 @@
 
 /* Right section background */
 /* .right-section {
-  background-image: url("../../Assets/images/ourmission.png");
+  background-image: url("../../Assets/images/ourmission.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -157,7 +157,7 @@
  position: absolute;
  top: -71px!important ;
  left: 137px !important;
- background: url('../../Assets/images/volusteergradiantimg.png') 0% 0% no-repeat;
+ background: url('../../Assets/images/volusteergradiantimg.webp') 0% 0% no-repeat;
  background-size: contain;
  padding-left: 0;
  height: 179%;
@@ -267,7 +267,7 @@
 
 /* Left section background */
 /* .left-section {
-  background-image: url("../../Assets/images/wedobg.png");
+  background-image: url("../../Assets/images/wedobg.webp");
   background-size: cover;
   background-position: center;
   color: #333333;
@@ -279,7 +279,7 @@
 
 /* Right section background */
 /* .legacy .right-section {
-  background-image: url("../../Assets/images/legacybg.png");
+  background-image: url("../../Assets/images/legacybg.webp");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -630,8 +630,8 @@
   /* background: linear-gradient(
       rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 0.9)
-    ), url('../../Assets/images/multiprogrambg.png');  */
-  background-image: url("../../Assets/images/multiprogrambg.png");
+    ), url('../../Assets/images/multiprogrambg.webp');  */
+  background-image: url("../../Assets/images/multiprogrambg.webp");
   background-size: cover;
   background-color: #FDFBF8;
   background-position: center;
@@ -840,7 +840,7 @@
 }
 
 /* .programs-section-left {
-  background-image: url("../../Assets/images/hprogrambg.png");
+  background-image: url("../../Assets/images/hprogrambg.webp");
 
   background-position: center;
 
@@ -859,7 +859,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url("../../Assets/images/hprogrambg.png");
+  background-image: url("../../Assets/images/hprogrambg.webp");
   background-position: center;
   background-size: contain; /* Or use 'cover' based on your preference */
   background-repeat: no-repeat;

@@ -3,7 +3,7 @@ import housingprogramvideo from "../../Assets/images/housingprogramvideo.mp4";
 import Layout from "../../components/layout";
 import React, { useState, useEffect } from "react";
 
-import housingprogramimgage from "../../Assets/images/housingprogramimgage.jpg";
+import housingprogramimgage from "../../Assets/images/housingprogramimgage.webp";
 
 import HeroSection from "../../components/herosection";
 
@@ -11,11 +11,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";
-import houseimg from "../../Assets/images/houseimg.png";
-import youth from "../../Assets/images/youth.png";
-import Oc from "../../Assets/images/Oc.png";
-import Closet from "../../Assets/images/closet.png";
-import housungprogramimg2 from "../../Assets/images/housungprogramimg2.jpg";
+import houseimg from "../../Assets/images/houseimg.webp";
+import youth from "../../Assets/images/youth.webp";
+import Oc from "../../Assets/images/Oc.webp";
+import Closet from "../../Assets/images/closet.webp";
+import housungprogramimg2 from "../../Assets/images/housungprogramimg2.webp";
 import AOS from "aos";
 
 function TransitionalHousingProgram() {

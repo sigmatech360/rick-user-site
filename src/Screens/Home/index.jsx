@@ -10,22 +10,22 @@ import { base_url_image } from "../Api/base_url";
 
 import React, { useContext, useEffect, useState } from "react";
 
-import placeholder from "../../Assets/images/placeholder.jpg";
-import dedicationunderline from "../../Assets/images/dedicationunderline.png";
+import placeholder from "../../Assets/images/placeholder.webp";
+import dedicationunderline from "../../Assets/images/dedicationunderline.webp";
 
-import announcementunderline from "../../Assets/images/announcementunderline.svg";
-import programAfter from "../../Assets/images/programAfter.svg";
-import googlePlay from "../../Assets/images/Google_Play_Store_badge.svg";
-import applePlay from "../../Assets/images/Apple_Play_Store_badge.png";
+import announcementunderline from "../../Assets/images/announcementunderline.webp";
+import programAfter from "../../Assets/images/programAfter.webp";
+import googlePlay from "../../Assets/images/Google_Play_Store_badge.webp";
+import applePlay from "../../Assets/images/Apple_Play_Store_badge.webp";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
-import donateicon from "../../Assets/images/donateicon.png";
-import availabletagline from "../../Assets/images/availabletagline.png";
-import apartunderline from "../../Assets/images/apartunderline.png";
+import donateicon from "../../Assets/images/donateicon.webp";
+import availabletagline from "../../Assets/images/availabletagline.webp";
+import apartunderline from "../../Assets/images/apartunderline.webp";
 import "./index.css";
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -33,21 +33,21 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css";
-import tagline from "../../Assets/images/tagline.png";
+import tagline from "../../Assets/images/tagline.webp";
 
-import programunderline from "../../Assets/images/programunderline.svg";
-import announcement1 from "../../Assets/images/announcement1.png";
-import announcement2 from "../../Assets/images/announcement2.png";
+import programunderline from "../../Assets/images/programunderline.webp";
+import announcement1 from "../../Assets/images/announcement1.webp";
+import announcement2 from "../../Assets/images/announcement2.webp";
 
-import changeworld from "../../Assets/images/changeworld.png";
+import changeworld from "../../Assets/images/changeworld.webp";
 
 import homeBanner1 from "../../Assets/images/homeBanner-1.webp";
 import homeBanner2 from "../../Assets/images/homeBanner-2.webp";
 import homeBanner3 from "../../Assets/images/homeBanner-3.webp";
 
-import wedotagline from "../../Assets/images/wedotagline.png";
+import wedotagline from "../../Assets/images/wedotagline.webp";
 import { useGet, usePost } from "../Api/usePost";
-import housingcard1 from "../../Assets/images/housingcard1.png";
+import housingcard1 from "../../Assets/images/housingcard1.webp";
 import Layout from "../../components/layout";
 import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";

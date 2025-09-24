@@ -1,10 +1,10 @@
 import React , {useEffect} from "react";
 import "./index.css";
-import createdunderline from "../../Assets/images/createdunderline.png";
-import buildfeatureicon1 from "../../Assets/images/buildfeatureicon1.svg";
-import buildfeatureicon12 from "../../Assets/images/buildfeatureicon2.svg";
-import buildfeatureicon13 from "../../Assets/images/buildfeatureicon3.svg";
-import donateicons from "../../Assets/images/donateicons.svg";
+import createdunderline from "../../Assets/images/createdunderline.webp";
+import buildfeatureicon1 from "../../Assets/images/buildfeatureicon1.webp";
+import buildfeatureicon12 from "../../Assets/images/buildfeatureicon2.webp";
+import buildfeatureicon13 from "../../Assets/images/buildfeatureicon3.webp";
+import donateicons from "../../Assets/images/donateicons.webp";
 
 import AOS from "aos";
 

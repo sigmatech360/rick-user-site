@@ -2,11 +2,11 @@ import React, { useEffect } from "react";
 
 import AOS from "aos";
 import "./index.css";
-import eventunderline from "../../Assets/images/eventunderlines.svg";
-import eventcard1 from "../../Assets/images/eventcard1.png";
-import eventcard2 from "../../Assets/images/eventcard2.png";
+import eventunderline from "../../Assets/images/eventunderlines.webp";
+import eventcard1 from "../../Assets/images/eventcard1.webp";
+import eventcard2 from "../../Assets/images/eventcard2.webp";
 
-import eventcard3 from "../../Assets/images/eventcard3.png";
+import eventcard3 from "../../Assets/images/eventcard3.webp";
 import 'aos/dist/aos.css';
 import { Link, useNavigate } from "react-router-dom";
 import { base_url_image } from "../../Screens/Api/base_url";

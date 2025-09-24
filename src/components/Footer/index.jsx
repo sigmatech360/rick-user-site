@@ -1,12 +1,12 @@
 import "./index.css";
 import { Link, Links, useNavigate } from "react-router-dom";
-import bottomfooterlogo3 from "../../Assets/images/bottomfooterlogo3.png";
-import bottomfooterlogo1 from "../../Assets/images/bottomlogo1.png";
-import bottomfooterlogo2 from "../../Assets/images/bottomfooterlogo2.png";
-import charitynavigator from "../../Assets/images/charitynavigator.png";
-import footerlogo from "../../Assets/images/footerlogo.svg";
-import googlePlay from "../../Assets/images/Google_Play_Store_badge.svg";
-import applePlay from "../../Assets/images/Apple_Play_Store_badge.png";
+import bottomfooterlogo3 from "../../Assets/images/bottomfooterlogo3.webp";
+import bottomfooterlogo1 from "../../Assets/images/bottomlogo1.webp";
+import bottomfooterlogo2 from "../../Assets/images/bottomfooterlogo2.webp";
+import charitynavigator from "../../Assets/images/charitynavigator.webp";
+import footerlogo from "../../Assets/images/footerlogo.webp";
+import googlePlay from "../../Assets/images/Google_Play_Store_badge.webp";
+import applePlay from "../../Assets/images/Apple_Play_Store_badge.webp";
 
 import Whistleblowerpolicy from "../../Assets/pdf/10-Whistleblower-policy.docx.pdf";
 import NondiscriminationPolicy from "../../Assets/pdf/Non-discrimination-Policy-CLJ-Rev.pdf";

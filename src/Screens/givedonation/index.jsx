@@ -7,25 +7,25 @@ import Layout from "../../components/layout";
 import Leadership from "../../components/Leadership";
 
 import { useGet, usePost } from '../Api/usePost'
-import createdunderline from "../../Assets/images/createdunderline.png";
+import createdunderline from "../../Assets/images/createdunderline.webp";
 import HeroSection from "../../components/herosection";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";
-import matchinggiftunderline from "../../Assets/images/matchinggiftunderline.png";
-import donateunderline from "../../Assets/images/donateunderline.svg";
-import donatecard1 from "../../Assets/images/donatecard1.svg";
-import donatecard2 from "../../Assets/images/donatecard2.svg";
-import donatecard3 from "../../Assets/images/donatecard3.svg";
-import programlegacy from "../../Assets/images/programlegacy.png";
-import applyemployeebg from "../../Assets/images/applyemployeebg.png";
-import donatebg from "../../Assets/images/donatebg.png";
+import matchinggiftunderline from "../../Assets/images/matchinggiftunderline.webp";
+import donateunderline from "../../Assets/images/donateunderline.webp";
+import donatecard1 from "../../Assets/images/donatecard1.webp";
+import donatecard2 from "../../Assets/images/donatecard2.webp";
+import donatecard3 from "../../Assets/images/donatecard3.webp";
+import programlegacy from "../../Assets/images/programlegacy.webp";
+import applyemployeebg from "../../Assets/images/applyemployeebg.webp";
+import donatebg from "../../Assets/images/donatebg.webp";
 
-import dedleadimg1 from "../../Assets/images/dedleadimg1.png";
-import dedleadimg2 from "../../Assets/images/dedleadimg2.png";
-import dedleadimg3 from "../../Assets/images/dedleadimg3.png";
-import dedleadimg4 from "../../Assets/images/dedleadimg4.png";
+import dedleadimg1 from "../../Assets/images/dedleadimg1.webp";
+import dedleadimg2 from "../../Assets/images/dedleadimg2.webp";
+import dedleadimg3 from "../../Assets/images/dedleadimg3.webp";
+import dedleadimg4 from "../../Assets/images/dedleadimg4.webp";
 import { toast } from "react-toastify";
 import GiveButterStyler from "../../components/GiveButter/GiveButterStyler";
 function Givedonation() {

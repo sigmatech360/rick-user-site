@@ -1,12 +1,12 @@
-import dedleadimg1 from "../../Assets/images/dedleadimg1.png";
-import dedleadimg2 from "../../Assets/images/dedleadimg2.png";
-import dedleadimg3 from "../../Assets/images/dedleadimg3.png";
-import dedleadimg4 from "../../Assets/images/dedleadimg4.png";
+import dedleadimg1 from "../../Assets/images/dedleadimg1.webp";
+import dedleadimg2 from "../../Assets/images/dedleadimg2.webp";
+import dedleadimg3 from "../../Assets/images/dedleadimg3.webp";
+import dedleadimg4 from "../../Assets/images/dedleadimg4.webp";
 import Slider from "react-slick";
-import placeholder from "../../Assets/images/placeholder.jpg";
+import placeholder from "../../Assets/images/placeholder.webp";
 import React, { useEffect, useState } from "react";
 import AOS from "aos";
-import dedicationunderline from "../../Assets/images/dedicationunderline.png";
+import dedicationunderline from "../../Assets/images/dedicationunderline.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./index.css";
