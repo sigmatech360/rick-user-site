@@ -74,7 +74,6 @@ const isLessThan7Days = (eventDate) => {
   const diffInMs = targetDate - today;
   const diffInDays = diffInMs / (1000 * 60 * 60 * 24); // convert ms to days
 
-  // console.log(`Diff in days: ${diffInDays} and event date is ${eventDate}`);
 
   return diffInDays >= 0 && diffInDays <= 7;
 };
@@ -129,12 +128,6 @@ function Home() {
     getdatapodcast();
     getdatastats();
     getdataSponsorBrands();
-    // console.log('ApiDatastats?.data',ApiDatastats?.data);
-
-    // let filterData = ApiDatastats?.data.filter((stats)=>stats.show_in_web == 1 );
-    // setStatsData(ApiDatastats);
-
-    // getStats();
 
     document.title = "HOME- HIS OC ";
   }, []);
@@ -160,11 +153,6 @@ function Home() {
   };
   useEffect(() => {
     AOS.init();
-    // if (window.gbWidgets.aid) {
-    //   // window.gbWidgets.init(); // In case of React Router SPA behavior
-    //   console.log("Givebutter widget initialized");
-
-    // }
   }, []);
 
   const PrevArrow = (props) => {
@@ -292,18 +280,7 @@ function Home() {
   useEffect(() => {
     if (ApiDataevent?.data?.length > 0) {
       let data = ApiDataevent?.data;
-      // data.forEach(event => {
-      //   const hasTicket = !!event.ticketing_link;
-      //   console.log('ticket', hasTicket);
-
-      //   const eventDate = parseEventDate(event.date);
-      //   if (hasTicket && isLessThan7Days(eventDate)) {
-      //     setShowTicketAlert(true);
-      //     break;
-      //   }
-      // });
       for (const event of data) {
-        // const hasTicket = !!event.ticketing_link;
         const hasTicket =
           event.ticketing_link !== null && event.ticketing_link !== "null";
         const eventDate = parseEventDate(event.date);

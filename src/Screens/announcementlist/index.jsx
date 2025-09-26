@@ -39,7 +39,6 @@ function AnnouncementList() {
   }, []);
 
 
-  console.log("ApiDatapodcast", ApiDatapodcast)
 
 
   const handleannouncementlist = () => {

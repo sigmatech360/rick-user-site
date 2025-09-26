@@ -90,7 +90,6 @@ function Event() {
       let interestedeEventsTemp = ApiInterestedEventGet.data.map((item) => {
         return item.id;
       });
-      console.log("interested events ids", interestedeEventsTemp);
       setInterestedeEvents(interestedeEventsTemp);
     }
   }, [ApiInterestedEventGet]);

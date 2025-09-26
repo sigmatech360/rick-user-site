@@ -8,7 +8,6 @@ export const requestPermission = async () => {
       const serviceWorkerRegistration = await navigator.serviceWorker.register(
         "/firebase-messaging-sw.js"
       );
-      // console.log("Service Worker registered:", serviceWorkerRegistration);
       
       // Get the FCM token using service worker registration
       const fcmToken = await getToken(messaging, {
@@ -19,7 +18,6 @@ export const requestPermission = async () => {
       
       // setToken(fcmToken);
       localStorage.setItem("device_token", fcmToken);
-      // console.log("fcmToken.", fcmToken);
       return fcmToken;
     } else {
       console.error("Permission denied for notifications");
@@ -52,7 +50,6 @@ const useFirebaseMessaging = () => {
 
     // Firebase messaging handler when a message is received in the foreground
     const unsubscribe = onMessage(messaging, (payload) => {
-      console.log("Message received:", payload);
       toast(
         <div>
           <p className="text-dark fw-bold mb-0">{payload.notification.title}</p>
@@ -70,7 +67,6 @@ const useFirebaseMessaging = () => {
 
   useEffect(() => {
     if (!token) return; // Prevent sending undefined token
-    // console.log('token', token);
     
 
     const sendTokenToServer = async () => {
@@ -92,7 +88,6 @@ const useFirebaseMessaging = () => {
         }
 
         const data = await response.json();
-        // console.log("Server response:", data); // Handle the response data
       } catch (err) {
         setError(err.message); // Set error if the fetch fails
         console.error("Fetch error:", err);

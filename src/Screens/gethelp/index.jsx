@@ -72,7 +72,6 @@ function GetHelp() {
     getdataFaq();
   }, []);
 
-  console.log("ApiDataGetFaq", ApiDataGetFaq);
 
   const handleSubmit = (e) => {
     e.preventDefault();

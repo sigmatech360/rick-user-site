@@ -33,7 +33,6 @@ function Podcastdetail() {
     getdatalist()
     getdatapodcast()
   }, [])
-  console.log("ApiDataGetlist", ApiDataGetlist)
 
   const agendaItems = [
     { time: "5:00 PM - 6:00 PM", event: "Arrival and Registration" },

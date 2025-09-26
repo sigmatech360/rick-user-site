@@ -86,9 +86,6 @@ const Profile = () => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  console.log("ApiData", ApiData);
-
-  console.log("formdata", formdata);
 
   const [isOpen, setIsOpen] = useState(false);
   const [isOpenslots, setIsOpenslots] = useState(false);

@@ -60,7 +60,6 @@ function ProgramsProjects() {
     get: getdataprogram,
   } = useGet("/program");
 
-  console.log("ApiDataGetprogram", ApiDataGetprogram);
 
   const handleSubmit = (e) => {
     e.preventDefault();

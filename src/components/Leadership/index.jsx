@@ -34,7 +34,6 @@ function Leadership({ ApiDataGetmembers }) {
         ApiDataGetmembers?.data?.filter((member) => member.member_type === "2")
       );
     }
-    // console.log('boardMembers : ', boardMembers);
   }, [ApiDataGetmembers]);
 
   const PrevArrow = (props) => {

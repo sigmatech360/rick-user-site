@@ -40,7 +40,6 @@ function Announcementdetail() {
     getdatalist();
   }, []);
 
-  console.log("ApiDataGet", ApiDataGet);
 
   const agendaItems = [
     { time: "5:00 PM - 6:00 PM", event: "Arrival and Registration" },

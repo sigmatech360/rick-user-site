@@ -164,12 +164,6 @@ function Header() {
       );
       formDataMethod.append("available_days", JSON.stringify(selectedItems));
 
-      // console.log("available_slots Slot (Array check):", available_slots);
-      // console.log(
-      //   "Is available_slots an array?",
-      //   Array.isArray(available_slots)
-      // );
-      // console.log("available_slots Slot type:", typeof available_slots);
 
       if (!localStorage.getItem("device_token")) {
         requestPermission();
@@ -284,7 +278,6 @@ function Header() {
       localStorage.setItem("token", ApiDatalogin?.data?.token);
       setShowModallogin(false);
       setUserData(() => {
-        // console.log("Clearing userData..."); // Debug log
         return {};
       });
       navigate("/");
@@ -374,7 +367,6 @@ function Header() {
     script.onload = () => {
       // Optional: Set state or perform an action after the script loads
       setScriptLoaded(true);
-      console.log("Script loaded successfully");
       if (window.GivebutterWidget) {
         window.GivebutterWidget.init();
         console.log("🎉 GivebutterWidget initialized");
@@ -392,32 +384,6 @@ function Header() {
       document.body.removeChild(script); // Cleanup when component unmounts
     };
   }, []);
-
-  // useEffect(() => {
-  //   const existingScript = document.getElementById("givebutter-script");
-
-  //   if (!existingScript) {
-  //     const script = document.createElement("script");
-  //     script.src =
-  //       "https://widgets.givebutter.com/latest.umd.min.js?acct=EEzrwTqr8xPNFSdt&embed=modal";
-  //     script.id = "givebutter-script";
-  //     script.async = true;
-
-  //     // console.log('script', script);
-
-  //     script.onload = () => {
-  //       console.log("✅ Givebutter loaded");
-  //     };
-
-  //     script.onerror = () => {
-  //       console.error("❌ Givebutter script failed to load");
-  //     };
-
-  //     document.body.appendChild(script);
-  //   }
-  // }, []);
-
-  // const [scriptLoaded, setScriptLoaded] = useState(false);
 
   return (
     <>
@@ -491,7 +457,7 @@ function Header() {
                 <i className="bi bi-snapchat"></i>
               </a>
               <a
-                href="https://www.tiktok.com/@HIS-OC"
+                href="https://www.tiktok.com/@hisoc89"
                 className="text-white"
                 target="_blank"
                 passHref

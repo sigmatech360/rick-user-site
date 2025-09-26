@@ -79,7 +79,6 @@ function Givedonation() {
   }, [])
   useEffect(() => {
     AOS.init();
-    console.log('give butter', window);
     
   }, []);
   const PrevArrow = (props) => {
@@ -278,20 +277,6 @@ function Givedonation() {
                   </button> */}
                   <GiveButterStyler />
                   <givebutter-widget class='giveButterBtn donate' id="pzBZ3p">Donate Now</givebutter-widget>
-                  {/* <button
-                      className="btn donate-button"
-                      onClick={() => {
-                        console.log('Donate btn clicked',window.gbWidgets?.open);
-                        
-                        // if (window.gbWidgets?.open) {
-                        //   window.gbWidgets.open({ id: "pzBZ3p" });
-                        // } else {
-                        //   console.warn("⏳ Widget not ready yet.");
-                        // }
-                      }}
-                    >
-                      Give Help
-                    </button> */}
                 </div>
               </div>
 

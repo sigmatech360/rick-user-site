@@ -23,7 +23,6 @@ function Contact({
   }, []);
   const [donatenotify, setDonatenotiy] = useState(false);
 
-  console.log("ApiDataGetmembers", ApiDataGetmembers);
 
   const handleClose = (event) => {
     event.preventDefault();

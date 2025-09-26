@@ -130,7 +130,6 @@ function Footer() {
       localStorage.setItem("token", ApiDatalogin?.data?.token);
       setShowModallogin(false);
       setUserData(() => {
-        // console.log("Clearing userData..."); // Debug log
         return {};
       });
       navigate("/");
@@ -277,13 +276,6 @@ function Footer() {
         "device_token",
         localStorage.getItem("device_token")
       );
-
-      console.log("available_slots Slot (Array check):", available_slots);
-      console.log(
-        "Is available_slots an array?",
-        Array.isArray(available_slots)
-      );
-      console.log("available_slots Slot type:", typeof available_slots);
 
       await post(formDataMethod);
       // if (errorRegister) {
@@ -553,7 +545,7 @@ function Footer() {
 
                 <Link
                   onClick={scrollToTop}
-                  to="https://www.tiktok.com/@HIS-OC"
+                  to="https://www.tiktok.com/@hisoc89"
                   className="text-white me-3"
                 >
                   <i className="bi bi-tiktok fs-5"></i>

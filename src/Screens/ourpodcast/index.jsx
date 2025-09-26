@@ -30,7 +30,6 @@ function Ourpodcast() {
   document.title = "Our Podcast- HIS OC ";
   }, [])
 
-  console.log("ApiDataGetmembers", ApiDatapodcast)
   useEffect(() => {
     AOS.init();
   }, []);
