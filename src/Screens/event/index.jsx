@@ -168,7 +168,7 @@ function Event() {
                           >
                             Learn more
                           </button>
-                          {items?.ticketing_link && (
+                          {items?.ticketing_link && items?.ticketing_link != "null" && (
                             <a
                               href={items?.ticketing_link}
                               className="todaybtn"

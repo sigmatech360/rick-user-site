@@ -210,7 +210,7 @@ function EventDetail() {
                   __html: ApiDataGeteventdetail?.data?.description,
                 }}
               ></p>
-              {ApiDataGeteventdetail?.data?.ticketing_link && (
+              {ApiDataGeteventdetail?.data?.ticketing_link && ApiDataGeteventdetail?.data?.ticketing_link != 'null' && (
               <div className="d-flex">
                 <a
                   href={ApiDataGeteventdetail?.data?.ticketing_link}

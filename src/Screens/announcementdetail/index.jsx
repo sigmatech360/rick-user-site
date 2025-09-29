@@ -121,6 +121,7 @@ function Announcementdetail() {
                     }
                     alt="Volunteer Orientation"
                     className="VolunteerOrientationblgimg"
+                    onClick={() => handlerouteannouncementlist(items?.id)}
                   />
 
 
@@ -128,12 +129,12 @@ function Announcementdetail() {
                     <p className="VolunteerOrientationblgtitledate">
                       {items?.date}
                     </p>
-                    <h4>{items?.title}</h4>
+                    <h4 onClick={() => handlerouteannouncementlist(items?.id)}>{items?.title}</h4>
                     <button
                       onClick={() => handlerouteannouncementlist(items?.id)}
-                      className="btn VolunteerOrientationblgtitledatereade"
+                      className="btn ps-0 VolunteerOrientationblgtitledatereade"
                     >
-                      Read more <MdOutlineKeyboardDoubleArrowRight />
+                      Read more  <MdOutlineKeyboardDoubleArrowRight />
                     </button>
                   </div>
                 </div>
