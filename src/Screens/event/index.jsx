@@ -15,6 +15,7 @@ import { useGet, usePost } from "../Api/usePost";
 import { base_url_image } from "../Api/base_url";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
+import ReactHelmet from "../../components/ReactHelmet";
 function Event() {
   const navigate = useNavigate();
   const [logintoken, setLogintoken] = useState(null);
@@ -96,6 +97,7 @@ function Event() {
 
   return (
     <>
+    <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={eventBannerImg}
@@ -189,6 +191,7 @@ function Event() {
                       }
                       onClick={() => learnnavigate(items?.id)}
                       className="img-fluid eventimg hoverLink"
+                      alt="Event"
                     />
                   </div>
                 </div>

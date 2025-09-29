@@ -292,7 +292,7 @@ function Footer() {
             <div className="row">
               <div className="col-lg-4 mb-3 mb-lg-0 text-lg-start text-center">
                 <Link to={"/"}>
-                  <img src={footerlogo} className="footerlogo  mb-2  " />
+                  <img src={footerlogo} className="footerlogo  mb-2  " alt="Be the Helping Hand!" />
                 </Link>
                 {/* <p className="title fw-bold mb-2">
                   Building A Future Without{" "}
@@ -421,14 +421,14 @@ function Footer() {
                         "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
                       }
                     >
-                      <img src={googlePlay} className="w-100" alt="" />
+                      <img src={googlePlay} className="w-100" alt="google play" />
                     </Link>
                     <Link
                       to={"https://apps.apple.com/us/app/hisocapp/id6749266767"}
                       target="_blank"
                       className="appLink"
                     >
-                      <img src={applePlay} className="w-100" alt="" />
+                      <img src={applePlay} className="w-100" alt="apple play" />
                     </Link>
                   </div>
                 </div>
@@ -507,56 +507,77 @@ function Footer() {
             {/* Center section for copyright text */}
             <div className="text-center text-md-end socialicon">
               <div className="d-flex mb-2 justify-content-center justify-content-xl-end">
-                <Link
-                  onClick={scrollToTop}
-                  to="https://www.facebook.com/homeless.intervention.oc"
+                <a
+                  // onClick={scrollToTop}
+                  href="https://www.facebook.com/homeless.intervention.oc"
+                  target="_blank"
                   className="text-white me-3"
+                  aria-label="Visit Facebook page"
+                rel="noopener noreferrer"
                 >
                   <i className="bi bi-facebook fs-5"></i>
-                </Link>
-                <Link
-                  onClick={scrollToTop}
-                  to="https://twitter.com/Homeless_Int_OC"
+                </a>
+                <a
+                  // onClick={scrollToTop}
+                  href="https://twitter.com/Homeless_Int_OC"
+                  target="_blank"
                   className="text-white me-3"
+                  aria-label="Visit Twitter page"
+                rel="noopener noreferrer"
                 >
                   <i className="bi bi-x fs-5"></i>
-                </Link>
-                <Link
-                  onClick={scrollToTop}
-                  to="https://www.linkedin.com/company/hisoc/"
+                </a>
+                <a
+                  // onClick={scrollToTop}
+                  href="https://www.linkedin.com/company/hisoc/"
+                  target="_blank"
                   className="text-white me-3"
+                  aria-label="Visit LinkedIn page"
+                rel="noopener noreferrer"
                 >
                   <i className="bi bi-linkedin fs-5"></i>
-                </Link>
-                <Link
-                  onClick={scrollToTop}
-                  to="https://www.instagram.com/homelessintoc/?hl=en"
+                </a>
+                <a
+                  // onClick={scrollToTop}
+                  href="https://www.instagram.com/homelessintoc/?hl=en"
+                  target="_blank"
                   className="text-white me-3"
+                  aria-label="Visit Instagram page"
+                rel="noopener noreferrer"
                 >
                   <i className="bi bi-instagram fs-5"></i>
-                </Link>
-                <Link
-                  onClick={scrollToTop}
-                  to="https://www.snapchat.com/@his-oc"
+                </a>
+                <a
+                  // onClick={scrollToTop}
+                  href="https://www.snapchat.com/@his-oc"
+                  target="_blank"
                   className="text-white me-3"
+                  aria-label="Visit Snapchat page"
+                rel="noopener noreferrer"
                 >
                   <i className="bi bi-snapchat fs-5"></i>
-                </Link>
+                </a>
 
-                <Link
-                  onClick={scrollToTop}
-                  to="https://www.tiktok.com/@hisoc89"
+                <a
+                  // onClick={scrollToTop}
+                  href="https://www.tiktok.com/@hisoc89"
+                  target="_blank"
                   className="text-white me-3"
+                  aria-label="Visit TikTok page"
+                rel="noopener noreferrer"
                 >
                   <i className="bi bi-tiktok fs-5"></i>
-                </Link>
-                <Link
-                  onClick={scrollToTop}
-                  to="https://www.youtube.com/@HISOC"
+                </a>
+                <a
+                  // onClick={scrollToTop}
+                  href="https://www.youtube.com/@HISOC"
+                  target="_blank"
                   className="text-white me-3"
+                  aria-label="Visit YouTube page"
+                rel="noopener noreferrer"
                 >
                   <i className="bi bi-youtube fs-5"></i>
-                </Link>
+                </a>
               </div>
 
               {/* <p className="mb-0 text-xl-end text-center">

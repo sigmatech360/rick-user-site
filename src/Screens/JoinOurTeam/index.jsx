@@ -25,6 +25,7 @@ import Sponsor from "../../components/sponsor";
 import { useGet, usePost } from "../Api/usePost";
 import { toast } from "react-toastify";
 import { height } from "@fortawesome/free-brands-svg-icons/fa42Group";
+import ReactHelmet from "../../components/ReactHelmet";
 function JoinOurTeam() {
   const {
     ApiData: ApiDataGetmembers,
@@ -198,6 +199,7 @@ function JoinOurTeam() {
 
   return (
     <>
+    <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={heropage2}
@@ -270,7 +272,7 @@ function JoinOurTeam() {
                     Join Our Team To End{" "}
                     <span className="hightlight">
                       Homelessness!{" "}
-                      <img src={tagline} className="underline-image" />{" "}
+                      <img src={tagline} className="underline-image" alt="Join Our Team To End Homelessness!" />{" "}
                     </span>{" "}
                   </p>
                   <p className="intershippara">
@@ -311,7 +313,7 @@ function JoinOurTeam() {
                     Internship{" "}
                     <span className="hightlight">
                       Opportunities{" "}
-                      <img src={tagline} className="underline-image" />{" "}
+                      <img src={tagline} className="underline-image" alt="Internship Opportunities" />{" "}
                     </span>{" "}
                     <br /> At HIS-OC{" "}
                   </p>

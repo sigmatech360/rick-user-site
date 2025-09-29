@@ -151,6 +151,7 @@ function TransitionalHousingProgram() {
                 <img
                   src={housingprogramimgage}
                   className="img-fluid"
+                  alt="Our Transitional Housing Program"
                   data-aos="fade-right"
                   data-aos-offset="0"
                   data-aos-duration="1000"
@@ -221,7 +222,7 @@ function TransitionalHousingProgram() {
                 </ul>
               </div>
               <div className="col-md-6">
-                <img src={housungprogramimg2} className="img-fluid" />
+                <img src={housungprogramimg2} className="img-fluid" alt="Entering our program" />
               </div>
             </div>
           </div>

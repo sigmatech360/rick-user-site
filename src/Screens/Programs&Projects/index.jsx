@@ -37,6 +37,7 @@ import { FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import { base_url_image } from "../Api/base_url";
+import ReactHelmet from "../../components/ReactHelmet";
 
 // import { FaArrowRight } from "react-icons/fa";
 function ProgramsProjects() {
@@ -244,6 +245,7 @@ function ProgramsProjects() {
   }, [ApiDataGetprogram]);
   return (
     <>
+    <ReactHelmet />
       <Layout>
         <HeroSection
           className="ourWorkBanner-sec"
@@ -349,6 +351,7 @@ function ProgramsProjects() {
                                 <img
                                   src={aboutherounderline}
                                   className="programunderlines"
+                                  alt={program?.title}
                                 />
                               </span>
                               {/* {program?.title2} */}
@@ -388,8 +391,9 @@ function ProgramsProjects() {
                       <img
                         src={houseprogramunderline}
                         className="houseprogramunderline"
+                        alt=""
                       />
-                    </span>{" "}
+                    </span>{"Homeless Intervention services Of Orange Country HIS-OC"}
                   </h5>
                 </div>
               </div>

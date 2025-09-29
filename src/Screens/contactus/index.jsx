@@ -21,6 +21,7 @@ import contectbf from "../../Assets/images/contactbg.webp";
 import contactUsBanner from "../../Assets/images/contactUsBanner.webp";
 import { toast } from "react-toastify";
 import { Form } from "react-router-dom";
+import ReactHelmet from "../../components/ReactHelmet";
 function Contactus() {
   const [formState, setFormState] = useState({});
   const {
@@ -175,6 +176,7 @@ function Contactus() {
 
   return (
     <>
+      <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={contactUsBanner}
@@ -198,7 +200,7 @@ function Contactus() {
                   Want To Talk? Let’s{" "}
                   <span className="do-it">
                     Do It!{" "}
-                    <img className="donateunderline" src={donateunderline} />
+                    <img className="donateunderline" src={donateunderline} alt="Want To Talk? Let’s Do It" />
                   </span>
                 </h1>
                 <p
@@ -297,8 +299,7 @@ function Contactus() {
               {/* Right side with map image */}
               <div className="col-lg-6   d-lg-block">
                 <a href={mapimg}>
-                <img src={mapimg} alt="Map" className="img-fluid map-image" />
-
+                  <img src={mapimg} alt="Map" className="img-fluid map-image" />
                 </a>
               </div>
             </div>
@@ -310,7 +311,7 @@ function Contactus() {
             For Any Inquiries Call:{" "}
             <a href="tel:(714) 993-5774" className="position-relative">
               (714) 993-5774
-              <img className="sponsorunderline" src={sponsorunderline} />
+              <img className="sponsorunderline" src={sponsorunderline} alt="For Any Inquiries Call:" />
             </a>
           </h2>
         </section>

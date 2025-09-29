@@ -25,7 +25,7 @@ const BuildingFutures = () => {
                 <span className="position-relative">
                   {" "}
                   Futures{" "}
-                  <img src={createdunderline} className="createdunderline" />
+                  <img src={createdunderline} className="createdunderline" alt="Empowering Lives Building Futures" />
                 </span>
               </h2>
             </div>
@@ -42,7 +42,7 @@ const BuildingFutures = () => {
               <button className="donateiconbg d-flex justify-content-center align-items-center"     data-aos="fade-up"
                         data-aos-offset="0"
                         data-aos-duration="1000">
-                <img src={donateicons} /> Donate Today!
+                <img src={donateicons} alt="Donate Today" /> Donate Today!
               </button>
             </div>
           </div>
@@ -60,6 +60,7 @@ const BuildingFutures = () => {
                 <img
                   className="img-fluid iconbg mb-4"
                   src={buildfeatureicon1}
+                  alt="Transitional Housing"
                 />
                 <p className="extension font-weight-bold  mb-0  ">
                   Transitional Housing{" "}
@@ -84,6 +85,7 @@ const BuildingFutures = () => {
                 <img
                   className="img-fluid iconbg mb-4"
                   src={buildfeatureicon12}
+                  alt="Advocacy & Community Support"
                 />
                 {/* <FaPhoneAlt size={30} color="#EBFEEE" /> */}
                 <p className="extension font-weight-bold  mb-0  ">
@@ -109,6 +111,7 @@ const BuildingFutures = () => {
                 <img
                   className="img-fluid iconbg mb-4"
                   src={buildfeatureicon13}
+                  alt="Why Your Support Matters"
                 />
                 {/* <FaPhoneAlt size={30} color="#348F99" /> */}
                 <p className="extension font-weight-bold  mb-0  ">

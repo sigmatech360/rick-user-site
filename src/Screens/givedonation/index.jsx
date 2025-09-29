@@ -28,6 +28,7 @@ import dedleadimg3 from "../../Assets/images/dedleadimg3.webp";
 import dedleadimg4 from "../../Assets/images/dedleadimg4.webp";
 import { toast } from "react-toastify";
 import GiveButterStyler from "../../components/GiveButter/GiveButterStyler";
+import ReactHelmet from "../../components/ReactHelmet";
 function Givedonation() {
 
   const { ApiData: ApiDataGetmembers, loading: loadingGet, error: errorGet, get: getdatamembers } = useGet('/member')
@@ -200,6 +201,7 @@ function Givedonation() {
 
   return (
     <>
+    <ReactHelmet />
       <Layout>
         
         <HeroSection
@@ -222,7 +224,7 @@ function Givedonation() {
               Your Donation Can{" "}
               <span className="text-success position-relative">
               Save Lives{" "}
-                <img className="availabletagline" src={donateunderline} />
+                <img className="availabletagline" src={donateunderline} alt="Your Donation Can Save Lives" />
               </span>
             </h2>
             <p
@@ -255,7 +257,7 @@ function Givedonation() {
                     borderRadius: "12px",
                   }}
                 >
-                  <img className="creadetimg" src={donatecard1} />
+                  <img className="creadetimg" src={donatecard1} alt="Give Now by Credit" />
                   <p className="extension font-weight-bold  mb-0  ">
                     Give Now by{" "}
                     <spna className="credit position-relative">
@@ -263,6 +265,7 @@ function Givedonation() {
                       <img
                         className="createdunderline"
                         src={createdunderline}
+                        alt="Give Now by Credit"
                       />
                     </spna>{" "}
                     Card
@@ -293,7 +296,7 @@ function Givedonation() {
                     borderRadius: "12px",
                   }}
                 >
-                  <img className="creadetimg" src={donatecard2} />
+                  <img className="creadetimg" src={donatecard2} alt="Give Now by Check" />
                   {/* <FaPhoneAlt size={30} color="#EBFEEE" /> */}
                   <p className="extension font-weight-bold  mb-0  ">
                     Give now by  {" "}
@@ -302,6 +305,7 @@ function Givedonation() {
                       <img
                         className="createdunderline"
                         src={createdunderline}
+                        alt="Give now by Check"
                       />
                     </spna>{" "}
                     {/* Card */}
@@ -326,7 +330,7 @@ function Givedonation() {
                     borderRadius: "12px",
                   }}
                 >
-                  <img className="creadetimg" src={donatecard3} />
+                  <img className="creadetimg" src={donatecard3} alt="Wishlist" />
                   {/* <FaPhoneAlt size={30} color="#348F99" /> */}
                   <p className="extension font-weight-bold  mb-0  ">
                     Wishlist
@@ -370,6 +374,7 @@ function Givedonation() {
                       <img
                         className="matchinggiftunderline"
                         src={matchinggiftunderline}
+                        alt="Apply For Employee Matching Gifts"
                       />{" "}
                     </span>
                   </h3>
@@ -410,6 +415,7 @@ function Givedonation() {
                       <img
                         className="legacyunderline"
                         src={matchinggiftunderline}
+                        alt="Leave A Legacy (Planned Giving)"
                       />{" "}
                     </span>
                   </h3>

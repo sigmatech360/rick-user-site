@@ -24,6 +24,7 @@ import Contact from "../../components/contact";
 import Sponsor from "../../components/sponsor";
 import { useGet, usePost } from "../Api/usePost";
 import { toast } from "react-toastify";
+import ReactHelmet from "../../components/ReactHelmet";
 function About() {
   const {
     ApiData: ApiDataGetmembers,
@@ -197,6 +198,7 @@ function About() {
 
   return (
     <>
+      <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={heropage2}
@@ -223,7 +225,7 @@ function About() {
                   Transforming Lives Restoring Hope <br />
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="text-success position-relative">
-                    Hole <img className="hopeunderline" src={hopeunderline} />
+                    Hole <img className="hopeunderline" src={hopeunderline} alt="Transforming Lives Restoring Hope Hole" />
                   </span>
                 </h2>
               </div>
@@ -240,7 +242,7 @@ function About() {
                     Our{" "}
                     <span className="highlight-text position-relative">
                       Mission{" "}
-                      <img src={missionunderline} className="wedotagline" />
+                      <img src={missionunderline} className="wedotagline" alt="Our Mission" />
                     </span>
                   </h2>
                   <p
@@ -274,7 +276,7 @@ function About() {
                 >
                   A{" "}
                   <span className=" text-black  position-relative">
-                    Legacy <img className="hopeunderline" src={hopeunderline} />
+                    Legacy <img className="hopeunderline" src={hopeunderline} alt="A Legacy Of Compassion Everyone Deserves" />
                   </span>{" "}
                   Of Compassion Everyone Deserves <br />
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
@@ -294,7 +296,7 @@ function About() {
                     Our{" "}
                     <span className="highlight-text  position-relative">
                       Story{" "}
-                      <img src={missionunderline} className="wedotagline" />{" "}
+                      <img src={missionunderline} className="wedotagline" alt="Our Story" />{" "}
                     </span>
                   </h2>
                   <p
@@ -363,7 +365,7 @@ function About() {
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="mb-2 text-success position-relative">
                     <span className="mb-2"> connections </span>
-                    <img className="hopeunderline" src={hopeunderline} />
+                    <img className="hopeunderline" src={hopeunderline} alt="Empowering instant, secure, and meaningful connections" />
                   </span>
                 </h2>
               </div>
@@ -380,7 +382,7 @@ function About() {
                     Our{" "}
                     <span className="highlight-text position-relative">
                       Vision{" "}
-                      <img src={missionunderline} className="wedotagline" />
+                      <img src={missionunderline} className="wedotagline" alt="Our Vision" />
                     </span>
                     {/* <span className=" text-black  position-relative">
                       Vision <img className="hopeunderline" src={hopeunderline} />
@@ -418,7 +420,7 @@ function About() {
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="text-success position-relative">
                     innovation{" "}
-                    <img className="hopeunderline" src={hopeunderline} />
+                    <img className="hopeunderline" src={hopeunderline} alt="Our approach focuses on simplicity, security, and innovation" />
                   </span>
                 </h2>
               </div>
@@ -435,7 +437,7 @@ function About() {
                     Our{" "}
                     <span className="highlight-text position-relative">
                       Approach{" "}
-                      <img src={missionunderline} className="wedotagline" />
+                      <img src={missionunderline} className="wedotagline" alt="Our Approach" />
                     </span>
                   </h2>
                   <p
@@ -484,7 +486,7 @@ function About() {
                     Recent{" "}
                     <span className="highlight-text position-relative">
                       Developments{" "}
-                      <img src={missionunderline} className="wedotagline" />
+                      <img src={missionunderline} className="wedotagline" alt="Recent Developments" />
                     </span>
                   </h2>
                   <p
@@ -569,7 +571,7 @@ function About() {
                     Join Our Team To End{" "}
                     <span className="hightlight">
                       Homelessness!{" "}
-                      <img src={tagline} className="underline-image" />{" "}
+                      <img src={tagline} className="underline-image" alt="Join Our Team To End Homelessness" />{" "}
                     </span>{" "}
                   </p>
                   <p className="intershippara">
@@ -610,7 +612,7 @@ function About() {
                     Internship{" "}
                     <span className="hightlight">
                       Opportunities{" "}
-                      <img src={tagline} className="underline-image" />{" "}
+                      <img src={tagline} className="underline-image" alt="Internship Opportunities At HIS-OC" />{" "}
                     </span>{" "}
                     <br /> At HIS-OC{" "}
                   </p>

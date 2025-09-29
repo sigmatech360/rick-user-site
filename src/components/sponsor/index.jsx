@@ -23,7 +23,7 @@ function Sponsor() {
         >
           BE A{" "}
           <span className="text-warning   position-relative">
-            SPONSOR <img className="sponsorunderline" src={sponsorunderline} />
+            SPONSOR <img className="sponsorunderline" src={sponsorunderline} alt="BE A SPONSOR" />
           </span>
         </h2>
       </section>

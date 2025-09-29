@@ -23,6 +23,7 @@ import { AiOutlineDoubleRight } from "react-icons/ai";
 
 import { Link } from "react-router-dom";
 import { base_url_image } from "../Api/base_url";
+import ReactHelmet from "../../components/ReactHelmet";
 function AnnouncementList() {
 
 
@@ -47,6 +48,7 @@ function AnnouncementList() {
   }
   return (
     <>
+    <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={announcementbg}
@@ -91,12 +93,12 @@ function AnnouncementList() {
 
               {ApiDatapodcast?.data?.map((items) => (
 
-                <div className="row  align-items-center">
+                <div className="row  align-items-center" key={items.id}>
                   {/* <div className="borderstop"></div> */}
                   <hr />
                   <div className="  col-md-6 mb-4">
                     <div className="text-center">
-                      <img src={base_url_image + items?.image} className="anmouncementlist1  " />
+                      <img src={base_url_image + items?.image} className="anmouncementlist1" alt={items?.title} />
                     </div>
                   </div>
                   <div className="  col-md-6 mb-4">

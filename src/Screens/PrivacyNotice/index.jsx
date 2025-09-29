@@ -27,6 +27,7 @@ import { useGet, usePost } from "../Api/usePost";
 import AOS from "aos";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import ReactHelmet from "../../components/ReactHelmet";
 
 function PrivacyNotice() {
   const {
@@ -206,6 +207,7 @@ function PrivacyNotice() {
 
   return (
     <>
+      <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={gethelpbg}
@@ -219,7 +221,7 @@ function PrivacyNotice() {
         <section className="info-section d-flex justify-content-center align-items-center py-5">
           <div className="container gethelpgradbg">
             <div className="text-center mb-3">
-            <img src={LogoIcon} className="privacy-logo" alt="" />
+              <img src={LogoIcon} className="privacy-logo" alt="privacy logo" />
               <p className="text-primary fs-1 fw-bold">Privacy Notice</p>
               <p className="fw-bold">
                 Orange County Continuum of Care Homeless Management Information

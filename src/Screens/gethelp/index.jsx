@@ -37,6 +37,7 @@ import "swiper/css/pagination";
 import "swiper/css/effect-fade";
 import "swiper/css";
 import { Accordion } from "react-bootstrap";
+import ReactHelmet from "../../components/ReactHelmet";
 
 function GetHelp() {
   const {
@@ -237,6 +238,7 @@ function GetHelp() {
 
   return (
     <>
+    <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={getHelpBannerImg}
@@ -327,6 +329,7 @@ function GetHelp() {
                         <img
                           src={helpcontecticon}
                           className="img-fluid helpcontecticon"
+                          alt={item.title}
                         />
                         {/* <FaPhoneAlt size={30} color="#348F99" /> */}
                         {/* <p className="para mt-3 mb-2 text-muted text-center">
@@ -373,7 +376,7 @@ function GetHelp() {
                     data-aos-duration="1000"
                   >
                     <Link to={"https://www.211oc.org/"}>
-                      <img src={helpstar} className="starimg" />
+                      <img src={helpstar} className="starimg" alt="HIS OC" />
                     </Link>
                   </h1>
                   <FaStar className="text-warning star-icon" />

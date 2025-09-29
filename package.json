@@ -1,12 +1,13 @@
 {
   "name": "His-oc",
-  "homepage": "/",
+  "homepage": "https://his-oc.org/",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "postbuild":"npx critical dist/index.html --inline --width 480 --height 680 --target dist/index.html",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -24,6 +25,7 @@
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.9",
     "react-dom": "^18.3.1",
+    "react-helmet": "^6.1.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.2.0",
     "react-slick": "^0.30.3",
@@ -36,6 +38,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react-swc": "^3.5.0",
+    "critical": "^7.2.1",
     "eslint": "^9.15.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",

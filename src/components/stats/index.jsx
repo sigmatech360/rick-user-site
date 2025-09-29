@@ -29,7 +29,7 @@ const Stats = ({ApiDatastats}) => {
                   Help is{" "}
                   <span className="text-success position-relative">
                     Available{" "}
-                    <img className="availabletagline" src={availabletagline} />
+                    <img className="availabletagline" src={availabletagline} alt='Help is Available' />
                   </span>
                 </h2>
                 <p

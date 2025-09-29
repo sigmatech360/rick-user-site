@@ -167,6 +167,7 @@ function Leadership({ ApiDataGetmembers }) {
                   <img
                     className="dedicationunderline"
                     src={dedicationunderline}
+                    alt="Leadership"
                   />
                 </span>
                 Team

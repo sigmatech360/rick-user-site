@@ -18,6 +18,7 @@ import Ourpodcasts from "../../components/ourpodcast";
 
 import { useGet, usePost } from '../Api/usePost'
 import { Link } from "react-router-dom";
+import ReactHelmet from "../../components/ReactHelmet";
 function Ourpodcast() {
 
 
@@ -35,6 +36,7 @@ function Ourpodcast() {
   }, []);
   return (
     <>
+    <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={ourpodcastbg}
@@ -63,6 +65,7 @@ function Ourpodcast() {
                       <img
                         src={partnerunderline}
                         className="houseprogramunderline"
+                        alt="Stories Of Resilience"
                       />{" "}
                     </span>
                   </h2>

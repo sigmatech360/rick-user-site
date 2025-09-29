@@ -53,7 +53,7 @@ function Contact({
             We'd{" "}
             <span className=" position-relative text-warning">
               Love To Hear
-              <img src={contantunderline} className="contantunderline" />
+              <img src={contantunderline} className="contantunderline" alt=" We'd Love To Hear From You" />
             </span>{" "}
             From You
           </h2>

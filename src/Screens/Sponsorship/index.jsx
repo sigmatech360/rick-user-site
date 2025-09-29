@@ -40,6 +40,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 
 import { faCommentDots } from "@fortawesome/free-solid-svg-icons";
+import ReactHelmet from "../../components/ReactHelmet";
 
 const sponsorData = [
   {
@@ -284,6 +285,7 @@ function Contactus() {
 
   return (
     <>
+    <ReactHelmet />
       <Layout>
         <HeroSection
           heroimg={contectbf}
@@ -386,7 +388,7 @@ function Contactus() {
                           <img
                             src={base_url_image + item?.image}
                             className="img-fluid"
-                            alt=""
+                            alt={item?.title}
                           />
                         </div>
                         <div className="sponsor-card-body">
@@ -463,7 +465,7 @@ function Contactus() {
                   Partner With{" "}
                   <span className="do-it">
                     HIS-OC{" "}
-                    <img className="donateunderline" src={donateunderline} />
+                    <img className="donateunderline" src={donateunderline} alt="Partner With HIS-OC To Create Lasting Impact" />
                   </span>
                   To Create Lasting Impact
                 </h3>
@@ -615,7 +617,7 @@ function Contactus() {
             <a href="tel:(714)%20993-5774" className="position-relative">
               {" "}
               (714) 993-5774{" "}
-              <img className="sponsorunderline" src={sponsorunderline} />
+              <img className="sponsorunderline" src={sponsorunderline} alt="Contact" />
             </a>
           </h2>
         </section>

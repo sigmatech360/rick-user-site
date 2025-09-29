@@ -57,6 +57,7 @@ import { useNavigate } from "react-router-dom";
 import Stats from "../../components/stats";
 import Testimonial from "../../components/Testimonial";
 import { AuthContext } from "../../Routers/AuthContext";
+import ReactHelmet from "../../components/ReactHelmet";
 
 const parseEventDate = (dateStr) => {
   const cleanDateStr = dateStr.replace(/(\d+)(st|nd|rd|th)/, "$1");
@@ -73,7 +74,6 @@ const isLessThan7Days = (eventDate) => {
 
   const diffInMs = targetDate - today;
   const diffInDays = diffInMs / (1000 * 60 * 60 * 24); // convert ms to days
-
 
   return diffInDays >= 0 && diffInDays <= 7;
 };
@@ -162,6 +162,7 @@ function Home() {
         type="button"
         className="slick-arrow slick-prev mb-2 "
         onClick={onClick}
+        aria-label="Previous slide"
       >
         <span className="arrow-icon">
           {" "}
@@ -178,6 +179,7 @@ function Home() {
         type="button"
         className="slick-arrow slick-next mb-2"
         onClick={onClick}
+        aria-label="Next slide"
       >
         <span className="arrow-icon">
           {" "}
@@ -306,6 +308,7 @@ function Home() {
   // news - announcements
   return (
     <>
+      <ReactHelmet />
       <Layout>
         {showTicketAlert && (
           <Alert
@@ -438,7 +441,7 @@ function Home() {
                               "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
                             }
                           >
-                            <img src={googlePlay} className="w-100" alt="" />
+                            <img src={googlePlay} className="w-100" alt="Google Play" />
                           </Link>
                           <Link
                             to={
@@ -447,7 +450,7 @@ function Home() {
                             target="_blank"
                             className="appLink"
                           >
-                            <img src={applePlay} className="w-100" alt="" />
+                            <img src={applePlay} className="w-100" alt="apple play" />
                           </Link>
                         </div>
                       </div>
@@ -593,12 +596,12 @@ function Home() {
                     Goal? */}
                     <span className="highlight-text">
                       Empowering{" "}
-                      <img src={wedotagline} className="wedotagline" />{" "}
+                      <img src={wedotagline} className="wedotagline" alt="wedotagline" />{" "}
                     </span>
                     Change. Building{" "}
                     <span className="highlight-text">
                       Stability
-                      <img src={wedotagline} className="wedotagline" />{" "}
+                      <img src={wedotagline} className="wedotagline" alt="wedotagline" />{" "}
                     </span>
                     .
                   </h2>
@@ -633,7 +636,7 @@ function Home() {
                   Be the <span className="text-warning">Change</span> That You
                   Think the{" "}
                   <span className="text-success position-relative">
-                    World <img className="changeworld" src={changeworld} />
+                    World <img className="changeworld" src={changeworld} alt="Be the Change That You Think the World Deserves!" />
                   </span>{" "}
                   Deserves!
                 </h2>
@@ -653,7 +656,7 @@ function Home() {
               Why Choose Us For Your{" "}
               <span className="text-warning  position-relative">
                 Donations?{" "}
-                <img className="apartunderline" src={apartunderline} />
+                <img className="apartunderline" src={apartunderline} alt="Why Choose Us For Your Donations?" />
               </span>
             </h2>
             <p
@@ -760,6 +763,7 @@ function Home() {
                       <img
                         className="programunderline"
                         src={programunderline}
+                        alt="HIS-OC Programs"
                       />
                     </span>
                   </h2>
@@ -971,6 +975,7 @@ function Home() {
                     <img
                       className="dedicationunderline"
                       src={dedicationunderline}
+                      alt="Sponsor Brands"
                     />
                   </span>
                 </h2>

@@ -164,7 +164,6 @@ function Header() {
       );
       formDataMethod.append("available_days", JSON.stringify(selectedItems));
 
-
       if (!localStorage.getItem("device_token")) {
         requestPermission();
       }
@@ -369,7 +368,7 @@ function Header() {
       setScriptLoaded(true);
       if (window.GivebutterWidget) {
         window.GivebutterWidget.init();
-        console.log("🎉 GivebutterWidget initialized");
+        // console.log("🎉 GivebutterWidget initialized");
       } else {
         console.warn("⚠️ GivebutterWidget not found after load");
       }
@@ -421,6 +420,8 @@ function Header() {
                 href="https://www.facebook.com/homeless.intervention.oc"
                 target="_blank"
                 className="text-white"
+                aria-label="Visit Facebook page"
+                rel="noopener noreferrer"
               >
                 <i className="bi bi-facebook"></i>
               </a>
@@ -428,6 +429,8 @@ function Header() {
                 href="https://twitter.com/Homeless_Int_OC"
                 target="_blank"
                 className="text-white"
+                aria-label="Visit Twitter page"
+                rel="noopener noreferrer"
               >
                 <i className="bi bi-x"></i>
               </a>
@@ -435,6 +438,8 @@ function Header() {
                 href="https://www.linkedin.com/company/hisoc/"
                 target="_blank"
                 className="text-white"
+                aria-label="Visit LinkedIn page"
+                rel="noopener noreferrer"
                 passHref
               >
                 <i className="bi bi-linkedin"></i>
@@ -443,6 +448,8 @@ function Header() {
                 href="https://www.instagram.com/homelessintoc/?hl=en"
                 target="_blank"
                 className="text-white"
+                aria-label="Visit Instagram page"
+                rel="noopener noreferrer"
                 passHref
               >
                 <i className="bi bi-instagram"></i>
@@ -452,6 +459,8 @@ function Header() {
                 href="https://www.snapchat.com/@his-oc"
                 target="_blank"
                 className="text-white"
+                aria-label="Visit Snapchat page"
+                rel="noopener noreferrer"
                 passHref
               >
                 <i className="bi bi-snapchat"></i>
@@ -460,6 +469,8 @@ function Header() {
                 href="https://www.tiktok.com/@hisoc89"
                 className="text-white"
                 target="_blank"
+                aria-label="Visit TikTok page"
+                rel="noopener noreferrer"
                 passHref
               >
                 <i className="bi bi-tiktok"></i>
@@ -468,6 +479,8 @@ function Header() {
                 href="https://www.youtube.com/@HISOC"
                 target="_blank"
                 className="text-white"
+                aria-label="Visit YouTube page"
+                rel="noopener noreferrer"
                 passHref
               >
                 <i className="bi bi-youtube"></i>
@@ -514,7 +527,7 @@ function Header() {
                             ? base_url_image + ApiDataGet?.data?.image
                             : placeholder
                         }
-                        alt=""
+                        alt="Profile Image"
                         className="img-fluid"
                       />
                     </div>
@@ -541,8 +554,6 @@ function Header() {
                   </Dropdown.Menu>
                 </Dropdown>
               )}
-
-              
             </div>
 
             <div
@@ -557,30 +568,37 @@ function Header() {
                       About
                     </Link>
                   </li> */}
-                  <NavDropdown title="About" id="about-dropdown">
-                    <NavDropdown.Item
-                      as={Link}
-                      to="/about"
-                      active={location.pathname.includes("/about")}
-                    >
-                      About
-                    </NavDropdown.Item>
-                    <NavDropdown.Item
-                      as={Link}
-                      to="/news-announcements"
-                      active={location.pathname.includes("/news-announcements")}
-                    >
-                      News Announcements
-                    </NavDropdown.Item>
+                  <li>
+                    <NavDropdown title="About" id="about-dropdown">
+                      <NavDropdown.Item
+                        as={Link}
+                        to="/about"
+                        active={location.pathname.includes("/about")}
+                        data-discover="true"
+                      >
+                        About
+                      </NavDropdown.Item>
+                      <NavDropdown.Item
+                        as={Link}
+                        to="/news-announcements"
+                        active={location.pathname.includes(
+                          "/news-announcements"
+                        )}
+                        data-discover="true"
+                      >
+                        News Announcements
+                      </NavDropdown.Item>
 
-                    <NavDropdown.Item
-                      as={Link}
-                      to="/join-our-team"
-                      active={location.pathname.includes("/join-our-team")}
-                    >
-                      Join our team
-                    </NavDropdown.Item>
-                  </NavDropdown>
+                      <NavDropdown.Item
+                        as={Link}
+                        to="/join-our-team"
+                        active={location.pathname.includes("/join-our-team")}
+                        data-discover="true"
+                      >
+                        Join our team
+                      </NavDropdown.Item>
+                    </NavDropdown>
+                  </li>
                   {/* <li className="nav-item dropdown">
                     <Link className={`nav-link ${location.pathname.includes('/ourwork') ? 'active' : ''}`} to="/ourwork">
                       Our Work
@@ -592,6 +610,7 @@ function Header() {
                         location.pathname.includes("/gethelp") ? "active" : ""
                       }`}
                       to="/gethelp"
+                      data-discover="true"
                     >
                       Get Help
                     </Link>
@@ -604,12 +623,13 @@ function Header() {
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
+                      data-discover="true"
                     >
                       Our Initiatives
                     </Link>
                     <ul className="dropdown-menu">
                       <li>
-                        <Link to="/sponsorship" className="dropdown-item">
+                        <Link to="/sponsorship" className="dropdown-item" data-discover="true">
                           Sponsorship
                         </Link>
                       </li>
@@ -621,6 +641,7 @@ function Header() {
                               : ""
                           }`}
                           to="/our-work"
+                          data-discover="true"
                         >
                           Our Work
                         </Link>
@@ -631,6 +652,7 @@ function Header() {
                             location.pathname.includes("/event") ? "active" : ""
                           }`}
                           to="/event"
+                          data-discover="true"
                         >
                           Event
                         </Link>
@@ -646,6 +668,7 @@ function Header() {
                               : ""
                           }`}
                           to="/top-volunteer"
+                          data-discover="true"
                         >
                           Top Volunteer
                         </Link>
@@ -672,6 +695,7 @@ function Header() {
                         location.pathname.includes("/event") ? "active" : ""
                       }`}
                       to="/event"
+                      data-discover="true"
                     >
                       Event
                     </Link>
@@ -685,6 +709,7 @@ function Header() {
                           : ""
                       }`}
                       to="/givedonation"
+                      data-discover="true"
                     >
                       Donate
                     </Link>
@@ -695,6 +720,7 @@ function Header() {
                         location.pathname.includes("/contactus") ? "active" : ""
                       }`}
                       to="/contactus"
+                      data-discover="true"
                     >
                       Contact Us
                     </Link>
@@ -712,7 +738,10 @@ function Header() {
               {/* Right-aligned buttons and icons */}
               <div className="d-flex align-items-center lgHeaderRight">
                 {!logintoken && (
-                  <button onClick={handleShow} className="nav-event todaybtn  btn me-2">
+                  <button
+                    onClick={handleShow}
+                    className="nav-event todaybtn  btn me-2"
+                  >
                     Become A Volunteer
                   </button>
                 )}
@@ -730,7 +759,7 @@ function Header() {
                               ? base_url_image + ApiDataGet?.data?.image
                               : placeholder
                           }
-                          alt=""
+                          alt="Profile Image"
                           className="img-fluid"
                         />
                       </div>
@@ -769,12 +798,12 @@ function Header() {
         </nav>
 
         {naveshow === true && (
-          <ul className="responsivenavbar-nav me-auto mb-2 mb-lg-0 d-lg-none ">
+          <div className="responsivenavbar-nav me-auto mb-2 mb-lg-0 d-lg-none ">
             <div className="responsiveheader">
               {" "}
               <span>
                 {" "}
-                <Link className="navbar-brand techVerse_logo" to={"/"}>
+                <Link className="navbar-brand techVerse_logo" to={"/"} data-discover="true">
                   {/* <img src={logo} alt="" /> */}
                 </Link>
               </span>
@@ -794,6 +823,7 @@ function Header() {
                 as={Link}
                 to="/about"
                 active={location.pathname.includes("/about")}
+                data-discover="true"
               >
                 About
               </NavDropdown.Item>
@@ -801,6 +831,7 @@ function Header() {
                 as={Link}
                 to="/news-announcements"
                 active={location.pathname.includes("/news-announcements")}
+                data-discover="true"
               >
                 News Announcements
               </NavDropdown.Item>
@@ -809,29 +840,30 @@ function Header() {
                 as={Link}
                 to="/join-our-team"
                 active={location.pathname.includes("/join-our-team")}
+                data-discover="true"
               >
                 Join our team
               </NavDropdown.Item>
             </NavDropdown>
             <div className="dropdown_menu_divider"></div>
             <div className="dropdown_menu_divider"></div>
-            <li className="main-navbar-list">
-              <Link className="new_main-navbar-list" to="/gethelp">
+            <div className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/gethelp" data-discover="true">
                 Get Help
               </Link>
-            </li>{" "}
+            </div>{" "}
             <div className="dropdown_menu_divider"></div>{" "}
             <div className="dropdown_menu_divider"></div>
-            <li className="main-navbar-list">
-              <Link className="new_main-navbar-list" to="/event">
+            <div className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/event" data-discover="true">
                 Event
               </Link>
-            </li>{" "}
-            <li className="main-navbar-list">
-              <Link className="new_main-navbar-list" to="/contactus">
+            </div>{" "}
+            <div className="main-navbar-list">
+              <Link className="new_main-navbar-list" to="/contactus" data-discover="true">
                 Contact
               </Link>
-            </li>{" "}
+            </div>{" "}
             <div className="dropdown_menu_divider"></div>
             <div className="dropdown_menu_divider"></div>
             <div className="dropdown_menu_divider"></div>
@@ -840,6 +872,7 @@ function Header() {
                 as={Link}
                 to="/sponsorship"
                 active={location.pathname.includes("/sponsorship")}
+                data-discover="true"
               >
                 Sponsorship
               </NavDropdown.Item>
@@ -847,6 +880,7 @@ function Header() {
                 as={Link}
                 to="/our-work"
                 active={location.pathname.includes("/our-work")}
+                data-discover="true"
               >
                 Our Work
               </NavDropdown.Item>
@@ -855,25 +889,26 @@ function Header() {
                 as={Link}
                 to="/top-volunteer"
                 active={location.pathname.includes("/top-volunteer")}
+                data-discover="true"
               >
                 Top Volunteer
               </NavDropdown.Item>
             </NavDropdown>
             <div className="dropdown_menu_divider"></div>
-            <li className="main-navbar-list  ">
+            <div className="main-navbar-list  ">
               {!logintoken && (
                 <button onClick={handleShow} className="nav-event btn me-2">
                   Become A Volunteer
                 </button>
               )}
-            </li>
-            <li>
+            </div>
+            <div>
               {scriptLoaded && (
                 <givebutter-widget id="pzBZ3p"></givebutter-widget>
               )}
-            </li>
+            </div>
             <div className="dropdown_menu_divider"></div>
-          </ul>
+          </div>
         )}
       </section>
 
