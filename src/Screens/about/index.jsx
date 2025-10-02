@@ -222,10 +222,10 @@ function About() {
                   data-aos-offset="0"
                   data-aos-duration="1000"
                 >
-                  Transforming Lives Restoring Hope <br />
+                  Transforming Lives Restoring  <br />
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="text-success position-relative">
-                    Hole <img className="hopeunderline" src={hopeunderline} alt="Transforming Lives Restoring Hope Hole" />
+                    Hope <img className="hopeunderline" src={hopeunderline} alt="Transforming Lives Restoring Hope Hole" />
                   </span>
                 </h2>
               </div>

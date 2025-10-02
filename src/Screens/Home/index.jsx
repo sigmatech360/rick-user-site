@@ -321,8 +321,11 @@ function Home() {
             </Alert.Link>
           </Alert>
         )}
+
         <section className="homeless-intervention">
           <Swiper
+            preloadImages={false}
+            lazy={true}
             // pagination={true}
             // modules={[Pagination]}
             modules={[Pagination, Autoplay]}
@@ -441,7 +444,11 @@ function Home() {
                               "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
                             }
                           >
-                            <img src={googlePlay} className="w-100" alt="Google Play" />
+                            <img
+                              src={googlePlay}
+                              className="w-100"
+                              alt="Google Play"
+                            />
                           </Link>
                           <Link
                             to={
@@ -450,7 +457,11 @@ function Home() {
                             target="_blank"
                             className="appLink"
                           >
-                            <img src={applePlay} className="w-100" alt="apple play" />
+                            <img
+                              src={applePlay}
+                              className="w-100"
+                              alt="apple play"
+                            />
                           </Link>
                         </div>
                       </div>
@@ -596,12 +607,20 @@ function Home() {
                     Goal? */}
                     <span className="highlight-text">
                       Empowering{" "}
-                      <img src={wedotagline} className="wedotagline" alt="wedotagline" />{" "}
+                      <img
+                        src={wedotagline}
+                        className="wedotagline"
+                        alt="wedotagline"
+                      />{" "}
                     </span>
                     Change. Building{" "}
                     <span className="highlight-text">
                       Stability
-                      <img src={wedotagline} className="wedotagline" alt="wedotagline" />{" "}
+                      <img
+                        src={wedotagline}
+                        className="wedotagline"
+                        alt="wedotagline"
+                      />{" "}
                     </span>
                     .
                   </h2>
@@ -636,7 +655,12 @@ function Home() {
                   Be the <span className="text-warning">Change</span> That You
                   Think the{" "}
                   <span className="text-success position-relative">
-                    World <img className="changeworld" src={changeworld} alt="Be the Change That You Think the World Deserves!" />
+                    World{" "}
+                    <img
+                      className="changeworld"
+                      src={changeworld}
+                      alt="Be the Change That You Think the World Deserves!"
+                    />
                   </span>{" "}
                   Deserves!
                 </h2>
@@ -656,7 +680,11 @@ function Home() {
               Why Choose Us For Your{" "}
               <span className="text-warning  position-relative">
                 Donations?{" "}
-                <img className="apartunderline" src={apartunderline} alt="Why Choose Us For Your Donations?" />
+                <img
+                  className="apartunderline"
+                  src={apartunderline}
+                  alt="Why Choose Us For Your Donations?"
+                />
               </span>
             </h2>
             <p

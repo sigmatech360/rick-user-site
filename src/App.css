@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'Lato';
+  src: url(Assets/fonts/LatoRegular.woff2) format('woff2'),
+       url(Assets/fonts/LatoRegular.woff2) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @media (min-width: 1600px) {
   .container {
     max-width: 1640px;
