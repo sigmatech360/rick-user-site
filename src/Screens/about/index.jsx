@@ -222,7 +222,7 @@ function About() {
                   data-aos-offset="0"
                   data-aos-duration="1000"
                 >
-                  Transforming Lives Restoring  <br />
+                  Transforming Lives Restoring  {" "}
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="text-success position-relative">
                     Hope <img className="hopeunderline" src={hopeunderline} alt="Transforming Lives Restoring Hope Hole" />
@@ -416,7 +416,7 @@ function About() {
                   data-aos-offset="0"
                   data-aos-duration="1000"
                 >
-                  Our approach focuses on simplicity, security, and <br />
+                  Our approach focuses on simplicity, security, and {" "}
                   {/* <span className="text-warning">Change</span> You Wish To <br /> */}
                   <span className="text-success position-relative">
                     innovation{" "}
