@@ -1021,6 +1021,12 @@
   transition: transform 0.3s ease;
   max-width: 150px;
 }
+.appLinkQr {
+  flex: 1;
+  width: auto;
+  transition: transform 0.3s ease;
+  max-width: 100px;
+}
 
 .appLink:hover {
   transform: scale(1.05);

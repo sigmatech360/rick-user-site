@@ -6,7 +6,9 @@ import bottomfooterlogo2 from "../../Assets/images/bottomfooterlogo2.webp";
 import charitynavigator from "../../Assets/images/charitynavigator.webp";
 import footerlogo from "../../Assets/images/footerlogo.webp";
 import googlePlay from "../../Assets/images/Google_Play_Store_badge.webp";
+import googlePlayQR from "../../Assets/images/rick-playstore-qr-code.webp";
 import applePlay from "../../Assets/images/Apple_Play_Store_badge.webp";
+import applePlayQR from "../../Assets/images/rick-applestore-qr-code.webp";
 
 import Whistleblowerpolicy from "../../Assets/pdf/10-Whistleblower-policy.docx.pdf";
 import NondiscriminationPolicy from "../../Assets/pdf/Non-discrimination-Policy-CLJ-Rev.pdf";
@@ -292,7 +294,11 @@ function Footer() {
             <div className="row">
               <div className="col-lg-4 mb-3 mb-lg-0 text-lg-start text-center">
                 <Link to={"/"}>
-                  <img src={footerlogo} className="footerlogo  mb-2  " alt="Be the Helping Hand!" />
+                  <img
+                    src={footerlogo}
+                    className="footerlogo  mb-2  "
+                    alt="Be the Helping Hand!"
+                  />
                 </Link>
                 {/* <p className="title fw-bold mb-2">
                   Building A Future Without{" "}
@@ -414,22 +420,51 @@ function Footer() {
                     data-aos-offset="0"
                     data-aos-duration="1000"
                   >
-                    <Link
-                      className="appLink"
-                      target="_blank"
-                      to={
-                        "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
-                      }
-                    >
-                      <img src={googlePlay} className="w-100" alt="google play" />
-                    </Link>
-                    <Link
-                      to={"https://apps.apple.com/us/app/hisocapp/id6749266767"}
-                      target="_blank"
-                      className="appLink"
-                    >
-                      <img src={applePlay} className="w-100" alt="apple play" />
-                    </Link>
+                    <div className="d-flex flex-column align-items-center gap-2">
+                      <div className="appLinkQr">
+                        <img
+                          src={googlePlayQR}
+                          className="w-100"
+                          alt="apple play"
+                        />
+                      </div>
+
+                      <Link
+                        className="appLink"
+                        target="_blank"
+                        to={
+                          "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
+                        }
+                      >
+                        <img
+                          src={googlePlay}
+                          className="w-100"
+                          alt="google play"
+                        />
+                      </Link>
+                    </div>
+                    <div className="d-flex flex-column align-items-center gap-2">
+                      <div className="appLinkQr">
+                        <img
+                          src={applePlayQR}
+                          className="w-100"
+                          alt="apple play"
+                        />
+                      </div>
+                      <Link
+                        to={
+                          "https://apps.apple.com/us/app/hisocapp/id6749266767"
+                        }
+                        target="_blank"
+                        className="appLink"
+                      >
+                        <img
+                          src={applePlay}
+                          className="w-100"
+                          alt="apple play"
+                        />
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -513,7 +548,7 @@ function Footer() {
                   target="_blank"
                   className="text-white me-3"
                   aria-label="Visit Facebook page"
-                rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i className="bi bi-facebook fs-5"></i>
                 </a>
@@ -523,7 +558,7 @@ function Footer() {
                   target="_blank"
                   className="text-white me-3"
                   aria-label="Visit Twitter page"
-                rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i className="bi bi-x fs-5"></i>
                 </a>
@@ -533,7 +568,7 @@ function Footer() {
                   target="_blank"
                   className="text-white me-3"
                   aria-label="Visit LinkedIn page"
-                rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i className="bi bi-linkedin fs-5"></i>
                 </a>
@@ -543,7 +578,7 @@ function Footer() {
                   target="_blank"
                   className="text-white me-3"
                   aria-label="Visit Instagram page"
-                rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i className="bi bi-instagram fs-5"></i>
                 </a>
@@ -553,7 +588,7 @@ function Footer() {
                   target="_blank"
                   className="text-white me-3"
                   aria-label="Visit Snapchat page"
-                rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i className="bi bi-snapchat fs-5"></i>
                 </a>
@@ -564,7 +599,7 @@ function Footer() {
                   target="_blank"
                   className="text-white me-3"
                   aria-label="Visit TikTok page"
-                rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i className="bi bi-tiktok fs-5"></i>
                 </a>
@@ -574,7 +609,7 @@ function Footer() {
                   target="_blank"
                   className="text-white me-3"
                   aria-label="Visit YouTube page"
-                rel="noopener noreferrer"
+                  rel="noopener noreferrer"
                 >
                   <i className="bi bi-youtube fs-5"></i>
                 </a>

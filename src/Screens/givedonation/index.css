@@ -366,8 +366,9 @@
   display: block;
   z-index: 1;
   position: relative;
-  object-fit: cover;
-  object-position: top center;
+  object-fit: contain;
+  object-position: center;
+  background-color: white;
 }
 
 /* innovation services */

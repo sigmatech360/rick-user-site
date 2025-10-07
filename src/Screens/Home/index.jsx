@@ -523,6 +523,41 @@ function Home() {
                           Get Help
                         </button>
                       </div>
+                      <div className="row">
+                        <div
+                          className="col-12 d-flex justify-content-center justify-content-md-start gap-3 mt-5 "
+                          data-aos="fade-up"
+                          data-aos-offset="0"
+                          data-aos-duration="1000"
+                        >
+                          <Link
+                            className="appLink"
+                            target="_blank"
+                            to={
+                              "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
+                            }
+                          >
+                            <img
+                              src={googlePlay}
+                              className="w-100"
+                              alt="Google Play"
+                            />
+                          </Link>
+                          <Link
+                            to={
+                              "https://apps.apple.com/us/app/hisocapp/id6749266767"
+                            }
+                            target="_blank"
+                            className="appLink"
+                          >
+                            <img
+                              src={applePlay}
+                              className="w-100"
+                              alt="apple play"
+                            />
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -579,6 +614,41 @@ function Home() {
                         <button className="nav-donate btn btn-outline-light">
                           Get Help
                         </button>
+                      </div>
+                      <div className="row">
+                        <div
+                          className="col-12 d-flex justify-content-center justify-content-md-start gap-3 mt-5 "
+                          data-aos="fade-up"
+                          data-aos-offset="0"
+                          data-aos-duration="1000"
+                        >
+                          <Link
+                            className="appLink"
+                            target="_blank"
+                            to={
+                              "https://play.google.com/store/apps/details?id=com.hisocapp&pli=1"
+                            }
+                          >
+                            <img
+                              src={googlePlay}
+                              className="w-100"
+                              alt="Google Play"
+                            />
+                          </Link>
+                          <Link
+                            to={
+                              "https://apps.apple.com/us/app/hisocapp/id6749266767"
+                            }
+                            target="_blank"
+                            className="appLink"
+                          >
+                            <img
+                              src={applePlay}
+                              className="w-100"
+                              alt="apple play"
+                            />
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </div>
