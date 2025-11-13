@@ -227,18 +227,20 @@ function PrivacyNotice() {
                 Orange County Continuum of Care Homeless Management Information
                 System (OC HMIS)
               </p>
-              <p>
-                THIS PRIVACY NOTICE EXPLAINS UNDER WHAT CIRCUMSTANCES WE MAY
-                SHARE AND DISCLOSE YOUR INFORMATION FROM THE OC HMIS. THIS
-                NOTICE ALSO EXPLAINS YOUR RIGHTS REGARDING YOUR CONFIDENTIAL
-                INFORMATION.
-              </p>
-              <p
-                className="text-danger"
-                style={{ textDecoration: "underline" }}
-              >
-                PLEASE READ IT CAREFULLY.
-              </p>
+              <div className="border border-dark p-2">
+                <p className="fw-bold lh-lg">
+                  THIS PRIVACY NOTICE EXPLAINS UNDER WHAT CIRCUMSTANCES WE MAY
+                  SHARE AND DISCLOSE YOUR INFORMATION FROM THE OC HMIS. THIS
+                  NOTICE ALSO EXPLAINS YOUR RIGHTS REGARDING YOUR CONFIDENTIAL
+                  INFORMATION.
+                </p>
+                <p
+                  className="text-danger mb-0 fw-bold"
+                  // style={{ textDecoration: "underline" }}
+                >
+                  PLEASE READ IT CAREFULLY.
+                </p>
+              </div>
             </div>
             <p>
               Our organization collects and shares information about individuals
@@ -249,12 +251,11 @@ function PrivacyNotice() {
               homeless services in Orange County.
             </p>
             <p>
-              We ask for your permission to share confidential personal
-              information that we collect about you and your family. This
-              confidential information is referred to as Protected Personal
-              Information (PPI). We are required to protect the privacy of your
-              PPI by complying with the privacy practices described in this
-              Privacy Notice.
+              Confidential personal information that we collect about you and
+              your family is referred to as Protected Personal Information
+              (PPI). We are required to protect the privacy of your PPI by
+              complying with the privacy practices described in this Privacy
+              Notice.
             </p>
             <p className="fw-bold mt-3">Why We Collect and Share Information</p>
             <p>
@@ -265,19 +266,19 @@ function PrivacyNotice() {
               assess the types of resources needed in your local area.
             </p>
             <p className="mt-3">
-              By collecting your information for HMIS, we are able to generate
-              aggregate statistical reports requested by the Department of
-              Housing and Urban Development (HUD).
+              By collecting your information for HMIS, we are also able to
+              generate aggregate statistical reports requested by the Department
+              of Housing and Urban Development (HUD).
             </p>
             <p className="fw-bold mt-3">
               The Type of Information We Collect and Share in the HMIS
             </p>
+            <p>
+              We collect and share both PPI and general information obtained
+              during your intake and assessment, which may include but is not
+              limited to:
+            </p>
             <ul>
-              <li>
-                We collect and share both PPI and general information obtained
-                during your intake and assessment,which may include but is not
-                limited to:
-              </li>
               <li>Name and contact information</li>
               <li>Social security number</li>
               <li>Birthdate</li>
@@ -295,9 +296,9 @@ function PrivacyNotice() {
               <li>Income sources and amounts; and non-cash benefits</li>
               <li>Veteran status</li>
               <li>Disability status</li>
-              <li>&nbsp;Household composition</li>
+              <li>Household composition</li>
               <li>Emergency contact information</li>
-              <li>&nbsp;Domestic violence history</li>
+              <li>Domestic violence history</li>
               <li>Photo (optional)</li>
             </ul>
             <p className="fs-3 fw-bold text-primary">
@@ -314,7 +315,8 @@ function PrivacyNotice() {
             <p className="fw-bold">How PPI May Be Shared and Disclosed</p>
             <p>
               Unless restricted by other laws, the information we collect can be
-              shared and disclosed under the following circumstances:
+              shared and disclosed without your consent under the following
+              circumstances:
             </p>
             <ul>
               <li>To provide or coordinate services.</li>
@@ -336,6 +338,11 @@ function PrivacyNotice() {
               </li>
               <li>For academic research purposes.</li>
               <li>
+                In a situation where you have requested access to your HMIS
+                records through the Client Record Request process, and an agency
+                will be providing you with those records.
+              </li>
+              <li>
                 Other uses and disclosures of your PPI can be made with your
                 written consent.
               </li>
@@ -344,16 +351,21 @@ function PrivacyNotice() {
               Providing Your Consent for Sharing PPI in the HMIS
             </p>
             <p>
-              If you choose to share your PPI in the OC HMIS, we must have your
-              written consent. Exception: In a situation where we are gathering
-              PPI from you during a phone screening, street outreach, or
-              community access center sign-in, your verbal consent can be used
-              to share your information in HMIS. If we obtain your verbal
-              consent, you will be requested to provide written consent during
-              your initial assessment. If you do not appear for your initial
-              assessment, your information will remain in HMIS until you revoke
-              your consent in writing.
+              Generally, to share your PPI in the OC HMIS, we must have your
+              written consent. Exception:
             </p>
+            <ul>
+              <li>
+                In a situation where we are gathering PPI from you during a
+                phone screening, street outreach, or community access center
+                sign-in, your verbal consent can be used to share your
+                information in HMIS. If we obtain your verbal consent, you will
+                be requested to provide written consent during your initial
+                assessment. If you do not appear for your initial assessment,
+                your information will remain in HMIS until you revoke your
+                consent in writing.
+              </li>
+            </ul>
             <p className="text-danger">
               You have the right to receive services even if you do not consent
               to share your PPI in the OC HMIS.
@@ -398,10 +410,12 @@ function PrivacyNotice() {
             <p>
               If you believe your privacy rights have been violated, you may
               send a written grievance to this organization. You will not be
-              retaliated against for filing a grievance. If your grievance is
-              not resolved to your satisfaction, you may send a written
-              grievance appeal to the HMIS System Administrator, 211 Orange
-              County (211OC).
+              retaliated against for filing a grievance.
+            </p>
+            <p>
+              If your grievance is not resolved to your satisfaction, you may
+              send a written grievance appeal to the HMIS Lead, Orange County
+              United Way
             </p>
             <p className="mt-3 fw-bold">Amendments to this Privacy Notice</p>
             <p>
@@ -414,21 +428,8 @@ function PrivacyNotice() {
               federal HMIS privacy standards. This organization must keep
               permanent documentation of all privacy notice amendments.
             </p>
-            {/* <div className="text-center">
-              <p className="text-primary fs-2 fw-bold">Aviso de Privacidad</p>
-              <p className="fw-bold">
-                Continuidad de Cuidado del Condado de Orange Homeless Management
-                Information System (OC HMIS)
-              </p>
-              <p>
-                ESTE AVISO DE PRIVACIDAD EXPLICA LAS CIRCUNSTANCIAS EN QUE
-                PODEMOS COMPARTIR Y REVELAR SU INFORMACIÓN DISTRIBUIDO POR OC
-                HMIS. ESTE AVISO TAMBIÉN EXPLICA SUS DERECHOS CON RESPECTO A SU
-                INFORMACIÓN CONFIDENCIAL
-              </p>
-              <p className="text-danger" style={{textDecoration:'underline'}}>POR FAVOR LEA CON CUIDADO</p>
-            </div> */}
-            <div className="text-center mb-3">
+
+            {/* <div className="text-center mb-3">
               <p className="text-primary fs-1 fw-bold">Aviso de Privacidad</p>
               <p className="fw-bold">
                 Sistema de Información de Gestión para Personas sin Hogar del
@@ -636,7 +637,7 @@ function PrivacyNotice() {
               ser consistentes con los requisitos de los estándares federales de
               privacidad del HMIS. Esta organización debe mantener documentación
               permanente de todas las enmiendas al aviso de privacidad.
-            </p>
+            </p> */}
           </div>
         </section>
 
