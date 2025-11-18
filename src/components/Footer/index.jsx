@@ -15,6 +15,7 @@ import NondiscriminationPolicy from "../../Assets/pdf/Non-discrimination-Policy-
 import GrievanceEnglish from "../../Assets/pdf/Grievance-12-2021-English.pdf";
 import GrievanceSpanish from "../../Assets/pdf/Grievance-12-2021-Spanish.pdf";
 import donateform from "../../Assets/pdf/2025-990-1.pdf";
+import inKindDonationLetter from "../../Assets/pdf/In-Kind-Donation-Letter_Fillable.pdf";
 
 import { ToastContainer, toast } from "react-toastify";
 
@@ -485,6 +486,14 @@ function Footer() {
                     <Link onClick={scrollToTop} to={"/contactus"} className="">
                       Contact Us
                     </Link>
+                  </li>
+                  <li>
+                    <a href={inKindDonationLetter}  target="_blank">
+                      <span className="text-danger">
+
+                      In-Kind Donation Receipt
+                      </span>
+                    </a>
                   </li>
                 </ul>
 
