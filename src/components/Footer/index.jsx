@@ -489,10 +489,7 @@ function Footer() {
                   </li>
                   <li>
                     <a href={inKindDonationLetter}  target="_blank">
-                      <span className="text-danger">
-
                       In-Kind Donation Receipt
-                      </span>
                     </a>
                   </li>
                 </ul>
