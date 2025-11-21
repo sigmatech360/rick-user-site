@@ -10,7 +10,7 @@ import helpcontecticon from "../../Assets/images/helpcontecticon.webp";
 import HeroSection from "../../components/herosection";
 import drivingchangecard1 from "../../Assets/images/drivingchangecard1.webp";
 import drivingchangecard2 from "../../Assets/images/drivingchangecard2.webp";
-import LogoIcon from "../../Assets/images/logo.webp";
+import LogoIcon from "../../Assets/images/privacy-logo.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -222,7 +222,7 @@ function PrivacyNotice() {
           <div className="container gethelpgradbg">
             <div className="text-center mb-3">
               <img src={LogoIcon} className="privacy-logo" alt="privacy logo" />
-              <p className="text-primary fs-1 fw-bold">Privacy Notice</p>
+              {/* <p className="text-primary fs-1 fw-bold">Privacy Notice</p> */}
               <p className="fw-bold">
                 Orange County Continuum of Care Homeless Management Information
                 System (OC HMIS)
